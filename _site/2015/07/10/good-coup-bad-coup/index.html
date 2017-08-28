@@ -1,0 +1,671 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.5.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Good coup, bad coup - MI Regression</title>
+
+
+
+
+<meta name="description" content="Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability">
+
+
+
+
+<meta name="author" content="Andreas Beger">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="MI Regression">
+<meta property="og:title" content="Good coup, bad coup">
+
+
+  <link rel="canonical" href="http://localhost:4000/2015/07/10/good-coup-bad-coup/">
+  <meta property="og:url" content="http://localhost:4000/2015/07/10/good-coup-bad-coup/">
+
+
+
+  <meta property="og:description" content="Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2015-07-10T13:03:36+03:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Andreas Beger",
+      "url" : "http://localhost:4000",
+      "sameAs" : ["https://twitter.com/andybeega","https://www.linkedin.com/in/andreas-beger-67728a36","https://plus.google.com/111153267456095139645","https://scholar.google.com/citations?user=0QX5DXoAAAAJ"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="cuymuwKhb4ZRPa4fX0BANEZvI3px-I4kRwScJhVEV1I" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="MI Regression Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- MathJax support (took out async) -->
+<script type="text/javascript" 
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="http://localhost:4000/">MI Regression</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blog archive</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/papers/">Projects & Papers</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/about/">About</a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="http://localhost:4000/images/mugshot2017.jpg" class="author__avatar" alt="Andreas Beger" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Andreas Beger</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Conflict forecasting, data science
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Tallinn, Estonia</span>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:adbeger+mireg@gmail.com">
+            <meta itemprop="email" content="adbeger+mireg@gmail.com" />
+            <i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/andybeega" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/andybega" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Good coup, bad coup">
+    <meta itemprop="description" content="Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability">
+    <meta itemprop="datePublished" content="July 10, 2015">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Good coup, bad coup
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p><em>This post first appeared at <a href="http://predictiveheuristics.com">Predictive Heuristics</a>.</em></p>
+
+<p><a href="http://www.washingtonpost.com/blogs/monkey-cage/wp/2015/05/14/did-burundi-just-have-a-good-coup/">Alexander Noyes</a> and <a href="http://www.washingtonpost.com/blogs/monkey-cage/wp/2015/05/18/taking-stock-of-good-coups-in-africa/">Sebastian Elischer</a> wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability. Elischer, although on the whole less optimistic about good coups than Noyes, writes:</p>
+
+<blockquote>
+  <p>There is some good news for those who want to believe in “good coups.” A number of military interventions in Africa have led to competitive multiparty elections, creating a necessary condition for successful democratization. These cases include the often (perhaps too often)-cited Malian coup of 1991, the Lesotho coup of 1991, the Nigerien coups of 1999 and 2000, the Guinean coup of 2008, the Malian coup of 2012 and potentially Burkina Faso’s 2014 coup, among others.</p>
+</blockquote>
+
+<p>Here is a quick look at the larger picture. I took the same Powell and Thyne <a href="http://www.jonathanmpowell.com/coup-detat-dataset.html">data on coups</a> that is referenced in the blog posts and added the <a href="http://www.systemicpeace.org/polityproject.html">Polity data on regimes</a> to it.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> Specifically, I added the Polity score 7 days before a coup, and 1 and 2 years afterwards, although I’ll focus on the changes 2 years later. The Polity score measures, on a scale from -10 to 10, how autocratic or democratic a regime is. The scale is in turn based on a larger number of items coded by the Polity project. It’s not quite an ordinal or interval scale, in part because there are a couple of special codes for regimes that are in transition or where a country is occupied or without a national government (failed state). Rather than exclude these special scores or convert them to Polity scores, I grouped the Polity scores into several broader categories from autocracy to full democracy, and kept the special codes under the label “unstable”, which may or may not be a good description for them.</p>
+
+<p>The overwhelming pattern for all 227 <em>successful</em> coups that the data cover is that things stay the same (0.41 of cases) or get worse (0.40 of cases). The plot below shows the number of times specific category-to-category switches took place, with the regime 7 days before a successful coup on the <em>y</em>-axis, and the regime 2 years later on the <em>x</em>-axis. It’s really just a slightly more fancy version of a transition matrix.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p><a href="http://localhost:4000/content/2015/2-year-transitions.png"><img src="http://localhost:4000/content/2015/2-year-transitions.png" alt="Regime type 2 years after a coup" /></a></p>
+
+<p>In 41, or 18 percent of cases, the regime was more democratic 2 years later. There are probably a few more that were still coded as being in transition to a more democratic regime, so the 18 percent is for unambiguously more democratic regimes.</p>
+
+<p>Below is another way of visualizing the same data. I don’t know what this type of plot is called, but in any case the <code class="highlighter-rouge">Gmisc</code> R package <a href="http://www.r-bloggers.com/visualizing-transitions-with-the-transitionplot-function/">implements a version of it</a>:</p>
+
+<p><a href="http://localhost:4000/content/2015/trans-plot-2-year.png"><img src="http://localhost:4000/content/2015/trans-plot-2-year.png" alt="Transition plot, 2 year" /></a></p>
+
+<p>It’s maybe clearer with this plot that of the transitions that do occur, the modal change is to autocracy. The number of autocracies 2 years post-coup is clearly larger than before, at the expense of less autocratic, more liberal regimes. There was one transition from democracy to full democracy–the thin line on the bottom right, which was for Cyprus in 1974 after a short-lived coup that led to Turkish invasion and eventually the fall of the Greek dictatorship and restoration of the previous president.</p>
+
+<p>By the way, I’m trying to consciously steer away from language implying causation here. This is after all a descriptive look at polity before and 2 years after a coup, and I have not dug into any particular case histories nor tried to control for any confounding factors. Forgive the occasional slip, and I don’t mean to imply causality when I use words like “transition”.</p>
+
+<p>So, when we consider the whole data, coups have historically more often than not reinforced autocratic tendencies. The picture actually looks much better if you look at post-1990 Sub-Saharan Africa only, as Elischer’s Monkey Cage post does:</p>
+
+<p><a href="http://localhost:4000/content/2015/2-year-transitions-ssa-90on.png"><img src="http://localhost:4000/content/2015/2-year-transitions-ssa-90on.png" alt="Regime type 2 years after a coup, Sub-Saharan Africa only" /></a></p>
+
+<p>More than a third of coups in post-1990 Sub-Saharan Africa are followed by regime liberalization. To be honest I was a bit surprised that the ratio of “good” to “bad” coups is that high. Here is a timeline of the specific cases. I changed the colors so that “same” is now red as well. The labels are easier to read if you click to open the larger version of the image.</p>
+
+<p><a href="http://localhost:4000/content/2015/ssa-over-time-2yrs.png"><img src="http://localhost:4000/content/2015/ssa-over-time-2yrs.png" alt="Sub-Saharan Africa" /></a></p>
+
+<p>Niger has had 3 coups since 1990: in 1996, 1999, and 2010. In the first, Polity decreased a year after the coup, but the other two resulted in improvements. This matches the narrative in Elischer’s post, as he gives the second two Nigerien coups as examples of good coups. A couple of other countries also appear twice in this list. I’m not sure whether repeated good coups are still a good thing, but on the other hand I’m not very familiar with the particular case histories, so maybe they really are.</p>
+
+<p>Like with the transition plots before, extending the time period and spatial focus to all countries from 1950 on changes the picture a lot:</p>
+
+<p><a href="http://localhost:4000/content/2015/all-over-time-2yrs.png"><img src="http://localhost:4000/content/2015/all-over-time-2yrs.png" alt="All coups" /></a></p>
+
+<p>Most coups historically were “bad”, with more autocratic or unchanged regimes 2 years later. A few here and there seem to be associated with democratization, and while the number of bad coups has decreased over time from highs in the 60’s and 70’s, the good coups seem to continue with a steady trickle. Still, despite the occurrence of a substantial number of coups that are associated with democratization, the main pattern historically and still today is that successful coups more often than not associated with more of the same, or worse (autocratization<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>). The imbalance between positive and negative movements in regime is even more pronounced at shorter time scales, e.g. if you consider regime type 1 year after a coup, and the main immediate effect is probably instability and political deterioration.</p>
+
+<p>Contrast this with Powell and Thyne,<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> whose <a href="http://www.uky.edu/~clthyn2/thyne_powell_FPA2013.pdf">2014 paper in Foreign Policy Analysis</a> is one of the articles that started the mini-discussion on good coups. Powell and Thyne look at whether having had a coup or <em>attempted but unsuccessful</em> coup within the past 2 years is associated with democratization, which they operationalize as a shift in Polity score from less than 6 to 6 or higher. This is equivalent to a movement from any category below democracy to “Democracy” or “Full Democracy” in the categorization I have used here. They find that it does, and with further investigation show that the effect is even more pronounced in strongly autocratic regimes and those with a long-ruling leader.</p>
+
+<p>How can coups increase the probability of democratization, while regimes tend to be similar or worse following a coup?</p>
+
+<p>My empirically unevaluated hunch is that the trick is twofold: the data Powell and Thyne use consist only of autocracies (Polity &lt; 6), and they only consider movement from not-democracy to democracy. To use a <a href="http://en.wikipedia.org/wiki/If_a_tree_falls_in_a_forest">bad analogy</a>, with this setup if a coup makes an autocracy more autocratic, nobody is there to hear it. In any case, I think that the explanation for the inconsistency is along these lines: coups perturb regimes, and sometimes these perturbations will be in the more democratic direction. So if you are only looking at whether countries cross a threshold from not democratic to democratic, you will find that coups will indeed sometimes push countries over the threshold.</p>
+
+<p>Dan Carlin, in his <a href="http://www.dancarlin.com/product/hardcore-history-50-blueprint-for-armageddon-i/">podcasts on World War 1</a>, has a great analogy about the quality of monarchs that came to mind here.<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> He describes monarchical succession as a roll of the dice where sometimes you get great kings like Frederick II or Peter the Great, but other times you are stuck with the <a href="http://en.wikipedia.org/wiki/Frederick_the_Great">Wilhelm II</a> or <a href="http://en.wikipedia.org/wiki/Nicholas_II_of_Russia">Nicholas II</a>’s of the regal world. Based on the cursory look I’ve described here, coups are then akin to rolling a loaded dice. Sometimes they can lead to regimes that are more liberal, and if not outright democratic at least less autocratic. But more often, they are associated with no change or change in the wrong direction, in addition to other short-term costs they carry.</p>
+
+<p>So while good coups happen, there are also associated risks. You shouldn’t consider potential benefits without the potential costs involved. The next logical step would be to try to figure out whether there are any systematic conditions that can help predict whether a coup would lead to liberalization, no meaningful change, or more autocracy. Powell and Thyne have a little bit of this when it comes to the benefit (democratization) side, e.g. that democratizing coups are more likely in highly autocratic regimes with aging leaders, but the potential risks are not clear. It seems like being able to predict what change in regime type a coup would likely lead to is also something policymakers would be interest in when evaluating how to respond to a coup or the possibility of one.</p>
+
+<p><a href="https://github.com/andybega/mireg-blogs/tree/master/good-coup-bad-coup">Code and data</a></p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Jonathan Powell is doing a wonderful job, as far as I can tell, in keeping the data regularly updated. At least it has been updated every time I have looked on his website.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>I would like to plot the transition matrix with a &lt;<a href="http://www.infovis.net/printMag.php?num=184&amp;lang=2">bivariate color scale</a> so that it shows both whether a transition is to a more authoritarian/democratic regime, and also what the frequency of any given pair was. I.e. a cross between a qualitative and gradient scales, or specifically 3 separate gradient scales. But it seems that this is not possible with <code class="highlighter-rouge">ggplot2</code>. If there were only two categories I could cheat with a diverging scale, alas there are three.&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>If “democratization” is a word, it seems that “autocratization” should be as well.&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Thank you for posting an ungated copy of the paper, along with replication materials.&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Maybe he got it from somewhere else, I don’t know.&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/tags/#archigos" class="page__taxonomy-item" rel="tag">Archigos</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#coups" class="page__taxonomy-item" rel="tag">coups</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#descriptive-statistics" class="page__taxonomy-item" rel="tag">descriptive statistics</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#good-coups" class="page__taxonomy-item" rel="tag">good coups</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#polity" class="page__taxonomy-item" rel="tag">polity</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2015-07-10T13:03:36+03:00">July 10, 2015</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Good+coup%2C+bad+coup%20http%3A%2F%2Flocalhost%3A4000%2F2015%2F07%2F10%2Fgood-coup-bad-coup%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2015%2F07%2F10%2Fgood-coup-bad-coup%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2F2015%2F07%2F10%2Fgood-coup-bad-coup%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2015%2F07%2F10%2Fgood-coup-bad-coup%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/2015/04/08/public-icews-data/" class="pagination--pager" title="A quick look at the public ICEWS data
+">Previous</a>
+    
+    
+      <a href="http://localhost:4000/2015/09/24/when-forecasting-goes-wrong-maybe-yemen/" class="pagination--pager" title="When forecasting goes wrong (maybe): Yemen
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2017/02/10/coup-forecasts-2017/" rel="permalink">Coup forecasts for 2017
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  20 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Forecasts of the risk of a coup attempt for 161 countries in 2017.
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2016/11/22/eu-army/" rel="permalink">Support for the creation of an EU Army
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Some plots of a Eurobarometer question asking people about the creation of an EU Army.
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2016/09/14/data-management/" rel="permalink">Data management and missing data
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  10 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">A lot can go wrong between raw data and processed data used for analysis. Here is one post-mortem example and a plot that can help identify issues for countr...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2016/06/20/moving-from-wordpress-to-jekyll/" rel="permalink">Moving from Wordpress to Jekyll
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  6 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I moved my home page and blog from Wordpress to Jekyll over the past week, thanks to a small break in regular work. I’ve been using Wordpress.com since 2011,...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/andybega"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Andreas Beger. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36796505-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+  
+      
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/2015/07/10/good-coup-bad-coup/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/2015/07/10/good-coup-bad-coup"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mireg.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+
+  </body>
+</html>

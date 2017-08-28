@@ -1,0 +1,636 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.5.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Building a survivor curve from observed data - MI Regression</title>
+
+
+
+
+<meta name="description" content="A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it’s usually presented similarly. So this was a bit of a challenge.">
+
+
+
+
+<meta name="author" content="Andreas Beger">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="MI Regression">
+<meta property="og:title" content="Building a survivor curve from observed data">
+
+
+  <link rel="canonical" href="http://localhost:4000/2012/12/22/building-a-survivor-curve-from-observed-data/">
+  <meta property="og:url" content="http://localhost:4000/2012/12/22/building-a-survivor-curve-from-observed-data/">
+
+
+
+  <meta property="og:description" content="A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it’s usually presented similarly. So this was a bit of a challenge.">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2012-12-22T02:52:38+02:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Andreas Beger",
+      "url" : "http://localhost:4000",
+      "sameAs" : ["https://twitter.com/andybeega","https://www.linkedin.com/in/andreas-beger-67728a36","https://plus.google.com/111153267456095139645","https://scholar.google.com/citations?user=0QX5DXoAAAAJ"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="cuymuwKhb4ZRPa4fX0BANEZvI3px-I4kRwScJhVEV1I" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="MI Regression Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- MathJax support (took out async) -->
+<script type="text/javascript" 
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="http://localhost:4000/">MI Regression</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blog archive</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/papers/">Projects & Papers</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/about/">About</a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="http://localhost:4000/images/mugshot2017.jpg" class="author__avatar" alt="Andreas Beger" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Andreas Beger</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Conflict forecasting, data science
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Tallinn, Estonia</span>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:adbeger+mireg@gmail.com">
+            <meta itemprop="email" content="adbeger+mireg@gmail.com" />
+            <i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/andybeega" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/andybega" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Building a survivor curve from observed data">
+    <meta itemprop="description" content="A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it’s usually presented similarly. So this was a bit of a challenge.">
+    <meta itemprop="datePublished" content="December 22, 2012">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Building a survivor curve from observed data
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>A few weeks ago <a href="http://www.mdwardlab.com" title="Ward Lab">we</a> were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned <a href="https://files.nyu.edu/mrg217/public/homepage.htm">about this</a> it involved a lot of math and Stata, and when you look around the web it’s usually presented similarly. So this was a bit of a challenge.</p>
+
+<p>A nice thing about duration analysis though is that a lot of the key concepts are already explicitly graphical, like <a href="http://en.wikipedia.org/wiki/Survival_function">survival curves</a> (wikipedia) and hazard rates. Below, for example, is a survival curve for cancer patients diagnosed with acute lymphoblastic leukemia between 1988 and 2008 in the US, from <a href="http://seer.cancer.gov/faststats/index.php">SEER fast stats</a>:</p>
+
+<p><a href="http://localhost:4000/content/2012/all_surv.png"><img src="http://localhost:4000/content/2012/all_surv.png" alt="Survival curve for ALL, 1988-2008" /></a></p>
+
+<p>Starting from the moment at which a patient is diagnosed with cancer (year 0), it shows the proportion of patients who survive without relapse or death any given number of years from diagnosis. Two years from diagnosis, 50 percents of patients are still event free. Five years from diagnosis about 35 percent are event free (what you might call cured), etc. Alternatively, one could interpret it as the probability that a given ALL patient will be alive 2 or 5 years from diagnosis, with probabilities of 0.5 and 0.35 respectively.</p>
+
+<p>So far so good, except that in practice one has to estimate survival functions on the basis of limited empirical data, e.g. using a <a href="http://en.wikipedia.org/wiki/Kaplan–Meier_estimator">Kaplan-Meier estimate</a> (wikipedia). The resulting estimated survivor curves are not smooth like the curve above, but ragged. Using another example of lightbulbs, with data for the number of days until five bulbs burned out, one might get something like this:</p>
+
+<p><a href="http://localhost:4000/content/2012/first5_s.png"><img src="http://localhost:4000/content/2012/first5_s.png" alt="First 5 failures" /></a></p>
+
+<p>The black line shows the survivor curve estimate, based on data for the five lightbulbs. I added the grey bars to represent the number of days each of the five bulbs lasted to show how the survivor estimate is built up from individual failures. E.g. the top bar is the first bulb, which lasted for ~80 days. Thus on day 25 all 5 bulbs are still burning and our survivor curve is at 1.0. Around day 80, after the first bulb has failed, 4 of 5 or 0.8 of the original bulbs are still “alive”, bringing the curve down to 0.8. And so on for each additional failure.</p>
+
+<p>Taking a cue from Bayesian Biologist’s <a href="http://bayesianbiologist.com/2012/08/17/an-update-on-visualizing-bayesian-updating/">video of Bayesian updating</a>, and Drew Conway’s <a href="http://www.drewconway.com/zia/?p=2741">video of Chicago crime</a> , I thought it would be nice to create a video that shows how an empirical survivor curve like this is built up from observed failure data, and how it changes as you add more data.</p>
+
+<p>First, a simple backstory: Imagine you move into a new apartment, and having an obsession with measurement, you start keeping track of how long the lightbulbs in your five light fixtures last (it’s a small apartment). In the video below, the top half shows the five fixtures, where each bar represents a lightbulb and the number of days it is in operation now. On day 0 all 5 fixtures have new bulbs, i.e. there are no failures yet. Thus the survivor curve estimate, shown at the bottom, is not very useful (we disregard bulbs that haven’t burned out yet, i.e. no censoring).</p>
+
+<p><a href="http://www.vimeo.com/56935195">vimeo</a></p>
+
+<p>Time goes by and after 80 days bulbs are starting to burn out. With data on failures we can now start updating our survivor curve to reflect those failures. The first updates still leave us with a very rough survivor curve estimate, but as more bulbs fail the curve starts getting a nicer shape. Note also that the mean time to failure (MTTF) in the bottom left corner starts getting closer to it’s theoretical value. The video ends after a year’s worth of simulation, but the longer we let it run the smoother the KM estimate would get. Eventually the KM estimate should converge to the theoretical survivor curve shown in red at the end of the video.</p>
+
+<p>I created the video using R, with the code below. You’ll need <a href="http://ffmpeg.org">ffmpeg</a> to combine the individual frames into a video at the end.</p>
+
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">  
+</span><span class="n">library</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">## functions for simulated dgp  
+</span><span class="n">createSurvivalFrame</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">f.survfit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span><span class="c1">## Create data frame to pass to ggplot2 using survfit result  
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">f.survfit</span><span class="p">)</span><span class="o">!=</span><span class="s1">'survfit'</span><span class="p">)</span><span class="w"> </span><span class="n">stop</span><span class="p">(</span><span class="s1">'Need &amp;amp;quot;survfit&amp;amp;quot; class object.'</span><span class="p">)</span><span class="w">  
+</span><span class="n">f.surv</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">f.survfit</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">surv</span><span class="o">=</span><span class="n">f.survfit</span><span class="o">$</span><span class="n">surv</span><span class="p">)</span><span class="w">  
+</span><span class="n">f.start</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">f.surv</span><span class="o">$</span><span class="n">time</span><span class="p">[</span><span class="m">1</span><span class="p">]),</span><span class="w"> </span><span class="n">surv</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w">  
+</span><span class="c1"># add row at end (0 to end of time)  
+</span><span class="n">f.end</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="m">125</span><span class="p">,</span><span class="w"> </span><span class="n">surv</span><span class="o">=</span><span class="m">0</span><span class="p">)</span><span class="w">  
+</span><span class="n">f.surv</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">rbind</span><span class="p">(</span><span class="n">f.start</span><span class="p">,</span><span class="w"> </span><span class="n">f.surv</span><span class="p">,</span><span class="w"> </span><span class="n">f.end</span><span class="p">)</span><span class="w">
+
+</span><span class="nf">return</span><span class="p">(</span><span class="n">f.surv</span><span class="p">)</span><span class="w">  
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">qplot_survival</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">f.surv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span><span class="n">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">  
+</span><span class="n">p</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">f.surv</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_step</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">surv</span><span class="p">),</span><span class="w"> </span><span class="n">direction</span><span class="o">=</span><span class="s1">'hv'</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">1.5</span><span class="p">)</span><span class="w">  
+</span><span class="n">p</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ylim</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">75</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">125</span><span class="p">),</span><span class="w"> </span><span class="n">limits</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">125</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">labs</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'Survivors'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="s1">'Day'</span><span class="p">)</span><span class="w">  
+</span><span class="nf">return</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w">  
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1">## function to simulate lightbulbs  
+</span><span class="n">lights_sim</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">max.days</span><span class="o">=</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span><span class="n">require</span><span class="p">(</span><span class="n">survival</span><span class="p">)</span><span class="w">  
+</span><span class="n">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">  
+</span><span class="n">require</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Initalize  
+</span><span class="n">obs.bulbs</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="kc">NULL</span><span class="w">  
+</span><span class="n">fixtures</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">no</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">bulb</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">bulb.life</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">bulb.spell</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">event</span><span class="o">=</span><span class="nb">F</span><span class="p">)</span><span class="w">  
+</span><span class="n">bulb</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="m">0</span><span class="w">  
+</span><span class="n">true.mttf</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">gamma</span><span class="p">(</span><span class="m">1+1</span><span class="o">/</span><span class="m">10</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">)</span><span class="w">  
+</span><span class="n">mttf</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="s1">'NA'</span><span class="w">
+
+</span><span class="c1"># Initial survival plot  
+</span><span class="n">f.surv</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">125</span><span class="p">),</span><span class="w"> </span><span class="n">surv</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w">  
+</span><span class="n">p</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">qplot_survival</span><span class="p">(</span><span class="n">f.surv</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w">  
+</span><span class="n">label</span><span class="o">=</span><span class="s1">'Estimated MTTF:'</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w">  
+</span><span class="n">label</span><span class="o">=</span><span class="n">mttf</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w">  
+</span><span class="n">label</span><span class="o">=</span><span class="s1">'Theoretical MTTF:'</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w">  
+</span><span class="n">label</span><span class="o">=</span><span class="n">true.mttf</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Simulate through max.days  
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">day</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">max.days</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span><span class="c1"># Update spell counters, reset events  
+</span><span class="n">fixtures</span><span class="o">$</span><span class="n">bulb.spell</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">fixtures</span><span class="o">$</span><span class="n">bulb.spell</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">  
+</span><span class="c1"># Place bulbs in empty fixtures  
+</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nf">any</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">fixtures</span><span class="o">$</span><span class="n">bulb</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span><span class="n">bulb</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">bulb</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">  
+</span><span class="n">fixtures</span><span class="p">[</span><span class="n">match</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">fixtures</span><span class="o">$</span><span class="n">bulb</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'bulb'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bulb.life'</span><span class="p">)]</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">bulb</span><span class="p">,</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">rweibull</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="m">100</span><span class="p">)))</span><span class="w">  
+</span><span class="p">}</span><span class="w">  
+</span><span class="c1"># Check for bulbs to burn out now  
+</span><span class="n">fixtures</span><span class="o">$</span><span class="n">event</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">with</span><span class="p">(</span><span class="n">fixtures</span><span class="p">,</span><span class="w"> </span><span class="n">ifelse</span><span class="p">(</span><span class="n">bulb.life</span><span class="o">==</span><span class="n">bulb.spell</span><span class="p">,</span><span class="w"> </span><span class="nb">T</span><span class="p">,</span><span class="w"> </span><span class="nb">F</span><span class="p">))</span><span class="w">  
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">any</span><span class="p">(</span><span class="n">fixtures</span><span class="o">$</span><span class="n">event</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span><span class="n">obs.bulbs</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">rbind</span><span class="p">(</span><span class="n">obs.bulbs</span><span class="p">,</span><span class="w"> </span><span class="n">fixtures</span><span class="p">[</span><span class="n">fixtures</span><span class="o">$</span><span class="n">event</span><span class="o">==</span><span class="nb">T</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'bulb'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bulb.life'</span><span class="p">,</span><span class="w"> </span><span class="s1">'event'</span><span class="p">)])</span><span class="w">  
+</span><span class="n">fixtures</span><span class="p">[</span><span class="n">fixtures</span><span class="o">$</span><span class="n">event</span><span class="o">==</span><span class="nb">T</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'bulb'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bulb.life'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bulb.spell'</span><span class="p">,</span><span class="w"> </span><span class="s1">'event'</span><span class="p">)]</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w">  
+</span><span class="n">matrix</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="nb">F</span><span class="p">),</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">fixtures</span><span class="o">$</span><span class="n">event</span><span class="p">)),</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="o">=</span><span class="nb">T</span><span class="p">)</span><span class="w">  
+</span><span class="c1"># Mean time to failure estimate  
+</span><span class="n">mttf</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">obs.bulbs</span><span class="o">$</span><span class="n">bulb.life</span><span class="p">),</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">  
+</span><span class="c1"># Kaplan-Meier surv curve  
+</span><span class="n">surv.data</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">with</span><span class="p">(</span><span class="n">obs.bulbs</span><span class="p">,</span><span class="w"> </span><span class="n">Surv</span><span class="p">(</span><span class="n">bulb.life</span><span class="p">,</span><span class="w"> </span><span class="n">event</span><span class="p">))</span><span class="w">  
+</span><span class="n">f.surv</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">createSurvivalFrame</span><span class="p">(</span><span class="n">survfit</span><span class="p">(</span><span class="n">surv.data</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">surv.data</span><span class="p">))</span><span class="w">  
+</span><span class="n">p</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">qplot_survival</span><span class="p">(</span><span class="n">f.surv</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w">  
+</span><span class="n">label</span><span class="o">=</span><span class="s1">'Estimated MTTF:'</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w">  
+</span><span class="n">label</span><span class="o">=</span><span class="n">mttf</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w">  
+</span><span class="n">label</span><span class="o">=</span><span class="s1">'Theoretical MTTF:'</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w">  
+</span><span class="n">label</span><span class="o">=</span><span class="n">true.mttf</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1"># fixture plot for each day  
+</span><span class="n">p.fix</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">fixtures</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">geom_bar</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">no</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">bulb.spell</span><span class="p">),</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">rgb</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.61</span><span class="p">),</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">0.3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">scale_y_continuous</span><span class="p">(</span><span class="n">limits</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">125</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">75</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">125</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">scale_x_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Lamp'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">coord_flip</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.title.y</span><span class="o">=</span><span class="n">element_text</span><span class="p">(</span><span class="n">vjust</span><span class="o">=</span><span class="m">0.1</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">theme</span><span class="p">(</span><span class="n">plot.margin</span><span class="o">=</span><span class="n">unit</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.1</span><span class="p">,</span><span class="m">1.45</span><span class="p">),</span><span class="w"> </span><span class="s1">'lines'</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ggtitle</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="s1">'Day: '</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># Plot frames for each day  
+</span><span class="n">png</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="s1">'graphics/frames/'</span><span class="p">,</span><span class="w"> </span><span class="n">sprintf</span><span class="p">(</span><span class="s1">'%03d'</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">),</span><span class="w"> </span><span class="s1">'.png'</span><span class="p">))</span><span class="w">  
+</span><span class="n">grid.arrange</span><span class="p">(</span><span class="n">p.fix</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w">  
+</span><span class="n">dev.off</span><span class="p">()</span><span class="w">
+
+</span><span class="c1"># Progress bar  
+</span><span class="n">pb</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">txtProgressBar</span><span class="p">(</span><span class="n">min</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="n">max.days</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">50</span><span class="p">)</span><span class="w">  
+</span><span class="n">setTxtProgressBar</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">)</span><span class="w">  
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1">## Add last frame with true survivor curve  
+# unobserved data-generating process  
+</span><span class="n">dgp</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">125</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">=</span><span class="n">dweibull</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">125</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="m">100</span><span class="p">))</span><span class="w">  
+</span><span class="n">dgp</span><span class="o">$</span><span class="nb">F</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">dgp</span><span class="o">$</span><span class="n">f</span><span class="p">)</span><span class="w">  
+</span><span class="n">dgp</span><span class="o">$</span><span class="n">S</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dgp</span><span class="o">$</span><span class="nb">F</span><span class="w">
+
+</span><span class="n">true</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dgp</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">S</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">linetype</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">'Empirical'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">70</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.65</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">'Theoretical'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">105</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.72</span><span class="p">)</span><span class="w">
+
+</span><span class="n">png</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="s1">'graphics/frames/'</span><span class="p">,</span><span class="w"> </span><span class="n">sprintf</span><span class="p">(</span><span class="s1">'%03d'</span><span class="p">,</span><span class="w"> </span><span class="n">max.days</span><span class="m">+1</span><span class="p">),</span><span class="w"> </span><span class="s1">'.png'</span><span class="p">))</span><span class="w">  
+</span><span class="n">grid.arrange</span><span class="p">(</span><span class="n">p.fix</span><span class="p">,</span><span class="w"> </span><span class="n">true</span><span class="p">)</span><span class="w">  
+</span><span class="n">dev.off</span><span class="p">()</span><span class="w">
+
+</span><span class="c1"># done, return failures  
+</span><span class="nf">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">obs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obs.bulbs</span><span class="p">,</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fixtures</span><span class="p">,</span><span class="w"> </span><span class="n">dgp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dgp</span><span class="p">))</span><span class="w">  
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1">### End of functions ###
+</span><span class="w">
+</span><span class="c1">## Simulate  
+</span><span class="n">set.seed</span><span class="p">(</span><span class="m">1152359</span><span class="p">)</span><span class="w">  
+</span><span class="n">sims</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="w"> </span><span class="n">lights_sim</span><span class="p">(</span><span class="m">365</span><span class="p">)</span><span class="w">
+
+</span><span class="n">system</span><span class="p">(</span><span class="s1">'ffmpeg -f image2 -r 10 -i ~/path/to/frames/%03d.png ~/path/to/video/lightbulbs.mp4'</span><span class="p">)</span><span class="w">
+
+</span></code></pre>
+</div>
+
+<p>r code and github links</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/tags/#duration-modeling" class="page__taxonomy-item" rel="tag">duration modeling</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#r" class="page__taxonomy-item" rel="tag">R</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#survival-function" class="page__taxonomy-item" rel="tag">survival function</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#teaching" class="page__taxonomy-item" rel="tag">teaching</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/categories/#teaching" class="page__taxonomy-item" rel="tag">teaching</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2012-12-22T02:52:38+02:00">December 22, 2012</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Building+a+survivor+curve+from+observed+data%20http%3A%2F%2Flocalhost%3A4000%2F2012%2F12%2F22%2Fbuilding-a-survivor-curve-from-observed-data%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2012%2F12%2F22%2Fbuilding-a-survivor-curve-from-observed-data%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2F2012%2F12%2F22%2Fbuilding-a-survivor-curve-from-observed-data%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2012%2F12%2F22%2Fbuilding-a-survivor-curve-from-observed-data%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series/" class="pagination--pager" title="Random walk negative binomial model for persistent count series.
+">Previous</a>
+    
+    
+      <a href="http://localhost:4000/2013/05/08/plot-of-duke-grade-inflation/" class="pagination--pager" title="Plot of Duke grade inflation
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div>
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/andybega"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Andreas Beger. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36796505-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+  
+      
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/2012/12/22/building-a-survivor-curve-from-observed-data/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/2012/12/22/building-a-survivor-curve-from-observed-data"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mireg.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+
+  </body>
+</html>

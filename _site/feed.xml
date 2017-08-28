@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-08-28T21:46:50+03:00</updated><id>http://localhost:4000/</id><title type="html">MI Regression</title><subtitle>My personal blog about conflict forecasting and political science.</subtitle><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><entry><title type="html">Coup forecasts for 2017</title><link href="http://localhost:4000/2017/02/10/coup-forecasts-2017/" rel="alternate" type="text/html" title="Coup forecasts for 2017" /><published>2017-02-10T12:00:00+02:00</published><updated>2017-02-10T12:00:00+02:00</updated><id>http://localhost:4000/2017/02/10/coup-forecasts-2017</id><content type="html" xml:base="http://localhost:4000/2017/02/10/coup-forecasts-2017/">&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fa fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#forecasts&quot; id=&quot;markdown-toc-forecasts&quot;&gt;Forecasts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#models-and-accuracy&quot; id=&quot;markdown-toc-models-and-accuracy&quot;&gt;Models and accuracy&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#accuracy&quot; id=&quot;markdown-toc-accuracy&quot;&gt;Accuracy&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data&quot; id=&quot;markdown-toc-data&quot;&gt;Data&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#covariates&quot; id=&quot;markdown-toc-covariates&quot;&gt;Covariates&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#coups&quot; id=&quot;markdown-toc-coups&quot;&gt;Coups&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#missing-data&quot; id=&quot;markdown-toc-missing-data&quot;&gt;Missing data&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#why-did-we-not-include&quot; id=&quot;markdown-toc-why-did-we-not-include&quot;&gt;Why did we not include…?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#parting-thoughts&quot; id=&quot;markdown-toc-parting-thoughts&quot;&gt;Parting thoughts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;&lt;em&gt;This posts provides some background for the &lt;a href=&quot;https://www.washingtonpost.com/news/monkey-cage/wp/2017/01/31/where-are-coups-most-likely-to-occur-in-2017/&quot;&gt;coup forecasts article&lt;/a&gt; Mike Ward and I published in the Washington Posts’ Monkey Cage.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Coup attempts, even if they fail, as the events in Turkey since July 2016 have shown, can have a major impact on a country. And, as some of the reactions to the Turkey coup attempt have reiterated, they often seem to come as a surprise. We have created coup forecasts for 161 countries for 2017 that should make it more obvious and less surprising where any coup attempts that might happen this year will occur. Aside to presenting those forecasts, this post goes into a little bit more technical detail on how they were created.&lt;/p&gt;
+
+&lt;p&gt;First, this project is very much inspired by and in may ways a continuation of Jay Ulfelder’s coup forecasts for 2012-2015 (&lt;a href=&quot;https://dartthrowingchimp.wordpress.com/2012/01/30/assessing-coup-risk-in-2012/&quot;&gt;2012&lt;/a&gt;, &lt;a href=&quot;https://dartthrowingchimp.wordpress.com/2012/12/21/coup-forecasts-for-2013/&quot;&gt;2013&lt;/a&gt;, &lt;a href=&quot;https://dartthrowingchimp.wordpress.com/2014/01/25/coup-forecasts-for-2014/&quot;&gt;2014&lt;/a&gt;, &lt;a href=&quot;https://dartthrowingchimp.wordpress.com/2015/01/17/statistical-assessments-of-coup-risk-for-2015/&quot;&gt;2015&lt;/a&gt;). It also draws on previous work Mike Ward, Cassy Dorff, and I have done on forecasting irregular leadership changes, which include coups, but also other mechanisms of sudden leader change.&lt;/p&gt;
+
+&lt;h2 id=&quot;forecasts&quot;&gt;Forecasts&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2017/coup-fcast-map-2017-v2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2017/coup-fcast-map-2017-v2.png&quot; alt=&quot;tag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The map above shows the risk of a coup attempt, whether successful or not, for 2017. The risk is created by combining separate forecasts for the risk of a successful coup, like in Thailand in 2014, or failed coupt attempt, like in Turkey this year. The underlying data on coups come from Powell and Thyne&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, who define coup attempts as &lt;em&gt;“illegal and overt attempts by the military or other elites within the state apparatus to unseat the sitting executive”&lt;/em&gt;. The table below shows all three components–the risk of a coup attempt, and the underlying risk of a successful coup or failed attempt–for the 30 countries with the highest risk of a coup attempt. You can find a complete list of the forecasts here.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/content/2017/coup-fcast-table-2017.png&quot; alt=&quot;![tag](http://localhost:4000/content/2017/coup-fcast-table-2017.png)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There aren’t any real surprises in the list of high risk countries. A cursory review shows recent episodes of instability for the couple that we checked. It is also true that generally, countries that have a history of coups or that have had recent coup attempts, like Turkey or Ukraine&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, have a higher risk. A few worth highlighting, given current events, are Syria, Russia, and the US. Syria has a estimated 9% chance of a coup attempt, and Russia 6%, placing them in the top 10 and top 20 respectively. And, in both we estimate that should a coup attempt occur, it is much more likely to fail than to succeed. In Russia the odds are 2 to 1 for failure, and in Syria about 4 to 1.&lt;/p&gt;
+
+&lt;p&gt;Despite the worries of a Trump presidency, the forecast for the US is much lower, with 2%. That puts it at rank 103 out of 161, much higher than almost all other developed democracies. This is because some of the models pick up on infant mortality, a measure on which the US falls behind compared to other wealthy democracies. But 2% and 103rd out of 161 are still not a high risk overall. On the other hand, it is worth pointing out that our models don’t have a “Trump” dummy among their covariates. They are rather based on a number of structural factors like regime type and various economic and societal measures, and by which the US like all wealthy democracies is at a low risk for coup attemps. Arguably it is exactly the potential idiosyncracies and breaks with American democratic traditions that have some observers worried about the prospect of democratic stability in the US, but this is not something we can easily account for, by definition.&lt;/p&gt;
+
+&lt;h2 id=&quot;models-and-accuracy&quot;&gt;Models and accuracy&lt;/h2&gt;
+
+&lt;p&gt;The way we created the forecasts is somewhat more complex than a single regression model, but the added complexity brings benefits that are worth it to us. Namely, these are the steps to create the final forecasts for any coup attempt, and whether it is likely to succeed or fail:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Estimate lasso regression and random forest models of the probability of a successful coup and failed coup attempt, making a total of four models using data on past coups from 1960 to 2006.&lt;/li&gt;
+  &lt;li&gt;Create an ensemble prediction for failed attempts and successful coups by averaging the predictions from the two models for each outcome.&lt;/li&gt;
+  &lt;li&gt;Calculate the probability of a coup attempt, regardless of whether it fails or succeeds, using the probability rule for disjunction, i.e. as the probability that there will be either a successful or failed coup attempt, or both.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It is easier to discuss the justification for this process by going through several parts, one at a time:&lt;/p&gt;
+
+&lt;p&gt;First, &lt;em&gt;why lasso and random forests&lt;/em&gt;, rather than a simpler model with an explicit specifcation of covariates along the lines of “coups are a function of wealth, regime type, infantly mortality, and some other limited set of factors”?  Both lasso regression and random forest are plug and play in that you can throw a large number of potential covariates at them and they will perform both feature selection and estimate a model that can generate predictions for new cases. This was a time-saving measure, but doesn’t mean other models cannot be incorporated.&lt;/p&gt;
+
+&lt;p&gt;Second, &lt;em&gt;why use ensembles for each outcome?&lt;/em&gt; Ensembles are often more accurate and stable than their individual components. In this case, there was not much of a difference between the averaged predictions and the individual predictions from the lasso and random forest models. But keeping the framework makes it easier to add more models, maybe including some based on existing research on coups, down the road. On a related matter, there are different ways to construct ensembles. In this case a simple average was the quickest solution, but if the number of models expands in the future an ensemble constructed using &lt;a href=&quot;https://doi.org/10.1093/pan/mps002&quot;&gt;EBMA&lt;/a&gt; or one of the other methods for stacking/ensemble-ing models might be better.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Why not model coup attempts directly?&lt;/em&gt; Modeling coup attempts directly with it’s own set of lasso regression and random forest models and corresponding ensemble is more accurate than the disjunction predictions for coup attempts. But it becomes harder to say whether a coup attempt is likely to succeed or fail. We still have the predictinos for failed and successful coups, but since the underlying models are estimated separately, the probabilities for the three possible outcomes do not add up, so to say, the way the disjunction predictions do. I.e. &lt;em&gt;P(any attempt)&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;\neq&lt;/script&gt; &lt;em&gt;P(coup) OR P(failed attempt)&lt;/em&gt; anymore. This might be confusing, and thus for the sake of presentation and interpretability the disjoint approach is prefereable.&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;accuracy&quot;&gt;Accuracy&lt;/h3&gt;
+
+&lt;p&gt;The table below has two measures of accuracy for the base model, ensemble, and disjunction predictions, the area under the ROC curve (AUC-ROC) and the similar area under the precision-recall curve (AUC-PR). The AUC-ROC is related to the tradeoff between recall (Of the coup attemps that happened, how many did we predict?) and the false positive rate (How often do we predict a coup attempt when there wasn’t one?). The AUC-PR looks at the tradeoff between recall and precision (When we said there would be a coup attempt, how often was there?) instead. It’s a subtle difference and the AUC-ROC is used much more common in political science, but less than 4% of country-years experienced one or more coup attempts and for rare events like this &lt;a href=&quot;http://andybeger.com/2015/03/16/precision-recall-curves/&quot;&gt;AUC-PR is also a good measure to look at&lt;/a&gt;. The training fit is the average fit for repeated cross-validation with 10 folds repeated 10 times, using data up to 2006. The test fit is for predictions from 2007 to 2016.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Outcome&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Model&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Train ROC&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Train PR&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Test ROC&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Test PR&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Attempt&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Disjunction&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.806&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.052&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Coup&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Ensemble&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.732&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.038&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Coup&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Lasso&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.801&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.088&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.766&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.020&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Coup&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;RF&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.808&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.083&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.725&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.037&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Failed attempt&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Ensemble&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.836&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.030&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Failed attempt&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Lasso&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.772&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.090&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.842&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.050&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Failed attempt&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;RF&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.782&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.086&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.785&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.023&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Both accuracy measures can range from 0 to 1, where higher is better. For the AUC-ROC, anything less than 0.5 is terrible. The overall AUC-ROC is around 0.8, which seems to be the &lt;a href=&quot;https://en.wikipedia.org/wiki/Pareto_principle&quot;&gt;80% solution&lt;/a&gt; in a variety of conflict forecasting applications (Phil Schrodt pointed this out somewhere?). Maybe adding some artisan models to the ensembles would help a bit here. The biggest problem, not surprising given the input covariates, is that the precision of the predictions is not very high. Even if the models do a good job at ranking the small number of country-years with coup attempts higher than the majority of country-years without coup attempts, most of the models’ positive predictions (&lt;em&gt;“expect a coup here”&lt;/em&gt;) are still non-events. But still, the results are decent overall.&lt;/p&gt;
+
+&lt;p&gt;There are no training fit values for the ensemble and disjunction models because the cross-validation scheme we use from &lt;code class=&quot;highlighter-rouge&quot;&gt;caret&lt;/code&gt; is based on random partitioning, meaning the sets of predictions are not comparable, and thus not averageable accross models. Without some extra work.&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; However, since there is no fitting or parameter tuning involved in averaging or disjointing, the test fit should still be a valid indication of out-of-sample, true forecast performance.&lt;/p&gt;
+
+&lt;p&gt;There are three important caveats for using these accuracy values to set expectations for how accurate the 2017 forecasts are going to be. Coup attemps are becoming less frequent over time, which is part of the reason that accuracy is higher in the training than test period. Second, the test period forecasts are not generated exactly the same way as the 2017 forecasts. We extrapolate some data values for 2016/2017, like Polity regime types, by assuming they will stay as they were last year. That could introduce some variation. Lastly, the numbers above are average fit measures computed on the basis of decades of data. There is variation in the accuracy for any single year, depending in part on the actual number of coup attempts in that year.&lt;/p&gt;
+
+&lt;h2 id=&quot;data&quot;&gt;Data&lt;/h2&gt;
+
+&lt;p&gt;The data range from 1960 to 2017. The data for 2017 are really values for 2016–most covariates are lagged 1 year? We can update some covariates, like how many years a current leader has been in power, by assuming things will stay the same as on December 31st, 2016. We use the &lt;a href=&quot;http://privatewww.essex.ac.uk/~ksg/statelist.html&quot;&gt;Gleditsch and Ward list of independent states&lt;/a&gt; as the basis for constructing the country-year data. We count states that existed on December 31st of a year, and also used the last day of the year for capturing things like the sitting leader or regime type.&lt;/p&gt;
+
+&lt;h3 id=&quot;covariates&quot;&gt;Covariates&lt;/h3&gt;
+
+&lt;p&gt;Covariates, factors that might be helpful for predicting coup attempts, came from several different sources:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;State characteristics&lt;/em&gt; like years since independence, are based on the same &lt;a href=&quot;http://privatewww.essex.ac.uk/~ksg/statelist.html&quot;&gt;Gleditsch and Ward&lt;/a&gt; list of states that form the core of the cases (country-years) in the data.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;State leader characteristics&lt;/em&gt; from Archigos (&lt;a href=&quot;http://privatewww.essex.ac.uk/~ksg/archigos.html&quot;&gt;here&lt;/a&gt; or &lt;a href=&quot;http://www.rochester.edu/college/faculty/hgoemans/data.htm&quot;&gt;here&lt;/a&gt;), like the number of years the current leader has been in power, or whether they entered power themselves in an irregular fashion.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Development related factors&lt;/em&gt; like wealth from the World Bank World Development Indicators. GDP, GDP growth, population, infant mortality, but also cell phone and internet usage rates.&lt;/p&gt;
+
+&lt;p&gt;The idea to use these originally goes back to the Ward lab’s ICEWS work and later our irregular leadership change work. Coups are in large part a game of setting expectations, creating the perception that the coup has already succeeded. That’s why back in the day you seized the broadcast stations and announced your new junta. And it just so happens that the number of coup attempts started dropping off in the late 1990’s and early 2000’s, when the internet and cell phones started spreading and becoming more common in countries that have experienced many coups in the past. It seems plausible  that the decrease in coups may in part have something to do with the decentralization of communication. It becomes harder for a small group of people to dominate the flow of information and create a narrative of coup success. What comes to mind here is for example the way social media in Turkey last July was used to mobilize popular opposition to the coup attempt. And of course Erdogan’s first crucial public communication during the attempt was via video chat on a cell phone. Maybe protests on the other hand are becoming easier to coordinate.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Regime characteristics&lt;/em&gt; from Polity. Factors like constraints on the executive, how political competition is regulated, and overall indices of democratic and authoritarian features of a country’s political system.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Global food prices&lt;/em&gt; from &lt;a href=&quot;http://www.fao.org/worldfoodsituation/foodpricesindex/en/&quot;&gt;the FAO&lt;/a&gt;. This is a single index of average global food prices. Something more disaggregated, like regional food prices, would be better, but this is the data we could find.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Oil prices&lt;/em&gt; from the &lt;a href=&quot;http://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html&quot;&gt;BP Statistical Review of World Energy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Prior coup history&lt;/em&gt; from the same &lt;a href=&quot;http://www.jonathanmpowell.com/coup-detat-dataset.html&quot;&gt;Powell&lt;/a&gt; and &lt;a href=&quot;http://www.uky.edu/~clthyn2/coup_data/home.htm_&quot;&gt;Thyne&lt;/a&gt; coup data that the outcomes are coded from, for example the number of coup attempts/successful coups/failed attempts in the past 10 years.&lt;/p&gt;
+
+&lt;h3 id=&quot;coups&quot;&gt;Coups&lt;/h3&gt;
+
+&lt;p&gt;The Powell and Thyne coup data include the date of the coup attempt, and whether it was successful. There have been a total of 414 coup attempts since 1960, of which about half, 206, have been successful coups. Coups are becoming distinctly less common over time. Over the past 15 years, there have been 2-4 coup attempts per year. In 2016 there was only one coup attempt, the one in Turkey.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2017/coups-barchart.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2017/coups-barchart.png&quot; alt=&quot;tag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are by the way also plots of cell phone ownership and internet usage rates per 100.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2017/IT.CEL.SETS.P2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2017/IT.CEL.SETS.P2.png&quot; alt=&quot;tag&quot; class=&quot;align-center&quot; width=&quot;80%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2017/IT.NET.USER.P2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2017/IT.NET.USER.P2.png&quot; alt=&quot;tag&quot; class=&quot;align-center&quot; width=&quot;80%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;missing-data&quot;&gt;Missing data&lt;/h3&gt;
+
+&lt;p&gt;The Gleditsch and Ward list of states, with annual data and counting states in existence on the last day of a year, produces about 9,500 country-years between 1960 and 2016 that we should have. Quite a few of these observations drop out due to missing covariate data, about 30%. The final data used for model training and testing has about 6,700 country-years. There are 195 states (per G&amp;amp;W) in 2016; we have forecasts for 161 states.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2017/final-data-missing.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2017/final-data-missing.png&quot; alt=&quot;tag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This plot shows missing country-years in the final data. On the x-axis are years, and each row on the y-axis corresponds to a country. We have labelled those that we do not have forecasts for. There are two important patterns in this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a lot of the missing values are for countries that are missing completely, like the smaller Pacific island nations at the top of the plot. Generally these are states with a population less than half a million, which is the cutoff criterion for inclusion in some of the data sets we used;&lt;/li&gt;
+  &lt;li&gt;many of the other missing values are for newly independent former colonies in the 1960’s and 1970’s, which are exactly the kinds of places where you might expect a military coup. That is suboptimal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;About 30% of the coup attempts since 1960 also drop out of the final data. The table below summarizes how many are missing by the reason they are missing from the final data. The largest portion by far are missing because of missing values in the World Bank World Development Indicators. Mostly this is due to missing GDP per capita values.&lt;/p&gt;
+
+&lt;p&gt;A couple of coups are missing because they occured in countries, like Ethiopia that at some point since 1960 fragment (Eritrea). We dropped those countries from the data because the WDI indicators like GDP are misleading since they have been back-coded to capture only the currently existing fraction.&lt;/p&gt;
+
+&lt;p&gt;In a small handful of instances (3), coup attempts drop out of the data because they occurred in the first calendar year of a country’s existence. Because many variables are lagged one year, the first year for an independent country is missing from the final data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Reason&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Attempts&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;ATT%&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Failed attempts&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;FA%&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Coups&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;CP%&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;In data&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;306&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;68.76&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;157&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;70.40&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;149&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;67.12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Missing data in WDI&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;101&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;22.70&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;21.08&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;54&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;24.32&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Dropped because country later fragments&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;18&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4.04&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;10&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4.48&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;8&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Missing data in WDI, ACD&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;10&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2.25&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2.69&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1.80&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;First year of independence&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.67&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.45&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Missing data in Polity, Archigos&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.67&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.45&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Missing data in Polity, Archigos, WDI&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.67&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.45&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Missing data in Polity&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.22&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.00&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;We did not use comprehensive multiple imputation and instead rather did variable-specific interpolations and extrapolations. These are limited in that we only attempted to replace missing values if they occured in a small number in a data series. And they are variable specific in the sense that we examined the series for a variable to determine how to impute, e.g. logistic growth models fit the observed evolution of internet and cell phone usage rates well, while linear growth works well for most countries for GDP and population. If a country was missing many or all values for a variable, we kept it missing.&lt;/p&gt;
+
+&lt;p&gt;Multiple imputation often ends up imputing entire missing countries or years, something we strove to avoid doing, and in general it can be problematic for non-independent, structured data. For example, while the imputed values may reflect the general distribution of non-missing values and cross-correlations with other variables, and thus be fine for statistical estimation, multiple imputation can produce values within a single data series that obvioulsy seem wrong and which are a bad basis for case-specific predictions. A large jump in a small gap of data, those sorts of things. We intentionally only imputed values that based on visual examination appear valid and plausible.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-did-we-not-include&quot;&gt;Why did we not include…?&lt;/h3&gt;
+
+&lt;p&gt;There are a couple of factors that normally show up in models of coups or coup attempts but that we did not use to generate our forecasts. The most notable ones are variables related to the time from the last or to the next future election, and various variables related to the structure and size of the military, like number of personnel, size of the budget, spending per soldier, and variables derived from the number of competing security organizations.&lt;/p&gt;
+
+&lt;p&gt;The problem with statistics regarding the military is that there are bigger than usual problems with missing values, and that one would have to combine several different sources to get coverage from 1960 to the present. Jay Ulfelder has &lt;a href=&quot;https://dartthrowingchimp.wordpress.com/2015/01/27/why-my-coup-risk-models-dont-include-any-measures-of-national-militaries/&quot;&gt;has some more details&lt;/a&gt; that also apply here, and also brings up the good point that some of the things we really would want to know about the military, like infighting, is hard to measure.&lt;/p&gt;
+
+&lt;p&gt;Including elections is also complicated by the potential need to combine data from several sources. There are also two additional practical problems. One is what to do with countries that don’t hold regular national elections, like North Korea or Saudi Arabia. These are often the countries we are most interested in predicting coup risk for.&lt;/p&gt;
+
+&lt;p&gt;The second problem is that some elections are the result of preceding coups. Ghana, for example, experienced a coup in 1966 that overthrew an authoritarian leader, and which led to elections in 1969; these were followed by another coup in 1972.&lt;sup id=&quot;fnref:6&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; That has implications for how to construct variables dervied from elections. For example, while it may be that some coups are staged to pre-empt upcoming elections, it would be problematic to include a counter of the time to the next elections since it would also count towards some elections that were the result of a coup.&lt;sup id=&quot;fnref:7&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;parting-thoughts&quot;&gt;Parting thoughts&lt;/h2&gt;
+
+&lt;p&gt;Some people will find the lack of depth in these forecasts disappointing. It is true that we cannot say much about why the risk for some countries is higher than for others. We can and have looked at other reports about events in those countries and can speculate on that basis, just like anyone else, but we have explicitly avoided trying to make causal statements derived from the models that we use to forecast. That is not to say one couldn’t work towards that goal by adopting one of the many models in the literature on coups and coup attempts that do try to evaluate causal arguments. Two big problems with this is that most of these models have not been evaluated for their predictive performance, and most of them would require a significant investment of time to hand code and update measures they rely on, if it is possible at all.&lt;/p&gt;
+
+&lt;p&gt;Some area experts with a more in-depth knowledge of a region or particular country may point out that a high or low risk forecast for a country is “obvious”. If such comments are made in retrospect, after outcomes are already observed, we should view them with some hesitation. It is true, though, that these experts can add much more to our understanding of the events in a particular country than our models can. But a problem with that is that there are experts for many countries who may point to worrying trends, and it might be difficult to weigh which set of experts should receive more attention. Forecasts like ours provide a principled way of doing that, and also of weighing the evolution of risk within a single country over time.&lt;/p&gt;
+
+&lt;p&gt;Another important point to keep in mind for those who don’t find these quantitative forecasts appealing is to ask what the alternatives are. We know from research on decision making that many experts predict quite poorly once you hold them accountable for making and evaluating specific forecasts, and that even simple statistical models can outperform most forecasters. We have specific forecasts over a specific time period, and it will be relatively easy to see how well we did in about 11 months, when the year ends.&lt;/p&gt;
+
+&lt;p&gt;It is difficult to predict the accuracy of any forecast. There are many obstacles to doing so with the approach we have taken, from overfitting to accidental contamination of variables with future information to changes in test and live forecasting procedures to inappropriate use of a test set for guiding modeling decisions (2nd order overfitting), and others. At the end of the day, we will have to, and plan to, see how well these forecasts did.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.uky.edu/~clthyn2/powell-thyne-JPR-2011.pdf&quot;&gt;Powell &amp;amp; Thyne, 2011, Global instances of coups from 1950 to 2010: A new dataset&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;Powell &amp;amp; Thyne classify the Euromaidan events in Ukraine in 2014 as a coup. Writing about this in the context of irregular leadership changes, which include coups but also revolutions in the sense of successful mass protest campaigns, Ukraine appears to us more like the latter. It also bothers me that calling the Ukraine events a “coup” plays into the Russian propaganda that attempts to portray the current Ukrainian regime as the result of a neo-fascist coup.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;Another possibility is to model coup attempts using the full data and then in a second stage model to model coup success or failure using the data for the ~300 coups in the data. This seems to be the approach taken in &lt;a href=&quot;http://journals.sagepub.com/doi/abs/10.1177/0022002712445732&quot;&gt;published research on coups&lt;/a&gt; that tries to model attempts in addition to successful coups. One problem is that 300 cases don’t leave much room for robust modeling with cross-validation and a separate test set.&amp;nbsp;&lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot;&gt;
+      &lt;p&gt;It’s possible to get compatible sets of the full CV predictions for all folds and repetitions by setting up the partitioning scheme in &lt;code class=&quot;highlighter-rouge&quot;&gt;caret&lt;/code&gt; to use the same random seeds/partitions for all 4 models (lasso + random forest for coup + failed attempt). On the todo list for next year.&amp;nbsp;&lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot;&gt;
+      &lt;p&gt;Naunihal Singh describes several of Ghana’s coups in the late 60s and 70s in his book &lt;a href=&quot;https://www.amazon.com/Seizing-Power-Naunihal-Singh-ebook/dp/B00GTSPG38/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;amp;qid=&amp;amp;sr=&quot;&gt;&lt;em&gt;Seizing Power&lt;/em&gt;&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:7&quot;&gt;
+      &lt;p&gt;If it is the case that quite a few coups lead to subsequent elections, including such a counter would problably work great in our observed data. The problem is that we don’t know about future elections scheduled as a result of furture coups yet, so doing this would also inflate our sense of the accuracy of the real forecasts.&amp;nbsp;&lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="research" /><category term="coups" /><category term="2017" /><category term="forecasts" /><summary type="html">Forecasts of the risk of a coup attempt for 161 countries in 2017.</summary></entry><entry><title type="html">Support for the creation of an EU Army</title><link href="http://localhost:4000/2016/11/22/eu-army/" rel="alternate" type="text/html" title="Support for the creation of an EU Army" /><published>2016-11-22T12:00:00+02:00</published><updated>2016-11-22T12:00:00+02:00</updated><id>http://localhost:4000/2016/11/22/eu-army</id><content type="html" xml:base="http://localhost:4000/2016/11/22/eu-army/">&lt;p&gt;In the wake of the Trump victory surprise, and the potential implications for NATO, I stumbled upon a Eurobarometer question that asks people how they feel about the prospect of an EU Army:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Thinking about the future of the EU, please tell me whether you are in favour or opposed to the following statement: the creation of an EU army.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Turns out the Eurobarometer has been asking that question for quite some time, which was the first surprising thing. The second thing that was surprising, to me at least, was that there generally is support for the creation of an EU Army. Whatever that is, the question is pretty vague.&lt;/p&gt;
+
+&lt;p&gt;The data are from November 2015, that is the latest survey asking that question that I could find. Here are a couple of plots visualizing the responses.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/eu-army-map.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/eu-army-map.png&quot; alt=&quot;tag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I don’t have any experience with survey data. For the map, I counted all “Totally in favor” and “Somewhat in favor” responses as being in favor, and ditto for opposed, and calculated the margin based on that. I copied that approach from what Eurobarometer seems to do in their reports.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/eu-army-barplot.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/eu-army-barplot.png&quot; alt=&quot;tag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Eastern Europe is generally in favor, are they trying to free ride on the wealthier Western European members? I don’t know, but military spending is not related to either being in favor of or opposing EU membership.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/eu-army-milexp.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/eu-army-milexp.png&quot; alt=&quot;tag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/andybega/mireg-blogs/tree/master/eu-army&quot;&gt;Data and R code&lt;/a&gt;&lt;/p&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="research" /><category term="EU" /><category term="Eurobarometer" /><category term="data" /><category term="visualization" /><summary type="html">Some plots of a Eurobarometer question asking people about the creation of an EU Army.</summary></entry><entry><title type="html">Data management and missing data</title><link href="http://localhost:4000/2016/09/14/data-management/" rel="alternate" type="text/html" title="Data management and missing data" /><published>2016-09-14T13:00:00+03:00</published><updated>2016-09-14T13:00:00+03:00</updated><id>http://localhost:4000/2016/09/14/data-management</id><content type="html" xml:base="http://localhost:4000/2016/09/14/data-management/">&lt;p&gt;One of my first assignments as a research assistant in graduate school was to create and work with a directed dyadic refugees and migration dataset. This was in about 2006. The data were big-ish, maybe a 100 MB in some incarnation, so my advisor gave me a CD and probably some sensible instructions on what I was supposed to do. Off I went to the grad computer lab, since I didn’t own a laptop then. I had basically no experience with handling data, nor did I really know how to use Stata, which, bless Stata, will let you do lots of weird things without necessarily giving an indication that something is wrong.  So I would sit in the grad computer lab, hack away at the data, and periodically burn the results to a CD that I would share at the end of the day with my advisor. He invariably found one problem or another with the data. It was a painful, messy experience.&lt;/p&gt;
+
+&lt;p&gt;I was clueless. My advisor would find problems or inconsistencies at the surface that were a symptom of deeper issues in how I was manipulating and merging data. Slowly (very slowly) I started recognizing some of the common things to look out for.&lt;/p&gt;
+
+&lt;p&gt;It’s been about 10 year since then. But among the things others have found in data wrangling code I have written or I in theirs in the recent past are gems like these:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An inverse distance spatial lag that didn’t have the inverted part. So things further away had higher weights.&lt;/li&gt;
+  &lt;li&gt;In a model of binary (0 or 1) outcomes, a counter of previous positive outcomes that immediately updated when a new event occurred, and which when corrected to update the time period after the event happened, wiped out the key result.&lt;/li&gt;
+  &lt;li&gt;Lagged variables that were not actually lagged anymore.&lt;/li&gt;
+  &lt;li&gt;Yearly variables that were lagged 1 month, not 1 year.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It’s not really surprising that other people will find problems I overlooked and vice versa, but it &lt;a href=&quot;https://politicalsciencereplication.wordpress.com/2016/04/19/coding-errors-can-be-avoided/&quot;&gt;probably doesn’t happen that often&lt;/a&gt; in political science or at least international relations that people will dig into individual data points. I occasionally look at the data for published studies on coups and other events that we are forecasting in search of models to add, and in the spirit of data management issues, here is my journey through one of these projects.&lt;/p&gt;
+
+&lt;p&gt;The data I was looking at consist of country-years and the key variable is civil war onset. I don’t want to mention what paper they came from, because that’s not really important. For what it’s worth, I think the authors built on other people’s data and the paper itself was interesting to me. Also, &lt;em&gt;I was able to replicate the results in the paper &lt;strong&gt;without any&lt;/strong&gt; problems&lt;/em&gt;, so that’s a win.&lt;/p&gt;
+
+&lt;p&gt;Here is what the data look like, leaving off columns that are not needed for the examples below.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;year&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;cowcode&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;ln_gdpen&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1945&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;700&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1946&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;700&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-1.64&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1947&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;700&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-1.63&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1948&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;700&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-1.64&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1949&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;700&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-1.40&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1950&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;700&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-1.67&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;For unrelated reasons I was particularly interested in data for the most recent year in the data–2000–and looked at GDP per capita to use as an example variable. I don’t remember what the initial warning sign was that something is weird, but the GDP data seemed suspicious so I plotted a couple of histograms for different years.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/gdppc-by-year-problems.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/gdppc-by-year-problems.png&quot; alt=&quot;GDP histograms for several years&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly something weird happens in 2000. GDP per capita doesn’t change that much over time, as you can see from the similarity of the 1998 and 1999 distributions, so something else happened with the 2000 data.&lt;/p&gt;
+
+&lt;p&gt;Looking at the series of GDP per capita over years for a few countries led me to just plot all of them.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/lngdpen-noodles.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/lngdpen-noodles.png&quot; alt=&quot;GDP pc noodles&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;GDP per capita data should not look like this. There are some spikes, like circa 1950 in the bottommost series that are borderline suspect, but the obvious bigger problem is what’s going on at the beginning and end. This looks like missing values that were set to the mean of the non-missing data. The paper itself doesn’t mention whether and how missing values in the data were imputed.&lt;/p&gt;
+
+&lt;h2 id=&quot;plotting-missing-values&quot;&gt;Plotting missing values&lt;/h2&gt;
+
+&lt;p&gt;One of the things I usually do with data like these and variables that have missing values is to plot the missing values against country and year. This produces a plot like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/missing-plot-1.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/missing-plot-1.png&quot; alt=&quot;Plot of missing values&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Each little block in this plot corresponds to a country-year, i.e. a row in the dataset. On the x-axis are years, and on the y-axis all the different countries. The color of each block shows whether that country-year had complete data (blue), missing values (red), or whether the observation was absent entirely. What that means is that given the set of unique countries in the dataset and the range of years, the hypothetical combination of that particular country-year value was not in the data. Like Yugoslavia after 1991, when the country didn’t exist anymore.&lt;/p&gt;
+
+&lt;p&gt;There are no missing values in the coup dataset, but four countries drop out of the data suddenly in 2000 (the four white blocks on the right edge). I didn’t label the country axis because it gets cluttered, but the countries are Algeria, Macedonia, Sierra Leone, and Congo-DRC). No obvious reason that these four should suddenly have missing data for GDP per capita, especially since the other values for 2000 appear to have been imputed by setting to the mean.&lt;/p&gt;
+
+&lt;p&gt;A more usual reason to use these plots is that they can show whether missing values are missing for entire countries or years. That is potentially important for how and whether to impute or drop data. Here are two examples that show what an entire missing year or countries that are completely missing some value would look like.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/missing-plot-2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/missing-plot-2.png&quot; alt=&quot;Plot of missing values&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In between the noodle plot from above and these missing value plots, it would have been more obvious that GDP per capita was missing for a whole year, and that some other way to impute, even by carrying forward the 1999 value, would have been more sensible than setting to the mean.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-about-state-system-membership&quot;&gt;What about state system membership?&lt;/h2&gt;
+
+&lt;p&gt;Since the data were fully imputed, looking at missing values doesn’t get us very far. We can also check against state system membership though. The &lt;a href=&quot;http://www.correlatesofwar.org/data-sets/state-system-membership&quot;&gt;Correlates of War (COW) Project&lt;/a&gt; and &lt;a href=&quot;http://privatewww.essex.ac.uk/~ksg/statelist.html&quot;&gt;Gleditsch and Ward&lt;/a&gt; have two related, but different, lists of what states were in existence over what time periods. This tells us which hypothetical country-year combinations we should expect, and which should be absent.&lt;/p&gt;
+
+&lt;p&gt;Throwing state system membership in the mix gives us two dimensions along which one can classify the observations in the country-year coup dataset. The first dimension is whether a case, by which a mean a particular country-year combination out of all possible combinations, has missing values, is complete, or is absent from the data. Absent here, again, means there is no observation with that country-year combination in the data. The second dimension is whether a particular case was in the state system according to one of the two lists I mentioned before. That makes for six possible combinations:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Case&lt;/th&gt;
+      &lt;th&gt;In state sys.&lt;/th&gt;
+      &lt;th&gt;Outside state sys.&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Complete case&lt;/td&gt;
+      &lt;td&gt;Good&lt;/td&gt;
+      &lt;td&gt;Bad&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Missing values&lt;/td&gt;
+      &lt;td&gt;Semi-bad&lt;/td&gt;
+      &lt;td&gt;Bad&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Case missing&lt;/td&gt;
+      &lt;td&gt;Bad&lt;/td&gt;
+      &lt;td&gt;Good&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In the end, we want all observations in our data to correspond with state system members and to have complete data. Conversely, if we militantly stick to the state system membership lists, we want no cases that should not be there according to the state system lists. Anything else is problematic. For country-year combinations that were in the state system and are missing values for one or more variables, we we may be able to impute. But cases that are missing even though we should have them in the data, like those four countries from before, and cases that are in the data even though they don’t correspond to independent states, indicate that the data do not match the state system membership expectations.&lt;/p&gt;
+
+&lt;p&gt;With this new categorization, here is a plot that checks both missing values and state system membership. The legend corresponds to the table above, although the color scheme could use some help.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/missing-plot-w-sscheck.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/missing-plot-w-sscheck.png&quot; alt=&quot;Missing plot with SS check&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A couple of things about the data that stand out now, in this plot:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Most countries have one leading year of data that shouldn’t be there. Maybe this was done so that lagged variables would not be missing for the first year. Twenty-nine countries do not have a leading year of data however.&lt;/li&gt;
+  &lt;li&gt;Several countries conversely are missing their first year.&lt;/li&gt;
+  &lt;li&gt;A couple of country codes are mixed up: the Russian Federation and the USSR, also Yugoslavia and Kosovo.&lt;/li&gt;
+  &lt;li&gt;Why is Zanzibar (511) in the data?&lt;/li&gt;
+  &lt;li&gt;What is 818? It’s neither in COW nor G&amp;amp;W. Maybe Vietnam, after reunification in 1975? If so, why is North Vietnam (816) also still there, with non-missing GDP per capita values?&lt;/li&gt;
+  &lt;li&gt;It is easier to see now that the four countries absent from the data in 2010 are a problem. They should be there.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;is-this-important&quot;&gt;Is this important?&lt;/h2&gt;
+
+&lt;p&gt;The fact that the data don’t match state system membership, or that there are missing values with strange patterns, is not necessarily bad. There may be reasonable explanation for what happened. But this is also the kind of stuff one might see if there were problems and unintentional mistakes in the process of merging and aggregating different raw datasets to produce the final data that were used for analysis.&lt;/p&gt;
+
+&lt;p&gt;These kinds of problems are more obvious when you are doing prediction, as I have been over the past few years. Four countries drop out of the data in the last available year? That’s going to be pretty obvious when your list of forecasts is suddenly shorter than it should be. And it’s easier for data validity problems to be exposed when people ask you to dig into what factors are driving a particular high forecast, or a drastic change in the forecast for a country like Yemen.&lt;/p&gt;
+
+&lt;p&gt;One could argue though that it is less problematic for analyses that in the end boil down to a coefficient in a table somewhere. So what if a few values are off? Just like changing a few data points when you are computing the mean of several thousand numbers probably won’t affect the mean too much, a few extra, some missing country-years and a couple of skewed data points in some unknown fraction of cases won’t affect results in important ways.&lt;/p&gt;
+
+&lt;p&gt;But then, on the other hand, a few small mistakes will alter results and conclusions sometimes, and we don’t know which of these two worlds we are in with any particular instance of data. I think I can partly piggyback here on the justifications people give for why imputing missing values is important and better than alternatives like dropping cases. Also, estimates are fragile enough that it is common to see robustness checks in published papers. If small changes in specification or measurement are a serious enough threat to need to check for them, then I imagine a small percentage of questionable data points would also be problematic.&lt;/p&gt;
+
+&lt;p&gt;If nothing else, i.e. you don’t buy any of that, the plots I’ve shown can help identify issues in the data wrangling and merging stage of a project, and help with decisions about how to handle missing values. Are you comfortable imputing values for GDP per capita for all of 2000? Or for a country that is missing the whole series? Whether you are or not (I’m not), that’s a more focused issue than “hey, 5% of my cases have missing values for this variable, that’s not that much, I’ll just…”.&lt;/p&gt;
+
+&lt;p&gt;My solution to these issues has been to start with an empty dataset that contains the cases I know should be there, merge other raw data onto it, and pedantically investigate any deviations and deal with them as seems reasonable. So, start with an empty country-year/month/whatever dataset constructed from one of the state system membership lists, merge, and subsequently impute, drop, or find alternative data sources as needed. It’s tedious, and I probably make a lot of mistakes, but it’s also easier to identify why something is missing and whether that is problematic. Conversely, it drives me nuts when suddenly 10 or 20% of cases used in some descriptive statistics in a paper are suddenly not used in a regression model that is presented in the results, or when the number of cases changes between different models. What is happening here?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/andybega/mireg-blogs/tree/master/data-management&quot;&gt;Data and R code for this post, producing similar figures, and producing country-year, month, or day datasets that correspond to the COW or G&amp;amp;W state lists.&lt;/a&gt;&lt;/p&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="research" /><category term="data" /><category term="state system membership" /><category term="plots" /><category term="missing values" /><summary type="html">A lot can go wrong between raw data and processed data used for analysis. Here is one post-mortem example and a plot that can help identify issues for country-year data.</summary></entry><entry><title type="html">Moving from Wordpress to Jekyll</title><link href="http://localhost:4000/2016/06/20/moving-from-wordpress-to-jekyll/" rel="alternate" type="text/html" title="Moving from Wordpress to Jekyll" /><published>2016-06-20T18:00:00+03:00</published><updated>2016-06-20T18:00:00+03:00</updated><id>http://localhost:4000/2016/06/20/moving-from-wordpress-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/06/20/moving-from-wordpress-to-jekyll/">&lt;p&gt;I moved my home page and blog from Wordpress to Jekyll over the past week, thanks to a small break in regular work. I’ve been using Wordpress.com since 2011, when I started blogging. I don’t remember what led me back then to choose Wordpress, but overall, I haven’t been unhappy with it. It’s easy to set up, and at some point it became possible to write posts in Markdown. Comments work out of the box. Some traffic stats are baked in.&lt;/p&gt;
+
+&lt;p&gt;Two minor things that bothered me were that the editor would mangle posts when switching between the visual and text editors, and that it was always a bit clunky to work with figures and other media. You can just drag and drop them to a media upload page, which by itself is fine, but it is tedious to update existing figures in a way that doesn’t change their internal file names. At least it was for me.&lt;/p&gt;
+
+&lt;p&gt;I noticed that some people have been using pages made with Jekyll and similar static page generators. My general sense of the selling points for Jekyll and similar projects like Pelican was that the static sites they create load faster and are more secure. They are not written in PHP. And I guess there’s an appeal to figuring out the smallish technical aspects of getting a blog running with them. None of these were really a selling point for me, rather:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I like the minimalistic styling of the blogs Jekyll, Pelican, and co. create.&lt;/li&gt;
+  &lt;li&gt;I like the idea of having control over all the content. Having a folder on my laptop that contains all the posts and content, rather than interacting with them through a web editor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’m using a slightly modified version of the &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt; theme by Michael Rosen. He’s set a set of really nice and clear instructions to get started and between that and a variety of tutorials for getting set up with Jekyll that one can find via Google, I didn’t have any major issues in exporting posts from Wordpress.com, setting up the theme, adding Disqus comments, hosting it on GitHub Pages, and switching my domain name registrar. There was a bit of manual work cleaning up and formatting the posts, but I don’t have that many posts anyways.&lt;/p&gt;
+
+&lt;p&gt;Beyond the documentation that comes with the Minimal Mistakes theme, Rose has the source code for both the theme and the documentation, including the sample posts, on GitHub. The theme itself is on the master branch, the documentation and sample posts on another branch. Comparing the two was helpful in figuring out things like figure justification.&lt;/p&gt;
+
+&lt;p&gt;Otherwise, I found these guides to be helpful in particular:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mattdickenson.com/2016/02/29/moving-from-wordpress-to-jekyll/&quot;&gt;Moving From Wordpress to Jekyll&lt;/a&gt;, by Matt Dickenson&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.girliemac.com/blog/2013/12/27/wordpress-to-jekyll/&quot;&gt;How-to: Migrating Blog from WordPress to Jekyll, and Host on Github&lt;/a&gt;, by Tomomi Imura&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.leemunroe.com/moving-wordpress-dreamhost-to-jekyll-github/&quot;&gt;Lessons Learned Switching From Wordpress On Dreamhost To Jekyll On GitHub&lt;/a&gt;, by Lee Munroe&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://michaeljdeeb.com/blog/using-a-custom-domain-with-github-pages/&quot;&gt;Using a Custom Domain with GitHub Pages&lt;/a&gt;, by Michael Deeb&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The small changes I made to the theme include reducing the default font size (which was too big for me), changing the table styling to Tufte style tables, and adding support for math formulas using MathJax.&lt;/p&gt;
+
+&lt;p&gt;The theme style is controlled by a couple of Sass files. To make the default font smaller I found and changed the relevant variable in &lt;code class=&quot;highlighter-rouge&quot;&gt;_variables.scss&lt;/code&gt;. As the &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/&quot;&gt;documentation explains&lt;/a&gt;, changes in the SCSS files require regenerating the CSS style files. Doing the required installs and rebuilding the files went without problems for me, once I found that I had to do this (I don’t know anything about SASS, Ruby).&lt;/p&gt;
+
+&lt;p&gt;To make it possible to include Latex style math in posts I added a pointer to the MathJax scripts in the header templace in &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/head.html&lt;/code&gt;, as recommended in the &lt;a href=&quot;https://docs.mathjax.org/en/latest/start.html&quot;&gt;MathJax documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That worked without problems until it didn’t. When I tested the posts that had formulas in them locally, the math displayed fine. But on GitHub Pages some would show up, some wouldn’t. In the end, the problem was that on GitHub pages, the hmtl files get compressed into wonderful one-liners without any white space or line breaks. Locally they were still nicely formatted, which is why the equations were displaying locally but not on GitHub Pages. Wrapping the equations in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/code&gt; tags fixed the problem.&lt;/p&gt;
+
+&lt;p&gt;Lastly, the default table styling in Minimal Mistakes looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/mm-default-table.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/mm-default-table.png&quot; alt=&quot;tag&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I took the booktabs table styling from &lt;code class=&quot;highlighter-rouge&quot;&gt;tufte.scss&lt;/code&gt; &lt;a href=&quot;https://github.com/clayh53/tufte-jekyll/tree/master/css&quot;&gt;here&lt;/a&gt;, which is part of Clay Harmon’s Tufte Jekyll theme. I added the code to &lt;code class=&quot;highlighter-rouge&quot;&gt;_tables.scss&lt;/code&gt; in the theme Sass files (&lt;code class=&quot;highlighter-rouge&quot;&gt;assets/_scss&lt;/code&gt;) and then rebuild the CSS file using the same approach as before with the font size change. Tables now look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/tufte-table.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/tufte-table.png&quot; alt=&quot;tag&quot; class=&quot;align-center&quot; width=&quot;300px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two more things I want to do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Check and fix broken links.&lt;/li&gt;
+  &lt;li&gt;Move all content to the blog, e.g. right now there are some PDF and shapefiles hosted on Dropbox.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I should probably work on actually posting things again as well. And working on the handful of &lt;em&gt;bona fide&lt;/em&gt; academic projects I still have hanging in the air.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-people-have-been-looking-at&quot;&gt;What people have been looking at&lt;/h2&gt;
+
+&lt;p&gt;Moving to Jekyll/GitHub Pages and Google Analytics for statistics breaks continuity in those. So I guess this is a good time to look back at what people are coming to this blog for. It seems that other bloggers like to do these kinds of post at the end of the year, but I’ll use this structural break as an opportunity instead.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Year&lt;/th&gt;
+      &lt;th&gt;Posts&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2011&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2012&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2013&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2014&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2015&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2016&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I started blogging at a crawling pace back in 2011, and I’ve stayed at a crawling pace since then, with a new post every 2 months or so at best. A lot of the early posts were dumping older data and notes from my graduate school days, like the &lt;a href=&quot;{ post.url 2013-09-05-stata-do-files-for-country-code-conversions }&quot;&gt;Stata do files for converting country names to codes&lt;/a&gt;. This was also when I started learning R, and later, in 2013, SQL, so there were some posts related to R and mapping. Although the posts have become rarer in the past two years, they have been more substantial and self-contained.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/visits-per-year.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/visits-per-year.png&quot; alt=&quot;Visits per year&quot; class=&quot;align-center&quot; width=&quot;500px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/visits-last-months.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/visits-last-months.png&quot; alt=&quot;Visits last months&quot; class=&quot;align-center&quot; width=&quot;500px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking at traffic, I had 1 or 2 thousand page views in the first year, which grew to 15 thousand in 2015. These days I get about a 1,000 views per month, although switching to Jekyll has disrupted that somewhat. That’s not a lot, but a lot more than the few hundred views/visitors my self-written page got back in my early to mid grad student days.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/top-posts.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/top-posts.png&quot; alt=&quot;Visits per year&quot; class=&quot;align-center&quot; width=&quot;400px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking at specific posts, the majority of visitors come for the Stata country conversion do files and for how to put north arrows and scales on R maps. Those posts have been up since 2012 and 2013, and I had the Stata do files on my web site before then, so I think there are some habitual users of these. I’m glad that three of the posts from 2015 are showing up in the top list (these are the ones marked with orange).&lt;/p&gt;
+
+&lt;p&gt;For now, the old blog is still around at &lt;a href=&quot;http://andybeger.wordpress.com&quot;&gt;andybeger.wordpress.com&lt;/a&gt;. But all the content is here as well.&lt;/p&gt;
+
+&lt;p&gt;Now back to those research projects.&lt;/p&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="meta" /><category term="wordpress" /><category term="jekyll" /><category term="traffic" /><category term="Matt Dickenson" /><category term="Michael Rosen" /><summary type="html">I moved my home page and blog from Wordpress to Jekyll over the past week, thanks to a small break in regular work. I’ve been using Wordpress.com since 2011, when I started blogging. I don’t remember what led me back then to choose Wordpress, but overall, I haven’t been unhappy with it. It’s easy to set up, and at some point it became possible to write posts in Markdown. Comments work out of the box. Some traffic stats are baked in.</summary></entry><entry><title type="html">3d surface plots of GDP vs. event data</title><link href="http://localhost:4000/2016/03/03/3d-surface-plots/" rel="alternate" type="text/html" title="3d surface plots of GDP vs. event data" /><published>2016-03-03T14:00:00+02:00</published><updated>2016-03-03T14:00:00+02:00</updated><id>http://localhost:4000/2016/03/03/3d-surface-plots</id><content type="html" xml:base="http://localhost:4000/2016/03/03/3d-surface-plots/">&lt;p&gt;A while ago I &lt;a href=&quot;http://andybeger.com/2014/10/06/the-right-kind-of-variance/&quot;&gt;wrote a post&lt;/a&gt; about how the patterns by which data for cross-national datasets observed over multiple periods, e.g. with country-year or country-month observations, vary is important for modeling and prediction. Here is another way to visualize why this is the case using 3-d surface plots made with &lt;a href=&quot;https://plot.ly&quot;&gt;Plotly&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/gdp-logged.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/gdp-logged.png&quot; alt=&quot;3d surface plot of logged GDP per capita&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The plot shows logged GDP per capita for &amp;gt;150 countries from 1995 to 2013. This is about the time period we cover in our data for &lt;a href=&quot;http://rap.sagepub.com/content/1/3/2053168014557511&quot;&gt;forecasting irregular leadership changes&lt;/a&gt;. Countries are sorted by GDP for the last year with data, which is why the near edge of the plot is smoother than the far end. It’s obvious that there are some changes within countries and at rates that differ from other countries, but still most of the variation is between countries.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The differences are much larger at the high end when we look at the raw, unlogged GDP data:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/gdp-raw.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/gdp-raw.png&quot; alt=&quot;3d surface plot of raw GDP per capita&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes, there are differences within countries and this is clearer to see with the unlogged data, but overall the surface is pretty flat over the time dimension and sloping or curving over the list of countries on the &lt;em&gt;y&lt;/em&gt; dimension.&lt;/p&gt;
+
+&lt;p&gt;The reason why variation on one (spatial) or the other (temporal) dimension is important, as I argued in the other post, is that to predict dynamic outcomes like civil war onset, or irregular leadership changes in our case, temporally varying variables are absolutely necessary. Not sufficient by default, but neccessary. Data like GDP, similar structural indicators, and more generally time-invariant or largely invariant variables cannot possibly predict the timing of events.&lt;/p&gt;
+
+&lt;p&gt;Now compare the two plots above to what anti-government protests look like:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2016/protest-count.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2016/protest-count.png&quot; alt=&quot;3d surface plot of protest counts&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s essentially the same set of countries, and over the same time period, but using monthly rather than annual observations. I also flipped the &lt;em&gt;x&lt;/em&gt; and &lt;em&gt;y&lt;/em&gt; axes, but that hardly matters, it’s spiky either way. The data come from the &lt;a href=&quot;https://github.com/andybega/rap-ensemble-forecasting&quot;&gt;replication data for the Research &amp;amp; Politics article I linked above&lt;/a&gt;, and consist of counts of anti-government protests events in the ICEWS event data. There is more variation over time, and although there are countries with higher mean levels of protests, it’s not as pronounced a pattern as it was with GDP. This is the kind of thing that might help pin the timing of events down.&lt;/p&gt;
+
+&lt;p&gt;No discussion of event data should probably fail to mention that media-based event data are subject to important biases and irregularities, and that these are crucial for attempts at causal inference. They are not fundamentally a threat to use in prediction sans explanation though.&lt;/p&gt;
+
+&lt;p&gt;Creating the plots was pretty easy. There is a &lt;code&gt;plotly&lt;/code&gt; R library that allows you to send &lt;code&gt;ggplot2&lt;/code&gt; objects to their website, where a bit of clicking and rotating will turn them into interactive 3-d surface plots. Although it seems to not handle missing and ragged–think countries entering at various points in the 60’s or 90’s–data very well, it’s a bit more intuitive than looking at summary means and variances, which in any case might obscure differences like these in the kind of structured data commonly used in IR (country/province/grid cell–year/month)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/andybega/mireg-blogs/tree/master/3d-var-viz&quot;&gt;Replication code (3d-var-viz)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Interactive plots:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;https://plot.ly/~andybega/14/gdp-per-capita-ppp-in-constant-2005-international-logged/&quot;&gt;GDP per capita, logged&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://plot.ly/~andybega/21/gdp-per-capita-ppp-constant-2005-international/&quot;&gt;GDP per capita, raw&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://plot.ly/~andybega/33/anti-government-protests-icews/&quot;&gt;Anti-government protests&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="research" /><category term="plotly" /><category term="3d surface plot" /><summary type="html">A while ago I wrote a post about how the patterns by which data for cross-national datasets observed over multiple periods, e.g. with country-year or country-month observations, vary is important for modeling and prediction. Here is another way to visualize why this is the case using 3-d surface plots made with Plotly.</summary></entry><entry><title type="html">When forecasting goes wrong (maybe): Yemen</title><link href="http://localhost:4000/2015/09/24/when-forecasting-goes-wrong-maybe-yemen/" rel="alternate" type="text/html" title="When forecasting goes wrong (maybe): Yemen" /><published>2015-09-24T16:16:14+03:00</published><updated>2015-09-24T16:16:14+03:00</updated><id>http://localhost:4000/2015/09/24/when-forecasting-goes-wrong-maybe-yemen</id><content type="html" xml:base="http://localhost:4000/2015/09/24/when-forecasting-goes-wrong-maybe-yemen/">&lt;p&gt;&lt;em&gt;From the &lt;a href=&quot;http://predictiveheuristics.com/2015/08/10/yemen-investigation/&quot;&gt;Ward Lab blog&lt;/a&gt; a few weeks ago:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Over the past few months we have worked on regularly updating our irregular leadership change models and forecasts in order to provide monthly 6-month ahead forecasts of the probability of irregular leadership change in a large number of countries–but excluding the US–worldwide. Part of that effort has been the occasional glance back at our previous predictions, and particularly more in-depth examinations for notable cases that we missed or got right, to see whether we can improve our modeling as a result. This note is one of these glances back: a postmortem of our Yemen predictions for the first half of 2015.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;To provide some background, the ILC forecasts are generated from an ensemble of seven &lt;em&gt;thematic&lt;/em&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; split-population duration models. For more details on how this works or what irregular leadership changes are and how we code them, take a look at &lt;a href=&quot;http://rap.sagepub.com/content/1/3/2053168014557511&quot;&gt;our R&amp;amp;P paper&lt;/a&gt; or &lt;a href=&quot;http://arxiv.org/abs/1409.7105&quot;&gt;this longer arXiv writeup&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We made a couple of changes this year, notably adding data for the 1990's, which in turn cascaded into more changes because of the &lt;a href=&quot;http://andybeger.com/2015/04/08/public-icews-data/&quot;&gt;variation in ICEWS event data volume&lt;/a&gt;. This delayed things a bit, but eventually we were able to generate new forecasts for the time period from January to June 2015, using data up to December 2014. Here were the top predictions:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Country&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;6-month Prob.&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Burkina Faso&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.058&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Egypt&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.055&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Ukraine&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.044&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;India&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.038&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Somalia&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.038&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Afghanistan&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.035&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Nigeria&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.030&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The probabilities are from the ensemble forecast and give the probabilities of at least 1 ILC occurring in a country between January and June 2015. To create the table, we ranked countries by these 6-month probabilities and cut off values below some threshold. There is a tradeoff here that any non-perfect model of a 0 or 1, yes/no outcome has: we could have included more cases in this table to increase the chances that we'll capture any ILCs that do occur, but would then also list a lot of countries that won't have an ILC. This is really just a tradeoff, there is no &lt;em&gt;correct&lt;/em&gt; answer for how to weigh these two factors.&lt;/p&gt;
+&lt;p&gt;We &lt;em&gt;can&lt;/em&gt; say that the forecasts in this table should &lt;em&gt;on average, etc.&lt;/em&gt; give us a recall of 0.5, and in an updated paper (not yet public) we also listed another 25 cases that should get us to a recall of 0.75, for those who are more interested in avoiding false negatives than false positive.&lt;/p&gt;
+
+&lt;p&gt;Absent from either table is Yemen, which by the time we made the forecasts already seemed to have experienced an ILC, with President Hadi’s &lt;a href=&quot;http://english.alarabiya.net/en/News/middle-east/2015/01/22/Yemen-government-offers-resignation.html&quot;&gt;resignation in January&lt;/a&gt;, and &lt;a href=&quot;http://uk.reuters.com/article/2015/03/26/uk-yemen-security-idUKKBN0ML0YM20150326&quot;&gt;flight to Saudi Arabia in March&lt;/a&gt;. Yemen was instead ranked 33 in our 6-month forecasts. The plot below shows the &lt;em&gt;ranking&lt;/em&gt; of Yemen in the monthly forecasts from 2014 on:&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/rank-oslo.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/rank-oslo.png&quot; alt=&quot;Yemen forecast rankings are around 30 in the test period&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Keeping in mind that we produce forecasts for about a 150 to 160 countries, Yemen's EBMA ranking is actually fairly high and consistently in the top fifth, around 30 or so. It's ranked high in the internal conflict and public discontent models, which rely on event aggregations for material conflict between dissidents and government as well as protest, but lower in the other component predictions.&lt;/p&gt;
+&lt;p&gt;One can argue here about whether we really missed Yemen in our forecasts or not. At face value, it is not in the tables with which we present forecasts in the paper, even if it still ranks fairly highly overall. Either way it would still be better if Yemen had been higher in our forecasts, especially since there has been plenty of violence and instability in Yemen prior to the recent events in 2015.&lt;/p&gt;
+&lt;p&gt;What made this especially puzzling for us is that in our 2014 models and forecasts, Yemen was in fact ranked much higher, at number 3 for mid-2014 (&lt;a href=&quot;http://rap.sagepub.com/content/1/3/2053168014557511&quot;&gt;see Table 2 here&lt;/a&gt;).&lt;/p&gt;
+&lt;h2&gt;Why did Yemen's ranking decrease?&lt;/h2&gt;
+&lt;p&gt;The first step was to try to figure out why it was high in our past rankings, but not now. We changed several aspects of the data and models by including 90's data, and correcting the models for the changing ICEWS volume over that period as well as some variables we had to drop because 90's data were not available for them. This gave us the first two candidates for what might explain the difference in Yemen's ranking: dropping the 90's data, where event volumes are tricky, and reverting to the 2014 models.&lt;/p&gt;
+&lt;p&gt;Fast forward through some experimenting, and it turned out that Yemen was ranked higher only when:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;we don't use 90's data and instead only use data from 2001 on, which is how we did things last year,&lt;/li&gt;
+&lt;li&gt;we use the 2014 models rather than the slightly changed 2015 models,&lt;/li&gt;
+&lt;li&gt;and we use some suspicious imputed values for the share of Yemen's population excluded from power.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Change any of these three factors and Yemen's forecast ranking drops.&lt;/p&gt;
+&lt;p&gt;The first two of these factors are related. When we added data for 1990's it required some effort to cobble together data from a couple of sources. As a result a few variables were dropped out from the 2015 models.&lt;/p&gt;
+&lt;p&gt;At the same time, while the ICEWS volume from 2001 is stable enough that we didn't worry about normalization, the 90's data are generated from a much lower volume of news stories, and thus all the 2015 models now also include a count of the total ICEWS events for each month. The problem is that the number of stories and hence events were not lower in the 90's because less stuff was happening in the world, but more probably because fewer events were reported in a way that one can capture and code (this was after all in the dark ages of a young internet). So you need to try to &quot;correct&quot; for that.&lt;/p&gt;
+
+&lt;p&gt;Data problems are not new in international relations, but a growing awareness of media and reporting biases in the data we do have maybe is, as a side-effect of the proliferation of event data over the past couple of years (hello GDELT).&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; We are probably not normalizing as well as we should be, and how to properly normalize event data is something that merits greater investigation.&lt;/p&gt;
+
+&lt;p&gt;The last factor is about some suspicious imputed values for a variable related to inter-ethnic power relations in Yemen. These data come from the &lt;a href=&quot;http://www.epr.ucla.edu&quot;&gt;Ethnic Power Relations (UCLA) dataset&lt;/a&gt;, which end in 2010 and are imputed as part of the ICEWS project data for years after that. When adding EPR data for the 1990's, we plotted series for a few countries, including Yemen:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/exclpop.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/exclpop.png&quot; alt=&quot;Excluded population was imputed to around 0.2, but in carry forward remains 0&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The top plot shows the original data we used. That shift from 2011 on is an artifact of imputation, also given away as such by the sub-annual variation that is impossible since EPR only tracks things in terms of years. Given that the EPR series are largely stable for countries, over stretches of decades, we switched instead to just carrying forward the last observed value.&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;All in all it appears that Yemen was lower in the current round of forecasts for several mechanistic reasons that do not necessarily speak much to the underlying subjective events.  The real issue is whether the imputed coding is more accurate than the ETH coding--which is based on an extensive code book (available at &lt;a href=&quot;http://growup.ethz.ch/&quot;&gt;http://growup.ethz.ch/&lt;/a&gt;). EPR coding suggest that there are no ethnic power divisions in Yemen, but this might be differently evaluated.&lt;/p&gt;
+&lt;h2&gt;What, if anything, do our models pick up?&lt;/h2&gt;
+&lt;p&gt;Is it all bleak? No. For one, Yemen is a strange and complicated case. EPR has a great &lt;a href=&quot;http://growup.ethz.ch/atlas/Yemen&quot;&gt;summary of the country's recent past&lt;/a&gt;, but I'll focus just on the past few years. The current 2015 crisis began in September 2014 when Houthis took control of the capital Sana'a. In Yemen the situation is just sufficiently bizarre that the key pieces merit listing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2011 - February 2012: In Yemen's version of the Arab Spring, protests oust long-time president Saleh and elections bring Abd-Rabbu Mansour Hadi to power.&lt;/li&gt;
+&lt;li&gt;Early 2014: Houthis &lt;a href=&quot;http://www.nytimes.com/interactive/2015/03/26/world/middleeast/geography-of-chaos-in-yemen-maps.html&quot;&gt;expand their area of control&lt;/a&gt; from the north throughout the center of the country.&lt;/li&gt;
+&lt;li&gt;Houthis are able to stage mass protests in Sana'a in August 2014 after the government announces cuts to fuel subsidies.&lt;/li&gt;
+&lt;li&gt;The protests along with the push south allow Houthis to take control of the capital in September, the prime minister resigns, and President Hadi agrees to a power-sharing deal.&lt;/li&gt;
+&lt;li&gt;In January 2015, Hadi resignes, flees to Aden, un-resigns in February, flees to Saudi Arabia in March, and still claims to be President, has &lt;a href=&quot;http://www.huffingtonpost.com/2015/04/19/yemen-troops-hadi_n_7095040.html&quot;&gt;at least some military support in the country&lt;/a&gt;, and of course the support of Saudi Arabia, Egypt, and a few other countries.&lt;/li&gt;
+&lt;li&gt;Meanwhile, guess who's back! Former President Saleh, who still has support from factions of the military, was, or still is, &lt;a href=&quot;http://www.wsj.com/articles/yemens-ousted-president-saleh-helps-propel-houthi-rebel-advance-1428704009&quot;&gt;fighting alongside the Houthis&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Compare this to the plots below, which show a couple of the most relevant event aggregations. The variables are grouped by the three models in which they are included and separately shows our own (Duke) protest aggregation, which is in several other models as well. All variables are lagged one month. These are the variables that &lt;a href=&quot;http://predictiveheuristics.com/2014/10/06/the-right-kind-of-variance/&quot;&gt;drive month-to-month variation&lt;/a&gt; in our forecasts.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/events.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/events.png&quot; alt=&quot;Plots of several event aggregations for Yemen that show spikes corresponding to the 2011 revolution and the August 2014 demonstrationsYemen forecast rankings are around 30 in the test period&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The revolution that ousted Saleh in 2011 is marked, as well as the August protests that started the most recent and ongoing crisis. Both the ICEWS (&lt;code&gt;protest.tALL.l1&lt;/code&gt;) and our protest aggregations (&lt;code&gt;i_protest_tGOV_l1&lt;/code&gt;), in the left two plots, show corresponding spikes. As do several of the quad variables counting verbal/material conflict/cooperation between government and dissidents or within government, shown in the right two plots.&lt;/p&gt;
+&lt;p&gt;Let's now turn back to the progression of Yemen's ranking again, which is in large part driven by the variables shown above. The ensemble forecast picks up the August protests and fighting for a bump in the September forecasts that push Yemen to number 9 in the rankings. This is when the Houthis took control of the capital, the prime minister resigned, and Hadi entered a power-sharing agreement. Then it drops again, and of course we don't know what the event data look like for January, when more trouble came (ok, we know now, but our models didn't know).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/rank-oslo.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/rank-oslo.png&quot; alt=&quot;Yemen forecast rankings are around 30 in the test period&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So our forecasts do pick up correctly on at least part of the story. Loosely speaking they are “correct”, in that they match the background narrative of events, up through about September 2014, from which point on the situation slowly deteriorates in a way that our models do not pick up on as much as we would like them to. Quite likely there was a spike in events that would have pushed our forecasts higher had we made them later, i.e. with January or February data, and in the end although Yemen was not included in the tables of forecasts we presented for the first half of 2015, it was still ranked highly and consistently in the top fifth of forecasts.&lt;/p&gt;
+
+&lt;p&gt;There is not much here to suggest systematic changes or a new direction in terms of modeling, but that in itself is good to know. Of course we would prefer more accurate models that would predict cases like Yemen higher. Although we are consistently in the high 0.8’s in out-of-sample AUC-ROC, we are just starting to scratch the surface when it comes to precision. But with data as sparse as those we are using, it is also challenging to improve performance in a robust way that survives small changes/updates in the data rather than being a symptom of overfitting.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;The research described in this post was sponsored by the Political Instability Task Force (PITF). The PITF is funded by the Central Intelligence Agency. The views expressed in this article are the authors’ alone and do not represent the views of the US Government.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Since we are modeling with country-months, and the vast majority of published work on coups, revolutions, etc. is at the country-year level, we had to improvise our own models. They are loosely based on (well-)known concepts from the conflict literature, but won’t satisfy, and might even upset, people who are engaged in the more traditional, non-forecasting kind of conflict research. But please, feel free to do your own modeling with the &lt;a href=&quot;https://github.com/andybega/rap-ensemble-forecasting&quot;&gt;2014 replication data&lt;/a&gt;, we would love to incorporate “guest” models that stand on more solid ground.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;The rankings are largely stable from December 2014 on because in our live forecasts we hold back covariates as well, instead using carry forward imputation with limited updating for some variables like leader age, which in most cases still leads to minimal variation in the component and ensemble probabilities.&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;…&lt;em&gt;growing&lt;/em&gt; awareness, there certainly have been plenty of people talking and writing about this issue over the years.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;We are switching to the &lt;a href=&quot;http://www.icr.ethz.ch/data/epr&quot;&gt;ETH version of EPR&lt;/a&gt;, which as of May 2015 was updated through 2013. There will still be a missing data problem, but much less severe.&amp;nbsp;&lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="Yemen" /><category term="irregular leadership change" /><category term="forecasts" /><summary type="html">Over the past few months we have worked on regularly updating our irregular leadership change models and forecasts in order to provide monthly 6-month ahead forecasts of the probability of irregular leadership change in a large number of countries--but excluding the US--worldwide.</summary></entry><entry><title type="html">Good coup, bad coup</title><link href="http://localhost:4000/2015/07/10/good-coup-bad-coup/" rel="alternate" type="text/html" title="Good coup, bad coup" /><published>2015-07-10T13:03:36+03:00</published><updated>2015-07-10T13:03:36+03:00</updated><id>http://localhost:4000/2015/07/10/good-coup-bad-coup</id><content type="html" xml:base="http://localhost:4000/2015/07/10/good-coup-bad-coup/">&lt;p&gt;&lt;em&gt;This post first appeared at &lt;a href=&quot;http://predictiveheuristics.com&quot;&gt;Predictive Heuristics&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.washingtonpost.com/blogs/monkey-cage/wp/2015/05/14/did-burundi-just-have-a-good-coup/&quot;&gt;Alexander Noyes&lt;/a&gt; and &lt;a href=&quot;http://www.washingtonpost.com/blogs/monkey-cage/wp/2015/05/18/taking-stock-of-good-coups-in-africa/&quot;&gt;Sebastian Elischer&lt;/a&gt; wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability. Elischer, although on the whole less optimistic about good coups than Noyes, writes:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There is some good news for those who want to believe in “good coups.” A number of military interventions in Africa have led to competitive multiparty elections, creating a necessary condition for successful democratization. These cases include the often (perhaps too often)-cited Malian coup of 1991, the Lesotho coup of 1991, the Nigerien coups of 1999 and 2000, the Guinean coup of 2008, the Malian coup of 2012 and potentially Burkina Faso’s 2014 coup, among others.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is a quick look at the larger picture. I took the same Powell and Thyne &lt;a href=&quot;http://www.jonathanmpowell.com/coup-detat-dataset.html&quot;&gt;data on coups&lt;/a&gt; that is referenced in the blog posts and added the &lt;a href=&quot;http://www.systemicpeace.org/polityproject.html&quot;&gt;Polity data on regimes&lt;/a&gt; to it.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; Specifically, I added the Polity score 7 days before a coup, and 1 and 2 years afterwards, although I’ll focus on the changes 2 years later. The Polity score measures, on a scale from -10 to 10, how autocratic or democratic a regime is. The scale is in turn based on a larger number of items coded by the Polity project. It’s not quite an ordinal or interval scale, in part because there are a couple of special codes for regimes that are in transition or where a country is occupied or without a national government (failed state). Rather than exclude these special scores or convert them to Polity scores, I grouped the Polity scores into several broader categories from autocracy to full democracy, and kept the special codes under the label “unstable”, which may or may not be a good description for them.&lt;/p&gt;
+
+&lt;p&gt;The overwhelming pattern for all 227 &lt;em&gt;successful&lt;/em&gt; coups that the data cover is that things stay the same (0.41 of cases) or get worse (0.40 of cases). The plot below shows the number of times specific category-to-category switches took place, with the regime 7 days before a successful coup on the &lt;em&gt;y&lt;/em&gt;-axis, and the regime 2 years later on the &lt;em&gt;x&lt;/em&gt;-axis. It’s really just a slightly more fancy version of a transition matrix.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/2-year-transitions.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/2-year-transitions.png&quot; alt=&quot;Regime type 2 years after a coup&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In 41, or 18 percent of cases, the regime was more democratic 2 years later. There are probably a few more that were still coded as being in transition to a more democratic regime, so the 18 percent is for unambiguously more democratic regimes.&lt;/p&gt;
+
+&lt;p&gt;Below is another way of visualizing the same data. I don’t know what this type of plot is called, but in any case the &lt;code class=&quot;highlighter-rouge&quot;&gt;Gmisc&lt;/code&gt; R package &lt;a href=&quot;http://www.r-bloggers.com/visualizing-transitions-with-the-transitionplot-function/&quot;&gt;implements a version of it&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/trans-plot-2-year.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/trans-plot-2-year.png&quot; alt=&quot;Transition plot, 2 year&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s maybe clearer with this plot that of the transitions that do occur, the modal change is to autocracy. The number of autocracies 2 years post-coup is clearly larger than before, at the expense of less autocratic, more liberal regimes. There was one transition from democracy to full democracy–the thin line on the bottom right, which was for Cyprus in 1974 after a short-lived coup that led to Turkish invasion and eventually the fall of the Greek dictatorship and restoration of the previous president.&lt;/p&gt;
+
+&lt;p&gt;By the way, I’m trying to consciously steer away from language implying causation here. This is after all a descriptive look at polity before and 2 years after a coup, and I have not dug into any particular case histories nor tried to control for any confounding factors. Forgive the occasional slip, and I don’t mean to imply causality when I use words like “transition”.&lt;/p&gt;
+
+&lt;p&gt;So, when we consider the whole data, coups have historically more often than not reinforced autocratic tendencies. The picture actually looks much better if you look at post-1990 Sub-Saharan Africa only, as Elischer’s Monkey Cage post does:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/2-year-transitions-ssa-90on.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/2-year-transitions-ssa-90on.png&quot; alt=&quot;Regime type 2 years after a coup, Sub-Saharan Africa only&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;More than a third of coups in post-1990 Sub-Saharan Africa are followed by regime liberalization. To be honest I was a bit surprised that the ratio of “good” to “bad” coups is that high. Here is a timeline of the specific cases. I changed the colors so that “same” is now red as well. The labels are easier to read if you click to open the larger version of the image.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/ssa-over-time-2yrs.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/ssa-over-time-2yrs.png&quot; alt=&quot;Sub-Saharan Africa&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Niger has had 3 coups since 1990: in 1996, 1999, and 2010. In the first, Polity decreased a year after the coup, but the other two resulted in improvements. This matches the narrative in Elischer’s post, as he gives the second two Nigerien coups as examples of good coups. A couple of other countries also appear twice in this list. I’m not sure whether repeated good coups are still a good thing, but on the other hand I’m not very familiar with the particular case histories, so maybe they really are.&lt;/p&gt;
+
+&lt;p&gt;Like with the transition plots before, extending the time period and spatial focus to all countries from 1950 on changes the picture a lot:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/all-over-time-2yrs.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/all-over-time-2yrs.png&quot; alt=&quot;All coups&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Most coups historically were “bad”, with more autocratic or unchanged regimes 2 years later. A few here and there seem to be associated with democratization, and while the number of bad coups has decreased over time from highs in the 60’s and 70’s, the good coups seem to continue with a steady trickle. Still, despite the occurrence of a substantial number of coups that are associated with democratization, the main pattern historically and still today is that successful coups more often than not associated with more of the same, or worse (autocratization&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;). The imbalance between positive and negative movements in regime is even more pronounced at shorter time scales, e.g. if you consider regime type 1 year after a coup, and the main immediate effect is probably instability and political deterioration.&lt;/p&gt;
+
+&lt;p&gt;Contrast this with Powell and Thyne,&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; whose &lt;a href=&quot;http://www.uky.edu/~clthyn2/thyne_powell_FPA2013.pdf&quot;&gt;2014 paper in Foreign Policy Analysis&lt;/a&gt; is one of the articles that started the mini-discussion on good coups. Powell and Thyne look at whether having had a coup or &lt;em&gt;attempted but unsuccessful&lt;/em&gt; coup within the past 2 years is associated with democratization, which they operationalize as a shift in Polity score from less than 6 to 6 or higher. This is equivalent to a movement from any category below democracy to “Democracy” or “Full Democracy” in the categorization I have used here. They find that it does, and with further investigation show that the effect is even more pronounced in strongly autocratic regimes and those with a long-ruling leader.&lt;/p&gt;
+
+&lt;p&gt;How can coups increase the probability of democratization, while regimes tend to be similar or worse following a coup?&lt;/p&gt;
+
+&lt;p&gt;My empirically unevaluated hunch is that the trick is twofold: the data Powell and Thyne use consist only of autocracies (Polity &amp;lt; 6), and they only consider movement from not-democracy to democracy. To use a &lt;a href=&quot;http://en.wikipedia.org/wiki/If_a_tree_falls_in_a_forest&quot;&gt;bad analogy&lt;/a&gt;, with this setup if a coup makes an autocracy more autocratic, nobody is there to hear it. In any case, I think that the explanation for the inconsistency is along these lines: coups perturb regimes, and sometimes these perturbations will be in the more democratic direction. So if you are only looking at whether countries cross a threshold from not democratic to democratic, you will find that coups will indeed sometimes push countries over the threshold.&lt;/p&gt;
+
+&lt;p&gt;Dan Carlin, in his &lt;a href=&quot;http://www.dancarlin.com/product/hardcore-history-50-blueprint-for-armageddon-i/&quot;&gt;podcasts on World War 1&lt;/a&gt;, has a great analogy about the quality of monarchs that came to mind here.&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; He describes monarchical succession as a roll of the dice where sometimes you get great kings like Frederick II or Peter the Great, but other times you are stuck with the &lt;a href=&quot;http://en.wikipedia.org/wiki/Frederick_the_Great&quot;&gt;Wilhelm II&lt;/a&gt; or &lt;a href=&quot;http://en.wikipedia.org/wiki/Nicholas_II_of_Russia&quot;&gt;Nicholas II&lt;/a&gt;’s of the regal world. Based on the cursory look I’ve described here, coups are then akin to rolling a loaded dice. Sometimes they can lead to regimes that are more liberal, and if not outright democratic at least less autocratic. But more often, they are associated with no change or change in the wrong direction, in addition to other short-term costs they carry.&lt;/p&gt;
+
+&lt;p&gt;So while good coups happen, there are also associated risks. You shouldn’t consider potential benefits without the potential costs involved. The next logical step would be to try to figure out whether there are any systematic conditions that can help predict whether a coup would lead to liberalization, no meaningful change, or more autocracy. Powell and Thyne have a little bit of this when it comes to the benefit (democratization) side, e.g. that democratizing coups are more likely in highly autocratic regimes with aging leaders, but the potential risks are not clear. It seems like being able to predict what change in regime type a coup would likely lead to is also something policymakers would be interest in when evaluating how to respond to a coup or the possibility of one.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/andybega/mireg-blogs/tree/master/good-coup-bad-coup&quot;&gt;Code and data&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Jonathan Powell is doing a wonderful job, as far as I can tell, in keeping the data regularly updated. At least it has been updated every time I have looked on his website.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;I would like to plot the transition matrix with a &amp;lt;&lt;a href=&quot;http://www.infovis.net/printMag.php?num=184&amp;amp;lang=2&quot;&gt;bivariate color scale&lt;/a&gt; so that it shows both whether a transition is to a more authoritarian/democratic regime, and also what the frequency of any given pair was. I.e. a cross between a qualitative and gradient scales, or specifically 3 separate gradient scales. But it seems that this is not possible with &lt;code class=&quot;highlighter-rouge&quot;&gt;ggplot2&lt;/code&gt;. If there were only two categories I could cheat with a diverging scale, alas there are three.&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;If “democratization” is a word, it seems that “autocratization” should be as well.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;Thank you for posting an ungated copy of the paper, along with replication materials.&amp;nbsp;&lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot;&gt;
+      &lt;p&gt;Maybe he got it from somewhere else, I don’t know.&amp;nbsp;&lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="Archigos" /><category term="coups" /><category term="descriptive statistics" /><category term="good coups" /><category term="polity" /><summary type="html">Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability</summary></entry><entry><title type="html">A quick look at the public ICEWS data</title><link href="http://localhost:4000/2015/04/08/public-icews-data/" rel="alternate" type="text/html" title="A quick look at the public ICEWS data" /><published>2015-04-08T12:11:08+03:00</published><updated>2015-04-08T12:11:08+03:00</updated><id>http://localhost:4000/2015/04/08/public-icews-data</id><content type="html" xml:base="http://localhost:4000/2015/04/08/public-icews-data/">&lt;p&gt;The ICEWS data, including the underlying raw event data as well as some
+aggregations, were quietly &lt;a href=&quot;http://thedata.harvard.edu/dvn/dv/icews&quot;&gt;posted on
+Dataverse&lt;/a&gt; the Friday before last.
+I’ve worked with the ICEWS data for several years now, first when I was
+working on on the ICEWS package–we deliver updated monthly forecasts for the
+ICEWS events of interest (EOIs) once a month–and more recently for the
+&lt;a href=&quot;http://andybeger.com/2014/05/23/the-thailand-coup-and-some-recent-
+forecasting-work/&quot;&gt;irregular leadership change forecasting
+project&lt;/a&gt;. The public data are formatted differently from the data
+I’ve worked with, so most of the code I have lying around is not that useful,
+but in going through the public data I did recreate a short overview that is
+nowhere near as complete as &lt;a href=&quot;http://www.davidmasad.com&quot;&gt;David Masad&lt;/a&gt;’s &lt;a href=&quot;http://nbviewer.ipython.org/gist/dmasad/f79ce5abfd4fb61d253b&quot;&gt;first
+look&lt;/a&gt; (using
+Python), and some code that might be useful for getting started in R.&lt;/p&gt;
+
+&lt;p&gt;One of the nice things about the public release of these data, aside from the
+hope that they will start to &lt;a href=&quot;http://predictiveheuristics.com/2014/10/06/the-right-kind-of-
+variance/&quot;&gt;get used in
+modeling&lt;/a&gt; (&lt;a href=&quot;http://andybeger.com/2014/10/06/the-right-kind-of-
+variance/&quot;&gt;repost&lt;/a&gt;), is that it is very interesting to read new takes by people whose
+perspectives are different than mine, like, so far:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://nbviewer.ipython.org/gist/dmasad/f79ce5abfd4fb61d253b&quot;&gt;Overview and descriptives&lt;/a&gt; by David Masad&lt;/li&gt;
+  &lt;li&gt;Jay Ulfelder’s notes on &lt;a href=&quot;https://dartthrowingchimp.wordpress.com/2015/04/03/down-the-country-month-rabbit-hole/&quot;&gt;using ICEWS in country-month modeling&lt;/a&gt;, including some starter R code.&lt;/li&gt;
+  &lt;li&gt;Phil Schrodt’s &lt;a href=&quot;https://asecondmouse.wordpress.com/2015/03/30/seven-observations-on-the-newly-released-icews-data/&quot;&gt;comments on the public release&lt;/a&gt;, from an event data producer’s perspective.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now to the quick overview, using R rather than Python (link to code at end).
+The first figure below shows the daily event totals, as well as a 30-day
+moving average. The daily totals increase from around 500 in 1996 to a steady
+level of around 3,000 from 2005 on, before decreasing again around 2009/2010.
+As others have pointed out, this stability is a good feature to have since it
+makes it plausible to model without some kind of normalization to account for
+changes in the underlying event volume. This is in contrast to GDELT, where
+the story corpus and event counts increase dramatically over time.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/icews-daily.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/icews-daily.png&quot; alt=&quot;Daily totals in the ICEWS event data&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The plot shows the daily event totals as points rather than with a line plot
+mainly because I also wanted to add a moving average to bring out the
+underlying trend more clearly. This shows an interesting pattern that I didn’t
+see with a line plot, namely that the daily event totals seem to be bimodal.
+There appear to be two kinds of days: those with relatively few events, about
+1,500 during the 2000’s, those with more events, with 2,500 to 3,000 events
+per day, and few days that fall in between. &lt;del&gt;I have no idea why that is,
+but for that matter also no idea whether this shows up with any other machine-
+coded event data.&lt;/del&gt; It turns out that on weekends there are only about
+half the amount of stories, and hence events, compared to weekdays (thanks to
+the &lt;a href=&quot;https://twitter.com/icews/status/585788549221482496&quot;&gt;ICEWS team for clarifying
+this&lt;/a&gt;). Talk about a
+reminder of how important media bias and coverage are for event data.&lt;/p&gt;
+
+&lt;p&gt;The second plot maps events per capita by country, using the full range of the
+data from 1995 to 2014. I used 2013 population data from the World Bank World
+Development Indicators (WDI) to scale the event totals with. Bluish colors
+indicate below average events per capita, and red higher than average events
+per capita. The raw rates range from 600 on the low end, with countries like
+Madagascar, Niger, and Cameroon, and up to 64,000 on the high end for Georgia,
+Israel, Cyprus, and Lebanon. The rates are very skewed, and note that the map
+shows log10 of the rate.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/icews-map.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/icews-map.png&quot; alt=&quot;Total ICEWS events per capita, using 2013 WDI population figures.&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I also did some hasty linear regressions models (see the linked code below) of
+the logged country totals using a couple of variables from WDI. The moments
+where you can use linear regression in conflict research are rare and so
+refreshing, I couldn’t resist. Population and GDP both have a positive impact
+on event totals, and a model with only those two variables has an adjusted R2
+of about 0.8. That’s good. Neither area nor broadband internet subscribers nor
+cell subscribers had significant coefficients and they did not help model fit.
+Cases like Israel and Georgia have large residuals, so maybe adding some kind
+of conflict indicator would help. But I think this is starting to touch on the
+much larger issue of media coverage and bias (again), so I’ll just leave with
+this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/events-pcap-hist.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/events-pcap-hist.png&quot; alt=&quot;Distribution of ICEWS events per million by country&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;p&gt;R code to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/andybega/mireg-blogs/tree/master/icews-public&quot;&gt;Summarize the data&lt;/a&gt;, including the images in this post.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/andybega/mireg-blogs/blob/master/icews-public/icews-to-sql.r&quot;&gt;Load event data to SQLite&lt;/a&gt;, with some example queries.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="event data" /><category term="icews" /><summary type="html">The ICEWS data, including the underlying raw event data as well as some aggregations, were quietly posted on Dataverse the Friday before last. I’ve worked with the ICEWS data for several years now, first when I was working on on the ICEWS package–we deliver updated monthly forecasts for the ICEWS events of interest (EOIs) once a month–and more recently for the irregular leadership change forecasting project. The public data are formatted differently from the data I’ve worked with, so most of the code I have lying around is not that useful, but in going through the public data I did recreate a short overview that is nowhere near as complete as David Masad’s first look (using Python), and some code that might be useful for getting started in R.</summary></entry><entry><title type="html">Precision-recall curves</title><link href="http://localhost:4000/2015/03/16/precision-recall-curves/" rel="alternate" type="text/html" title="Precision-recall curves" /><published>2015-03-16T16:00:04+02:00</published><updated>2015-03-16T16:00:04+02:00</updated><id>http://localhost:4000/2015/03/16/precision-recall-curves</id><content type="html" xml:base="http://localhost:4000/2015/03/16/precision-recall-curves/">&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;Update 2016-06&lt;/strong&gt;: there’s a PDF of this now, at &lt;a href=&quot;http://ssrn.com/abstract=2765419&quot;&gt;http://ssrn.com/abstract=2765419&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Receiver_operating_characteristic&quot;&gt;ROC curves&lt;/a&gt;
+are a fairly standard way to evaluate model fit with binary outcomes, like
+(civil) war onset. I would be willing to bet that most if not all quantitative
+political scientists know what they are and how to construct one. Unlike
+simpler fit statistics like accuracy or percentage reduction in error (PRE),
+they do not depend on the particular threshold value used to divide
+probabilistic predictions into binary predictions, and thus give a better
+sense of the tradeoff between true and false positives inherent in any
+probabilistic model. The area under a ROC curve (AUC) can summarize a model’s
+performance and has the somewhat intuitive alternative interpretation of
+representing the probability that a randomly picked positive outcome case will
+have been ranked higher by the model than a randomly picked negative outcome
+case. What I didn’t realize until more recently though is that ROC curves are
+a misleading indication of model performance with kind of sparse data that
+happens to be the norm in conflict research.&lt;/p&gt;
+
+&lt;p&gt;
+$$
+\begin{array}{c|cc}
+Y &amp;amp; p &amp;lt; \theta &amp;amp; p \geq \theta \\
+\hline
+0 &amp;amp; \text{True Neg.} &amp;amp; \text{False Pos.} \\
+1 &amp;amp; \text{False Neg.} &amp;amp; \text{True Pos.} 
+\end{array}
+$$
+&lt;/p&gt;
+
+&lt;p&gt;To recap, the basic situation is that we have a binary outcome, but a stream
+of predictions that as probabilities range between 0 and 1, and the challenge
+is how to map this onto the binary outcomes. We could calculate Brier scores
+and avoid the problem, or we could choose a particular threshold and calculate
+things like accuracy, percentage reduction in error, etc. These measures rely
+on how positive predictions match up with observed outcomes (see the confusion
+table above), but the drawback is that they depend on a particular threshold
+value, and will change as the threshold changes. A way around this is to
+record and plot all possible combinations over the range of possible threshold
+values, and this is essentially what ROC curves are.&lt;/p&gt;
+
+&lt;div style=&quot;width:40%;padding:0 0 0 150px;&quot;&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Observed&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Predicted&lt;/td&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To construct a ROC curve, you would pick all possible thresholds, bin
+predictions to 0 or 1, and then calculate the true positive rate and false
+positive rate associated with each threshold, giving you the data you would
+need to plot the ROC curve. The true and false positive rates are calculated
+as the ratio of true positives (cases the model got right) to overall
+positives in the data, and the ratio of false positives (cases the model
+predicted 1, but that did not have a positive outcome) to overall negatives in
+the data. Here’s an example using some simulated data I’ll discuss more below:&lt;/p&gt;
+
+&lt;div style=&quot;width:50%;padding:0 0 0 150px;&quot;&gt;
+&lt;p&gt;&lt;!-- Thu Mar 12 11:57:35 2015 --&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;Threshold&lt;/th&gt;
+&lt;th&gt;TPR&lt;/th&gt;
+&lt;th&gt;FPR&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;0.99998&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00000&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;0.99998&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00048&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;0.99974&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00048&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00034&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;0.99953&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00097&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00034&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;0.99946&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00145&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00034&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;0.99942&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00194&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.00034&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Which gives the following ROC curve if we plot the TP and FP rates:&lt;/p&gt;
+
+&lt;figure&gt;
+  
+&lt;a href=&quot;http://localhost:4000/content/2015/roc-example.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/roc-example.png&quot; alt=&quot;ROC curve for the example data&quot; /&gt;&lt;/a&gt;
+
+  &lt;figcaption&gt;
+ROC curve for the example data
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In this example, about 40% of outcomes are positive, but this is rarely the
+case in international relations and conflict research in particular, where
+data tend to be sparse, with much fewer positive outcomes for things like war
+or civil war onset and occurrence. &lt;a href=&quot;http://jou
+rnals.cambridge.org/action/displayAbstract?fromPage=online&amp;amp;aid=142717&amp;amp;fileId=S
+0003055403000534&quot;&gt;Fearon and Laitin’s 2003 paper&lt;/a&gt; on civil war onset has 167 positives per 10,000, and the two
+projects I mostly work on these days have rates of 17 per 10,000 for country-
+month &lt;a href=&quot;http://predictiveheuristics.com/2014/05/22/the-coup-in-thailand-and-
+progress-in-forecasting/&quot;&gt;irregular leadership
+changes&lt;/a&gt; and 1-5 per 10,000 for &lt;a href=&quot;http://andybeger.com/2014/08/08/modeling-and-predicting-ieds/&quot;&gt;IEDs in
+Afghanistan&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With sparse data it becomes pretty easy for any model to correctly predict
+negatives. Because the ROC curve in part plots false positive rates that are
+calculated with the resulting large number of true negatives in the
+denominator, by that metric we will seem to be doing pretty well. The table
+below shows a contrived example using numbers similar to what one might get
+with the Fearon &amp;amp; Laitin 2003 data and a reasonably good model. With these
+number we get 50% recall (recall is the same as TPR) and a false positive rate
+of only 9%. In the ROC world, we are doing well. Except that looking at the
+table it is obvious that the model predictions are still problematic: for
+every correct positive prediction our model makes, there are 10 false
+positives.&lt;/p&gt;
+
+&lt;p&gt;
+$$
+\begin{array}{c|cc}
+Y &amp;amp; p &amp;lt; \theta &amp;amp; p \geq \theta \\
+\hline
+0 &amp;amp; 10,000 &amp;amp; 1,000 \\
+1 &amp;amp; 100 &amp;amp; 100 
+\end{array}
+$$
+&lt;/p&gt;
+
+&lt;p&gt;Since it becomes easier to predict negatives as they become more common,
+looking at false positive rates with sparse data might not be that
+informative. Instead, let’s plot something else. The only option, assuming
+that we do care about positives and hence the true positive rate or recall,
+would be to compare false positives to the overall number of positive
+predictions made by a model for a given threshold. This is called precision,
+and I think of it as how believable a model’s predictions are (“My model says
+1, what are the actual chances this is true?”).&lt;/p&gt;
+
+&lt;p&gt;The plot below is a precision-recall curve that does this, for the same
+example as before. Instead of FPR we now have precision, and I’ve also flipped
+the axes as it seems to be convention to plot recall on the x-axis.&lt;/p&gt;
+
+&lt;figure&gt;
+  
+&lt;a href=&quot;http://localhost:4000/content/2015/pr-example.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/pr-example.png&quot; alt=&quot;Precision-recall curve for the same example data with 0.4 positives.&quot; /&gt;&lt;/a&gt;
+
+  &lt;figcaption&gt;
+Precision-recall curve for the same example data with 0.4 positives.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;simulations&quot;&gt;Simulations!&lt;/h2&gt;
+
+&lt;p&gt;Since the example I used had a positive rate of 0.4, the plot doesn’t really
+make it obvious why one would want to look at precision-recall curves for
+sparse data. To illustrate that better, below are two plots from a simulation
+where I created 3 data sets with decreasing positive rates (0.4, 0.1, 0.01)
+and for each data set then created 3 models designed to achieve a particular
+AUC-ROC value (0.8, 0.9, 0.95).&lt;/p&gt;
+
+&lt;p&gt;The first series of plots are the ROC curves. Since the models are meant to
+match a given AUC, these shouldn’t really look different, and they don’t, as
+we move to the increasingly sparse datasets. The curves get a little bit
+edgier on the right, but this is just because there are less positive outcomes
+based on which recall/TPR are calculated. All models are doing equally well if
+we use ROC curves and AUC as our metric.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/roc.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/roc.png&quot; alt=&quot;ROC curve&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The corresponding precision-recall plots on the other hand show the loss of
+precision as one moves to sparser data, and here it becomes more obvious that
+the sparse data present more of a challenge. On the right, even the 0.95 AUC
+model barely touches on 0.5 precision (1 correct positive for 1 false
+positive), and if we were to calculate the area under the PR curves (AUC-PR)
+we’d get values much lower, 0.25 and less.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/rpc.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/rpc.png&quot; alt=&quot;PR curves&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A lot of conflict research is in the world of the rightmost plot, maybe
+somewhere between the two rightmost plots if you are working with occurrence
+and country-year data. AUC values that I always thought were great, 0.8, even
+0.9 or higher, actually can hide a lot of imprecision–“room for growth” as I
+like to tell myself in consolation.&lt;/p&gt;
+
+&lt;p&gt;Another thing that stands out from these plots is that you can always increase
+model recall. Just lower your threshold, everything will light up as a
+potential positive, and incidentally you will capture most if not all actual
+positive outcomes. Getting high precision on the other hand is much more
+difficult, and realistically there are hard limits here, at least with this
+kind of problem. With that in mind it seems strange to me, on the few
+occasions I’ve been exposed to this, that people commissioning these kinds of
+forecasts aim for recall, e.g. require that models reach 0.8 or some other
+threshold, rather than precision, which might make quantitative modeling more
+credible to non-technical audiences. But then, my cost for false negatives,
+which I would tend to have more of with this rationale, is probably also much
+lower.&lt;/p&gt;
+
+&lt;p&gt;The conclusions: if you are doing (conflict) research with sparse binary data
+and are interested for whatever reason in model fit, (1) your models don’t do
+as well as ROC might lead one to believe, and (2) consider precision-recall
+curves as an addition or alternative.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/andybega/auc-pr&quot;&gt;Code to plot PR curves, calculate AUC-PR, and replicate the examples
+here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-about-brier-scores&quot;&gt;What about Brier scores?&lt;/h2&gt;
+
+&lt;p&gt;One thing I haven’t quite wrapped my mind around is how this relates to Brier
+scores, calibration, and discrimination. With ROC and PR curves we implicitly
+treat the model predictions are meaningless in and of themselves. All that
+matters is their relative ranking, and I can in fact transform them in any way
+that doesn’t alter this ranking. For the initial example above, I can cut all
+probabilities in half and I would still get the same ROC/PR information
+(recall is 0.5, precision is 0.5, FPR is 0.5):&lt;/p&gt;
+
+&lt;div style=&quot;width:60%;padding:0 0 0 150px;&quot;&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Observed&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Predicted&lt;/td&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Predicted 2&lt;/td&gt;
+&lt;td&gt;0.05&lt;/td&gt;
+&lt;td&gt;0.3&lt;/td&gt;
+&lt;td&gt;0.2&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Although I more or less know how well the models I am working on do in terms
+of AUC-ROC and AUC-PR, I am not in fact sure to what extent one can take the
+probabilities generated by them at face value. For one, they tend to be very
+low, way below 0.1, which makes it a bit harder to assess forecast accuracy
+(Did I miss, even though I’m getting the baseline right?), but then, we are
+also dealing with very rare events.&lt;/p&gt;
+
+&lt;p&gt;From a modeling perspective, another question is to what extent Brier score
+rankings map on to other fit measures. In the extreme upper limiting case, it
+seems that a perfect model from a ROC/PR curve perspective would also imply
+that the model has perfect calibration and discrimination. But I am not sure
+what happens below that, which can make it challenging to decide what models
+to invest more time in.&lt;/p&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="AUC-PR" /><category term="AUC-ROC" /><category term="binary fit" /><category term="precision-recall curves" /><category term="ROC curves" /><summary type="html">ROC curves are not very good for evaluating model fit with sparse outcomes, like civil war onset or coups. Use precision-recall curves instead.</summary></entry><entry><title type="html">Archigos leader turnovers by regime</title><link href="http://localhost:4000/2015/01/14/archigos-leader-turnovers-by-regime/" rel="alternate" type="text/html" title="Archigos leader turnovers by regime" /><published>2015-01-14T13:31:37+02:00</published><updated>2015-01-14T13:31:37+02:00</updated><id>http://localhost:4000/2015/01/14/archigos-leader-turnovers-by-regime</id><content type="html" xml:base="http://localhost:4000/2015/01/14/archigos-leader-turnovers-by-regime/">&lt;p&gt;&lt;em&gt;This post is about the Archigos data, which you can find &lt;a href=&quot;http://www.rochester.edu/college/faculty/hgoemans/data.htm&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Political scientists, and maybe historians as well, are familiar with coups, rebellions, and mass protests as distinct phenomena that lead to the fall of regimes occasionally. Another way to view these events is from the perspective of state leaders, and how these events affect transitions between political leaders. &lt;a href=&quot;http://www.amazon.com/Logic-Political-Survival-Bruce-Mesquita/dp/0262524406&quot;&gt;Selectorate theory&lt;/a&gt; does this by considering the sets of people within a regime that a leader must rely on to remain in power, and how their relative sizes shape behavior. We do this empirically by modeling irregular leadership changes, where we draw our dependent variable from the Archigos dataset. I’ve been vaguely aware of these data for a while, but honestly did not understand well how useful they could be. In this post I’ll try to give a quick overview of the data.&lt;/p&gt;
+
+&lt;p&gt;Archigos is a dataset of the political leaders of states from 1875 on collected by &lt;a href=&quot;http://www.rochester.edu/college/faculty/hgoemans/&quot;&gt;Hein Goemans&lt;/a&gt;, &lt;a href=&quot;http://privatewww.essex.ac.uk/~ksg/&quot;&gt;Kristian Skrede Gleditsch&lt;/a&gt;, and &lt;a href=&quot;http://www.vanderbilt.edu/political-science/bio/giacomo-chiozza&quot;&gt;Giacomo Chiozza&lt;/a&gt;. The most recent version, 2.9, has more than 3,000 leaders through 2004 and an update to 2014 is in the works. Aside from identifying leaders and when they gained and lost office, it codes how they did so (from the &lt;a href=&quot;http://www.rochester.edu/college/faculty/hgoemans/GGC_finalsubmission.pdf&quot;&gt;Archigos codebook&lt;/a&gt;):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Archigos codes the manner in which transfers between rulers occur. Our main interest is whether transfers of power between leaders take place in a regular or irregular fashion. We code transfers as regular or irregular depending on the political institutions and selection mechanisms in place. We identify whether leaders are selected into and leave political office in a manner prescribed by either explicit rules or established conventions. In a democracy, a leader may come to power through direct election or establishing a sufficient coalition of representatives in the legislature. Although leaders may not be elected or selected in particularly competitive processes, many autocracies have similar implicit or explicit rules for transfers of executive power. Leader changes that occur through designation by an outgoing leader, hereditary succession in a monarchy, and appointment by the central committee of a ruling party would all be considered regular transfers of power from one leader to another in an autocratic regime.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So whether a leadership transition (entry or exit) is regular or irregular depends on the regime in which it takes place. A father-son transition is regular in hereditary monarchies like Saudi Arabia, but wouldn’t be in a democracy (without intervening elections). Although it is a bit subjective, this is actually a really powerful concept that seems to encompass &lt;em&gt;successful&lt;/em&gt; coups, mass protests campaigns, and rebellions (i.e. civil wars where the goal is overthrow of the central government). We show this to some extent in one of the appendices to a &lt;a href=&quot;http://arxiv.org/abs/1409.7105&quot;&gt;long report&lt;/a&gt; we wrote in the summer, where we found that almost all coups, using the &lt;a href=&quot;http://jpr.sagepub.com/content/48/2/249.short&quot;&gt;Powell &amp;amp; Thyne&lt;/a&gt; &lt;a href=&quot;http://www.jonathanmpowell.com/coup-detat-dataset.html&quot;&gt;data&lt;/a&gt;, overlap with irregular entries in the Archigos data.&lt;/p&gt;
+
+&lt;p&gt;When we think about the ways in which irregular transitions can occur–often coups, weak autocracies with politicized militaries come to mind. So I thought it would be interesting to look at the regularity of transitions by regime type. To measure regime types I used the Polity IV dataset, which along with Freedom House, is a common measure of regime types used in IR (despite what comparative political scientists who research this, among other things, might think). Polity measures a several aspects of a regime, and uses these to construct 0-10 composite indicators for the autocratic and democratic tendencies of the regime, which are in turn commonly subtracted for a combined Polity score ranging from -10 (autocracy) to 10 (democracy). The website bins these scores into a a couple of categories, like democracy and anocracy, that I use here.&lt;/p&gt;
+
+&lt;p&gt;First, here is a mosaic plot of how leaders entered office by regime type. The area of the cells in these plots corresponds to how many cases fit that combination. Most regimes historically have been “closed anocracies” or what we might call weak autocracies. But even in these and full “autocracies”, most leaders entered office regularly, in keeping with that regimes conventions (aka selection by the Politburo). Unsurprisingly, the vast majority of leaders in democracies entered office regularly.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/entry-by-regime.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/entry-by-regime.png&quot; alt=&quot;Regular and irregular leader entries to office for different regime types, 1875-2004.&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The second plots shows how leaders left office, by regime type. There are a few more possibilities here, like suicide. Quite a few leaders in autocracies are in power until their death (Stalin, Kim Il Sung come to mind).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/content/2015/exit-by-regime.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/exit-by-regime.png&quot; alt=&quot;Regular and irregular leader exits from power for different regime types, 1875-2004.&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Although irregular assumption of and exit from power are far more common in authoritarian regimes, regular transitions are still the most common means, with the exception of full autocracies, where leaders are much more likely to die in office (e.g. Hafez al-Assad in Syria, Deng Xiaoping in China) or be overthrown (e.g. Mobutu Sese Seko in the DRC, Siad Barre in Somalia).&lt;/p&gt;
+
+&lt;p&gt;Another interesting part of Archigos to look at is how long leaders were in power. The plots below are histograms showing the frequency of tenure lengths in months by the different Polity regime types (note the x-axis is logged):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/content/2015/months-in-power-by-reg.png&quot;&gt;&lt;img src=&quot;/content/2015/months-in-power-by-reg.png&quot; alt=&quot;Months in power by regime&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Three patterns, not entirely unsurprising, stand out in these histograms:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Notable spikes at 1, 4, 8 years, and to some extent also at 5 years. The one year spike in democracies is largely driven by Switzerland, where a President is elected for one-year terms from the seven-member executive council. The others correspond to the common election cycles (4, 5) and term limits (8).&lt;/li&gt;
+  &lt;li&gt;The spikes are present even in less than full democracies, what Polity calls open and closed anocracies, showing that elections work here sometimes, at least.&lt;/li&gt;
+  &lt;li&gt;Leaders in autocracies last longer than those in democracies, but also than those in partial autocracies. It’s a bit hard to tell with the logged axes, but there are quite a few leaders in autocracies who were in power for a really long time–these are your old-school monarchs like Francis Joseph I of Austria-Hungary (27 years) and&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For the last point, that a few autocratic leaders hold on to power for really long times, that doesn’t really seem to be changing. The plot below maps the time in power for leaders who have completed their time in office: the mean, shown by the gray band for the smoothed mean, doesn’t seem be changing over time. (Since there are fewer autocracies nowadays than historically, I wonder if that means that the remaining autocracies are very consolidated ones with long leader tenures.)&lt;/p&gt;
+
+&lt;figure&gt;
+  
+&lt;a href=&quot;http://localhost:4000/content/2015/in-power-over-time.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/content/2015/in-power-over-time.png&quot; alt=&quot;Time in power for world leaders&quot; /&gt;&lt;/a&gt;
+
+  &lt;figcaption&gt;
+Leaders who entered power are are still currently in power are highlighted in cyan. The mean does not seem to change much over time.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;That’s it for Archigos. About the larger point, a lot of published (quantitative) political science consists of explanatory modeling, focused on theory-building and hypothesis testing as it is. The work I do mostly falls into a second category, prediction, which is not, but maybe becoming more, widespread. Basic description like this partly occurs as part of the other two, but often falls to the wayside in online appendixes and supplementary materials. But it seems to me that this is an area in which political science stands in contrast to a lot of popular misconceptions about political conflict (and maybe other aspects of politics as well), like for example &lt;a href=&quot;http://faculty.ucmerced.edu/cconrad2/Academic/ITT_Data_Collection.html&quot;&gt;how widespread torture&lt;/a&gt; is, or how (un)common civil wars and terrorism are. And unlike statistical modeling, formal theory, etc. it’s relatively easy for non-technical people to follow (I think).&lt;/p&gt;
+
+&lt;p&gt;Lastly, some technical details. Here is the &lt;a href=&quot;https://github.com/andybega/mireg-blogs/tree/master/archigos-polity&quot;&gt;code to replicate&lt;/a&gt; the figures. It basically merges the Polity score to the Archigos record for each leader. Since Polity scores can and do change over the course of a leaders tenure, it uses the mean Polity score, weighted by the length of time that those Polity scores overlap a leader’s tenure.&lt;/p&gt;</content><author><name>Andreas Beger</name><email>adbeger+mireg@gmail.com</email></author><category term="Archigos" /><category term="coups" /><category term="irregular leadership changes" /><category term="Polity IV" /><summary type="html">Exploration of data on leadership transitions and how they vary by regime types, using the Archigos data on state leaders and the Polity regime classification.</summary></entry></feed>

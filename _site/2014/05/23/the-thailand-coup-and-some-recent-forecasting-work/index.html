@@ -1,0 +1,541 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.5.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>The Thailand coup and some recent forecasting work - MI Regression</title>
+
+
+
+
+<meta name="description" content="I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I’ve recently been part of:">
+
+
+
+
+<meta name="author" content="Andreas Beger">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="MI Regression">
+<meta property="og:title" content="The Thailand coup and some recent forecasting work">
+
+
+  <link rel="canonical" href="http://localhost:4000/2014/05/23/the-thailand-coup-and-some-recent-forecasting-work/">
+  <meta property="og:url" content="http://localhost:4000/2014/05/23/the-thailand-coup-and-some-recent-forecasting-work/">
+
+
+
+  <meta property="og:description" content="I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I’ve recently been part of:">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2014-05-23T03:41:12+03:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Andreas Beger",
+      "url" : "http://localhost:4000",
+      "sameAs" : ["https://twitter.com/andybeega","https://www.linkedin.com/in/andreas-beger-67728a36","https://plus.google.com/111153267456095139645","https://scholar.google.com/citations?user=0QX5DXoAAAAJ"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="cuymuwKhb4ZRPa4fX0BANEZvI3px-I4kRwScJhVEV1I" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="MI Regression Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- MathJax support (took out async) -->
+<script type="text/javascript" 
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="http://localhost:4000/">MI Regression</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blog archive</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/papers/">Projects & Papers</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/about/">About</a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="http://localhost:4000/images/mugshot2017.jpg" class="author__avatar" alt="Andreas Beger" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Andreas Beger</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Conflict forecasting, data science
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Tallinn, Estonia</span>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:adbeger+mireg@gmail.com">
+            <meta itemprop="email" content="adbeger+mireg@gmail.com" />
+            <i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/andybeega" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/andybega" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="The Thailand coup and some recent forecasting work">
+    <meta itemprop="description" content="I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I’ve recently been part of:">
+    <meta itemprop="datePublished" content="May 23, 2014">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">The Thailand coup and some recent forecasting work
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>I blogged earlier at Predictive Heuristics about the <a href="http://predictiveheuristics.com/2014/05/22/the-coup-in-thailand-and-progress-in-forecasting/">Thailand coup and some forecasting work</a> I’ve recently been part of:</p>
+
+<blockquote>
+  <p>This morning (East Coast time), the Thai military <a href="http://www.scmp.com/news/asia/article/1517775/thai-army-chief-general-prayuth-announces-military-coup-live-television">staged a coup</a> against the caretaker government that had been in power for the past several weeks, after months of protests and political turmoil directed at the government of Yingluck Shinawatra, who herself had been ordered to <a href="http://www.theguardian.com/world/2014/may/07/thai-court-orders-yingluck-shinawatra-resign">resign on 7 May</a> by the judiciary. This follows a military coup in 2006, and more than a dozen successful or attempted coups before then.</p>
+
+  <p><strong>We predicted this event last month</strong>, in a report commissioned by the CIA-funded Political Instability Task Force (which we can’t quite share yet). In the report, we forecast irregular regime changes, which include coups but also successful protest campaigns and armed rebellions, for 168 countries around the world for the 6-month period from April to September 2014. Thailand was number 4 on our list, shown below alongside our top 20 forecasts. It was number 10 on Jay Ulfelder’s <a href="http://dartthrowingchimp.wordpress.com/">2014 coup forecasts</a>. So much for our <a href="http://www.nytimes.com/2012/06/24/opinion/sunday/political-scientists-are-lousy-forecasters.html?pagewanted=all&amp;_r=0">inability to forecast</a> (very rare) political events, and the <a href="http://www.nytimes.com/2014/02/16/opinion/sunday/kristof-professors-we-need-you.html">irrelevance of what we do</a>.</p>
+</blockquote>
+
+<p>We will hopefully be able to publish this report in the near future, and I’ve also spent some time working on a R <a href="http://www.rstudio.com/shiny/">Shiny app</a> that creates graphics like the one shown for Thailand, to make it easier to interpret model predictions and performance.</p>
+
+<p>On a different note, I was excited when I read the news about Thailand this morning. Forecasting is difficult because it’s so easy to be wrong. Creating forecasts that are actually used in some fashion to support decision making adds the potential for real-world damage, and I think this is part of the reason that makes some people reluctant to engage in it. But at the same time it’s incredibly rewarding when the forecasts you make turn out to be correct.</p>
+
+<p>While that’s nice and great for me, it’s also a reminder that the events those who are interested in political violence are studying, like coups but also civil wars or repression, are simply bad things that negatively impact a lot of people. Ideally, being able to create better forecasts or advance understanding of what causes political conflict to take on violent or otherwise costly forms will in the long run reduce their frequency and impact.</p>
+
+<p>Here is the full post:</p>
+
+<hr />
+
+<figure>
+  
+<a href="http://localhost:4000/content/2014/thai_coup_announcement.jpg"><img src="http://localhost:4000/content/2014/thai_coup_announcement.jpg" alt="Thailand coup announcement" /></a>
+
+  <figcaption>
+Thailand’s Army chief General Prayuth announces the coup on television on 22 May 2014. Source: <a href="http://www.scmp.com/news/asia/article/1517775/thai-army-chief-general-prayuth-announces-military-coup-live-television">SCMP</a>
+</figcaption>
+</figure>
+
+<p>This morning (May 22nd, 2014, East Coast time), the Thai military <a href="http://www.scmp.com/news/asia/article/1517775/thai-army-chief-general-prayuth-announces-military-coup-live-television">staged a coup</a> against the caretaker government that had been in power for the past several weeks, after months of protests and political turmoil directed at the government of Yingluck Shinawatra, who herself had been ordered to <a href="http://www.theguardian.com/world/2014/may/07/thai-court-orders-yingluck-shinawatra-resign">resign on 7 May</a> by the judiciary. This follows a military coup in 2006, and more than a dozen successful or attempted coups before then.</p>
+
+<p><strong>We predicted this event last month</strong>, in a report commissioned by the CIA-funded Political Instability Task Force (which we can’t quite share yet). In the report, we forecast irregular regime changes, which include coups but also successful protest campaigns and armed rebellions, for 168 countries around the world for the 6-month period from April to September 2014. Thailand was number 4 on our list, shown below alongside our top 20 forecasts. It was number 10 on Jay Ulfelder’s <a href="http://dartthrowingchimp.wordpress.com/">2014 coup forecasts</a>. So much for our <a href="http://www.nytimes.com/2012/06/24/opinion/sunday/political-scientists-are-lousy-forecasters.html?pagewanted=all&amp;_r=0">inability to forecast</a> (very rare) political events, and the <a href="http://www.nytimes.com/2014/02/16/opinion/sunday/kristof-professors-we-need-you.html">irrelevance of what we do</a>.</p>
+
+<figure>
+  
+<a href="http://localhost:4000/content/2014/irc-mid-2014-forecast-table.png"><img src="http://localhost:4000/content/2014/irc-mid-2014-forecast-table.png" alt="Forecast table" /></a>
+
+  <figcaption>
+Forecasts for Irregular Regime Change between April and September 2014, using data and models through March 2014.)
+</figcaption>
+</figure>
+
+<p>One of the things we argue in the report is that rather than looking at coups, successful protest movements, and armed rebellions as separate phenomena because the mechanism by which they effect regime changes is different, we should look at the common outcome they lead to, which we call irregular regime changes. This concept builds on the <a href="http://www.rochester.edu/college/faculty/hgoemans/data.htm">Archigos dataset on political leaders</a>, which codes how leaders enter and leave office, and considers this transition process to be <em>irregular</em> in cases where it contravenes the established rules and conventions of a state. <strong><em>Irregular regime changes</em></strong> by our definition thus occur when a leader enters or leaves power through irregular means, whether this is brought about by a coup, mass protests, armed rebellion, or any other mechanism.</p>
+
+<p>The usefulness of this concept comes out clearly in the events that have occurred in Thailand over the past few months. What happened today was without question a military coup. But if we look at the larger context, the previous Prime Minister,  Yingluck Shinawatra, was forced to resign office after a ruling from the Constitutional Court on May 7th, and both this ouster and the subsequent military coup occurred after six months of escalating pro- and anti-government protests. We’ve blogged before about <a href="http://predictiveheuristics.com/2013/10/19/games-on-networks-with-application-to-thai-politics/">anti-government networks in Thailand</a> and the role these play in protests, summarizing work in a <a href="http://onlinelibrary.wiley.com/doi/10.1111/ajps.12039/abstract">recent AJPS article</a>. It seems that in the current round of protests, the actions of protesters and the government were in fact shaped by beliefs about the threat of a military coup. As far back as December, protest leaders <a href="http://www.straitstimes.com/breaking-news/se-asia/story/thai-military-chief-rebuffs-protesters-intervention-plea-20131214">appealed to the military</a> to intervene and depose the civilian government, and it seems that the response by government police forces from the beginning of protests has been shaped, at least in part, by concerns about <a href="http://www.straitstimes.com/breaking-news/se-asia/story/bangkok-shutdown-police-lie-low-protesters-occupy-the-city-20140114">avoiding military intervention</a>.</p>
+
+<p>This raises the question of whether we should consider the events in Thailand to be a classical military coup or a successful protest campaign, or both. Even more so since this is not the first coup staged in the shadow of mass protests (e.g. <a href="http://www.theguardian.com/commentisfree/2013/jul/04/egypt-coup-military-morsi-democracy">Egypt 2013</a>), and considering that any successful protest campaign must have at least the acquiescence of the military. For the latter, look at the difference in outcomes for the protest campaigns in <a href="http://en.wikipedia.org/wiki/Egyptian_Revolution_of_2011">Egypt in 2011</a>, where the military was relatively constrained and neutral, and <a href="http://en.wikipedia.org/wiki/Bahraini_uprising_(2011%E2%80%93present)">Bahrain in the same year</a>, where the military and police have brutally suppressed dissent. Rather than attempt to separate these messy and intertwined mechanisms, we argue that it is helpful to focus on the common outcome of irregular regime change.</p>
+
+<p>Obviously by focusing on a broader outcome, we step into a world of multiple, different mechanisms that can lead to our outcome of interest. To that end, our forecasts actually come from an ensemble model that combines seven different split-population duration models, which distinctly model the risk that a country will experience and event at all, as well as the particular timing of an event given that a country is at risk. We call these seven sub-models <em>thematic</em> models, in the sense that each is meant to capture a difference facet of IRC, i.e. by focusing more on conditions amenable to coups or protest campaigns, or by focusing on a different functional process, like contagion of dissent from neighboring areas or economic instability. The predictions from these seven models are then combined into an ensemble model using…wait for it…Ensemble Bayesian Model Averaging (<a href="http://pan.oxfordjournals.org/content/20/3/271">EBMA, gated article</a>), which weights the input model predictions by factors related to their overall accuracy but also their uniqueness.</p>
+
+<figure>
+  
+<a href="http://localhost:4000/content/2014/thailand_blog.png"><img src="http://localhost:4000/content/2014/thailand_blog.png" alt="Forecast table" /></a>
+
+  <figcaption>
+Thailand forecasts over time” caption=”"Chatter" model predictions for Thailand.
+</figcaption>
+</figure>
+
+<p>All of this makes makes for a complicated research design. To help with the interpretation of models, we included a graphic that shows how the conditional risk probability, which estimates the chances that a country will experience an event at all, and the conditional hazard rate, which estimates the probability of an event at a given time, given the chances that the country is in the risk set. The particular example shows the conditional hazard and risk for the “Chatter” thematic model, which is based on cell phone and broadband access rates alongside with indicators of the <em>reported</em> (<a href="http://jcr.sagepub.com/content/early/2014/04/28/0022002714530431.full.pdf+html">lately</a>, but also <a href="http://www.unc.edu/~fbaum/teaching/PLSC_SOC_497_SP_2008/Woolley_AJPS_2000.pdf">earlier</a>) level of verbal intra-government cooperation and verbal dissident-government conflict (from the ICEWS event data). Coincidentally our example was for Thailand.</p>
+
+<p>The figure shows that Thailand is estimated to be in the risk set over our entire coverage period, although for other cases risk estimates are usually less extreme and vary somewhat over time. But if we look at the conditional hazard, which is informed by predictors like the count of reported verbal intra-government cooperation that vary quite a bit over time, we can see that the probabilities fluctuate quite a bit month to month. We’ve marked the IRC that occurred in 2006, three months after a spike in hazard prediction. The last data point is for March 2014, and we can see an increase in the model predictions around that time.</p>
+
+<p>In any case, the political unrest in Thailand, and the accompanying economic consequences, as well as similar issues in places like the Ukraine, which will have a presidential election next week, are without a question undesirable. But it is mildly reassuring that we seem to be getting better at predicting and anticipating them.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/tags/#forecasting" class="page__taxonomy-item" rel="tag">forecasting</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#irregular-leadership-change" class="page__taxonomy-item" rel="tag">irregular leadership change</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#thailand" class="page__taxonomy-item" rel="tag">Thailand</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-05-23T03:41:12+03:00">May 23, 2014</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=The+Thailand+coup+and+some+recent+forecasting+work%20http%3A%2F%2Flocalhost%3A4000%2F2014%2F05%2F23%2Fthe-thailand-coup-and-some-recent-forecasting-work%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2014%2F05%2F23%2Fthe-thailand-coup-and-some-recent-forecasting-work%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2F2014%2F05%2F23%2Fthe-thailand-coup-and-some-recent-forecasting-work%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2014%2F05%2F23%2Fthe-thailand-coup-and-some-recent-forecasting-work%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/2014/03/29/associating-points-with-polygons-in-r/" class="pagination--pager" title="Associating points with polygons in R
+">Previous</a>
+    
+    
+      <a href="http://localhost:4000/2014/08/08/modeling-and-predicting-ieds/" class="pagination--pager" title="Modeling and predicting IEDs
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div>
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/andybega"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Andreas Beger. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36796505-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+  
+      
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/2014/05/23/the-thailand-coup-and-some-recent-forecasting-work/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/2014/05/23/the-thailand-coup-and-some-recent-forecasting-work"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mireg.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+
+  </body>
+</html>
