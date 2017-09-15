@@ -10,14 +10,18 @@ tags: []
 
 ## Articles, technical reports
 
-1. [Irregular Leadership Changes in 2014: Forecasts using ensemble, split-population duration models](http://www.sciencedirect.com/science/article/pii/S0169207015000485), 
+1. [Lessons from near real-time forecasting of irregular leadership changes](http://journals.sagepub.com/doi/full/10.1177/0022343316680858)
+<br> 2017, *Journal of Peace Research*
+([appendix]({{ site.url }}/content/papers/Ward_Beger_2017_ForecastingLessons_JPR_Appendix.pdf), [replication](https://github.com/andybega/jpr-forecasting-lessons))
+
+2. [Irregular Leadership Changes in 2014: Forecasts using ensemble, split-population duration models](http://www.sciencedirect.com/science/article/pii/S0169207015000485), 
 <br> 2016, *International Journal of Forecasting* 
 ([pdf]({{ site.url }}/content/papers/ijf-ilc2014.pdf), [replication](https://github.com/andybega/ijf-ilc2014))
 
-2. [Ensemble Forecasting of Irregular Leadership Changes](http://rap.sagepub.com/content/1/3/2053168014557511),
+3. [Ensemble Forecasting of Irregular Leadership Changes](http://rap.sagepub.com/content/1/3/2053168014557511),
 <br> 2014, *Research &amp; Politics* ([pdf]({{ site.url }}/content/papers/rap-ensembe-forecasting.pdf), [replication](https://github.com/andybega/rap-ensemble-forecasting))
 
-3. [Irregular Leadership Changes in 2014: Forecasts using ensemble, split-population duration models](http://arxiv.org/abs/1409.7105),
+4. [Irregular Leadership Changes in 2014: Forecasts using ensemble, split-population duration models](http://arxiv.org/abs/1409.7105),
 <br> 2014, *arXiv* ([pdf](http://arxiv.org/pdf/1409.7105v1.pdf))
 <br> This is a 59 page technical report written for the Political Instability Task Force.
 
