@@ -62,7 +62,7 @@ Moving to Jekyll/GitHub Pages and Google Analytics for statistics breaks continu
 | 2015 | 5 |
 | 2016 | 2 |
 
-I started blogging at a crawling pace back in 2011, and I've stayed at a crawling pace since then, with a new post every 2 months or so at best. A lot of the early posts were dumping older data and notes from my graduate school days, like the [Stata do files for converting country names to codes]({ post.url 2013-09-05-stata-do-files-for-country-code-conversions }). This was also when I started learning R, and later, in 2013, SQL, so there were some posts related to R and mapping. Although the posts have become rarer in the past two years, they have been more substantial and self-contained.  
+I started blogging at a crawling pace back in 2011, and I've stayed at a crawling pace since then, with a new post every 2 months or so at best. A lot of the early posts were dumping older data and notes from my graduate school days, like the [Stata do files for converting country names to codes]({{ site.baseurl}}{% post_url 2013-09-05-stata-do-files-for-country-code-conversions %}). This was also when I started learning R, and later, in 2013, SQL, so there were some posts related to R and mapping. Although the posts have become rarer in the past two years, they have been more substantial and self-contained.  
 
 [![Visits per year]({{ site.url }}/content/2016/visits-per-year.png){: .align-center width="500px"}]({{ site.url }}/content/2016/visits-per-year.png)
 
