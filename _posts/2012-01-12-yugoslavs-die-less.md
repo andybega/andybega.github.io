@@ -33,4 +33,4 @@ Now consider that the area of each circle is proportional to the number of death
 
 One should be careful to infer anything about causes here, especially since the census was conducted a few months before war broke out. It may be that in places where there was a lot of tension, people choose to respond to the census as non-Yugoslavs. Still, it's a pretty interesting pattern and shows that although ethnic diversity can be associated with high violence, it doesn't necessarily have to.
 
-I've been looking into this stuff as part of my dissertation, and it's part of a paper you can find [here]({{ site.ur }}/publications).
+I've been looking into this stuff as part of my dissertation, and it's part of a paper you can find [here]({{ site.ur }}/papers).

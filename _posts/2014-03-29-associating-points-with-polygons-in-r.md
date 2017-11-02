@@ -9,7 +9,7 @@ tags:
 - sp
 ---
 
-Some time ago I posted on how to [find geographic coordinates given a list of village or city names in R](2013-08-06-finding-coordinates-for-cities-etc-with-r/). Somebody emailed me about how to do the reverse: the person had a list of villages in France along with the population in 2010, and wanted to find which administrative unit each village was located in. The problem boils down to associating points, the village coordinates, with polygons, the administrative division which they are a part of.
+Some time ago I posted on how to [find geographic coordinates given a list of village or city names in R]({{ site.baseurl }}{% post_url 2013-08-06-finding-coordinates-for-cities-etc-with-r %}). Somebody emailed me about how to do the reverse: the person had a list of villages in France along with the population in 2010, and wanted to find which administrative unit each village was located in. The problem boils down to associating points, the village coordinates, with polygons, the administrative division which they are a part of.
 
 The village data look like this:
 
