@@ -11,6 +11,7 @@ tags:
 - good coups 
 - polity 
 excerpt: Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability
+og_image: /content/2015/2-year-transitions.png
 --- 
 
 *This post first appeared at [Predictive Heuristics](http://predictiveheuristics.com).*  
