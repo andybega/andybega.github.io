@@ -5,6 +5,8 @@ date: 2017-11-28 21:30:00
 category: research
 tags: [estonia, elections, local elections]
 excerpt: Going through results for the 2017 local elections in Estonia; how well did the local right-wing populists do; slight disproportionality in results that favors bigger parties
+header: 
+  teaser: /content/2017/map-ekre-seats.png
 og_image: /content/2017/map-ekre-seats.png
 ---
 
