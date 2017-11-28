@@ -6,8 +6,8 @@ category: research
 tags: [estonia, elections, local elections]
 excerpt: Going through results for the 2017 local elections in Estonia; how well did the local right-wing populists do; slight disproportionality in results that favors bigger parties
 header: 
-  teaser: /content/2017/map-ekre-seats.png
-og_image: /content/2017/map-ekre-seats.png
+  teaser: /content/2017/map-vote-share-all-parties.png
+og_image: /content/2017/map-vote-share-all-parties.png
 ---
 
 About a month ago, on October 15th, Estonia held local elections for 79 municipalities. Insofar as they take place around the midpoint between national elections--the next are in 2019--the local elections are somewhat of a bellwether, like the US mid-term elections are. Accordingly a lot of the coverage in Estonia has focused on national-level results for the five major parties. 
