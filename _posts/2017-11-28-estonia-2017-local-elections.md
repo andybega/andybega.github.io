@@ -14,6 +14,11 @@ About a month ago, on October 15th, Estonia held local elections for 79 municipa
 
 For anyone outside of Estonia, it is 2017 and the burning question of course is how well the local right-wing populists did. Especially since there may be the perception given the current state of affairs in countries like Hungary and Poland that Eastern Europe is not doing so well in this regard. This is what got me interested in the first place, although mostly for selfish reasons since I am a foreigner living in Estonia. 
 
+This post will dig into two questions:
+
+1. How did the major parties do at the municipal level?
+2. And specifically, how well did EKRE, the local populists, do?
+
 A disclaimer before I start: I don't think anything in here will be radically surprising to an Estonian reader. But I have lived here for three years now and have to admit that I knew very little about how elections work in Estonia before writing this post. 
 
 ## Background
