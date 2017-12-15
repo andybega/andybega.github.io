@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Map of the age of state leaders
+title: Mapping state leader age
 date: 2017-12-12 12:00
 category: research
 tags: [Archigos, REIGN, state leaders, thematic map]
