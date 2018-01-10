@@ -5,6 +5,8 @@ date: 2017-02-10 10:00:00
 category: research
 tags: [coups, 2017, forecasts]
 excerpt: Forecasts of the risk of a coup attempt for 161 countries in 2017.
+header: 
+  teaser: /content/2017/coup-fcast-map-2017-v2.png
 ---
 
 {% include toc title = "Contents" %}
@@ -163,4 +165,3 @@ Some area experts with a more in-depth knowledge of a region or particular count
 Another important point to keep in mind for those who don't find these quantitative forecasts appealing is to ask what the alternatives are. We know from research on decision making that many experts predict quite poorly once you hold them accountable for making and evaluating specific forecasts, and that even simple statistical models can outperform most forecasters. We have specific forecasts over a specific time period, and it will be relatively easy to see how well we did in about 11 months, when the year ends.  
 
 It is difficult to predict the accuracy of any forecast. There are many obstacles to doing so with the approach we have taken, from overfitting to accidental contamination of variables with future information to changes in test and live forecasting procedures to inappropriate use of a test set for guiding modeling decisions (2nd order overfitting), and others. At the end of the day, we will have to, and plan to, see how well these forecasts did. 
-

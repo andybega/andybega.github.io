@@ -5,6 +5,8 @@ slug: 3d-surface-plots
 date: 2016-03-03 12:00:00
 category: research
 tags: [plotly, 3d surface plot]
+header: 
+  teaser: /content/2016/gdp-raw.png
 ---
 
 A while ago I <a href="http://andybeger.com/2014/10/06/the-right-kind-of-variance/">wrote a post</a> about how the patterns by which data for cross-national datasets observed over multiple periods, e.g. with country-year or country-month observations, vary is important for modeling and prediction. Here is another way to visualize why this is the case using 3-d surface plots made with <a href="https://plot.ly">Plotly</a>.

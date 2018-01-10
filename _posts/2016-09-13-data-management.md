@@ -5,6 +5,8 @@ date: 2016-09-14 10:00:00
 category: research
 tags: [data, state system membership, plots, missing values]
 excerpt: A lot can go wrong between raw data and processed data used for analysis. Here is one post-mortem example and a plot that can help identify issues for country-year data. 
+header:
+  teaster: /content/2016/lngdpen-noodles.png
 ---
 
 One of my first assignments as a research assistant in graduate school was to create and work with a directed dyadic refugees and migration dataset. This was in about 2006. The data were big-ish, maybe a 100 MB in some incarnation, so my advisor gave me a CD and probably some sensible instructions on what I was supposed to do. Off I went to the grad computer lab, since I didn't own a laptop then. I had basically no experience with handling data, nor did I really know how to use Stata, which, bless Stata, will let you do lots of weird things without necessarily giving an indication that something is wrong.  So I would sit in the grad computer lab, hack away at the data, and periodically burn the results to a CD that I would share at the end of the day with my advisor. He invariably found one problem or another with the data. It was a painful, messy experience. 

@@ -4,6 +4,8 @@ title: Moving from Wordpress to Jekyll
 date: 2016-06-20 15:00:00
 category: meta
 tags: [wordpress, jekyll, traffic, Matt Dickenson, Michael Rosen]
+header:
+  teaser: /content/2016/visits-per-year.png
 ---
 
 I moved my home page and blog from Wordpress to Jekyll over the past week, thanks to a small break in regular work. I've been using Wordpress.com since 2011, when I started blogging. I don't remember what led me back then to choose Wordpress, but overall, I haven't been unhappy with it. It's easy to set up, and at some point it became possible to write posts in Markdown. Comments work out of the box. Some traffic stats are baked in. 

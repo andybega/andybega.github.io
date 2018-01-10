@@ -1,4 +1,36 @@
 ---
 layout: home
-author_profile: true
 ---
+
+<!--
+
+change layout: single for this to wokr
+
+<h3 class="archive__subtitle">Recent posts</h3>
+
+<div class="grid__wrapper">
+  {% for post in site.posts limit:8 %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
+
+Eventually maybe do a splash page where the recent posts are in the feature row.
+
+Here is splash page doc: https://mmistakes.github.io/minimal-mistakes/docs/layouts/
+
+And on github discussion on how to add recent posts as features:
+
+https://github.com/mmistakes/minimal-mistakes/issues/1251
+
+<div class="feature__wrapper">
+
+  {% for f in site.posts limit:3 %}
+     can stay the same as the current feature_row include
+  {% endfor %}
+
+</div>
+
+See what the dude asking the question did here:
+https://github.com/eroth/fresh-start/tree/master/_includes
+
+--> 
