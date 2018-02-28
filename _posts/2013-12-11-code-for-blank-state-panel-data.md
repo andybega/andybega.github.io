@@ -7,8 +7,10 @@ categories:
 tags:
 - country codes
 - R
+excerpt: Create panel data for independent states, using either the Gleditsch and Ward (G&W) or Correlates of War (COW) state lists. I use these as a template for standardizing and merging different IR data sources.
 ---
 
+*2018-02-28 update: check out the [states](https://cran.r-project.org/package=states) on CRAN. Create panel data for independent states, includes the G&W and COW state lists, and some helper functions. Like `sfind(700)` to quickly check what country 700 is. Here's the [package page](https://andybeger.com/states/).*
 
 **The short version:**
 
