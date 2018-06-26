@@ -8,3 +8,6 @@ _site
 .Rproj.user
 *.Rproj
 .Rhistory
+
+*.sublime-project
+*.sublime-workspace
