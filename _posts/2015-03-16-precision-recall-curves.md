@@ -311,3 +311,15 @@ that the model has perfect calibration and discrimination. But I am not sure
 what happens below that, which can make it challenging to decide what models
 to invest more time in.
 
+## Addendum 
+
+(*Added on 2018-09-08*)
+
+Based on [Standard Deviant](https://disqus.com/by/standard_deviant/)'s really helpful comment and the posts he links to below, here are some modeling-related recommendations:
+
+1. *Fit* or train models using a proper scoring rule, e.g. the likelihood for statistical models like logistic regression, or things like Brier score or log loss for other types of models. See [this post](http://www.fharrell.com/post/class-damage/) by Frank Harrell. I would also use these, along measures like AIC/BIC if applicable, to compare or select models fitted/trained on the *exact* same set of (outcome) cases. 
+
+2. Unless the outcome is (close to) inherently binary/categorical, like classifiying images of handwritten digits, [preferentially use probabilistic predictions rather than class labels like discrete 0/1 predictions](http://www.fharrell.com/post/classification/). 
+
+3. For *evaluating performance* of a fitted model's predictions, I have a strong preference for measures like AUC-ROC and AUC-PR that depend less on the prevalence of positive cases in the data or the treshold used to discretize probabilistic predictions into discrete 0/1 predictions. It is really hard to look at a Brier score or maximized log-likelihood value and get a sense of how accurate a model is. Measures like AUC-PR/ROC also make it easier to compare the performance of models that model similar but not identical outcomes, like coup measures from different data sources, or models of the same coup dataset, but where the actual set of cases for a model varies because of differences in temporal scope or what cases are dropped due to missing values, etc. 
+
