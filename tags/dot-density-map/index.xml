@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dot density map on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/dot-density-map/</link>
+    <description>Recent content in dot density map on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/dot-density-map/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dot density map of the 2016 election</title>
+      <link>https://www.andybeger.com/2018/05/11/dot-density-map-of-the-2016-election/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2018/05/11/dot-density-map-of-the-2016-election/</guid>
+      <description>(Last updated on 2018-06-22 with pointilist version and reference to stochastic rounding.)
+There was a little war of maps after the 2016 election. A thematic map of the election results with states colored red or blue based on where the plurality of votes went, like this one from Politico, visually overstates the Republican vote share. This is even more evident with a map at the county level (example from here), which shows a sea of red containing scattered islands of a blue archipelago.</description>
+    </item>
+    
+  </channel>
+</rss>

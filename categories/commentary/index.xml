@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>commentary on Andreas Beger</title>
+    <link>https://www.andybeger.com/categories/commentary/</link>
+    <description>Recent content in commentary on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Dec 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/categories/commentary/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Defense doublethink</title>
+      <link>https://www.andybeger.com/2013/12/24/defense-doublethink/</link>
+      <pubDate>Tue, 24 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/12/24/defense-doublethink/</guid>
+      <description>If you had to take a look at the chart below, what would you say about the overall trend in US defense spending? There&#39;s a bump fairly early on for World War 2, but otherwise it seems to generally increase over time. I&#39;m actually surprised to see that we spend more, in terms of constant US dollars, today than we did at the height of the Korean War, and in fact at any point in US history save World War 2.</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s in a SIGACT</title>
+      <link>https://www.andybeger.com/2013/06/05/whats-in-a-sigact/</link>
+      <pubDate>Wed, 05 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/06/05/whats-in-a-sigact/</guid>
+      <description>I&#39;ve been working with SIGACT data (military significant activities reports) all day as part of a research project. When you are dealing with thousands of them, it is easy to trivialize and forget the amount of human suffering encapsulated in each event (and those we don&#39;t hear about). Yesterday, in Afghanistan, 2nd Lieutenant Justin Sisson was among the dead in a suicide bombing that killed another NATO soldier and 9 children.</description>
+    </item>
+    
+    <item>
+      <title>The Iraq War, 2003 to 2011</title>
+      <link>https://www.andybeger.com/2011/10/22/the-iraq-war-2003-to-2011/</link>
+      <pubDate>Sat, 22 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2011/10/22/the-iraq-war-2003-to-2011/</guid>
+      <description>President Obama announced today that U.S. troops will leave Iraq by the end of 2011. What has the 9 year long war accomplished?
+Iraq is a democracy, sort of. Although it has a parliament, prime minister, elections and that sort of stuff, it is also pretty corrupt. There has not yet been a peaceful transition of power, a key feature of democracy, as prime minister al-Maliki was reelected to a second term in a troubled election in 2010.</description>
+    </item>
+    
+    <item>
+      <title>Report on COIN intelligence collection</title>
+      <link>https://www.andybeger.com/2011/08/12/report-on-coin-intelligence-collection/</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2011/08/12/report-on-coin-intelligence-collection/</guid>
+      <description>A few months ago the Defense Science Board Task Force on Defense Intelligence released a report on Counterinsurgency (COIN) Intelligence, Surveillance, and Reconnaissance (ISR) Operations (pdf). Among its recommandations is that:
+ the government generally should increase investment in social science disciplines (anthropology, ethnography, human geography, sociology, social-psychology, political science, and economics) to inform a whole-of-government approach to understanding local cultures and customs and to support future COIN campaigns.
+ and the report notes that:</description>
+    </item>
+    
+  </channel>
+</rss>

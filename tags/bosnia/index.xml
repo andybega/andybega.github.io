@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bosnia on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/bosnia/</link>
+    <description>Recent content in Bosnia on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Aug 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/bosnia/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scale and north arrow for maps in R</title>
+      <link>https://www.andybeger.com/2012/08/25/scale-and-north-arrow-for-maps-in-r/</link>
+      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2012/08/25/scale-and-north-arrow-for-maps-in-r/</guid>
+      <description>A few months ago I produced some thematic maps of Bosnia (paper) using maptools and other packages in R, but I didn&#39;t include scales or a north arrow. It sounds simple and sp has functions for doing those things, but I couldn&#39;t get it to work well with my maps. Here is a basic map of Bosnia&#39;s pre-war municipalities:
+library(maptools) plot(bosnia) 
+The function map.scale() from the maps package adds a scale.</description>
+    </item>
+    
+    <item>
+      <title>Yugoslavs die less</title>
+      <link>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</guid>
+      <description>In 1991 a census was conducted in Bosnia and Herzegovina, which then was still part of the disintegrating federal state of Yugoslavia. Bosnia was the most diverse republic in the former Yugoslavia, with significant populations of Bosnian Muslims (or Bosniaks, 43 percent), Serbs (31 percent), Croats (17 percent), and others. Bosniaks, Serbs, and Croats were more or less well-established identities with historical roots. Unlike in most multiethnic countries however, the census respondents also had the option to identify themselves as Yugoslavs, rather than a particular ethnic or national group.</description>
+    </item>
+    
+    <item>
+      <title>Bosnia 1991 municipalities</title>
+      <link>https://www.andybeger.com/2011/01/18/bosnia-1991-municipalities/</link>
+      <pubDate>Tue, 18 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2011/01/18/bosnia-1991-municipalities/</guid>
+      <description>{: .align-center}
+This dates back to work I did in 2008, but some people seem to find it useful:
+At the beginning of the Yugoslav civil wars, Bosnia and Herzegovina (BiH) consisted of 109 municipalities. Finding free geographic layers with those municipal boundaries was difficult so I recreated them from National Geophysical Data Center Coastline Extractor, using World Data Bank II. Municipality names and demographic information come from the 1991 Yugoslav census courtesy wikipedia.</description>
+    </item>
+    
+  </channel>
+</rss>

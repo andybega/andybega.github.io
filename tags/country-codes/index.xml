@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>country codes on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/country-codes/</link>
+    <description>Recent content in country codes on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Dec 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/country-codes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Code for blank state panel data</title>
+      <link>https://www.andybeger.com/2013/12/11/code-for-blank-state-panel-data/</link>
+      <pubDate>Wed, 11 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/12/11/code-for-blank-state-panel-data/</guid>
+      <description>2018-02-28 update: check out the states package on CRAN. Create panel data for independent states, includes the G&amp;amp;W and COW state lists, and some helper functions. Like sfind(700) to quickly check what country 700 is. Here&#39;s the package page.
+ The short version:
+Here is some R code to create arbitrary country-year or country-month data sets reflecting the Gleditsch and Ward or COW state system membership lists, using the cshapes R package.</description>
+    </item>
+    
+    <item>
+      <title>Stata do files for country code conversions</title>
+      <link>https://www.andybeger.com/2013/09/05/stata-do-files-for-country-code-conversions/</link>
+      <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/09/05/stata-do-files-for-country-code-conversions/</guid>
+      <description>Blast from the past, in which I used Stata for things: here are some do files that will convert ISO or string country names/codes to COW country codes.
+Country names to COW [.do] Do-file that creates COW country codes for a dataset that only has country names in it. The file does not take the current year of an observation into account, and does not adjust for state membership (e.g. there was no unified Germany between 1946 and 1989).</description>
+    </item>
+    
+  </channel>
+</rss>

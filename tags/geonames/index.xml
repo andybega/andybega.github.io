@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>geonames on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/geonames/</link>
+    <description>Recent content in geonames on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/geonames/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finding coordinates for cities, etc. with R</title>
+      <link>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</guid>
+      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&#39;ve come across it a few times.
+The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&#39;s pretty easy to figure out the coordinates for a city or village name.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/data/</link>
+    <description>Recent content in data on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Support for the creation of an EU Army</title>
+      <link>https://www.andybeger.com/2016/11/22/support-for-the-creation-of-an-eu-army/</link>
+      <pubDate>Tue, 22 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2016/11/22/support-for-the-creation-of-an-eu-army/</guid>
+      <description>In the wake of the Trump victory surprise, and the potential implications for NATO, I stumbled upon a Eurobarometer question that asks people how they feel about the prospect of an EU Army:
+ Thinking about the future of the EU, please tell me whether you are in favour or opposed to the following statement: the creation of an EU army.
+ Turns out the Eurobarometer has been asking that question for quite some time, which was the first surprising thing.</description>
+    </item>
+    
+    <item>
+      <title>Data management and missing data</title>
+      <link>https://www.andybeger.com/2016/09/14/data-management-and-missing-data/</link>
+      <pubDate>Wed, 14 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2016/09/14/data-management-and-missing-data/</guid>
+      <description>One of my first assignments as a research assistant in graduate school was to create and work with a directed dyadic refugees and migration dataset. This was in about 2006. The data were big-ish, maybe a 100 MB in some incarnation, so my advisor gave me a CD and probably some sensible instructions on what I was supposed to do. Off I went to the grad computer lab, since I didn&#39;t own a laptop then.</description>
+    </item>
+    
+    <item>
+      <title>Which governments torture?</title>
+      <link>https://www.andybeger.com/2012/01/20/which-governments-torture/</link>
+      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2012/01/20/which-governments-torture/</guid>
+      <description>Almost all states, at least at some point between 1995 and 2005.
+The Ill-Treatment and Torture (ITT) project by Courtenay Conrad and Will Moore codes Amnesty International (AI) allegations of government torture, including the perpetrator, motive, and judicial response. The aggregated, country-year version of their data shows whether AI made allegations against a country in a given year and if so, what the extent of alleged torture or ill-treatment was, on a 5-point scale from &#34;</description>
+    </item>
+    
+    <item>
+      <title>Bosnia 1991 municipalities</title>
+      <link>https://www.andybeger.com/2011/01/18/bosnia-1991-municipalities/</link>
+      <pubDate>Tue, 18 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2011/01/18/bosnia-1991-municipalities/</guid>
+      <description>{: .align-center}
+This dates back to work I did in 2008, but some people seem to find it useful:
+At the beginning of the Yugoslav civil wars, Bosnia and Herzegovina (BiH) consisted of 109 municipalities. Finding free geographic layers with those municipal boundaries was difficult so I recreated them from National Geophysical Data Center Coastline Extractor, using World Data Bank II. Municipality names and demographic information come from the 1991 Yugoslav census courtesy wikipedia.</description>
+    </item>
+    
+  </channel>
+</rss>

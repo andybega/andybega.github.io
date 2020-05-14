@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.61.0" />
+
+
+<title>Building a survivor curve from observed data - Andreas Beger</title>
+<meta property="og:title" content="Building a survivor curve from observed data - Andreas Beger">
+
+
+  <link href='https://www.andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/post/">MIR Blog</a></li>
+    
+    <li><a href="/projects">Projects</a></li>
+    
+    <li><a href="/research">Research</a></li>
+    
+    <li><a href="/software">Software</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/contact/">Contact</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">6 min read</span>
+    
+
+    <h1 class="article-title">Building a survivor curve from observed data</h1>
+
+    
+    <span class="article-date">2012-12-22</span>
+    
+
+    <div class="article-content">
+      <p>A few weeks ago <a href="http://www.mdwardlab.com" title="Ward Lab">we</a> were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned <a href="https://files.nyu.edu/mrg217/public/homepage.htm">about this</a> it involved a lot of math and Stata, and when you look around the web it's usually presented similarly. So this was a bit of a challenge.</p>
+<p>A nice thing about duration analysis though is that a lot of the key concepts are already explicitly graphical, like <a href="http://en.wikipedia.org/wiki/Survival_function">survival curves</a> (wikipedia) and hazard rates. Below, for example, is a survival curve for cancer patients diagnosed with acute lymphoblastic leukemia between 1988 and 2008 in the US, from <a href="http://seer.cancer.gov/faststats/index.php">SEER fast stats</a>:</p>
+<p><a href="/img/2012/all_surv.png"><img src="/img/2012/all_surv.png" alt="Survival curve for ALL, 1988-2008"></a></p>
+<p>Starting from the moment at which a patient is diagnosed with cancer (year 0), it shows the proportion of patients who survive without relapse or death any given number of years from diagnosis. Two years from diagnosis, 50 percents of patients are still event free. Five years from diagnosis about 35 percent are event free (what you might call cured), etc. Alternatively, one could interpret it as the probability that a given ALL patient will be alive 2 or 5 years from diagnosis, with probabilities of 0.5 and 0.35 respectively.</p>
+<p>So far so good, except that in practice one has to estimate survival functions on the basis of limited empirical data, e.g. using a <a href="http://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator">Kaplan-Meier estimate</a> (wikipedia). The resulting estimated survivor curves are not smooth like the curve above, but ragged. Using another example of lightbulbs, with data for the number of days until five bulbs burned out, one might get something like this:</p>
+<p><a href="/img/2012/first5_s.png"><img src="/img/2012/first5_s.png" alt="First 5 failures"></a></p>
+<p>The black line shows the survivor curve estimate, based on data for the five lightbulbs. I added the grey bars to represent the number of days each of the five bulbs lasted to show how the survivor estimate is built up from individual failures. E.g. the top bar is the first bulb, which lasted for ~80 days. Thus on day 25 all 5 bulbs are still burning and our survivor curve is at 1.0. Around day 80, after the first bulb has failed, 4 of 5 or 0.8 of the original bulbs are still &ldquo;alive&rdquo;, bringing the curve down to 0.8. And so on for each additional failure.</p>
+<p>Taking a cue from Bayesian Biologist's <a href="http://bayesianbiologist.com/2012/08/17/an-update-on-visualizing-bayesian-updating/">video of Bayesian updating</a>, and Drew Conway's <a href="http://www.drewconway.com/zia/?p=2741">video of Chicago crime</a> , I thought it would be nice to create a video that shows how an empirical survivor curve like this is built up from observed failure data, and how it changes as you add more data.</p>
+<p>First, a simple backstory: Imagine you move into a new apartment, and having an obsession with measurement, you start keeping track of how long the lightbulbs in your five light fixtures last (it's a small apartment). In the video below, the top half shows the five fixtures, where each bar represents a lightbulb and the number of days it is in operation now. On day 0 all 5 fixtures have new bulbs, i.e. there are no failures yet. Thus the survivor curve estimate, shown at the bottom, is not very useful (we disregard bulbs that haven't burned out yet, i.e. no censoring).</p>
+<iframe src="https://player.vimeo.com/video/56935195" width="640" height="640" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/56935195">Building up a Kaplan-Meier survivor estimate</a> from <a href="https://vimeo.com/user10078439">Andreas Beger</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Time goes by and after 80 days bulbs are starting to burn out. With data on failures we can now start updating our survivor curve to reflect those failures. The first updates still leave us with a very rough survivor curve estimate, but as more bulbs fail the curve starts getting a nicer shape. Note also that the mean time to failure (MTTF) in the bottom left corner starts getting closer to it's theoretical value. The video ends after a year's worth of simulation, but the longer we let it run the smoother the KM estimate would get. Eventually the KM estimate should converge to the theoretical survivor curve shown in red at the end of the video.</p>
+<p>I created the video using R, with the code below. You'll need <a href="http://ffmpeg.org">ffmpeg</a> to combine the individual frames into a video at the end.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(ggplot2)  
+library(gridExtra)
+
+<span style="color:#008000">## functions for simulated dgp  </span>
+createSurvivalFrame &lt;- function(f.survfit) {  
+    <span style="color:#008000">## Create data frame to pass to ggplot2 using survfit result  </span>
+    if (class(f.survfit)!=<span style="color:#a31515">&#39;</span><span style="color:#a31515">survfit&#39;</span>) stop(<span style="color:#a31515">&#39;</span><span style="color:#a31515">Need &amp;amp;quot;survfit&amp;amp;quot; class object.&#39;</span>)  
+    f.surv &lt;- data.frame(time=f.survfit$time, surv=f.survfit$surv)  
+    f.start &lt;- data.frame(time=c(0, f.surv$time[1]), surv=c(1, 1))  
+    <span style="color:#008000"># add row at end (0 to end of time)  </span>
+    f.end &lt;- data.frame(time=125, surv=0)  
+    f.surv &lt;- rbind(f.start, f.surv, f.end)
+
+    return(f.surv)  
+}
+
+qplot_survival &lt;- function(f.surv) {  
+    require(ggplot2)  
+    p - ggplot(data=f.surv) + geom_step(aes(x=time, y=surv), direction=<span style="color:#a31515">&#39;</span><span style="color:#a31515">hv&#39;</span>, lwd=1.5)  
+    p &lt;- p + theme_bw() + ylim(c(0, 1)) +  
+    scale_x_continuous(breaks=c(0, 25, 50, 75, 100, 125), limits=c(0,125)) +  
+    labs(y=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Survivors&#39;</span>, x=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Day&#39;</span>)  
+    return(p)  
+}
+
+<span style="color:#008000">## function to simulate lightbulbs  </span>
+lights_sim &lt;- function(max.days=100) {  
+    require(survival)  
+    require(ggplot2)  
+    require(gridExtra)
+
+    <span style="color:#008000"># Initalize  </span>
+    obs.bulbs &lt;- <span style="color:#00f">NULL</span>  
+    fixtures &lt;- data.frame(no=1:5, bulb=<span style="color:#00f">NA</span>, bulb.life=<span style="color:#00f">NA</span>, bulb.spell=0, event=F)  
+    bulb &lt;- 0  
+    true.mttf &lt;- round(gamma(1+1/10)*100)  
+    mttf &lt;- <span style="color:#a31515">&#39;</span><span style="color:#a31515">NA&#39;</span>
+
+    <span style="color:#008000"># Initial survival plot  </span>
+    f.surv &lt;- data.frame(time=c(0, 125), surv=c(1, 1))  
+    p &lt;- qplot_survival(f.surv) +  
+    annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, x=0, y=0.2, hjust=0,  
+    label=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Estimated MTTF:&#39;</span>, size=4) +  
+    annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, x=35, y=0.2, hjust=0,  
+    label=mttf, size=4) +  
+    annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, x=0, y=0.1, hjust=0,  
+    label=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Theoretical MTTF:&#39;</span>, size=4) +  
+    annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, x=35, y=0.1, hjust=0,  
+    label=true.mttf, size=4)
+
+    <span style="color:#008000"># Simulate through max.days  </span>
+    for (day in 1:max.days) {  
+        <span style="color:#008000"># Update spell counters, reset events  </span>
+        fixtures$bulb.spell &lt;- fixtures$bulb.spell + 1  
+        <span style="color:#008000"># Place bulbs in empty fixtures  </span>
+        while (any(is.na(fixtures$bulb))) {  
+            bulb &lt;- bulb + 1  
+            fixtures[match(<span style="color:#00f">NA</span>, fixtures$bulb), c(<span style="color:#a31515">&#39;</span><span style="color:#a31515">bulb&#39;</span>, <span style="color:#a31515">&#39;</span><span style="color:#a31515">bulb.life&#39;</span>)] &lt;- c(bulb, round(rweibull(1, shape=10, scale=100)))  
+        }  
+        <span style="color:#008000"># Check for bulbs to burn out now  </span>
+        fixtures$event &lt;- with(fixtures, ifelse(bulb.life==bulb.spell, T, F))  
+        if (any(fixtures$event)) {  
+            obs.bulbs &lt;- rbind(obs.bulbs, fixtures[fixtures$event==T, c(<span style="color:#a31515">&#39;</span><span style="color:#a31515">bulb&#39;</span>, <span style="color:#a31515">&#39;</span><span style="color:#a31515">bulb.life&#39;</span>, <span style="color:#a31515">&#39;</span><span style="color:#a31515">event&#39;</span>)])  
+            fixtures[fixtures$event==T, c(<span style="color:#a31515">&#39;</span><span style="color:#a31515">bulb&#39;</span>, <span style="color:#a31515">&#39;</span><span style="color:#a31515">bulb.life&#39;</span>, <span style="color:#a31515">&#39;</span><span style="color:#a31515">bulb.spell&#39;</span>, <span style="color:#a31515">&#39;</span><span style="color:#a31515">event&#39;</span>)] &lt;-  matrix(rep(c(<span style="color:#00f">NA</span>, <span style="color:#00f">NA</span>, 0, F), sum(fixtures$event)), ncol=4, byrow=T)  
+            <span style="color:#008000"># Mean time to failure estimate  </span>
+            mttf &lt;- round(mean(obs.bulbs$bulb.life), digits=1)  
+            <span style="color:#008000"># Kaplan-Meier surv curve  </span>
+            surv.data &lt;- with(obs.bulbs, Surv(bulb.life, event))  
+            f.surv &lt;- createSurvivalFrame(survfit(surv.data ~ 1, surv.data))  
+            p &lt;- qplot_survival(f.surv) +  
+            annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, x=0, y=0.2, hjust=0,  
+            label=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Estimated MTTF:&#39;</span>, size=4) +  
+            annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, x=35, y=0.2, hjust=0,  
+            label=mttf, size=4) +  
+            annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, x=0, y=0.1, hjust=0,  
+            label=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Theoretical MTTF:&#39;</span>, size=4) +  
+            annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, x=35, y=0.1, hjust=0,  
+            label=true.mttf, size=4)
+
+        }
+
+        <span style="color:#008000"># fixture plot for each day  </span>
+        p.fix &lt;- ggplot(data=fixtures) +  
+        geom_bar(aes(x=factor(no), y=bulb.spell), fill=rgb(0,0,0.61), width=0.3) +  
+        scale_y_continuous(limits=c(0, 125), name=<span style="color:#a31515">&#39;</span><span style="color:#a31515">&#39;</span>, breaks=c(0, 25, 50, 75, 100, 125)) +  
+        scale_x_discrete(name=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Lamp&#39;</span>) + coord_flip() + theme_bw() + theme(axis.title.y=element_text(vjust=0.1)) +  
+        theme(plot.margin=unit(c(1,1,0.1,1.45), <span style="color:#a31515">&#39;</span><span style="color:#a31515">lines&#39;</span>)) + ggtitle(paste0(<span style="color:#a31515">&#39;</span><span style="color:#a31515">Day: &#39;</span>, day))
+
+        <span style="color:#008000"># Plot frames for each day  </span>
+        png(paste0(<span style="color:#a31515">&#39;</span><span style="color:#a31515">graphics/frames/&#39;</span>, sprintf(<span style="color:#a31515">&#39;</span><span style="color:#a31515">%03d&#39;</span>, day), <span style="color:#a31515">&#39;</span><span style="color:#a31515">.png&#39;</span>))  
+        grid.arrange(p.fix, p)  
+        dev.off()
+
+        <span style="color:#008000"># Progress bar  </span>
+        pb &lt;- txtProgressBar(min=0, max=max.days, style=3, width=50)  
+        setTxtProgressBar(pb, day)  
+    }
+
+    <span style="color:#008000">## Add last frame with true survivor curve  </span>
+    <span style="color:#008000"># unobserved data-generating process  </span>
+    dgp &lt;- data.frame(t=1:125, f=dweibull(1:125, shape=10, scale=100))  
+    dgp$F &lt;- cumsum(dgp$f)  
+    dgp$S &lt;- 1 - dgp$F
+
+    true &lt;- p + geom_line(data=dgp, aes(x=t, y=S), col=<span style="color:#a31515">&#39;</span><span style="color:#a31515">red&#39;</span>, lwd=1, linetype=<span style="color:#a31515">&#39;</span><span style="color:#a31515">dashed&#39;</span>) +  
+    annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, label=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Empirical&#39;</span>, x=70, y=0.65) +  
+    annotate(<span style="color:#a31515">&#39;</span><span style="color:#a31515">text&#39;</span>, label=<span style="color:#a31515">&#39;</span><span style="color:#a31515">Theoretical&#39;</span>, x=105, y=0.72)
+
+    png(paste0(<span style="color:#a31515">&#39;</span><span style="color:#a31515">graphics/frames/&#39;</span>, sprintf(<span style="color:#a31515">&#39;</span><span style="color:#a31515">%03d&#39;</span>, max.days+1), <span style="color:#a31515">&#39;</span><span style="color:#a31515">.png&#39;</span>))  
+    grid.arrange(p.fix, true)  
+    dev.off()
+
+    <span style="color:#008000"># done, return failures  </span>
+    return(list(obs = obs.bulbs, current = fixtures, dgp = dgp))  
+}
+
+<span style="color:#008000">### End of functions ###</span>
+
+<span style="color:#008000">## Simulate  </span>
+set.seed(1152359)  
+sims &lt;- lights_sim(365)
+
+system(<span style="color:#a31515">&#39;</span><span style="color:#a31515">ffmpeg -f image2 -r 10 -i ~/path/to/frames/%03d.png ~/path/to/video/lightbulbs.mp4&#39;</span>)
+
+</code></pre></div>
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//mireg.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-36796505-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+

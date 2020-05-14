@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iraq on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/iraq/</link>
+    <description>Recent content in Iraq on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Oct 2012 22:07:55 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/iraq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Random walk negative binomial model for persistent count series.</title>
+      <link>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</link>
+      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
+      
+      <guid>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</guid>
+      <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&#39;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
+    </item>
+    
+    <item>
+      <title>The Iraq War, 2003 to 2011</title>
+      <link>https://www.andybeger.com/2011/10/22/the-iraq-war-2003-to-2011/</link>
+      <pubDate>Sat, 22 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2011/10/22/the-iraq-war-2003-to-2011/</guid>
+      <description>President Obama announced today that U.S. troops will leave Iraq by the end of 2011. What has the 9 year long war accomplished?
+Iraq is a democracy, sort of. Although it has a parliament, prime minister, elections and that sort of stuff, it is also pretty corrupt. There has not yet been a peaceful transition of power, a key feature of democracy, as prime minister al-Maliki was reelected to a second term in a troubled election in 2010.</description>
+    </item>
+    
+    <item>
+      <title>Report on COIN intelligence collection</title>
+      <link>https://www.andybeger.com/2011/08/12/report-on-coin-intelligence-collection/</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2011/08/12/report-on-coin-intelligence-collection/</guid>
+      <description>A few months ago the Defense Science Board Task Force on Defense Intelligence released a report on Counterinsurgency (COIN) Intelligence, Surveillance, and Reconnaissance (ISR) Operations (pdf). Among its recommandations is that:
+ the government generally should increase investment in social science disciplines (anthropology, ethnography, human geography, sociology, social-psychology, political science, and economics) to inform a whole-of-government approach to understanding local cultures and customs and to support future COIN campaigns.
+ and the report notes that:</description>
+    </item>
+    
+    <item>
+      <title>Iraq counter-IED</title>
+      <link>https://www.andybeger.com/2011/02/08/iraq-counter-ied/</link>
+      <pubDate>Tue, 08 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2011/02/08/iraq-counter-ied/</guid>
+      <description>A long time ago, in a place far away, I wrote this (pdf). Random thoughts on counter-IED in northern Iraq, and gripes about living there.
+Not knowing, I was on my way to death from cancer at the time. Maybe that&#39;s why I wasn&#39;t positive.
+In retrospect I have to also admit even more how much more difficult the combat arms soldiers and officers have it. My life was plush in comparison.</description>
+    </item>
+    
+  </channel>
+</rss>

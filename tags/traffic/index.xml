@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>traffic on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/traffic/</link>
+    <description>Recent content in traffic on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jun 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/traffic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moving from Wordpress to Jekyll</title>
+      <link>https://www.andybeger.com/2016/06/20/moving-from-wordpress-to-jekyll/</link>
+      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2016/06/20/moving-from-wordpress-to-jekyll/</guid>
+      <description>I moved my home page and blog from Wordpress to Jekyll over the past week, thanks to a small break in regular work. I&#39;ve been using Wordpress.com since 2011, when I started blogging. I don&#39;t remember what led me back then to choose Wordpress, but overall, I haven&#39;t been unhappy with it. It&#39;s easy to set up, and at some point it became possible to write posts in Markdown. Comments work out of the box.</description>
+    </item>
+    
+  </channel>
+</rss>

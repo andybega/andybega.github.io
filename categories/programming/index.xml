@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Andreas Beger</title>
+    <link>https://www.andybeger.com/categories/programming/</link>
+    <description>Recent content in programming on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Oct 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building rgdal from source</title>
+      <link>https://www.andybeger.com/2014/10/15/building-rgdal-from-source/</link>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2014/10/15/building-rgdal-from-source/</guid>
+      <description>&lt;p&gt;My limited knowledge of what happens in Terminal, and thus by extension shell, is mostly driven by PostgreSQL/PostGID/rgdal/RPostgreSQL install errors. In the latest variant of this, &lt;code&gt;rgdal&lt;/code&gt; throws the following error when attempting to build from source:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Baby steps with R Shiny</title>
+      <link>https://www.andybeger.com/2014/09/19/baby-steps-with-r-shiny/</link>
+      <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2014/09/19/baby-steps-with-r-shiny/</guid>
+      <description>Shiny is a web application framework that lets you create interactive websites representing R data visualization and analysis. The gallery has some nice examples, and it looks like a great way to make R more accessible without having to know things like JavaScript or d3. I&#39;ve been in trying my hand at it and it seems like a great way to visualize the models underlying the forecasts I work on in Ward Lab as well as the event data on which they are in part based.</description>
+    </item>
+    
+    <item>
+      <title>Associating points with polygons in R</title>
+      <link>https://www.andybeger.com/2014/03/29/associating-points-with-polygons-in-r/</link>
+      <pubDate>Sat, 29 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2014/03/29/associating-points-with-polygons-in-r/</guid>
+      <description>Some time ago I posted on how to find geographic coordinates given a list of village or city names in R. Somebody emailed me about how to do the reverse: the person had a list of villages in France along with the population in 2010, and wanted to find which administrative unit each village was located in. The problem boils down to associating points, the village coordinates, with polygons, the administrative division which they are a part of.</description>
+    </item>
+    
+    <item>
+      <title>Code for blank state panel data</title>
+      <link>https://www.andybeger.com/2013/12/11/code-for-blank-state-panel-data/</link>
+      <pubDate>Wed, 11 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/12/11/code-for-blank-state-panel-data/</guid>
+      <description>2018-02-28 update: check out the states package on CRAN. Create panel data for independent states, includes the G&amp;amp;W and COW state lists, and some helper functions. Like sfind(700) to quickly check what country 700 is. Here&#39;s the package page.
+ The short version:
+Here is some R code to create arbitrary country-year or country-month data sets reflecting the Gleditsch and Ward or COW state system membership lists, using the cshapes R package.</description>
+    </item>
+    
+    <item>
+      <title>Time to learn Python</title>
+      <link>https://www.andybeger.com/2013/11/21/time-to-learn-python/</link>
+      <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/11/21/time-to-learn-python/</guid>
+      <description>Apparently Python is taking over the world (from a post by Tal Yarkoni):
+ In 2013, my toolbox looks like this:
+ Python for text processing and miscellaneous scripting; Ruby on Rails/JavaScript for web development, except for an occasional date with Django or Flask (Python frameworks); Python (NumPy/SciPy) for numerical computing; Python (Neurosynth, NiPy etc.) for neuroimaging data analysis; Python (NumPy/SciPy/pandas/statsmodels) for statistical analysis; Python (MatPlotLib) for plotting and visualization, except for web-based visualizations (JavaScript/d3.</description>
+    </item>
+    
+    <item>
+      <title>Quick background maps in R</title>
+      <link>https://www.andybeger.com/2013/09/30/quick-background-maps-in-r/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/09/30/quick-background-maps-in-r/</guid>
+      <description>Sometimes, for whatever reason, you want to plot something fast. Last week I had some coordinates associated with event data that I was hoping were all from Egypt. But the coordinates were for locations that are only indirectly associated with the events I had, so I wanted to do a quick plot to check. The ggmap package in R makes that pretty easy.
+First, some libraries we will need, and the coordinates.</description>
+    </item>
+    
+    <item>
+      <title>Plot of Duke grade inflation</title>
+      <link>https://www.andybeger.com/2013/05/08/plot-of-duke-grade-inflation/</link>
+      <pubDate>Wed, 08 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/05/08/plot-of-duke-grade-inflation/</guid>
+      <description>Someone sent around a link this morning to data on grade inflation at Duke, which shows a table of average GPAs for undergraduates from 1932 on. Looking at the table you can sort of get a sense of when GPA&#39;s really started increasing (the &amp;lsquo;60s), but it would be nicer to just plot them:
+
+Or to plot the year over year change in average GPA, with some missing values interpolated:</description>
+    </item>
+    
+    <item>
+      <title>Scale and north arrow for maps in R</title>
+      <link>https://www.andybeger.com/2012/08/25/scale-and-north-arrow-for-maps-in-r/</link>
+      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2012/08/25/scale-and-north-arrow-for-maps-in-r/</guid>
+      <description>A few months ago I produced some thematic maps of Bosnia (paper) using maptools and other packages in R, but I didn&#39;t include scales or a north arrow. It sounds simple and sp has functions for doing those things, but I couldn&#39;t get it to work well with my maps. Here is a basic map of Bosnia&#39;s pre-war municipalities:
+library(maptools) plot(bosnia) 
+The function map.scale() from the maps package adds a scale.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bayesian on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/bayesian/</link>
+    <description>Recent content in Bayesian on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Oct 2012 22:07:55 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/bayesian/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Random walk negative binomial model for persistent count series.</title>
+      <link>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</link>
+      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
+      
+      <guid>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</guid>
+      <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&#39;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
+    </item>
+    
+    <item>
+      <title>Yugoslavs die less</title>
+      <link>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</guid>
+      <description>In 1991 a census was conducted in Bosnia and Herzegovina, which then was still part of the disintegrating federal state of Yugoslavia. Bosnia was the most diverse republic in the former Yugoslavia, with significant populations of Bosnian Muslims (or Bosniaks, 43 percent), Serbs (31 percent), Croats (17 percent), and others. Bosniaks, Serbs, and Croats were more or less well-established identities with historical roots. Unlike in most multiethnic countries however, the census respondents also had the option to identify themselves as Yugoslavs, rather than a particular ethnic or national group.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spatial on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/spatial/</link>
+    <description>Recent content in spatial on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/spatial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finding coordinates for cities, etc. with R</title>
+      <link>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</guid>
+      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&#39;ve come across it a few times.
+The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&#39;s pretty easy to figure out the coordinates for a city or village name.</description>
+    </item>
+    
+    <item>
+      <title>Yugoslavs die less</title>
+      <link>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</guid>
+      <description>In 1991 a census was conducted in Bosnia and Herzegovina, which then was still part of the disintegrating federal state of Yugoslavia. Bosnia was the most diverse republic in the former Yugoslavia, with significant populations of Bosnian Muslims (or Bosniaks, 43 percent), Serbs (31 percent), Croats (17 percent), and others. Bosniaks, Serbs, and Croats were more or less well-established identities with historical roots. Unlike in most multiethnic countries however, the census respondents also had the option to identify themselves as Yugoslavs, rather than a particular ethnic or national group.</description>
+    </item>
+    
+  </channel>
+</rss>

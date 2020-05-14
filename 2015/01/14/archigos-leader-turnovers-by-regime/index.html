@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.61.0" />
+
+
+<title>Archigos leader turnovers by regime - Andreas Beger</title>
+<meta property="og:title" content="Archigos leader turnovers by regime - Andreas Beger">
+
+
+  <link href='https://www.andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/post/">MIR Blog</a></li>
+    
+    <li><a href="/projects">Projects</a></li>
+    
+    <li><a href="/research">Research</a></li>
+    
+    <li><a href="/software">Software</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/contact/">Contact</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">7 min read</span>
+    
+
+    <h1 class="article-title">Archigos leader turnovers by regime</h1>
+
+    
+    <span class="article-date">2015-01-14</span>
+    
+
+    <div class="article-content">
+      <p><em>This post is about the Archigos data, which you can find <a href="http://www.rochester.edu/college/faculty/hgoemans/data.htm">here</a>.</em></p>
+<p>Political scientists, and maybe historians as well, are familiar with coups, rebellions, and mass protests as distinct phenomena that lead to the fall of regimes occasionally. Another way to view these events is from the perspective of state leaders, and how these events affect transitions between political leaders. <a href="http://www.amazon.com/Logic-Political-Survival-Bruce-Mesquita/dp/0262524406">Selectorate theory</a> does this by considering the sets of people within a regime that a leader must rely on to remain in power, and how their relative sizes shape behavior. We do this empirically by modeling irregular leadership changes, where we draw our dependent variable from the Archigos dataset. I've been vaguely aware of these data for a while, but honestly did not understand well how useful they could be. In this post I'll try to give a quick overview of the data.</p>
+<p>Archigos is a dataset of the political leaders of states from 1875 on collected by <a href="http://www.rochester.edu/college/faculty/hgoemans/">Hein Goemans</a>, <a href="http://privatewww.essex.ac.uk/~ksg/">Kristian Skrede Gleditsch</a>, and <a href="http://www.vanderbilt.edu/political-science/bio/giacomo-chiozza">Giacomo Chiozza</a>. The most recent version, 2.9, has more than 3,000 leaders through 2004 and an update to 2014 is in the works. Aside from identifying leaders and when they gained and lost office, it codes how they did so (from the <a href="http://www.rochester.edu/college/faculty/hgoemans/GGC_finalsubmission.pdf">Archigos codebook</a>):</p>
+<blockquote>
+<p>Archigos codes the manner in which transfers between rulers occur. Our main interest is whether transfers of power between leaders take place in a regular or irregular fashion. We code transfers as regular or irregular depending on the political institutions and selection mechanisms in place. We identify whether leaders are selected into and leave political office in a manner prescribed by either explicit rules or established conventions. In a democracy, a leader may come to power through direct election or establishing a sufficient coalition of representatives in the legislature. Although leaders may not be elected or selected in particularly competitive processes, many autocracies have similar implicit or explicit rules for transfers of executive power. Leader changes that occur through designation by an outgoing leader, hereditary succession in a monarchy, and appointment by the central committee of a ruling party would all be considered regular transfers of power from one leader to another in an autocratic regime.</p>
+</blockquote>
+<p>So whether a leadership transition (entry or exit) is regular or irregular depends on the regime in which it takes place. A father-son transition is regular in hereditary monarchies like Saudi Arabia, but wouldn't be in a democracy (without intervening elections). Although it is a bit subjective, this is actually a really powerful concept that seems to encompass <em>successful</em> coups, mass protests campaigns, and rebellions (i.e. civil wars where the goal is overthrow of the central government). We show this to some extent in one of the appendices to a <a href="http://arxiv.org/abs/1409.7105">long report</a> we wrote in the summer, where we found that almost all coups, using the <a href="http://jpr.sagepub.com/content/48/2/249.short">Powell &amp; Thyne</a> <a href="http://www.jonathanmpowell.com/coup-detat-dataset.html">data</a>, overlap with irregular entries in the Archigos data.</p>
+<p>When we think about the ways in which irregular transitions can occur&ndash;often coups, weak autocracies with politicized militaries come to mind. So I thought it would be interesting to look at the regularity of transitions by regime type. To measure regime types I used the Polity IV dataset, which along with Freedom House, is a common measure of regime types used in IR (despite what comparative political scientists who research this, among other things, might think). Polity measures a several aspects of a regime, and uses these to construct 0-10 composite indicators for the autocratic and democratic tendencies of the regime, which are in turn commonly subtracted for a combined Polity score ranging from -10 (autocracy) to 10 (democracy). The website bins these scores into a a couple of categories, like democracy and anocracy, that I use here.</p>
+<p>First, here is a mosaic plot of how leaders entered office by regime type. The area of the cells in these plots corresponds to how many cases fit that combination. Most regimes historically have been &ldquo;closed anocracies&rdquo; or what we might call weak autocracies. But even in these and full &ldquo;autocracies&rdquo;, most leaders entered office regularly, in keeping with that regimes conventions (aka selection by the Politburo). Unsurprisingly, the vast majority of leaders in democracies entered office regularly.</p>
+<p><a href="/img/2015/entry-by-regime.png"><img src="/img/2015/entry-by-regime.png" alt="Regular and irregular leader entries to office for different regime types, 1875-2004."></a></p>
+<p>The second plots shows how leaders left office, by regime type. There are a few more possibilities here, like suicide. Quite a few leaders in autocracies are in power until their death (Stalin, Kim Il Sung come to mind).</p>
+<p><a href="/img/2015/exit-by-regime.png"><img src="/img/2015/exit-by-regime.png" alt="Regular and irregular leader exits from power for different regime types, 1875-2004."></a></p>
+<p>Although irregular assumption of and exit from power are far more common in authoritarian regimes, regular transitions are still the most common means, with the exception of full autocracies, where leaders are much more likely to die in office (e.g. Hafez al-Assad in Syria, Deng Xiaoping in China) or be overthrown (e.g. Mobutu Sese Seko in the DRC, Siad Barre in Somalia).</p>
+<p>Another interesting part of Archigos to look at is how long leaders were in power. The plots below are histograms showing the frequency of tenure lengths in months by the different Polity regime types (note the x-axis is logged):</p>
+<p><a href="/img/2015/months-in-power-by-reg.png"><img src="/img/2015/months-in-power-by-reg.png" alt="Months in power by regime"></a></p>
+<p>Three patterns, not entirely unsurprising, stand out in these histograms:</p>
+<ol>
+<li>Notable spikes at 1, 4, 8 years, and to some extent also at 5 years. The one year spike in democracies is largely driven by Switzerland, where a President is elected for one-year terms from the seven-member executive council. The others correspond to the common election cycles (4, 5) and term limits (8).</li>
+<li>The spikes are present even in less than full democracies, what Polity calls open and closed anocracies, showing that elections work here sometimes, at least.</li>
+<li>Leaders in autocracies last longer than those in democracies, but also than those in partial autocracies. It's a bit hard to tell with the logged axes, but there are quite a few leaders in autocracies who were in power for a really long time&ndash;these are your old-school monarchs like Francis Joseph I of Austria-Hungary (27 years) and</li>
+</ol>
+<p>For the last point, that a few autocratic leaders hold on to power for really long times, that doesn't really seem to be changing. The plot below maps the time in power for leaders who have completed their time in office: the mean, shown by the gray band for the smoothed mean, doesn't seem be changing over time. (Since there are fewer autocracies nowadays than historically, I wonder if that means that the remaining autocracies are very consolidated ones with long leader tenures.)</p>
+<figure><a href="/img/2015/in-power-over-time.png">
+    <img src="/img/2015/in-power-over-time.png"
+         alt="Leaders who entered power are are still currently in power are highlighted in cyan. The mean does not seem to change much over time."/> </a><figcaption>
+            <p>Leaders who entered power are are still currently in power are highlighted in cyan. The mean does not seem to change much over time.</p>
+        </figcaption>
+</figure>
+
+<p>That's it for Archigos. About the larger point, a lot of published (quantitative) political science consists of explanatory modeling, focused on theory-building and hypothesis testing as it is. The work I do mostly falls into a second category, prediction, which is not, but maybe becoming more, widespread. Basic description like this partly occurs as part of the other two, but often falls to the wayside in online appendixes and supplementary materials. But it seems to me that this is an area in which political science stands in contrast to a lot of popular misconceptions about political conflict (and maybe other aspects of politics as well), like for example <a href="http://faculty.ucmerced.edu/cconrad2/Academic/ITT_Data_Collection.html">how widespread torture</a> is, or how (un)common civil wars and terrorism are. And unlike statistical modeling, formal theory, etc. it's relatively easy for non-technical people to follow (I think).</p>
+<p>Lastly, some technical details. Here is the <a href="https://github.com/andybega/mireg-blogs/tree/master/archigos-polity">code to replicate</a> the figures. It basically merges the Polity score to the Archigos record for each leader. Since Polity scores can and do change over the course of a leaders tenure, it uses the mean Polity score, weighted by the length of time that those Polity scores overlap a leader's tenure.</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//mireg.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-36796505-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+

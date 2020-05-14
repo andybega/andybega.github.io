@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.61.0" />
+
+
+<title>Random walk negative binomial model for persistent count series. - Andreas Beger</title>
+<meta property="og:title" content="Random walk negative binomial model for persistent count series. - Andreas Beger">
+
+
+  <link href='https://www.andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/post/">MIR Blog</a></li>
+    
+    <li><a href="/projects">Projects</a></li>
+    
+    <li><a href="/research">Research</a></li>
+    
+    <li><a href="/software">Software</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/contact/">Contact</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Random walk negative binomial model for persistent count series.</h1>
+
+    
+    <span class="article-date">2012-10-29</span>
+    
+
+    <div class="article-content">
+      <p><a href="http://mailer.fsu.edu/~whmoore/garnet-whmoore/" title="Will Moore">Will Moore</a>, <a href="http://www-cc.gakushuin.ac.jp/~e982440/index_e.htm" title="Kentaro Fukumoto">Kentaro Fukumoto</a>, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual <a href="http://andybeger.files.wordpress.com/2012/10/pssi_poster.pdf">pdf poster</a> (it's a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</p>
+<p>We are working on a draft paper, so I don't want to go through the whole story, but if you'd like to try it out yourself and know how to use JAGS, all the R and JAGS code is <a href="https://github.com/andybega/PSSI_2012_TSEC_Iraq">available on github</a>.</p>
+<p>Basically we are using a state-space model which consists of two separate equations: (1) a state transition equation that models a latent system state and describes how that latent state changes over time, and (2) a measurement equation that describes the process by which we observe actual outcomes (y) at any given time point. As a result, this model separates error in the temporal process that creates our data from the measurement error with which we observe it. An implication is that you can have covariates in either equation, where variables in the state transition equation have effects that propagate through time, i.e. short and long-run effects, while variables entering the measurement equation only have an instantaneous impact for that measurement period.</p>
+<figure><a href="/img/2012/deaths_iraq_total.png">
+    <img src="/img/2012/deaths_iraq_total.png"
+         alt="Monthly Iraqi civilian deaths (black=total, red=Baghdad, blue=rest of Iraq)." width="100%"/> </a><figcaption>
+            <p>Monthly Iraqi civilian deaths (black=total, red=Baghdad, blue=rest of Iraq).</p>
+        </figcaption>
+</figure>
+
+<p>We've tested this model against simulated data we create, and replication code for these simulations is included as well. For an empirical application, I ran the model against some data on Iraqi civilian deaths from the Iraq Body Count that I was <a href="http://andybeger.wordpress.com/2012/03/21/coding-provinces-for-the-iraq-body-count-data/">working on earlier</a>. The graph on the right shows the  monthly civilian deaths in Iraq we are working with. The black line shows totals, and red and blue show deaths in Baghdad and the rest of Iraq respectively. I've highlighted some the of the spikes in deaths, like during the invasion or government offensives.</p>
+<figure><a href="/img/2012/iraq_fitted.png">
+    <img src="/img/2012/iraq_fitted.png"
+         alt="Random walk negative binomial fitted values for Iraq monthly civilian deaths. In-sample fitted values (red) and observed civilian deaths (black). The red band shows 80% interval." width="100%"/> </a><figcaption>
+            <p>Random walk negative binomial fitted values for Iraq monthly civilian deaths. In-sample fitted values (red) and observed civilian deaths (black). The red band shows 80% interval.</p>
+        </figcaption>
+</figure>
+
+<p>We estimated a very basic random walk negative binomial model for total monthly civilian deaths, with four binary indicators for the initial invasion period, elections, government offensives, and Ramadan. The in-sample model fit is in the graph on the right. I think this is a pretty amazing fit considering how simple this model is, and the mean predicted values seem to be a pretty good reflection of local levels at any given time. At this stage I would feel fairly confident in using this for hypothesis testing, but fore forecasting it would be nice to have a more explicit temporal structure, e.g. running estimates of trends and changes in trends.</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//mireg.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-36796505-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+

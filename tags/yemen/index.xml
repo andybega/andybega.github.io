@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yemen on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/yemen/</link>
+    <description>Recent content in Yemen on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/yemen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>When forecasting goes wrong (maybe): Yemen</title>
+      <link>https://www.andybeger.com/2015/09/24/when-forecasting-goes-wrong-maybe-yemen/</link>
+      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2015/09/24/when-forecasting-goes-wrong-maybe-yemen/</guid>
+      <description>&lt;p&gt;&lt;em&gt;From the &lt;a href=&#34;http://predictiveheuristics.com/2015/08/10/yemen-investigation/&#34;&gt;Ward Lab blog&lt;/a&gt; a few weeks ago:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Over the past few months we have worked on regularly updating our irregular leadership change models and forecasts in order to provide monthly 6-month ahead forecasts of the probability of irregular leadership change in a large number of countries&amp;ndash;but excluding the US&amp;ndash;worldwide. Part of that effort has been the occasional glance back at our previous predictions, and particularly more in-depth examinations for notable cases that we missed or got right, to see whether we can improve our modeling as a result. This note is one of these glances back: a postmortem of our Yemen predictions for the first half of 2015.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

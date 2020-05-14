@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>visualization on Andreas Beger</title>
+    <link>https://www.andybeger.com/tags/visualization/</link>
+    <description>Recent content in visualization on Andreas Beger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.andybeger.com/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Support for the creation of an EU Army</title>
+      <link>https://www.andybeger.com/2016/11/22/support-for-the-creation-of-an-eu-army/</link>
+      <pubDate>Tue, 22 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2016/11/22/support-for-the-creation-of-an-eu-army/</guid>
+      <description>In the wake of the Trump victory surprise, and the potential implications for NATO, I stumbled upon a Eurobarometer question that asks people how they feel about the prospect of an EU Army:
+ Thinking about the future of the EU, please tell me whether you are in favour or opposed to the following statement: the creation of an EU army.
+ Turns out the Eurobarometer has been asking that question for quite some time, which was the first surprising thing.</description>
+    </item>
+    
+    <item>
+      <title>Quick background maps in R</title>
+      <link>https://www.andybeger.com/2013/09/30/quick-background-maps-in-r/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2013/09/30/quick-background-maps-in-r/</guid>
+      <description>Sometimes, for whatever reason, you want to plot something fast. Last week I had some coordinates associated with event data that I was hoping were all from Egypt. But the coordinates were for locations that are only indirectly associated with the events I had, so I wanted to do a quick plot to check. The ggmap package in R makes that pretty easy.
+First, some libraries we will need, and the coordinates.</description>
+    </item>
+    
+  </channel>
+</rss>
