@@ -24,6 +24,15 @@ Reason number 1, which spurred this whole transition idea, is that GitHub keeps 
     </item>
     
     <item>
+      <title>Presidential rankings</title>
+      <link>https://www.andybeger.com/2019/12/19/presidential-rankings/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andybeger.com/2019/12/19/presidential-rankings/</guid>
+      <description>This is more of a test post. It’s created from an Rmarkdown file that scrapes presidential rankings from Wikipedia for the chart below. Incidentally, I’m updating this from an earlier April version the morning after Trump was impeached back in the US by the House.</description>
+    </item>
+    
+    <item>
       <title>200 years of democracy charted</title>
       <link>https://www.andybeger.com/2018/06/26/200-years-of-democracy-charted/</link>
       <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
