@@ -532,7 +532,7 @@ Predicting IED and mine placements W-ICEWS 2012 - 2014</description>
       
       <guid>https://www.andybeger.com/research/</guid>
       <description>My Google Scholar profile.
-Peer-reviewed publications   Fred Morstatter, Aram Galstyan, Gleb Satyukov, Daniel Benjamin, Andres Abeliuk, Mehrnoosh Mirtaheri, KSM Tozammel Hossain, Pedro Szekely, Emilio Ferrara, Akira Matsui, Mark Steyvers, Stephen Bennet, David Budescu, Mark Himmelstein, Michael Ward, Andreas Beger, Michele Catasta, Rok Sosic, Jure Leskovec, Pavel Atanasov, Regina Joseph, Rajiv Sethi, Ali Abbas. 2019. &amp;ldquo;SAGE: A Hybrid Geopolitical Event Forecasting System&amp;rdquo;. Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence Demos: 6557-6559.</description>
+Peer-reviewed publications Fred Morstatter, Aram Galstyan, Gleb Satyukov, Daniel Benjamin, Andres Abeliuk, Mehrnoosh Mirtaheri, KSM Tozammel Hossain, Pedro Szekely, Emilio Ferrara, Akira Matsui, Mark Steyvers, Stephen Bennet, David Budescu, Mark Himmelstein, Michael Ward, Andreas Beger, Michele Catasta, Rok Sosic, Jure Leskovec, Pavel Atanasov, Regina Joseph, Rajiv Sethi, Ali Abbas. 2019. &amp;ldquo;SAGE: A Hybrid Geopolitical Event Forecasting System&amp;rdquo;. Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence Demos: 6557-6559.</description>
     </item>
     
     <item>
@@ -541,7 +541,8 @@ Peer-reviewed publications   Fred Morstatter, Aram Galstyan, Gleb Satyukov, Dani
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/software/</guid>
-      <description>R packages states: make country-year/month/day panel data that is consistent with the COW or Gleditsch &amp;amp; Ward lists of independent states. I use these bare-bones panels as templates to which other data have to conform when merging IR datasets.
+      <description>R packages icews: tools to download and update the ICEWS event data without interacting with dozens of files on dataverse.
+states: make country-year/month/day panel data that is consistent with the COW or Gleditsch &amp;amp; Ward lists of independent states. I use these bare-bones panels as templates to which other data have to conform when merging IR datasets.
 spduration: implementation of Weibull and Log-logistic split-population duration models. These models are designed for instances when you want to model the duration to some event but the population of cases consists of a mixture that includes some proportion of cases that will not experience the event at all, e.</description>
     </item>
     
