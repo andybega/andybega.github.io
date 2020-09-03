@@ -71,15 +71,23 @@
     
 
     <div class="article-content">
-      <p>Below is a list of past projects that I have worked on.</p>
-<p><em>Still in the works</em>.</p>
+      <p>Below is a list of ongoing and past projects that I am working or have worked on.</p>
+<span style = "text-align: center">
+<p><em>Still in the works</em></p>
+<p><em>[[90s GeoCities UNDER CONSTRUCTION.gif]]</em></p>
+</span>
 <h2 id="coup-forecasts">Coup forecasts</h2>
-<p>2017 - 2020</p>
-<!--
-Independently, I helped produce coup forecasts for 2017. 
---> 
+<p><em>(This is not a paid project, although with internal support from PH for the 2020 forecasts)</em></p>
+<p>Inspired by Jay Ulfelder's coup forecasts from 2012 - 2015, I've tried at various points since then to also provide some coup forecasts as a public good, although not successful for all years (I'm lazy, what can I say, and I've learned that I turn into a data pedant when doing these).</p>
+<ul>
+<li>Years: 2017 - 2020</li>
+<li>Latest 2020 forecasts: <a href="https://www.predictiveheuristics.com/forecasts/">https://www.predictiveheuristics.com/forecasts/</a></li>
+<li><a href="https://www.washingtonpost.com/news/monkey-cage/wp/2017/01/31/where-are-coups-most-likely-to-occur-in-2017/">WaPo article on the 2017 forecasts</a></li>
+</ul>
 <h2 id="part-and-demspaces">PART and DemSpaces</h2>
-<p>2018 - 2020</p>
+<ul>
+<li>Years: 2018 - 2020</li>
+</ul>
 <!--
 
 V-Forecast: Predicting Adverse Regime Transitions (PART)
@@ -88,41 +96,47 @@ https://www.v-dem.net/en/analysis/Forecast/
 
 -->
 <h2 id="hfc-sage">HFC-SAGE</h2>
-<p>2017 - 2020</p>
-<!--
-
-IJCAI https://www.ijcai.org/proceedings/2019/955
-
-https://www.hybridforecasting.com
-
--->
+<p>IARPA's Hybrid Forecasting Competition (HFC), <a href="https://www.iarpa.gov/index.php/research-programs/hfc">in their own words</a>:</p>
+<blockquote>
+<p>The HFC program seeks to develop and test hybrid geopolitical forecasting systems. These systems will integrate human and machine forecasting components to create maximally accurate, flexible, and scalable forecasting capabilities.</p>
+</blockquote>
+<p>The idea essentially was to study how one can combine human forecasts from a Good Judgment-style platform with machine-generated forecasts to answer questions like. We were part of <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjTg8eA-8zrAhXkAhAIHZRtAAQQFjABegQIAxAB&amp;url=https%3A%2F%2Fviterbischool.usc.edu%2Fnews%2F2017%2F10%2Fusc-isi-leads-iarpa-contract-developing-hybrid-forecasting-systems%2F&amp;usg=AOvVaw16-ypTB_zqSL0m4VL8ioPI">USC ISI's SAGE team</a>. My specific contribution was an automated forecasting system that used data provided by a corresponding ISI data collection platform in combination with some parsing logic to &ldquo;understand&rdquo; a multinomial question in order to apply univariate time-series models and turn them into probabilistic forecasts for the answer options. About half of the questions overall were at least in principle amenable to a univariate time-series based solution, and of those the system covered 2/3rds, with an overall accuracy that for the optimal models approached the best combination of human forecasts.</p>
+<ul>
+<li>Years: 2017 - 2020</li>
+<li>Publications: <a href="https://www.ijcai.org/proceedings/2019/955">IJCAI</a></li>
+<li>R, Docker, Python (Flask, but eventually R plumber instead)</li>
+</ul>
 <h2 id="mercury-safe">Mercury-SAFE</h2>
 <!--
 
 https://www.iarpa.gov/index.php/research-programs/mercury
 
-R, Python, web-scraping, docker
+- R, Python, web-scraping, docker
 -->
 <h2 id="forecasting-irregular-leadership-changes">Forecasting irregular leadership changes</h2>
-<p>2013 - 2016</p>
-<!--
-
--->
+<ul>
+<li>Years: 2013 - 2016</li>
+<li>Publications: <a href="https://doi.org/10.1177/2053168014557511">R&amp;P</a>, <a href="https://doi.org/10.1016/j.ijforecast.2015.01.009">IJF</a>, <a href="https://doi.org/10.1177/0022343316680858">JPR</a></li>
+<li><a href="http://arxiv.org/abs/1409.7105">PITF technical report (2014)</a></li>
+</ul>
 <h2 id="predicting-ied-and-mine-placements">Predicting IED and mine placements</h2>
 <!--
 
 Modeling and predicting the occurrence of IED events in Afghanistan at a high resolution of ~1km^2 grid cell-day units. Eventually expanded to modeling mines in Colombia, with estimates of the probability that province is mine free or not mine free. 
 
-R, PostGIS
+- R, PostgreSQL, PostGIS
 
 -->
+<ul>
+<li>Years: 2013 - 2016</li>
+</ul>
 <h2 id="w-icews">W-ICEWS</h2>
-<p>2012 - 2014</p>
-<!--
-
-MySQL
-
--->
+<p>W-ICEWS is a global crisis monitoring and forecasting system (<a href="https://www.lockheedmartin.com/en-us/capabilities/research-labs/advanced-technology-labs/icews.html">here's the Lockheed-Martin page on this</a>). A lot of people are familiar with the ICEWS event data that was generated as part of this project, but there was actually a forecasting component for five different forms of crises as well. I joined Duke at the tail end of the project, when the forecasting component was mostly already in place, and helped a bit with maintaining and improving it. This included improvements to the R package that was used to deliver monthly forecast updates, as well as to the general monthly forecast update pipeline. I also setup and maintained a MySQL server for lab use to host the raw ICEWS event data, which consists of 70+ database tables totalling 200GB at the time.</p>
+<ul>
+<li>Years: 2012 - 2014</li>
+<li><a href="https://www.researchgate.net/profile/Andreas_Beger2/publication/303211430_Comparing_GDELT_and_ICEWS_event_data/links/57f7d9bb08ae886b89836115/Comparing-GDELT-and-ICEWS-event-data.pdf">Comparing GDELT and ICEWS Event Data</a></li>
+<li><a href="https://www.andybeger.com/states">spduration: split-population duration models for R</a>; a package I worked on during this time as well.</li>
+</ul>
 
     </div>
   </article>
