@@ -493,7 +493,7 @@ At the beginning of the Yugoslav civil wars, Bosnia and Herzegovina (BiH) consis
       
       <guid>https://www.andybeger.com/about/</guid>
       <description>Camping in Estonia
-  I am a data scientist at Predictive Heuristics, a consulting firm, where I work on predictive modeling of political conflict.
+  Before my current work, I spent five years as a data scientist at Predictive Heuristics, where I worked on various predictive modeling projects.
 My previous position was as Postdoctoral Fellow at Duke University in the Wardlab group, where I contributed to the forecasting component of the W-ICEWS global forecasting project, developed and maintained near-real time forecasts of irregular leadership change&amp;ndash;coups, mass protests, and armed rebellion&amp;ndash;for the Political Instability Task Force (PITF), and did predictive modeling of improvised explosive devices (IEDs) and similar mines in Afghanistan and Colombia.</description>
     </item>
     
@@ -515,9 +515,7 @@ My previous position was as Postdoctoral Fellow at Duke University in the Wardla
       <description>Below is a list of ongoing and past projects that I am working or have worked on.
 Still in the works
 [[90s GeoCities UNDER CONSTRUCTION.gif]]
- HFC-SAGE IARPA&amp;rsquo;s Hybrid Forecasting Competition (HFC), in their own words:
- The HFC program seeks to develop and test hybrid geopolitical forecasting systems. These systems will integrate human and machine forecasting components to create maximally accurate, flexible, and scalable forecasting capabilities.
- The idea essentially was to study how one can combine human forecasts from a Good Judgment-style platform with machine-generated forecasts to answer questions like.</description>
+ The HFC program seeks to develop and test hybrid geopolitical forecasting systems. These systems will integrate human and machine forecasting components to create maximally accurate, flexible, and scalable forecasting capabilities. The idea essentially was to study how one can combine human forecasts from a Good Judgment-style platform with machine-generated forecasts to answer questions like.</description>
     </item>
     
     <item>
@@ -526,8 +524,11 @@ Still in the works
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/research/</guid>
-      <description>My Google Scholar profile.
-Peer-reviewed publications Fred Morstatter, Aram Galstyan, Gleb Satyukov, Daniel Benjamin, Andres Abeliuk, Mehrnoosh Mirtaheri, KSM Tozammel Hossain, Pedro Szekely, Emilio Ferrara, Akira Matsui, Mark Steyvers, Stephen Bennet, David Budescu, Mark Himmelstein, Michael Ward, Andreas Beger, Michele Catasta, Rok Sosic, Jure Leskovec, Pavel Atanasov, Regina Joseph, Rajiv Sethi, Ali Abbas. 2019. &amp;ldquo;SAGE: A Hybrid Geopolitical Event Forecasting System&amp;rdquo;. Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence Demos: 6557-6559.</description>
+      <description>Google Scholar profile
+ORCID profile
+Peer-reviewed publications Andreas Beger, Richard K Morgan, and Michael D. Ward. 2021. &amp;ldquo;Reassessing the Role of Theory and Machine Learning in Forecasting Civil Conflict&amp;rdquo;. Journal of Conflict Resolution.
+ https://doi.org/10.1177%2F0022002720982358  Emma Baillie, Piers DL Howe, Andrew Perfors, Tim Miller, Yoshihisa Kashima, and Andreas Beger. 2021. &amp;ldquo;Explainable models for forecasting the emergence of political instability&amp;rdquo;. PLoS ONE 16(7): e0254350.
+ https://doi.org/10.1371/journal.pone.0254350  Fred Morstatter, Aram Galstyan, Gleb Satyukov, Daniel Benjamin, Andres Abeliuk, Mehrnoosh Mirtaheri, KSM Tozammel Hossain, Pedro Szekely, Emilio Ferrara, Akira Matsui, Mark Steyvers, Stephen Bennet, David Budescu, Mark Himmelstein, Michael Ward, Andreas Beger, Michele Catasta, Rok Sosic, Jure Leskovec, Pavel Atanasov, Regina Joseph, Rajiv Sethi, and Ali Abbas.</description>
     </item>
     
     <item>

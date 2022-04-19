@@ -43,13 +43,11 @@
 
   <ul class="nav-links">
     
-    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
     
     <li><a href="/research">Research</a></li>
     
     <li><a href="/software">Software</a></li>
-    
-    <li><a href="/about/">About</a></li>
     
     <li><a href="/contact/">Contact</a></li>
     
@@ -89,6 +87,7 @@ Inspired by Jay Ulfelder's coup forecasts from 2012 - 2015, I've tried at variou
 
 - Years: 2018 - 2020
 
+-->
 <!--
 
 V-Forecast: Predicting Adverse Regime Transitions (PART)
@@ -96,31 +95,40 @@ V-Forecast: Predicting Adverse Regime Transitions (PART)
 https://www.v-dem.net/en/analysis/Forecast/
 
 -->
-<h2 id="hfc-sage">HFC-SAGE</h2>
-<p>IARPA&rsquo;s Hybrid Forecasting Competition (HFC), <a href="https://www.iarpa.gov/index.php/research-programs/hfc">in their own words</a>:</p>
-<blockquote>
-<p>The HFC program seeks to develop and test hybrid geopolitical forecasting systems. These systems will integrate human and machine forecasting components to create maximally accurate, flexible, and scalable forecasting capabilities.</p>
-</blockquote>
-<p>The idea essentially was to study how one can combine human forecasts from a Good Judgment-style platform with machine-generated forecasts to answer questions like. We were part of <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjTg8eA-8zrAhXkAhAIHZRtAAQQFjABegQIAxAB&amp;url=https%3A%2F%2Fviterbischool.usc.edu%2Fnews%2F2017%2F10%2Fusc-isi-leads-iarpa-contract-developing-hybrid-forecasting-systems%2F&amp;usg=AOvVaw16-ypTB_zqSL0m4VL8ioPI">USC ISI&rsquo;s SAGE team</a>. My specific contribution was an automated forecasting system that used data provided by a corresponding ISI data collection platform in combination with some parsing logic to &ldquo;understand&rdquo; a multinomial question in order to apply univariate time-series models and turn them into probabilistic forecasts for the answer options. About half of the questions overall were at least in principle amenable to a univariate time-series based solution, and of those the system covered 2/3rds, with an overall accuracy that for the optimal models approached the best combination of human forecasts.</p>
-<ul>
-<li>Years: 2017 - 2020</li>
-<li>Publications: <a href="https://www.ijcai.org/proceedings/2019/955">IJCAI</a></li>
-<li>R, Docker, Python (Flask, but eventually R plumber instead)</li>
-</ul>
-<h2 id="mercury-safe">Mercury-SAFE</h2>
+<!--
+
+## HFC-SAGE
+
+IARPA's Hybrid Forecasting Competition (HFC), [in their own words](https://www.iarpa.gov/index.php/research-programs/hfc):
+
+> The HFC program seeks to develop and test hybrid geopolitical forecasting systems. These systems will integrate human and machine forecasting components to create maximally accurate, flexible, and scalable forecasting capabilities.
+
+The idea essentially was to study how one can combine human forecasts from a Good Judgment-style platform with machine-generated forecasts to answer questions like. We were part of [USC ISI's SAGE team](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjTg8eA-8zrAhXkAhAIHZRtAAQQFjABegQIAxAB&url=https%3A%2F%2Fviterbischool.usc.edu%2Fnews%2F2017%2F10%2Fusc-isi-leads-iarpa-contract-developing-hybrid-forecasting-systems%2F&usg=AOvVaw16-ypTB_zqSL0m4VL8ioPI). My specific contribution was an automated forecasting system that used data provided by a corresponding ISI data collection platform in combination with some parsing logic to "understand" a multinomial question in order to apply univariate time-series models and turn them into probabilistic forecasts for the answer options. About half of the questions overall were at least in principle amenable to a univariate time-series based solution, and of those the system covered 2/3rds, with an overall accuracy that for the optimal models approached the best combination of human forecasts. 
+
+- Years: 2017 - 2020
+- Publications: [IJCAI](https://www.ijcai.org/proceedings/2019/955)
+- R, Docker, Python (Flask, but eventually R plumber instead)
+
+## Mercury-SAFE
+
+-->
 <!--
 
 https://www.iarpa.gov/index.php/research-programs/mercury
 
 - R, Python, web-scraping, docker
 -->
-<h2 id="forecasting-irregular-leadership-changes">Forecasting irregular leadership changes</h2>
-<ul>
-<li>Years: 2013 - 2016</li>
-<li>Publications: <a href="https://doi.org/10.1177/2053168014557511">R&amp;P</a>, <a href="https://doi.org/10.1016/j.ijforecast.2015.01.009">IJF</a>, <a href="https://doi.org/10.1177/0022343316680858">JPR</a></li>
-<li><a href="http://arxiv.org/abs/1409.7105">PITF technical report (2014)</a></li>
-</ul>
-<h2 id="predicting-ied-and-mine-placements">Predicting IED and mine placements</h2>
+<!--
+
+## Forecasting irregular leadership changes
+
+- Years: 2013 - 2016
+- Publications: [R&P](https://doi.org/10.1177/2053168014557511), [IJF](https://doi.org/10.1016/j.ijforecast.2015.01.009), [JPR](https://doi.org/10.1177/0022343316680858)
+- [PITF technical report (2014)](http://arxiv.org/abs/1409.7105)
+
+## Predicting IED and mine placements
+
+-->
 <!--
 
 Modeling and predicting the occurrence of IED events in Afghanistan at a high resolution of ~1km^2 grid cell-day units. Eventually expanded to modeling mines in Colombia, with estimates of the probability that province is mine free or not mine free. 
@@ -128,17 +136,20 @@ Modeling and predicting the occurrence of IED events in Afghanistan at a high re
 - R, PostgreSQL, PostGIS
 
 -->
-<ul>
-<li>Years: 2013 - 2016</li>
-</ul>
-<h2 id="w-icews">W-ICEWS</h2>
-<p>W-ICEWS is a global crisis monitoring and forecasting system (<a href="https://www.lockheedmartin.com/en-us/capabilities/research-labs/advanced-technology-labs/icews.html">here&rsquo;s the Lockheed-Martin page on this</a>). A lot of people are familiar with the ICEWS event data that was generated as part of this project, but there was actually a forecasting component for five different forms of crises as well. I joined Duke at the tail end of the project, when the forecasting component was mostly already in place, and helped a bit with maintaining and improving it. This included improvements to the R package that was used to deliver monthly forecast updates, as well as to the general monthly forecast update pipeline. I also setup and maintained a MySQL server for lab use to host the raw ICEWS event data, which consists of 70+ database tables totalling 200GB at the time.</p>
-<ul>
-<li>Years: 2012 - 2014</li>
-<li><a href="https://www.researchgate.net/profile/Andreas_Beger2/publication/303211430_Comparing_GDELT_and_ICEWS_event_data/links/57f7d9bb08ae886b89836115/Comparing-GDELT-and-ICEWS-event-data.pdf">Comparing GDELT and ICEWS Event Data</a></li>
-<li><a href="https://www.andybeger.com/states">spduration: split-population duration models for R</a>; a package I worked on during this time as well.</li>
-</ul>
-<p>&ndash;&gt;</p>
+<!--
+
+- Years: 2013 - 2016
+
+## W-ICEWS
+
+W-ICEWS is a global crisis monitoring and forecasting system ([here's the Lockheed-Martin page on this](https://www.lockheedmartin.com/en-us/capabilities/research-labs/advanced-technology-labs/icews.html)). A lot of people are familiar with the ICEWS event data that was generated as part of this project, but there was actually a forecasting component for five different forms of crises as well. I joined Duke at the tail end of the project, when the forecasting component was mostly already in place, and helped a bit with maintaining and improving it. This included improvements to the R package that was used to deliver monthly forecast updates, as well as to the general monthly forecast update pipeline. I also setup and maintained a MySQL server for lab use to host the raw ICEWS event data, which consists of 70+ database tables totalling 200GB at the time. 
+
+- Years: 2012 - 2014
+- [Comparing GDELT and ICEWS Event Data](https://www.researchgate.net/profile/Andreas_Beger2/publication/303211430_Comparing_GDELT_and_ICEWS_event_data/links/57f7d9bb08ae886b89836115/Comparing-GDELT-and-ICEWS-event-data.pdf)
+- [spduration: split-population duration models for R](https://www.andybeger.com/states); a package I worked on during this time as well.  
+
+--><blockquote>
+</blockquote>
 
     </div>
   </article>
