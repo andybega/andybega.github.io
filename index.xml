@@ -6,19 +6,15 @@
     <description>Recent content on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.andybeger.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Moving from Jekyll to blogdown</title>
       <link>https://www.andybeger.com/2020/05/14/moving-from-jekyll-to-blogdown/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2020/05/14/moving-from-jekyll-to-blogdown/</guid>
-      <description>Given the rate at which I&#39;m posting new content these days&amp;ndash;3 posts in 2017, 2 in 2018, 1 in 2019&amp;ndash;my blog appears to slowly be becoming a blog about moving from one blogging engine to another.
-Behind the scenes, at some point in early 2019 (it&#39;s hard to tell), I started moving the site from Jekyll to R&#39;s blogdown, which uses the Hugo static site generator.
+      <description>Given the rate at which I&amp;rsquo;m posting new content these days&amp;ndash;3 posts in 2017, 2 in 2018, 1 in 2019&amp;ndash;my blog appears to slowly be becoming a blog about moving from one blogging engine to another.
+Behind the scenes, at some point in early 2019 (it&amp;rsquo;s hard to tell), I started moving the site from Jekyll to R&amp;rsquo;s blogdown, which uses the Hugo static site generator.
 Why?
 Reason number 1, which spurred this whole transition idea, is that GitHub keeps alerting me to security vulnerabilities in the blog dependencies, a lot of which are related to the theme I was using.</description>
     </item>
@@ -59,10 +55,10 @@ There was a little war of maps after the 2016 election. A thematic map of the el
       <pubDate>Tue, 12 Dec 2017 12:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2017/12/12/mapping-state-leader-age/</guid>
-      <description>The map below shows the age of the world&#39;s state leaders on 12 December 2017.
+      <description>The map below shows the age of the world&amp;rsquo;s state leaders on 12 December 2017.
 
 The mean age is around 62 years, ranging from 31.5 year old Sebastian Kurz in Austria&amp;mdash;whose party won the last legislative elections and is in the process of forming a government&amp;mdash;to 91.5 year old President Essebi in Tunisia.
-The data come from the REIGN leader data, which in part builds on and updates the Archigos leader data, a dataset of the leaders of the world&#39;s independent states from 1875 on.</description>
+The data come from the REIGN leader data, which in part builds on and updates the Archigos leader data, a dataset of the leaders of the world&amp;rsquo;s independent states from 1875 on.</description>
     </item>
     
     <item>
@@ -102,7 +98,7 @@ Coup attempts, even if they fail, as the events in Turkey since July 2016 have s
       <pubDate>Wed, 14 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2016/09/14/data-management-and-missing-data/</guid>
-      <description>One of my first assignments as a research assistant in graduate school was to create and work with a directed dyadic refugees and migration dataset. This was in about 2006. The data were big-ish, maybe a 100 MB in some incarnation, so my advisor gave me a CD and probably some sensible instructions on what I was supposed to do. Off I went to the grad computer lab, since I didn&#39;t own a laptop then.</description>
+      <description>One of my first assignments as a research assistant in graduate school was to create and work with a directed dyadic refugees and migration dataset. This was in about 2006. The data were big-ish, maybe a 100 MB in some incarnation, so my advisor gave me a CD and probably some sensible instructions on what I was supposed to do. Off I went to the grad computer lab, since I didn&amp;rsquo;t own a laptop then.</description>
     </item>
     
     <item>
@@ -111,7 +107,7 @@ Coup attempts, even if they fail, as the events in Turkey since July 2016 have s
       <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2016/06/20/moving-from-wordpress-to-jekyll/</guid>
-      <description>I moved my home page and blog from Wordpress to Jekyll over the past week, thanks to a small break in regular work. I&#39;ve been using Wordpress.com since 2011, when I started blogging. I don&#39;t remember what led me back then to choose Wordpress, but overall, I haven&#39;t been unhappy with it. It&#39;s easy to set up, and at some point it became possible to write posts in Markdown. Comments work out of the box.</description>
+      <description>I moved my home page and blog from Wordpress to Jekyll over the past week, thanks to a small break in regular work. I&amp;rsquo;ve been using Wordpress.com since 2011, when I started blogging. I don&amp;rsquo;t remember what led me back then to choose Wordpress, but overall, I haven&amp;rsquo;t been unhappy with it. It&amp;rsquo;s easy to set up, and at some point it became possible to write posts in Markdown. Comments work out of the box.</description>
     </item>
     
     <item>
@@ -122,7 +118,7 @@ Coup attempts, even if they fail, as the events in Turkey since July 2016 have s
       <guid>https://www.andybeger.com/2016/03/03/3d-surface-plots/</guid>
       <description>&lt;p&gt;A while ago I &lt;a href=&#34;http://andybeger.com/2014/10/06/the-right-kind-of-variance/&#34;&gt;wrote a post&lt;/a&gt; about how the patterns by which data for cross-national datasets observed over multiple periods, e.g. with country-year or country-month observations, vary is important for modeling and prediction. Here is another way to visualize why this is the case using 3-d surface plots made with &lt;a href=&#34;https://plot.ly&#34;&gt;Plotly&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.andybeger.com/img/2016/gdp-logged.png&#34;&gt;&lt;img src=&#34;https://www.andybeger.com/img/2016/gdp-logged.png&#34; alt=&#34;3d surface plot of logged GDP per capita&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The plot shows logged GDP per capita for &amp;gt;150 countries from 1995 to 2013. This is about the time period we cover in our data for &lt;a href=&#34;http://rap.sagepub.com/content/1/3/2053168014557511&#34;&gt;forecasting irregular leadership changes&lt;/a&gt;. Countries are sorted by GDP for the last year with data, which is why the near edge of the plot is smoother than the far end. It&#39;s obvious that there are some changes within countries and at rates that differ from other countries, but still most of the variation is between countries.&lt;/p&gt;</description>
+&lt;p&gt;The plot shows logged GDP per capita for &amp;gt;150 countries from 1995 to 2013. This is about the time period we cover in our data for &lt;a href=&#34;http://rap.sagepub.com/content/1/3/2053168014557511&#34;&gt;forecasting irregular leadership changes&lt;/a&gt;. Countries are sorted by GDP for the last year with data, which is why the near edge of the plot is smoother than the far end. It&amp;rsquo;s obvious that there are some changes within countries and at rates that differ from other countries, but still most of the variation is between countries.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -151,7 +147,7 @@ Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a f
       <pubDate>Wed, 08 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2015/04/08/a-quick-look-at-the-public-icews-data/</guid>
-      <description>The ICEWS data, including the underlying raw event data as well as some aggregations, were quietly posted on Dataverse the Friday before last. I&#39;ve worked with the ICEWS data for several years now, first when I was working on on the ICEWS package&amp;ndash;we deliver updated monthly forecasts for the ICEWS events of interest (EOIs) once a month&amp;ndash;and more recently for the [irregular leadership change forecasting project](http://andybeger.com/2014/05/23/the-thailand-coup-and-some-recent- forecasting-work/). The public data are formatted differently from the data I&#39;ve worked with, so most of the code I have lying around is not that useful, but in going through the public data I did recreate a short overview that is nowhere near as complete as David Masad&amp;lsquo;s first look (using Python), and some code that might be useful for getting started in R.</description>
+      <description>The ICEWS data, including the underlying raw event data as well as some aggregations, were quietly posted on Dataverse the Friday before last. I&amp;rsquo;ve worked with the ICEWS data for several years now, first when I was working on on the ICEWS package&amp;ndash;we deliver updated monthly forecasts for the ICEWS events of interest (EOIs) once a month&amp;ndash;and more recently for the [irregular leadership change forecasting project](http://andybeger.com/2014/05/23/the-thailand-coup-and-some-recent- forecasting-work/). The public data are formatted differently from the data I&amp;rsquo;ve worked with, so most of the code I have lying around is not that useful, but in going through the public data I did recreate a short overview that is nowhere near as complete as David Masad&amp;rsquo;s first look (using Python), and some code that might be useful for getting started in R.</description>
     </item>
     
     <item>
@@ -160,7 +156,7 @@ Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a f
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2015/03/16/precision-recall-curves/</guid>
-      <description>Update 2016-06: there&#39;s a PDF of this now, at http://ssrn.com/abstract=2765419
+      <description>Update 2016-06: there&amp;rsquo;s a PDF of this now, at http://ssrn.com/abstract=2765419
  ROC curves are a fairly standard way to evaluate model fit with binary outcomes, like (civil) war onset. I would be willing to bet that most if not all quantitative political scientists know what they are and how to construct one. Unlike simpler fit statistics like accuracy or percentage reduction in error (PRE), they do not depend on the particular threshold value used to divide probabilistic predictions into binary predictions, and thus give a better sense of the tradeoff between true and false positives inherent in any probabilistic model.</description>
     </item>
     
@@ -199,7 +195,7 @@ Nobody in their right mind would think that the chances of civil war in Denmark
       <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2014/09/19/baby-steps-with-r-shiny/</guid>
-      <description>Shiny is a web application framework that lets you create interactive websites representing R data visualization and analysis. The gallery has some nice examples, and it looks like a great way to make R more accessible without having to know things like JavaScript or d3. I&#39;ve been in trying my hand at it and it seems like a great way to visualize the models underlying the forecasts I work on in Ward Lab as well as the event data on which they are in part based.</description>
+      <description>Shiny is a web application framework that lets you create interactive websites representing R data visualization and analysis. The gallery has some nice examples, and it looks like a great way to make R more accessible without having to know things like JavaScript or d3. I&amp;rsquo;ve been in trying my hand at it and it seems like a great way to visualize the models underlying the forecasts I work on in Ward Lab as well as the event data on which they are in part based.</description>
     </item>
     
     <item>
@@ -208,7 +204,7 @@ Nobody in their right mind would think that the chances of civil war in Denmark
       <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2014/08/08/modeling-and-predicting-ieds/</guid>
-      <description>This first appeared on Predictive Heuristics, my employer&#39;s blog.
+      <description>This first appeared on Predictive Heuristics, my employer&amp;rsquo;s blog.
 Improvised explosive devices, or IEDs, were extensively used during the US wars in Iraq and Afghanistan, causing half of all US and coalition casualties despite increasingly sophisticated countermeasures. Although both of these wars have come to a close, it is unlikely that the threat of IEDs will disappear. If anything, their success implies that US and European forces are more likely to face them in similar future conflicts.</description>
     </item>
     
@@ -218,7 +214,7 @@ Improvised explosive devices, or IEDs, were extensively used during the US wars 
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2014/05/23/the-thailand-coup-and-some-recent-forecasting-work/</guid>
-      <description>I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I&#39;ve recently been part of:
+      <description>I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I&amp;rsquo;ve recently been part of:
  This morning (East Coast time), the Thai military staged a coup against the caretaker government that had been in power for the past several weeks, after months of protests and political turmoil directed at the government of Yingluck Shinawatra, who herself had been ordered to resign on 7 May by the judiciary.</description>
     </item>
     
@@ -237,7 +233,7 @@ Improvised explosive devices, or IEDs, were extensively used during the US wars 
       <pubDate>Wed, 29 Jan 2014 02:48:21 +0200</pubDate>
       
       <guid>https://www.andybeger.com/2014/01/29/quick-lookup-for-country-codes/</guid>
-      <description>Update on 2017-11-01: In the meantime I&#39;ve written a minimal R package with the COW and GW state lists and a rudimentary search helper function at https://github.com/andybega/states.
+      <description>Update on 2017-11-01: In the meantime I&amp;rsquo;ve written a minimal R package with the COW and GW state lists and a rudimentary search helper function at https://github.com/andybega/states.
  After more than half a decade at this, it has finally dawned upon me that instead of downloading the Correlates of War state system membership table, or the Gleditsch and Ward refinement of it, every time I wonder what country &amp;ldquo;338&amp;rdquo; is, it might be easier to upload them to Google:</description>
     </item>
     
@@ -247,7 +243,7 @@ Improvised explosive devices, or IEDs, were extensively used during the US wars 
       <pubDate>Tue, 24 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/12/24/defense-doublethink/</guid>
-      <description>If you had to take a look at the chart below, what would you say about the overall trend in US defense spending? There&#39;s a bump fairly early on for World War 2, but otherwise it seems to generally increase over time. I&#39;m actually surprised to see that we spend more, in terms of constant US dollars, today than we did at the height of the Korean War, and in fact at any point in US history save World War 2.</description>
+      <description>If you had to take a look at the chart below, what would you say about the overall trend in US defense spending? There&amp;rsquo;s a bump fairly early on for World War 2, but otherwise it seems to generally increase over time. I&amp;rsquo;m actually surprised to see that we spend more, in terms of constant US dollars, today than we did at the height of the Korean War, and in fact at any point in US history save World War 2.</description>
     </item>
     
     <item>
@@ -256,7 +252,7 @@ Improvised explosive devices, or IEDs, were extensively used during the US wars 
       <pubDate>Wed, 11 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/12/11/code-for-blank-state-panel-data/</guid>
-      <description>2018-02-28 update: check out the states package on CRAN. Create panel data for independent states, includes the G&amp;amp;W and COW state lists, and some helper functions. Like sfind(700) to quickly check what country 700 is. Here&#39;s the package page.
+      <description>2018-02-28 update: check out the states package on CRAN. Create panel data for independent states, includes the G&amp;amp;W and COW state lists, and some helper functions. Like sfind(700) to quickly check what country 700 is. Here&amp;rsquo;s the package page.
  The short version:
 Here is some R code to create arbitrary country-year or country-month data sets reflecting the Gleditsch and Ward or COW state system membership lists, using the cshapes R package.</description>
     </item>
@@ -278,7 +274,7 @@ Here is some R code to create arbitrary country-year or country-month data sets 
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/10/18/taking-over-the-world/</guid>
-      <description>I work as a Postdoctoral Fellow in the Ward Lab here at Duke University. The Lab currently consists of Mike Ward, me, and a group of very smart graduate students. There are a lot of exciting projects within the lab, like ICEWS and other work for the US government, but also a broader set of projects by our lab members. One of the things we wanted to do this semester is to publicize this work a little bit more, and to this end we&#39;re taking a new blog live today: Predictive Heuristics.</description>
+      <description>I work as a Postdoctoral Fellow in the Ward Lab here at Duke University. The Lab currently consists of Mike Ward, me, and a group of very smart graduate students. There are a lot of exciting projects within the lab, like ICEWS and other work for the US government, but also a broader set of projects by our lab members. One of the things we wanted to do this semester is to publicize this work a little bit more, and to this end we&amp;rsquo;re taking a new blog live today: Predictive Heuristics.</description>
     </item>
     
     <item>
@@ -297,7 +293,7 @@ First, some libraries we will need, and the coordinates.</description>
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/09/19/database-adventures/</guid>
-      <description>Recently I&#39;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the Ward Lab. I should note that I have no idea what I&#39;m doing, and this is the first time I&#39;ve dealt with databases and how to get them working. It&#39;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like Quantum GIS:</description>
+      <description>Recently I&amp;rsquo;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the Ward Lab. I should note that I have no idea what I&amp;rsquo;m doing, and this is the first time I&amp;rsquo;ve dealt with databases and how to get them working. It&amp;rsquo;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like Quantum GIS:</description>
     </item>
     
     <item>
@@ -316,8 +312,8 @@ Country names to COW [.do] Do-file that creates COW country codes for a dataset
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</guid>
-      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&#39;ve come across it a few times.
-The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&#39;s pretty easy to figure out the coordinates for a city or village name.</description>
+      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&amp;rsquo;ve come across it a few times.
+The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&amp;rsquo;s pretty easy to figure out the coordinates for a city or village name.</description>
     </item>
     
     <item>
@@ -335,7 +331,7 @@ The (or a) solution is to look up the city names with the GeoNames database. The
       <pubDate>Wed, 08 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/05/08/plot-of-duke-grade-inflation/</guid>
-      <description>Someone sent around a link this morning to data on grade inflation at Duke, which shows a table of average GPAs for undergraduates from 1932 on. Looking at the table you can sort of get a sense of when GPA&#39;s really started increasing (the &amp;lsquo;60s), but it would be nicer to just plot them:
+      <description>Someone sent around a link this morning to data on grade inflation at Duke, which shows a table of average GPAs for undergraduates from 1932 on. Looking at the table you can sort of get a sense of when GPA&amp;rsquo;s really started increasing (the &amp;rsquo;60s), but it would be nicer to just plot them:
 
 Or to plot the year over year change in average GPA, with some missing values interpolated:</description>
     </item>
@@ -346,7 +342,7 @@ Or to plot the year over year change in average GPA, with some missing values in
       <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2012/12/22/building-a-survivor-curve-from-observed-data/</guid>
-      <description>A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it&#39;s usually presented similarly. So this was a bit of a challenge.
+      <description>A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it&amp;rsquo;s usually presented similarly. So this was a bit of a challenge.
 A nice thing about duration analysis though is that a lot of the key concepts are already explicitly graphical, like survival curves (wikipedia) and hazard rates.</description>
     </item>
     
@@ -356,7 +352,7 @@ A nice thing about duration analysis though is that a lot of the key concepts ar
       <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
       
       <guid>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</guid>
-      <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&#39;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
+      <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&amp;rsquo;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
     </item>
     
     <item>
@@ -365,7 +361,7 @@ A nice thing about duration analysis though is that a lot of the key concepts ar
       <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2012/08/25/scale-and-north-arrow-for-maps-in-r/</guid>
-      <description>A few months ago I produced some thematic maps of Bosnia (paper) using maptools and other packages in R, but I didn&#39;t include scales or a north arrow. It sounds simple and sp has functions for doing those things, but I couldn&#39;t get it to work well with my maps. Here is a basic map of Bosnia&#39;s pre-war municipalities:
+      <description>A few months ago I produced some thematic maps of Bosnia (paper) using maptools and other packages in R, but I didn&amp;rsquo;t include scales or a north arrow. It sounds simple and sp has functions for doing those things, but I couldn&amp;rsquo;t get it to work well with my maps. Here is a basic map of Bosnia&amp;rsquo;s pre-war municipalities:
 library(maptools) plot(bosnia) 
 The function map.scale() from the maps package adds a scale.</description>
     </item>
@@ -376,7 +372,7 @@ The function map.scale() from the maps package adds a scale.</description>
       <pubDate>Wed, 21 Mar 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2012/03/21/coding-provinces-for-the-iraq-body-count-data/</guid>
-      <description>The Iraq Body Count project collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [1, 2, 3], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&#39;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</description>
+      <description>The Iraq Body Count project collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [1, 2, 3], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&amp;rsquo;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</description>
     </item>
     
     <item>
@@ -404,7 +400,7 @@ The Ill-Treatment and Torture (ITT) project by Courtenay Conrad and Will Moore c
       <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2011/12/20/running-rstudio-on-amazon-ec2/</guid>
-      <description>For the most part I don&#39;t do things that are computationally so intensive that I can&#39;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on FSU&#39;s high performance computing cluster. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</description>
+      <description>For the most part I don&amp;rsquo;t do things that are computationally so intensive that I can&amp;rsquo;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on FSU&amp;rsquo;s high performance computing cluster. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</description>
     </item>
     
     <item>
@@ -434,7 +430,7 @@ Iraq is a democracy, sort of. Although it has a parliament, prime minister, elec
       <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2011/02/12/egypts-military-and-constitution/</guid>
-      <description>In 2003 we invaded Iraq with the hope that people would cheer in the streets. They didn&#39;t. We occupied the country anyways and our presences was and generally is hated by the people.
+      <description>In 2003 we invaded Iraq with the hope that people would cheer in the streets. They didn&amp;rsquo;t. We occupied the country anyways and our presences was and generally is hated by the people.
 Starting with the protests on National Police Day, January 25th, 2011, the Egyptian people went to the streets, largely peacefully, and removed Mubarak from power. Now the Egyptian military, hesitant, will have to get involved in running the country.</description>
     </item>
     
@@ -445,7 +441,7 @@ Starting with the protests on National Police Day, January 25th, 2011, the Egypt
       
       <guid>https://www.andybeger.com/2011/02/08/iraq-counter-ied/</guid>
       <description>A long time ago, in a place far away, I wrote this (pdf). Random thoughts on counter-IED in northern Iraq, and gripes about living there.
-Not knowing, I was on my way to death from cancer at the time. Maybe that&#39;s why I wasn&#39;t positive.
+Not knowing, I was on my way to death from cancer at the time. Maybe that&amp;rsquo;s why I wasn&amp;rsquo;t positive.
 In retrospect I have to also admit even more how much more difficult the combat arms soldiers and officers have it. My life was plush in comparison.</description>
     </item>
     
@@ -519,8 +515,9 @@ My previous position was as Postdoctoral Fellow at Duke University in the Wardla
       <description>Below is a list of ongoing and past projects that I am working or have worked on.
 Still in the works
 [[90s GeoCities UNDER CONSTRUCTION.gif]]
- Coup forecasts (This is not a paid project, although with internal support from PH for the 2020 forecasts)
-Inspired by Jay Ulfelder&#39;s coup forecasts from 2012 - 2015, I&#39;ve tried at various points since then to also provide some coup forecasts as a public good, although not successful for all years (I&#39;m lazy, what can I say, and I&#39;ve learned that I turn into a data pedant when doing these).</description>
+ HFC-SAGE IARPA&amp;rsquo;s Hybrid Forecasting Competition (HFC), in their own words:
+ The HFC program seeks to develop and test hybrid geopolitical forecasting systems. These systems will integrate human and machine forecasting components to create maximally accurate, flexible, and scalable forecasting capabilities.
+ The idea essentially was to study how one can combine human forecasts from a Good Judgment-style platform with machine-generated forecasts to answer questions like.</description>
     </item>
     
     <item>
@@ -530,7 +527,7 @@ Inspired by Jay Ulfelder&#39;s coup forecasts from 2012 - 2015, I&#39;ve tried a
       
       <guid>https://www.andybeger.com/research/</guid>
       <description>My Google Scholar profile.
-Peer-reviewed publications Fred Morstatter, Aram Galstyan, Gleb Satyukov, Daniel Benjamin, Andres Abeliuk, Mehrnoosh Mirtaheri, KSM Tozammel Hossain, Pedro Szekely, Emilio Ferrara, Akira Matsui, Mark Steyvers, Stephen Bennet, David Budescu, Mark Himmelstein, Michael Ward, Andreas Beger, Michele Catasta, Rok Sosic, Jure Leskovec, Pavel Atanasov, Regina Joseph, Rajiv Sethi, Ali Abbas. 2019. &amp;ldquo;SAGE: A Hybrid Geopolitical Event Forecasting System&amp;quot;. Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence Demos: 6557-6559.</description>
+Peer-reviewed publications Fred Morstatter, Aram Galstyan, Gleb Satyukov, Daniel Benjamin, Andres Abeliuk, Mehrnoosh Mirtaheri, KSM Tozammel Hossain, Pedro Szekely, Emilio Ferrara, Akira Matsui, Mark Steyvers, Stephen Bennet, David Budescu, Mark Himmelstein, Michael Ward, Andreas Beger, Michele Catasta, Rok Sosic, Jure Leskovec, Pavel Atanasov, Regina Joseph, Rajiv Sethi, Ali Abbas. 2019. &amp;ldquo;SAGE: A Hybrid Geopolitical Event Forecasting System&amp;rdquo;. Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence Demos: 6557-6559.</description>
     </item>
     
     <item>

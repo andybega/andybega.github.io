@@ -6,11 +6,7 @@
     <description>Recent content in PostgreSQL on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Oct 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.andybeger.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 15 Oct 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building rgdal from source</title>
       <link>https://www.andybeger.com/2014/10/15/building-rgdal-from-source/</link>

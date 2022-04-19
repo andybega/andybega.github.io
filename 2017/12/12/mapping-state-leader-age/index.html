@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Mapping state leader age - Andreas Beger</title>
@@ -43,8 +43,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -75,20 +73,20 @@
     
 
     <div class="article-content">
-      <p>The map below shows the age of the world's state leaders on 12 December 2017.</p>
+      <p>The map below shows the age of the world&rsquo;s state leaders on 12 December 2017.</p>
 <p><a href="/img//2017/map-leader-age.png"><img src="/img/2017/map-leader-age.png" alt="Map of state leader ages"></a></p>
 <p>The mean age is around 62 years, ranging from 31.5 year old Sebastian Kurz in Austria&mdash;whose party won the last legislative elections and is in the process of forming a government&mdash;to 91.5 year old President Essebi in Tunisia.</p>
-<p>The data come from the <a href="http://oefresearch.org/datasets/reign">REIGN leader data</a>, which in part builds on and updates the <a href="http://privatewww.essex.ac.uk/~ksg/archigos.html">Archigos leader data</a>, a dataset of the leaders of the world's independent states from 1875 on. You can find a list of the leaders that are shown in the map <a href="https://github.com/andybega/mireg-blogs/blob/master/leader-age-map/leader-data.csv">on github here</a>.</p>
+<p>The data come from the <a href="http://oefresearch.org/datasets/reign">REIGN leader data</a>, which in part builds on and updates the <a href="http://privatewww.essex.ac.uk/~ksg/archigos.html">Archigos leader data</a>, a dataset of the leaders of the world&rsquo;s independent states from 1875 on. You can find a list of the leaders that are shown in the map <a href="https://github.com/andybega/mireg-blogs/blob/master/leader-age-map/leader-data.csv">on github here</a>.</p>
 <p>Note that these data code the <em>de facto</em>, effective leader of a state, so the person listed there may not be the theoretical, <em>de jure</em> head of a state. For example, in parliamentary democracies the prime minister is coded as the state leader even though usually another person is the official, ceremonial head of state, while in semi-presidential regimes with both a president and prime-minister either might be designated the effective leader, and that designation might change in over time if the relative power of the two offices is altered. Similarly, in Russia Putin is coded as the uninterrupted leader since 2000, even for the period when Medvedev was president and Putin prime minister. The websites linked above both have code books that explain coding criteria in detail.</p>
 <p>The map was made in R using ggplot2, cowplot, and sf, with data via cshapes and rnaturalearth. The code is <a href="https://github.com/andybega/mireg-blogs/tree/master/leader-age-map">on github</a>.</p>
 <h2 id="are-leaders-in-larger-or-less-democratic-countries-older">Are leaders in larger or less democratic countries older?</h2>
-<p>Estonia, where I live, has had a successsion of young prime ministers in their 30s, and the youngest leader on the map is in another small country, Austria. Maybe it is easier for young persons to rise to the top government position in a small, less populous country with less hierarchy. Similarly, if we think of Robert Mugabe's recent retirement, maybe regime type also plays a role in how old a state's leader is.</p>
+<p>Estonia, where I live, has had a successsion of young prime ministers in their 30s, and the youngest leader on the map is in another small country, Austria. Maybe it is easier for young persons to rise to the top government position in a small, less populous country with less hierarchy. Similarly, if we think of Robert Mugabe&rsquo;s recent retirement, maybe regime type also plays a role in how old a state&rsquo;s leader is.</p>
 <p>First, here is leader age against country population, taken from the World Development Indicators:</p>
 <p><a href="/img//2017/leader-age-vs-country-pop.png"><img src="/img//2017/leader-age-vs-country-pop.png" alt="Leader age versus population"></a></p>
 <p>There is pretty much no relationship at all.</p>
 <p>Next, leader age against an index of liberal democracy, from the Varieties of Democracy project (V-Dem):</p>
 <p><a href="/img//2017/leader-age-vs-democracy.png"><img src="/img//2017/leader-age-vs-democracy.png" alt="Leader age versus democracy-ness"></a></p>
-<p>There is a very slight pattern of younger leaders in more democratic regimes here, but it doesn't really explain much of the variation in age.</p>
+<p>There is a very slight pattern of younger leaders in more democratic regimes here, but it doesn&rsquo;t really explain much of the variation in age.</p>
 <p>Who are those really young leaders in really autocratic states? The list of current under 40 autocrats consists of Kim Jong-Un in North Korea at 34 (more or less, depending on who you ask), <a href="https://en.wikipedia.org/wiki/Tamim_bin_Hamad_Al_Thani">Sheikh Al Thani</a> of Qatar at 37, and <a href="https://en.wikipedia.org/wiki/Saleh_Ali_al-Sammad">Saleh Ali al-Sammad</a> of the Houthis in Yemen, at 38 (although you could argue who really is at the top in Yemen right now, if anyone).</p>
 
     </div>
@@ -128,7 +126,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

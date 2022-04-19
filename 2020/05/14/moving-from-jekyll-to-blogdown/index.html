@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Moving from Jekyll to blogdown - Andreas Beger</title>
@@ -43,8 +43,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -75,12 +73,12 @@
     
 
     <div class="article-content">
-      <p>Given the rate at which I'm posting new content these days&ndash;3 posts in 2017, 2 in 2018, 1 in 2019&ndash;my blog appears to slowly be becoming a blog about moving from <a href="https://www.andybeger.com/2016/06/20/moving-from-wordpress-to-jekyll/">one blogging engine to another</a>.</p>
-<p>Behind the scenes, at some point in early 2019 (it's hard to tell), I started moving the site from Jekyll to R's <a href="https://bookdown.org/yihui/blogdown/"><strong>blogdown</strong></a>, which uses the <a href="https://gohugo.io">Hugo static site generator</a>.</p>
+      <p>Given the rate at which I&rsquo;m posting new content these days&ndash;3 posts in 2017, 2 in 2018, 1 in 2019&ndash;my blog appears to slowly be becoming a blog about moving from <a href="https://www.andybeger.com/2016/06/20/moving-from-wordpress-to-jekyll/">one blogging engine to another</a>.</p>
+<p>Behind the scenes, at some point in early 2019 (it&rsquo;s hard to tell), I started moving the site from Jekyll to R&rsquo;s <a href="https://bookdown.org/yihui/blogdown/"><strong>blogdown</strong></a>, which uses the <a href="https://gohugo.io">Hugo static site generator</a>.</p>
 <p>Why?</p>
-<p>Reason number 1, which spurred this whole transition idea, is that GitHub keeps alerting me to security vulnerabilities in the blog dependencies, a lot of which are related to the theme I was using. Updating the theme, which would have resolved these, has always been a painful process for me because I made some small adjustments that get wiped out. I did like the theme, it's good that GitHub identifies and alerts me to security issues, I just don't want to mess around with theme updates every couple of months. Hopefully this will be less of an issue with blogdown, since there is more provision for modifying themes, e.g. some of the style customization lives in a separate <code>custom.css</code>.</p>
+<p>Reason number 1, which spurred this whole transition idea, is that GitHub keeps alerting me to security vulnerabilities in the blog dependencies, a lot of which are related to the theme I was using. Updating the theme, which would have resolved these, has always been a painful process for me because I made some small adjustments that get wiped out. I did like the theme, it&rsquo;s good that GitHub identifies and alerts me to security issues, I just don&rsquo;t want to mess around with theme updates every couple of months. Hopefully this will be less of an issue with blogdown, since there is more provision for modifying themes, e.g. some of the style customization lives in a separate <code>custom.css</code>.</p>
 <p>Number 2, I can now write blog posts in <a href="https://rmarkdown.rstudio.com"><strong>rmarkdown</strong></a>, which I use quite a lot otherwise.</p>
-<p>It's still hosted using GitHub Pages though, despite the strong recommendation to use Netlify. I want to keep my GitHub project pages. To do that I have two repos: one contains the source for this site, the other contains the built content that Hugo creates, by default to the <code>/public</code> folder. See the bottom part of the instructions at <a href="https://bookdown.org/yihui/blogdown/github-pages.html">https://bookdown.org/yihui/blogdown/github-pages.html</a>.</p>
+<p>It&rsquo;s still hosted using GitHub Pages though, despite the strong recommendation to use Netlify. I want to keep my GitHub project pages. To do that I have two repos: one contains the source for this site, the other contains the built content that Hugo creates, by default to the <code>/public</code> folder. See the bottom part of the instructions at <a href="https://bookdown.org/yihui/blogdown/github-pages.html">https://bookdown.org/yihui/blogdown/github-pages.html</a>.</p>
 
     </div>
   </article>
@@ -119,7 +117,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

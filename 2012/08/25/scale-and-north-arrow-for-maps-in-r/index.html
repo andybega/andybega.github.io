@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Scale and north arrow for maps in R - Andreas Beger</title>
@@ -48,8 +48,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -80,23 +78,23 @@
     
 
     <div class="article-content">
-      <p>A few months ago I produced some thematic maps of Bosnia (<a href="http://andybeger.wordpress.com/research/" title="Research papers">paper</a>) using <code>maptools</code> and other packages in R, but I didn't include scales or a north arrow. It sounds simple and <code>sp</code> has functions for doing those things, but I couldn't get it to work well with my maps. Here is a basic map of Bosnia's pre-war municipalities:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(maptools)
+      <p>A few months ago I produced some thematic maps of Bosnia (<a href="http://andybeger.wordpress.com/research/" title="Research papers">paper</a>) using <code>maptools</code> and other packages in R, but I didn&rsquo;t include scales or a north arrow. It sounds simple and <code>sp</code> has functions for doing those things, but I couldn&rsquo;t get it to work well with my maps. Here is a basic map of Bosnia&rsquo;s pre-war municipalities:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(maptools)
 
 plot(bosnia)  
 </code></pre></div><p><a href="/img/2012/bosnia_munic.png"><img src="/img/2012/bosnia_munic.png" alt=""></a></p>
 <p>The function <code>map.scale()</code> from the <code>maps</code> package adds a scale. The position is in map units, latitude/longitude in this case:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(maps)  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(maps)  
 map.scale(x=15.5, y=42.75, ratio=<span style="color:#00f">FALSE</span>, relwidth=0.2)  
 </code></pre></div><p>And <code>GISTools</code> <code>north.arrow</code> for the north arrow. Units are also in map units. This package has a map scale function as well, which looks nicer but is a little bit more complicated to set up.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(GISTools)  
-north.arrow(xb=15.75, yb=43.25, len=0.05, lab=<span style="color:#a31515">&#34;</span><span style="color:#a31515">N&#34;</span>)  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(GISTools)  
+north.arrow(xb=15.75, yb=43.25, len=0.05, lab=<span style="color:#a31515">&#34;N&#34;</span>)  
 </code></pre></div><p>This will produce the following map:</p>
 <p><a href="/img/2012/bosnia_munic2.png"><img src="/img/2012/bosnia_munic2.png" alt="Bosnia municipalities 2"></a></p>
 <p>Adding these to a function I wrote for producing thematic maps of Bosnia produces this pretty nice map (with scale and north arrow!) of document per capita civil war deaths:</p>
 <p><a href="/img/2012/map_dead.png"><img src="/img/2012/map_dead.png" alt="Map of dead in Bosnia"></a></p>
 <p>Here is the function (which is pretty specific to the data I use):</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ThematicMap &lt;- function(vector, breaks, title, legend) {  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ThematicMap &lt;- function(vector, breaks, title, legend) {  
   require(maptools)  
   require(shape)  
   require(RColorBrewer)  
@@ -105,29 +103,29 @@ north.arrow(xb=15.75, yb=43.25, len=0.05, lab=<span style="color:#a31515">&#34;<
 
   plotvar &lt;- unlist(vector)  
   nclr &lt;- 9  
-  plotclr &lt;- brewer.pal(nclr, <span style="color:#a31515">&#34;</span><span style="color:#a31515">Reds&#34;</span>)  
+  plotclr &lt;- brewer.pal(nclr, <span style="color:#a31515">&#34;Reds&#34;</span>)  
   fillRed &lt;- colorRampPalette(plotclr)  
   plotvar[plotvar &gt;= maxy] &lt;- maxy -1  
   colcode &lt;- fillRed(maxy)[round(plotvar) + 1]  
-  plot(bosnia, col = colcode, lty = 0, border = <span style="color:#a31515">&#34;</span><span style="color:#a31515">gray&#34;</span>)  
-  plot(bosnia.st, add=<span style="color:#00f">TRUE</span>, lwd=1, border = <span style="color:#a31515">&#34;</span><span style="color:#a31515">gray30&#34;</span>)  
-  plot(bosnia.front93, add = <span style="color:#00f">TRUE</span>, lty=<span style="color:#a31515">&#34;</span><span style="color:#a31515">solid&#34;</span>, lwd=1.5, col=<span style="color:#a31515">&#34;</span><span style="color:#a31515">darkblue&#34;</span>)  
+  plot(bosnia, col = colcode, lty = 0, border = <span style="color:#a31515">&#34;gray&#34;</span>)  
+  plot(bosnia.st, add=<span style="color:#00f">TRUE</span>, lwd=1, border = <span style="color:#a31515">&#34;gray30&#34;</span>)  
+  plot(bosnia.front93, add = <span style="color:#00f">TRUE</span>, lty=<span style="color:#a31515">&#34;solid&#34;</span>, lwd=1.5, col=<span style="color:#a31515">&#34;darkblue&#34;</span>)  
   map.scale(x=15.5, y=42.75, relwidth=0.2, ratio=<span style="color:#00f">FALSE</span>)  
-  north.arrow(xb=15.75, yb=43.25, len=0.05, lab=<span style="color:#a31515">&#34;</span><span style="color:#a31515">N&#34;</span>)  
+  north.arrow(xb=15.75, yb=43.25, len=0.05, lab=<span style="color:#a31515">&#34;N&#34;</span>)  
   title(main = title)  
   colorlegend(posy = c(0.05,0.9), posx = c(0.9,0.92),  
   col = fillRed(maxy),  
   zlim=c(0, maxy), zval = breaks,  
   main = legend,  
   main.cex = 0.9)  
-  par(bg=<span style="color:#a31515">&#39;</span><span style="color:#a31515">white&#39;</span>)  
+  par(bg=<span style="color:#a31515">&#39;white&#39;</span>)  
 }
 
 killed.pk &lt;- (killed/pop91*1000)  
 maxy &lt;- 50  
 breaks &lt;- c(0, 10, 20, 30, 40, <span style="color:#00f">Inf</span>)  
-png(<span style="color:#a31515">&#34;</span><span style="color:#a31515">images/map_dead.png&#34;</span>)  
-print(ThematicMap(killed.pk,breaks,<span style="color:#a31515">&#34;</span><span style="color:#a31515">Documented killings during the Bosnian War&#34;</span>,<span style="color:#a31515">&#34;</span><span style="color:#a31515">per 1,000&#34;</span>))  
+png(<span style="color:#a31515">&#34;images/map_dead.png&#34;</span>)  
+print(ThematicMap(killed.pk,breaks,<span style="color:#a31515">&#34;Documented killings during the Bosnian War&#34;</span>,<span style="color:#a31515">&#34;per 1,000&#34;</span>))  
 dev.off()  
 </code></pre></div>
     </div>
@@ -179,7 +177,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

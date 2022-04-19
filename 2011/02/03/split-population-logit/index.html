@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Split Population Logit - Andreas Beger</title>
@@ -43,8 +43,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -79,7 +77,7 @@
 <p>In many circumstances political scientists study binary dependent variables that have been measured with bias. For example, in surveys the strategic interests of actors can lead them to misrepresent an attitude or behavior to the surveyor in a non-random fashion. Data on terror or torture that are coded using media reports likely suffer from a similar bias related to factors such as freedom of the press in a country.</p>
 <p>We, <a href="http://www.psci.unt.edu/~demeritt/home.html">Jacqueline DeMeritt</a>, <a href="http://web.utk.edu/~whwang/">Wonjae Hwang</a>, <a href="http://mailer.fsu.edu/~whmoore/garnet-whmoore/">Will Moore</a>, and <a href="http://andybeger.wordpress.com/about/" title="About">Andy Beger</a>, have adapted and implemented a split population logit model in Stata to deal with those issues.</p>
 <p><a href="/img/2011/infidelityhonesty.png"><img src="/img/2011/infidelityhonesty.png" alt=""></a></p>
-<p>To give you an idea of what this new model allows one to do, consider the issue of self-reported infidelity between romantic partners. Using survey data, the reported rate of infidelity is about 13% of the sample. Yet common sense would suggest that this rate be higher, at least due to social desirability bias that would lead respondents who did in fact cheat lie about it to avoid the negative stigma. The split population logit model allows us to separate respondents&rsquo; rates of honesty and infidelity separately, as shown in the table excerpt from our paper. It shows for example that 41% of the sample likely cheated on their partner, but also that around three-quarters chose to lie about it when surveyed. Quite a difference from the 13% reported in the observed data.</p>
+<p>To give you an idea of what this new model allows one to do, consider the issue of self-reported infidelity between romantic partners. Using survey data, the reported rate of infidelity is about 13% of the sample. Yet common sense would suggest that this rate be higher, at least due to social desirability bias that would lead respondents who did in fact cheat lie about it to avoid the negative stigma. The split population logit model allows us to separate respondents' rates of honesty and infidelity separately, as shown in the table excerpt from our paper. It shows for example that 41% of the sample likely cheated on their partner, but also that around three-quarters chose to lie about it when surveyed. Quite a difference from the 13% reported in the observed data.</p>
 <p>The split population logit is implemented in Stata using these <a href="/files/spoplogit/adoFiles.zip">ado files</a>. Here are also do files that calculate <a href="/files/spoplogit/EffectsAndPredictions.zip">first differences and predicted probabilities</a>.</p>
 <p>Here are replication files for the <a href="/files/spoplogit/Simulations.zip">simulations</a> we used to evaluate our estimator and replication files for the <a href="/files/spoplogit/InfidelityReplication.zip">infidelity example</a>. The simulations were run through <a href="http://www.hpc.fsu.edu">Florida State University High Performance Computing</a>.</p>
 <p>Paper to follow in a few weeks.</p>
@@ -121,7 +119,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

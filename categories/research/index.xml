@@ -6,11 +6,7 @@
     <description>Recent content in research on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.andybeger.com/categories/research/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 24 Sep 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/categories/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>When forecasting goes wrong (maybe): Yemen</title>
       <link>https://www.andybeger.com/2015/09/24/when-forecasting-goes-wrong-maybe-yemen/</link>
@@ -37,7 +33,7 @@ Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a f
       <pubDate>Wed, 08 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2015/04/08/a-quick-look-at-the-public-icews-data/</guid>
-      <description>The ICEWS data, including the underlying raw event data as well as some aggregations, were quietly posted on Dataverse the Friday before last. I&#39;ve worked with the ICEWS data for several years now, first when I was working on on the ICEWS package&amp;ndash;we deliver updated monthly forecasts for the ICEWS events of interest (EOIs) once a month&amp;ndash;and more recently for the [irregular leadership change forecasting project](http://andybeger.com/2014/05/23/the-thailand-coup-and-some-recent- forecasting-work/). The public data are formatted differently from the data I&#39;ve worked with, so most of the code I have lying around is not that useful, but in going through the public data I did recreate a short overview that is nowhere near as complete as David Masad&amp;lsquo;s first look (using Python), and some code that might be useful for getting started in R.</description>
+      <description>The ICEWS data, including the underlying raw event data as well as some aggregations, were quietly posted on Dataverse the Friday before last. I&amp;rsquo;ve worked with the ICEWS data for several years now, first when I was working on on the ICEWS package&amp;ndash;we deliver updated monthly forecasts for the ICEWS events of interest (EOIs) once a month&amp;ndash;and more recently for the [irregular leadership change forecasting project](http://andybeger.com/2014/05/23/the-thailand-coup-and-some-recent- forecasting-work/). The public data are formatted differently from the data I&amp;rsquo;ve worked with, so most of the code I have lying around is not that useful, but in going through the public data I did recreate a short overview that is nowhere near as complete as David Masad&amp;rsquo;s first look (using Python), and some code that might be useful for getting started in R.</description>
     </item>
     
     <item>
@@ -46,7 +42,7 @@ Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a f
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2015/03/16/precision-recall-curves/</guid>
-      <description>Update 2016-06: there&#39;s a PDF of this now, at http://ssrn.com/abstract=2765419
+      <description>Update 2016-06: there&amp;rsquo;s a PDF of this now, at http://ssrn.com/abstract=2765419
  ROC curves are a fairly standard way to evaluate model fit with binary outcomes, like (civil) war onset. I would be willing to bet that most if not all quantitative political scientists know what they are and how to construct one. Unlike simpler fit statistics like accuracy or percentage reduction in error (PRE), they do not depend on the particular threshold value used to divide probabilistic predictions into binary predictions, and thus give a better sense of the tradeoff between true and false positives inherent in any probabilistic model.</description>
     </item>
     
@@ -56,7 +52,7 @@ Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a f
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2014/05/23/the-thailand-coup-and-some-recent-forecasting-work/</guid>
-      <description>I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I&#39;ve recently been part of:
+      <description>I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I&amp;rsquo;ve recently been part of:
  This morning (East Coast time), the Thai military staged a coup against the caretaker government that had been in power for the past several weeks, after months of protests and political turmoil directed at the government of Yingluck Shinawatra, who herself had been ordered to resign on 7 May by the judiciary.</description>
     </item>
     
@@ -66,7 +62,7 @@ Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a f
       <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
       
       <guid>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</guid>
-      <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&#39;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
+      <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&amp;rsquo;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
     </item>
     
   </channel>

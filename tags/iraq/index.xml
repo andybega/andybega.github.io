@@ -6,18 +6,14 @@
     <description>Recent content in Iraq on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Oct 2012 22:07:55 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.andybeger.com/tags/iraq/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 29 Oct 2012 22:07:55 +0200</lastBuildDate><atom:link href="https://www.andybeger.com/tags/iraq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Random walk negative binomial model for persistent count series.</title>
       <link>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</link>
       <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
       
       <guid>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</guid>
-      <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&#39;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
+      <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&amp;rsquo;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
     </item>
     
     <item>
@@ -48,7 +44,7 @@ Iraq is a democracy, sort of. Although it has a parliament, prime minister, elec
       
       <guid>https://www.andybeger.com/2011/02/08/iraq-counter-ied/</guid>
       <description>A long time ago, in a place far away, I wrote this (pdf). Random thoughts on counter-IED in northern Iraq, and gripes about living there.
-Not knowing, I was on my way to death from cancer at the time. Maybe that&#39;s why I wasn&#39;t positive.
+Not knowing, I was on my way to death from cancer at the time. Maybe that&amp;rsquo;s why I wasn&amp;rsquo;t positive.
 In retrospect I have to also admit even more how much more difficult the combat arms soldiers and officers have it. My life was plush in comparison.</description>
     </item>
     

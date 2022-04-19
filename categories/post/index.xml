@@ -6,11 +6,7 @@
     <description>Recent content in post on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Oct 2014 15:52:56 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.andybeger.com/categories/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 06 Oct 2014 15:52:56 +0300</lastBuildDate><atom:link href="https://www.andybeger.com/categories/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The right kind of variance</title>
       <link>https://www.andybeger.com/2014/10/06/the-right-kind-of-variance/</link>
@@ -27,7 +23,7 @@ Nobody in their right mind would think that the chances of civil war in Denmark
       <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2014/08/08/modeling-and-predicting-ieds/</guid>
-      <description>This first appeared on Predictive Heuristics, my employer&#39;s blog.
+      <description>This first appeared on Predictive Heuristics, my employer&amp;rsquo;s blog.
 Improvised explosive devices, or IEDs, were extensively used during the US wars in Iraq and Afghanistan, causing half of all US and coalition casualties despite increasingly sophisticated countermeasures. Although both of these wars have come to a close, it is unlikely that the threat of IEDs will disappear. If anything, their success implies that US and European forces are more likely to face them in similar future conflicts.</description>
     </item>
     
@@ -37,7 +33,7 @@ Improvised explosive devices, or IEDs, were extensively used during the US wars 
       <pubDate>Wed, 29 Jan 2014 02:48:21 +0200</pubDate>
       
       <guid>https://www.andybeger.com/2014/01/29/quick-lookup-for-country-codes/</guid>
-      <description>Update on 2017-11-01: In the meantime I&#39;ve written a minimal R package with the COW and GW state lists and a rudimentary search helper function at https://github.com/andybega/states.
+      <description>Update on 2017-11-01: In the meantime I&amp;rsquo;ve written a minimal R package with the COW and GW state lists and a rudimentary search helper function at https://github.com/andybega/states.
  After more than half a decade at this, it has finally dawned upon me that instead of downloading the Correlates of War state system membership table, or the Gleditsch and Ward refinement of it, every time I wonder what country &amp;ldquo;338&amp;rdquo; is, it might be easier to upload them to Google:</description>
     </item>
     
@@ -47,7 +43,7 @@ Improvised explosive devices, or IEDs, were extensively used during the US wars 
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/10/18/taking-over-the-world/</guid>
-      <description>I work as a Postdoctoral Fellow in the Ward Lab here at Duke University. The Lab currently consists of Mike Ward, me, and a group of very smart graduate students. There are a lot of exciting projects within the lab, like ICEWS and other work for the US government, but also a broader set of projects by our lab members. One of the things we wanted to do this semester is to publicize this work a little bit more, and to this end we&#39;re taking a new blog live today: Predictive Heuristics.</description>
+      <description>I work as a Postdoctoral Fellow in the Ward Lab here at Duke University. The Lab currently consists of Mike Ward, me, and a group of very smart graduate students. There are a lot of exciting projects within the lab, like ICEWS and other work for the US government, but also a broader set of projects by our lab members. One of the things we wanted to do this semester is to publicize this work a little bit more, and to this end we&amp;rsquo;re taking a new blog live today: Predictive Heuristics.</description>
     </item>
     
     <item>
@@ -56,7 +52,7 @@ Improvised explosive devices, or IEDs, were extensively used during the US wars 
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/09/19/database-adventures/</guid>
-      <description>Recently I&#39;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the Ward Lab. I should note that I have no idea what I&#39;m doing, and this is the first time I&#39;ve dealt with databases and how to get them working. It&#39;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like Quantum GIS:</description>
+      <description>Recently I&amp;rsquo;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the Ward Lab. I should note that I have no idea what I&amp;rsquo;m doing, and this is the first time I&amp;rsquo;ve dealt with databases and how to get them working. It&amp;rsquo;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like Quantum GIS:</description>
     </item>
     
     <item>
@@ -75,8 +71,8 @@ Country names to COW [.do] Do-file that creates COW country codes for a dataset
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</guid>
-      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&#39;ve come across it a few times.
-The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&#39;s pretty easy to figure out the coordinates for a city or village name.</description>
+      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&amp;rsquo;ve come across it a few times.
+The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&amp;rsquo;s pretty easy to figure out the coordinates for a city or village name.</description>
     </item>
     
     <item>
@@ -85,7 +81,7 @@ The (or a) solution is to look up the city names with the GeoNames database. The
       <pubDate>Wed, 21 Mar 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2012/03/21/coding-provinces-for-the-iraq-body-count-data/</guid>
-      <description>The Iraq Body Count project collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [1, 2, 3], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&#39;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</description>
+      <description>The Iraq Body Count project collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [1, 2, 3], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&amp;rsquo;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</description>
     </item>
     
     <item>
@@ -113,7 +109,7 @@ The Ill-Treatment and Torture (ITT) project by Courtenay Conrad and Will Moore c
       <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2011/12/20/running-rstudio-on-amazon-ec2/</guid>
-      <description>For the most part I don&#39;t do things that are computationally so intensive that I can&#39;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on FSU&#39;s high performance computing cluster. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</description>
+      <description>For the most part I don&amp;rsquo;t do things that are computationally so intensive that I can&amp;rsquo;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on FSU&amp;rsquo;s high performance computing cluster. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</description>
     </item>
     
     <item>
@@ -122,7 +118,7 @@ The Ill-Treatment and Torture (ITT) project by Courtenay Conrad and Will Moore c
       <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2011/02/12/egypts-military-and-constitution/</guid>
-      <description>In 2003 we invaded Iraq with the hope that people would cheer in the streets. They didn&#39;t. We occupied the country anyways and our presences was and generally is hated by the people.
+      <description>In 2003 we invaded Iraq with the hope that people would cheer in the streets. They didn&amp;rsquo;t. We occupied the country anyways and our presences was and generally is hated by the people.
 Starting with the protests on National Police Day, January 25th, 2011, the Egyptian people went to the streets, largely peacefully, and removed Mubarak from power. Now the Egyptian military, hesitant, will have to get involved in running the country.</description>
     </item>
     
@@ -133,7 +129,7 @@ Starting with the protests on National Police Day, January 25th, 2011, the Egypt
       
       <guid>https://www.andybeger.com/2011/02/08/iraq-counter-ied/</guid>
       <description>A long time ago, in a place far away, I wrote this (pdf). Random thoughts on counter-IED in northern Iraq, and gripes about living there.
-Not knowing, I was on my way to death from cancer at the time. Maybe that&#39;s why I wasn&#39;t positive.
+Not knowing, I was on my way to death from cancer at the time. Maybe that&amp;rsquo;s why I wasn&amp;rsquo;t positive.
 In retrospect I have to also admit even more how much more difficult the combat arms soldiers and officers have it. My life was plush in comparison.</description>
     </item>
     

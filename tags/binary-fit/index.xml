@@ -6,18 +6,14 @@
     <description>Recent content in binary fit on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Mar 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.andybeger.com/tags/binary-fit/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 16 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/binary-fit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Precision-recall curves</title>
       <link>https://www.andybeger.com/2015/03/16/precision-recall-curves/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2015/03/16/precision-recall-curves/</guid>
-      <description>Update 2016-06: there&#39;s a PDF of this now, at http://ssrn.com/abstract=2765419
+      <description>Update 2016-06: there&amp;rsquo;s a PDF of this now, at http://ssrn.com/abstract=2765419
  ROC curves are a fairly standard way to evaluate model fit with binary outcomes, like (civil) war onset. I would be willing to bet that most if not all quantitative political scientists know what they are and how to construct one. Unlike simpler fit statistics like accuracy or percentage reduction in error (PRE), they do not depend on the particular threshold value used to divide probabilistic predictions into binary predictions, and thus give a better sense of the tradeoff between true and false positives inherent in any probabilistic model.</description>
     </item>
     

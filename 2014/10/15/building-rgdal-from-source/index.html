@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Building rgdal from source - Andreas Beger</title>
@@ -48,8 +48,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -81,12 +79,12 @@
 
     <div class="article-content">
       <p>My limited knowledge of what happens in Terminal, and thus by extension shell, is mostly driven by PostgreSQL/PostGID/rgdal/RPostgreSQL install errors. In the latest variant of this, <code>rgdal</code> throws the following error when attempting to build from source:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">checking PROJ.4: epsg found and readable... no  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">checking PROJ.4: epsg found and readable... no  
 Error: proj/epsg not found  
 Either install missing proj support files, for example the proj-nad and  proj-epsg RPMs on systems using RPMs, or if installed but not autodetected, set PROJ_LIB to the correct path, and if need be use the --with-proj-share=configure argument.  
 </code></pre></div><p>I have to build from source by the way because the default <code>rgdal</code> package for Mac does not include a PostgreSQL driver, meaning I have to build it against another version of GDAL that does. This was another fun thing to discover, but at least is easy to diagnose by checking whether <code>PostgreSQL</code> shows up when you run <code>ogrDrivers()</code> in R. Anyways, as far as I can tell the problem was that I installed <code>proj</code> via <a href="http://brew.sh/">homebrew</a>, a package manager for OS X. As a result although <code>rgdal</code> could find the <code>proj</code> binary via a symlink, it could not find the <code>epsg</code> and related data files that were in a little dark corner by themselves. The solution was to build the package with an option providing the file location manually:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">install.packages(<span style="color:#a31515">&#34;</span><span style="color:#a31515">rgdal&#34;</span>, type = <span style="color:#a31515">&#34;</span><span style="color:#a31515">source&#34;</span>, 
-  configure.args=<span style="color:#a31515">&#34;</span><span style="color:#a31515">--with-proj-share=/usr/local/Cellar/proj/4.8.0/share/proj&#34;</span>)  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">install.packages(<span style="color:#a31515">&#34;rgdal&#34;</span>, type = <span style="color:#a31515">&#34;source&#34;</span>, 
+  configure.args=<span style="color:#a31515">&#34;--with-proj-share=/usr/local/Cellar/proj/4.8.0/share/proj&#34;</span>)  
 </code></pre></div><p>This is I guess exactly what the install error message told me to do.</p>
     </div>
   </article>
@@ -137,7 +135,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

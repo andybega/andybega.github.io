@@ -6,18 +6,14 @@
     <description>Recent content in survival function on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Dec 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.andybeger.com/tags/survival-function/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 22 Dec 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/survival-function/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a survivor curve from observed data</title>
       <link>https://www.andybeger.com/2012/12/22/building-a-survivor-curve-from-observed-data/</link>
       <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2012/12/22/building-a-survivor-curve-from-observed-data/</guid>
-      <description>A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it&#39;s usually presented similarly. So this was a bit of a challenge.
+      <description>A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it&amp;rsquo;s usually presented similarly. So this was a bit of a challenge.
 A nice thing about duration analysis though is that a lot of the key concepts are already explicitly graphical, like survival curves (wikipedia) and hazard rates.</description>
     </item>
     

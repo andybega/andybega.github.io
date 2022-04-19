@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Precision-recall curves - Andreas Beger</title>
@@ -43,8 +43,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -76,7 +74,7 @@
 
     <div class="article-content">
       <blockquote>
-<p><strong>Update 2016-06</strong>: there's a PDF of this now, at <a href="http://ssrn.com/abstract=2765419">http://ssrn.com/abstract=2765419</a></p>
+<p><strong>Update 2016-06</strong>: there&rsquo;s a PDF of this now, at <a href="http://ssrn.com/abstract=2765419">http://ssrn.com/abstract=2765419</a></p>
 </blockquote>
 <p><a href="http://en.wikipedia.org/wiki/Receiver_operating_characteristic">ROC curves</a>
 are a fairly standard way to evaluate model fit with binary outcomes, like
@@ -86,11 +84,11 @@ simpler fit statistics like accuracy or percentage reduction in error (PRE),
 they do not depend on the particular threshold value used to divide
 probabilistic predictions into binary predictions, and thus give a better
 sense of the tradeoff between true and false positives inherent in any
-probabilistic model. The area under a ROC curve (AUC) can summarize a model's
+probabilistic model. The area under a ROC curve (AUC) can summarize a model&rsquo;s
 performance and has the somewhat intuitive alternative interpretation of
 representing the probability that a randomly picked positive outcome case will
 have been ranked higher by the model than a randomly picked negative outcome
-case. What I didn't realize until more recently though is that ROC curves are
+case. What I didn&rsquo;t realize until more recently though is that ROC curves are
 a misleading indication of model performance with kind of sparse data that
 happens to be the norm in conflict research.</p>
 <p>
@@ -142,7 +140,7 @@ need to plot the ROC curve. The true and false positive rates are calculated
 as the ratio of true positives (cases the model got right) to overall
 positives in the data, and the ratio of false positives (cases the model
 predicted 1, but that did not have a positive outcome) to overall negatives in
-the data. Here's an example using some simulated data I'll discuss more below:</p>
+the data. Here&rsquo;s an example using some simulated data I&rsquo;ll discuss more below:</p>
 <div style="width:50%;padding:0 0 0 150px;">
 <p><!-- Thu Mar 12 11:57:35 2015 --></p>
 <table>
@@ -186,9 +184,8 @@ the data. Here's an example using some simulated data I'll discuss more below:</
 </table>
 </div>
 <p>Which gives the following ROC curve if we plot the TP and FP rates:</p>
-<figure><a href="/img/2015/roc-example.png">
-    <img src="/img/2015/roc-example.png"
-         alt="ROC curve for the example data"/> </a><figcaption>
+<figure><a href="/img/2015/roc-example.png"><img src="/img/2015/roc-example.png"
+         alt="ROC curve for the example data"/></a><figcaption>
             <p>ROC curve for the example data</p>
         </figcaption>
 </figure>
@@ -196,7 +193,7 @@ the data. Here's an example using some simulated data I'll discuss more below:</
 <p>In this example, about 40% of outcomes are positive, but this is rarely the
 case in international relations and conflict research in particular, where
 data tend to be sparse, with much fewer positive outcomes for things like war
-or civil war onset and occurrence. [Fearon and Laitin's 2003 paper](http://jou
+or civil war onset and occurrence. [Fearon and Laitin&rsquo;s 2003 paper](http://jou
 rnals.cambridge.org/action/displayAbstract?fromPage=online&amp;aid=142717&amp;fileId=S
 0003055403000534) on civil war onset has 167 positives per 10,000, and the two
 projects I mostly work on these days have rates of 17 per 10,000 for country-
@@ -227,38 +224,36 @@ $$
 </p>
 <p>Since it becomes easier to predict negatives as they become more common,
 looking at false positive rates with sparse data might not be that
-informative. Instead, let's plot something else. The only option, assuming
+informative. Instead, let&rsquo;s plot something else. The only option, assuming
 that we do care about positives and hence the true positive rate or recall,
 would be to compare false positives to the overall number of positive
 predictions made by a model for a given threshold. This is called precision,
-and I think of it as how believable a model's predictions are (&ldquo;My model says
+and I think of it as how believable a model&rsquo;s predictions are (&ldquo;My model says
 1, what are the actual chances this is true?&quot;).</p>
 <p>The plot below is a precision-recall curve that does this, for the same
-example as before. Instead of FPR we now have precision, and I've also flipped
+example as before. Instead of FPR we now have precision, and I&rsquo;ve also flipped
 the axes as it seems to be convention to plot recall on the x-axis.</p>
-<figure><a href="2015/pr-example.png">
-    <img src="/img/2015/pr-example.png"
-         alt="Precision-recall curve for the same example data with 0.4 positives."/> </a><figcaption>
+<figure><a href="2015/pr-example.png"><img src="/img/2015/pr-example.png"
+         alt="Precision-recall curve for the same example data with 0.4 positives."/></a><figcaption>
             <p>Precision-recall curve for the same example data with 0.4 positives.</p>
         </figcaption>
 </figure>
 
 <h2 id="simulations">Simulations!</h2>
-<p>Since the example I used had a positive rate of 0.4, the plot doesn't really
+<p>Since the example I used had a positive rate of 0.4, the plot doesn&rsquo;t really
 make it obvious why one would want to look at precision-recall curves for
 sparse data. To illustrate that better, below are two plots from a simulation
 where I created 3 data sets with decreasing positive rates (0.4, 0.1, 0.01)
 and for each data set then created 3 models designed to achieve a particular
 AUC-ROC value (0.8, 0.9, 0.95).</p>
 <p>The first series of plots are the ROC curves. Since the models are meant to
-match a given AUC, these shouldn't really look different, and they don't, as
+match a given AUC, these shouldn&rsquo;t really look different, and they don&rsquo;t, as
 we move to the increasingly sparse datasets. The curves get a little bit
 edgier on the right, but this is just because there are less positive outcomes
 based on which recall/TPR are calculated. All models are doing equally well if
 we use ROC curves and AUC as our metric.</p>
-<figure><a href="2015/roc.png">
-    <img src="/img/2015/roc.png"
-         alt="ROC curves"/> </a><figcaption>
+<figure><a href="2015/roc.png"><img src="/img/2015/roc.png"
+         alt="ROC curves"/></a><figcaption>
             <p>ROC curves</p>
         </figcaption>
 </figure>
@@ -268,10 +263,9 @@ precision as one moves to sparser data, and here it becomes more obvious that
 the sparse data present more of a challenge. On the right, even the 0.95 AUC
 model barely touches on 0.5 precision (1 correct positive for 1 false
 positive), and if we were to calculate the area under the PR curves (AUC-PR)
-we'd get values much lower, 0.25 and less.</p>
-<figure><a href="2015/rpc.png">
-    <img src="/img/2015/rpc.png"
-         alt="PR curves"/> </a><figcaption>
+we&rsquo;d get values much lower, 0.25 and less.</p>
+<figure><a href="2015/rpc.png"><img src="/img/2015/rpc.png"
+         alt="PR curves"/></a><figcaption>
             <p>PR curves</p>
         </figcaption>
 </figure>
@@ -287,24 +281,24 @@ potential positive, and incidentally you will capture most if not all actual
 positive outcomes. Getting high precision on the other hand is much more
 difficult, and realistically there are hard limits here, at least with this
 kind of problem. With that in mind it seems strange to me, on the few
-occasions I've been exposed to this, that people commissioning these kinds of
+occasions I&rsquo;ve been exposed to this, that people commissioning these kinds of
 forecasts aim for recall, e.g. require that models reach 0.8 or some other
 threshold, rather than precision, which might make quantitative modeling more
 credible to non-technical audiences. But then, my cost for false negatives,
 which I would tend to have more of with this rationale, is probably also much
 lower.</p>
 <p>The conclusions: if you are doing (conflict) research with sparse binary data
-and are interested for whatever reason in model fit, (1) your models don't do
+and are interested for whatever reason in model fit, (1) your models don&rsquo;t do
 as well as ROC might lead one to believe, and (2) consider precision-recall
 curves as an addition or alternative.</p>
 <p><a href="https://github.com/andybega/auc-pr">Code to plot PR curves, calculate AUC-PR, and replicate the examples
 here.</a></p>
 <h2 id="what-about-brier-scores">What about Brier scores?</h2>
-<p>One thing I haven't quite wrapped my mind around is how this relates to Brier
+<p>One thing I haven&rsquo;t quite wrapped my mind around is how this relates to Brier
 scores, calibration, and discrimination. With ROC and PR curves we implicitly
 treat the model predictions are meaningless in and of themselves. All that
 matters is their relative ranking, and I can in fact transform them in any way
-that doesn't alter this ranking. For the initial example above, I can cut all
+that doesn&rsquo;t alter this ranking. For the initial example above, I can cut all
 probabilities in half and I would still get the same ROC/PR information
 (recall is 0.5, precision is 0.5, FPR is 0.5):</p>
 <div style="width:60%;padding:0 0 0 150px;">
@@ -341,7 +335,7 @@ probabilities in half and I would still get the same ROC/PR information
 of AUC-ROC and AUC-PR, I am not in fact sure to what extent one can take the
 probabilities generated by them at face value. For one, they tend to be very
 low, way below 0.1, which makes it a bit harder to assess forecast accuracy
-(Did I miss, even though I'm getting the baseline right?), but then, we are
+(Did I miss, even though I&rsquo;m getting the baseline right?), but then, we are
 also dealing with very rare events.</p>
 <p>From a modeling perspective, another question is to what extent Brier score
 rankings map on to other fit measures. In the extreme upper limiting case, it
@@ -351,7 +345,7 @@ what happens below that, which can make it challenging to decide what models
 to invest more time in.</p>
 <h2 id="addendum">Addendum</h2>
 <p>(<em>Added on 2018-09-08</em>)</p>
-<p>Based on <a href="https://disqus.com/by/standard_deviant/">Standard Deviant</a>&lsquo;s really helpful comment and the posts he links to below, here are some modeling-related recommendations:</p>
+<p>Based on <a href="https://disqus.com/by/standard_deviant/">Standard Deviant</a>&rsquo;s really helpful comment and the posts he links to below, here are some modeling-related recommendations:</p>
 <ol>
 <li>
 <p><em>Fit</em> or train models using a proper scoring rule, e.g. the likelihood for statistical models like logistic regression, or things like Brier score or log loss for other types of models. See <a href="http://www.fharrell.com/post/class-damage/">this post</a> by Frank Harrell. I would also use these, along measures like AIC/BIC if applicable, to compare or select models fitted/trained on the <em>exact</em> same set of (outcome) cases.</p>
@@ -360,7 +354,7 @@ to invest more time in.</p>
 <p>Unless the outcome is (close to) inherently binary/categorical, like classifiying images of handwritten digits, <a href="http://www.fharrell.com/post/classification/">preferentially use probabilistic predictions rather than class labels like discrete 0/1 predictions</a>.</p>
 </li>
 <li>
-<p>For <em>evaluating performance</em> of a fitted model's predictions, I have a strong preference for measures like AUC-ROC and AUC-PR that depend less on the prevalence of positive cases in the data or the treshold used to discretize probabilistic predictions into discrete 0/1 predictions. It is really hard to look at a Brier score or maximized log-likelihood value and get a sense of how accurate a model is. Measures like AUC-PR/ROC also make it easier to compare the performance of models that model similar but not identical outcomes, like coup measures from different data sources, or models of the same coup dataset, but where the actual set of cases for a model varies because of differences in temporal scope or what cases are dropped due to missing values, etc.</p>
+<p>For <em>evaluating performance</em> of a fitted model&rsquo;s predictions, I have a strong preference for measures like AUC-ROC and AUC-PR that depend less on the prevalence of positive cases in the data or the treshold used to discretize probabilistic predictions into discrete 0/1 predictions. It is really hard to look at a Brier score or maximized log-likelihood value and get a sense of how accurate a model is. Measures like AUC-PR/ROC also make it easier to compare the performance of models that model similar but not identical outcomes, like coup measures from different data sources, or models of the same coup dataset, but where the actual set of cases for a model varies because of differences in temporal scope or what cases are dropped due to missing values, etc.</p>
 </li>
 </ol>
 
@@ -404,7 +398,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

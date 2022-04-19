@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Coding provinces for the Iraq Body Count data - Andreas Beger</title>
@@ -48,8 +48,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -80,26 +78,26 @@
     
 
     <div class="article-content">
-      <p>The <a href="http://www.iraqbodycount.org/">Iraq Body Count project</a> collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [<a href="http://www.iraqbodycount.org/database/incidents/k18564">1</a>, <a href="http://www.iraqbodycount.org/database/incidents/k18560">2</a>, <a href="http://www.iraqbodycount.org/database/incidents/k18554">3</a>], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I'm looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</p>
-<p>Using the incident data from 2003 to February 2012, about 27,500 records, I've written an <a href="https://github.com/andybega/Code_IBC_Province/blob/master/code_province.R">R script that assign provinces</a> to ~95 percent of the records, 26,000.</p>
-<p>Here's a basic overview of how it works:</p>
+      <p>The <a href="http://www.iraqbodycount.org/">Iraq Body Count project</a> collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [<a href="http://www.iraqbodycount.org/database/incidents/k18564">1</a>, <a href="http://www.iraqbodycount.org/database/incidents/k18560">2</a>, <a href="http://www.iraqbodycount.org/database/incidents/k18554">3</a>], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&rsquo;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</p>
+<p>Using the incident data from 2003 to February 2012, about 27,500 records, I&rsquo;ve written an <a href="https://github.com/andybega/Code_IBC_Province/blob/master/code_province.R">R script that assign provinces</a> to ~95 percent of the records, 26,000.</p>
+<p>Here&rsquo;s a basic overview of how it works:</p>
 <p>The process basically consists of four steps:</p>
 <ol>
 <li>Split the location string into separate words</li>
 <li>Identify a candidate word</li>
-<li>Strip if of unnecessary parts (&ldquo;al-&quot;, &ldquo;&lsquo;s&rdquo;,&hellip;)</li>
+<li>Strip if of unnecessary parts (&ldquo;al-&rdquo;, &ldquo;&rsquo;s&rdquo;,&hellip;)</li>
 <li>Check against known city-province list</li>
 <li>Repeat until a match is found</li>
 </ol>
-<p>Two functions cover steps 3 and 4. The first strips out the &ldquo;al-&rdquo; prefix, which just is an article (&ldquo;the&rdquo;), the possessive suffix &ldquo;&lsquo;s&rdquo;, and a couple of other characters that are in a words sometimes.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">DelChar &lt;- function(x) {  
-  word &lt;- sub(<span style="color:#a31515">&#34;</span><span style="color:#a31515">al-&#34;</span>, <span style="color:#a31515">&#34;</span><span style="color:#a31515">&#34;</span>, x, ignore.case = <span style="color:#00f">TRUE</span>)  
-  word &lt;- gsub(<span style="color:#a31515">&#34;</span><span style="color:#a31515">&#39;[s]&#34;</span>, <span style="color:#a31515">&#34;</span><span style="color:#a31515">&#34;</span>, word)  
-  word &lt;- gsub(<span style="color:#a31515">&#34;</span><span style="color:#a31515">[?,&#39;]&#34;</span>, <span style="color:#a31515">&#34;</span><span style="color:#a31515">&#34;</span>, word)  
+<p>Two functions cover steps 3 and 4. The first strips out the &ldquo;al-&rdquo; prefix, which just is an article (&ldquo;the&rdquo;), the possessive suffix &ldquo;&rsquo;s&rdquo;, and a couple of other characters that are in a words sometimes.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">DelChar &lt;- function(x) {  
+  word &lt;- sub(<span style="color:#a31515">&#34;al-&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, x, ignore.case = <span style="color:#00f">TRUE</span>)  
+  word &lt;- gsub(<span style="color:#a31515">&#34;&#39;[s]&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, word)  
+  word &lt;- gsub(<span style="color:#a31515">&#34;[?,&#39;]&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, word)  
   return(word)  
 }  
 </code></pre></div><p>The other function takes a word and checks it against a list of known city and province pairs (&ldquo;city.prov&rdquo;) to see whether it matches either, and if so returns that province name:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ProvLook &lt;- function(x) {  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ProvLook &lt;- function(x) {  
   province &lt;- <span style="color:#00f">NULL</span>  
   repeat {  
     if (x %in% city.prov[, 2]) {  
@@ -109,14 +107,14 @@
       province &lt;- city.prov[(x==city.prov[, 1]), 2]  
       break  
     } else {  
-      province &lt;- <span style="color:#a31515">&#34;</span><span style="color:#a31515">no match&#34;</span>  
+      province &lt;- <span style="color:#a31515">&#34;no match&#34;</span>  
       break  
     }  
   }  
   return(province)  
 }  
-</code></pre></div><p>The rest is a loop over the words in location to evaluate each one. It's not very efficient and takes 7 seconds to run over the 27,500 records I'm using, but it's effective enough. Any ideas on how to improve efficiency? I don't know enough to have any clue on this.</p>
-<p>I'm pretty happy for now with getting 95 percent of the records, but it would be nice to get all in the future. Here are some ideas for how to do that:</p>
+</code></pre></div><p>The rest is a loop over the words in location to evaluate each one. It&rsquo;s not very efficient and takes 7 seconds to run over the 27,500 records I&rsquo;m using, but it&rsquo;s effective enough. Any ideas on how to improve efficiency? I don&rsquo;t know enough to have any clue on this.</p>
+<p>I&rsquo;m pretty happy for now with getting 95 percent of the records, but it would be nice to get all in the future. Here are some ideas for how to do that:</p>
 <ol>
 <li>Figure out how to accommodate common misspellings. There are certain patterns in how place names get misspelled. For example, &ldquo;h&rdquo; at the end of words that end in a vowel (Basra, Basrah), and repeated or substituted vowels (Qadisiya, Qadisiyya; Baiji, Baaji)</li>
 <li>Accomodate place names that consist of more than one word, like &ldquo;Salman Pak&rdquo;.</li>
@@ -172,7 +170,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

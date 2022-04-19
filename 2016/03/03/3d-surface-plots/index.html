@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>3d surface plots of GDP vs. event data - Andreas Beger</title>
@@ -43,8 +43,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -77,16 +75,16 @@
     <div class="article-content">
       <p>A while ago I <a href="http://andybeger.com/2014/10/06/the-right-kind-of-variance/">wrote a post</a> about how the patterns by which data for cross-national datasets observed over multiple periods, e.g. with country-year or country-month observations, vary is important for modeling and prediction. Here is another way to visualize why this is the case using 3-d surface plots made with <a href="https://plot.ly">Plotly</a>.</p>
 <p><a href="/img/2016/gdp-logged.png"><img src="/img/2016/gdp-logged.png" alt="3d surface plot of logged GDP per capita"></a></p>
-<p>The plot shows logged GDP per capita for &gt;150 countries from 1995 to 2013. This is about the time period we cover in our data for <a href="http://rap.sagepub.com/content/1/3/2053168014557511">forecasting irregular leadership changes</a>. Countries are sorted by GDP for the last year with data, which is why the near edge of the plot is smoother than the far end. It's obvious that there are some changes within countries and at rates that differ from other countries, but still most of the variation is between countries.</p>
+<p>The plot shows logged GDP per capita for &gt;150 countries from 1995 to 2013. This is about the time period we cover in our data for <a href="http://rap.sagepub.com/content/1/3/2053168014557511">forecasting irregular leadership changes</a>. Countries are sorted by GDP for the last year with data, which is why the near edge of the plot is smoother than the far end. It&rsquo;s obvious that there are some changes within countries and at rates that differ from other countries, but still most of the variation is between countries.</p>
 <p>The differences are much larger at the high end when we look at the raw, unlogged GDP data:</p>
 <p><a href="/img/2016/gdp-raw.png"><img src="/img/2016/gdp-raw.png" alt="3d surface plot of raw GDP per capita"></a></p>
 <p>Yes, there are differences within countries and this is clearer to see with the unlogged data, but overall the surface is pretty flat over the time dimension and sloping or curving over the list of countries on the <em>y</em> dimension.</p>
 <p>The reason why variation on one (spatial) or the other (temporal) dimension is important, as I argued in the other post, is that to predict dynamic outcomes like civil war onset, or irregular leadership changes in our case, temporally varying variables are absolutely necessary. Not sufficient by default, but neccessary. Data like GDP, similar structural indicators, and more generally time-invariant or largely invariant variables cannot possibly predict the timing of events.</p>
 <p>Now compare the two plots above to what anti-government protests look like:</p>
 <p><a href="/img/2016/protest-count.png"><img src="/img/2016/protest-count.png" alt="3d surface plot of protest counts"></a></p>
-<p>That's essentially the same set of countries, and over the same time period, but using monthly rather than annual observations. I also flipped the <em>x</em> and <em>y</em> axes, but that hardly matters, it's spiky either way. The data come from the <a href="https://github.com/andybega/rap-ensemble-forecasting">replication data for the Research &amp; Politics article I linked above</a>, and consist of counts of anti-government protests events in the ICEWS event data. There is more variation over time, and although there are countries with higher mean levels of protests, it's not as pronounced a pattern as it was with GDP. This is the kind of thing that might help pin the timing of events down.</p>
+<p>That&rsquo;s essentially the same set of countries, and over the same time period, but using monthly rather than annual observations. I also flipped the <em>x</em> and <em>y</em> axes, but that hardly matters, it&rsquo;s spiky either way. The data come from the <a href="https://github.com/andybega/rap-ensemble-forecasting">replication data for the Research &amp; Politics article I linked above</a>, and consist of counts of anti-government protests events in the ICEWS event data. There is more variation over time, and although there are countries with higher mean levels of protests, it&rsquo;s not as pronounced a pattern as it was with GDP. This is the kind of thing that might help pin the timing of events down.</p>
 <p>No discussion of event data should probably fail to mention that media-based event data are subject to important biases and irregularities, and that these are crucial for attempts at causal inference. They are not fundamentally a threat to use in prediction sans explanation though.</p>
-<p>Creating the plots was pretty easy. There is a <code>plotly</code> R library that allows you to send <code>ggplot2</code> objects to their website, where a bit of clicking and rotating will turn them into interactive 3-d surface plots. Although it seems to not handle missing and ragged&ndash;think countries entering at various points in the 60's or 90's&ndash;data very well, it's a bit more intuitive than looking at summary means and variances, which in any case might obscure differences like these in the kind of structured data commonly used in IR (country/province/grid cell&ndash;year/month)</p>
+<p>Creating the plots was pretty easy. There is a <code>plotly</code> R library that allows you to send <code>ggplot2</code> objects to their website, where a bit of clicking and rotating will turn them into interactive 3-d surface plots. Although it seems to not handle missing and ragged&ndash;think countries entering at various points in the 60&rsquo;s or 90&rsquo;s&ndash;data very well, it&rsquo;s a bit more intuitive than looking at summary means and variances, which in any case might obscure differences like these in the kind of structured data commonly used in IR (country/province/grid cell&ndash;year/month)</p>
 <p><a href="https://github.com/andybega/mireg-blogs/tree/master/3d-var-viz">Replication code (3d-var-viz)</a>.</p>
 <p>Interactive plots:</p>
 <ul>
@@ -131,7 +129,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

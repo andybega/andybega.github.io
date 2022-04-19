@@ -6,11 +6,7 @@
     <description>Recent content in R on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.andybeger.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>200 years of democracy charted</title>
       <link>https://www.andybeger.com/2018/06/26/200-years-of-democracy-charted/</link>
@@ -38,7 +34,7 @@ There was a little war of maps after the 2016 election. A thematic map of the el
       <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2014/09/19/baby-steps-with-r-shiny/</guid>
-      <description>Shiny is a web application framework that lets you create interactive websites representing R data visualization and analysis. The gallery has some nice examples, and it looks like a great way to make R more accessible without having to know things like JavaScript or d3. I&#39;ve been in trying my hand at it and it seems like a great way to visualize the models underlying the forecasts I work on in Ward Lab as well as the event data on which they are in part based.</description>
+      <description>Shiny is a web application framework that lets you create interactive websites representing R data visualization and analysis. The gallery has some nice examples, and it looks like a great way to make R more accessible without having to know things like JavaScript or d3. I&amp;rsquo;ve been in trying my hand at it and it seems like a great way to visualize the models underlying the forecasts I work on in Ward Lab as well as the event data on which they are in part based.</description>
     </item>
     
     <item>
@@ -56,7 +52,7 @@ There was a little war of maps after the 2016 election. A thematic map of the el
       <pubDate>Wed, 11 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/12/11/code-for-blank-state-panel-data/</guid>
-      <description>2018-02-28 update: check out the states package on CRAN. Create panel data for independent states, includes the G&amp;amp;W and COW state lists, and some helper functions. Like sfind(700) to quickly check what country 700 is. Here&#39;s the package page.
+      <description>2018-02-28 update: check out the states package on CRAN. Create panel data for independent states, includes the G&amp;amp;W and COW state lists, and some helper functions. Like sfind(700) to quickly check what country 700 is. Here&amp;rsquo;s the package page.
  The short version:
 Here is some R code to create arbitrary country-year or country-month data sets reflecting the Gleditsch and Ward or COW state system membership lists, using the cshapes R package.</description>
     </item>
@@ -88,7 +84,7 @@ First, some libraries we will need, and the coordinates.</description>
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/09/19/database-adventures/</guid>
-      <description>Recently I&#39;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the Ward Lab. I should note that I have no idea what I&#39;m doing, and this is the first time I&#39;ve dealt with databases and how to get them working. It&#39;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like Quantum GIS:</description>
+      <description>Recently I&amp;rsquo;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the Ward Lab. I should note that I have no idea what I&amp;rsquo;m doing, and this is the first time I&amp;rsquo;ve dealt with databases and how to get them working. It&amp;rsquo;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like Quantum GIS:</description>
     </item>
     
     <item>
@@ -97,8 +93,8 @@ First, some libraries we will need, and the coordinates.</description>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</guid>
-      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&#39;ve come across it a few times.
-The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&#39;s pretty easy to figure out the coordinates for a city or village name.</description>
+      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&amp;rsquo;ve come across it a few times.
+The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&amp;rsquo;s pretty easy to figure out the coordinates for a city or village name.</description>
     </item>
     
     <item>
@@ -107,7 +103,7 @@ The (or a) solution is to look up the city names with the GeoNames database. The
       <pubDate>Wed, 08 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2013/05/08/plot-of-duke-grade-inflation/</guid>
-      <description>Someone sent around a link this morning to data on grade inflation at Duke, which shows a table of average GPAs for undergraduates from 1932 on. Looking at the table you can sort of get a sense of when GPA&#39;s really started increasing (the &amp;lsquo;60s), but it would be nicer to just plot them:
+      <description>Someone sent around a link this morning to data on grade inflation at Duke, which shows a table of average GPAs for undergraduates from 1932 on. Looking at the table you can sort of get a sense of when GPA&amp;rsquo;s really started increasing (the &amp;rsquo;60s), but it would be nicer to just plot them:
 
 Or to plot the year over year change in average GPA, with some missing values interpolated:</description>
     </item>
@@ -118,7 +114,7 @@ Or to plot the year over year change in average GPA, with some missing values in
       <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2012/12/22/building-a-survivor-curve-from-observed-data/</guid>
-      <description>A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it&#39;s usually presented similarly. So this was a bit of a challenge.
+      <description>A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it&amp;rsquo;s usually presented similarly. So this was a bit of a challenge.
 A nice thing about duration analysis though is that a lot of the key concepts are already explicitly graphical, like survival curves (wikipedia) and hazard rates.</description>
     </item>
     
@@ -128,7 +124,7 @@ A nice thing about duration analysis though is that a lot of the key concepts ar
       <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2012/08/25/scale-and-north-arrow-for-maps-in-r/</guid>
-      <description>A few months ago I produced some thematic maps of Bosnia (paper) using maptools and other packages in R, but I didn&#39;t include scales or a north arrow. It sounds simple and sp has functions for doing those things, but I couldn&#39;t get it to work well with my maps. Here is a basic map of Bosnia&#39;s pre-war municipalities:
+      <description>A few months ago I produced some thematic maps of Bosnia (paper) using maptools and other packages in R, but I didn&amp;rsquo;t include scales or a north arrow. It sounds simple and sp has functions for doing those things, but I couldn&amp;rsquo;t get it to work well with my maps. Here is a basic map of Bosnia&amp;rsquo;s pre-war municipalities:
 library(maptools) plot(bosnia) 
 The function map.scale() from the maps package adds a scale.</description>
     </item>
@@ -139,7 +135,7 @@ The function map.scale() from the maps package adds a scale.</description>
       <pubDate>Wed, 21 Mar 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2012/03/21/coding-provinces-for-the-iraq-body-count-data/</guid>
-      <description>The Iraq Body Count project collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [1, 2, 3], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&#39;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</description>
+      <description>The Iraq Body Count project collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [1, 2, 3], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&amp;rsquo;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</description>
     </item>
     
     <item>
@@ -158,7 +154,7 @@ The Ill-Treatment and Torture (ITT) project by Courtenay Conrad and Will Moore c
       <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.andybeger.com/2011/12/20/running-rstudio-on-amazon-ec2/</guid>
-      <description>For the most part I don&#39;t do things that are computationally so intensive that I can&#39;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on FSU&#39;s high performance computing cluster. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</description>
+      <description>For the most part I don&amp;rsquo;t do things that are computationally so intensive that I can&amp;rsquo;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on FSU&amp;rsquo;s high performance computing cluster. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</description>
     </item>
     
   </channel>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Database adventures - Andreas Beger</title>
@@ -48,8 +48,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -80,18 +78,18 @@
     
 
     <div class="article-content">
-      <p>Recently I've set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the <a href="http://mdwardlab.com/">Ward Lab</a>. I should note that I have no idea what I'm doing, and this is the first time I've dealt with databases and how to get them working. It's been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like <a href="http://www.qgis.org/">Quantum GIS</a>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#008000"># setup connection to database  </span>
+      <p>Recently I&rsquo;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the <a href="http://mdwardlab.com/">Ward Lab</a>. I should note that I have no idea what I&rsquo;m doing, and this is the first time I&rsquo;ve dealt with databases and how to get them working. It&rsquo;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like <a href="http://www.qgis.org/">Quantum GIS</a>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#008000"># setup connection to database  </span>
 library(rgdal)  
-dsn &lt;- <span style="color:#a31515">&#34;</span><span style="color:#a31515">PG: dbname=&#39;db&#39; host=&#39;someIP&#39; port=&#39;5432&#39; user=&#39;me&#39; password=&#39;guest&#39;&#34;</span>
+dsn &lt;- <span style="color:#a31515">&#34;PG: dbname=&#39;db&#39; host=&#39;someIP&#39; port=&#39;5432&#39; user=&#39;me&#39; password=&#39;guest&#39;&#34;</span>
 
 <span style="color:#008000"># Load Afghanistan boundary (source: GADM)  </span>
-state &lt;- readOGR(dsn, layer=<span style="color:#a31515">&#34;</span><span style="color:#a31515">afg_adm0&#34;</span>)  
+state &lt;- readOGR(dsn, layer=<span style="color:#a31515">&#34;afg_adm0&#34;</span>)  
 plot(state)  
 </code></pre></div><p><a href="/img/2013/afg.png"><img src="/img/2013/afg.png" alt="Afghanistan"></a></p>
 <p>It all started in the beginning of this summer, when we needed a spatial database to support several GB worth of data related to a forecasting project with, surprise, a heavy spatial component. <a href="http://www.postgresql.org/">PostgreSQL</a>, an open source database system, in conjunction with the <a href="http://postgis.net/">PostGIS</a> extension, provides a database that can store that amount of data, supports spatial data types like polygon and raster data, and provides a useful number of related functions. With it you can do things like finding intersections between roads (lines), subsetting a gigantic raster dataset covering the entire Earth to just one country, and more.</p>
-<p>Long story short, without any background knowledge, getting everything working was a really long and frustrating process that lasted several weeks. With the benefit of hindsight, I've written up some documentation on our <a href="http://mdwardlab.com/wiki/index.php?title=Main_Page">Lab wiki</a> on how to <a href="http://mdwardlab.com/wiki/index.php?title=C-IED_server_install_and_admin">setup a PostGIS server on a Mac</a> and configure it for remote access, as well as how to <a href="http://mdwardlab.com/wiki/index.php?title=C-IED_how_to_get_started">get started guide for users</a>. Obviously that is all written with our projects in mind, and pretty rough still, but maybe it's helpful if you're doing this for the first time like I did.</p>
-<p>One final comment: yesterday I went through a similar process to set up a MySQL database with remote access through R. It took about 2 hours from start to finish, much of which was spent on adding data. Some of that difference in time is hopefully because I'm a little bit more familiar with databases now, but MySQL does seem to be a bit easier to get going than PostgreSQL.</p>
+<p>Long story short, without any background knowledge, getting everything working was a really long and frustrating process that lasted several weeks. With the benefit of hindsight, I&rsquo;ve written up some documentation on our <a href="http://mdwardlab.com/wiki/index.php?title=Main_Page">Lab wiki</a> on how to <a href="http://mdwardlab.com/wiki/index.php?title=C-IED_server_install_and_admin">setup a PostGIS server on a Mac</a> and configure it for remote access, as well as how to <a href="http://mdwardlab.com/wiki/index.php?title=C-IED_how_to_get_started">get started guide for users</a>. Obviously that is all written with our projects in mind, and pretty rough still, but maybe it&rsquo;s helpful if you&rsquo;re doing this for the first time like I did.</p>
+<p>One final comment: yesterday I went through a similar process to set up a MySQL database with remote access through R. It took about 2 hours from start to finish, much of which was spent on adding data. Some of that difference in time is hopefully because I&rsquo;m a little bit more familiar with databases now, but MySQL does seem to be a bit easier to get going than PostgreSQL.</p>
 
     </div>
   </article>
@@ -142,7 +140,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 

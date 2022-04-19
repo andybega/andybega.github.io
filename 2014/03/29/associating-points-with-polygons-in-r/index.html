@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 <title>Associating points with polygons in R - Andreas Beger</title>
@@ -48,8 +48,6 @@
 
   <ul class="nav-links">
     
-    <li><a href="/post/">MIR Blog</a></li>
-    
     <li><a href="/projects">Projects</a></li>
     
     <li><a href="/research">Research</a></li>
@@ -82,13 +80,13 @@
     <div class="article-content">
       <p>Some time ago I posted on how to <a href="https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/">find geographic coordinates given a list of village or city names in R</a>. Somebody emailed me about how to do the reverse: the person had a list of villages in France along with the population in 2010, and wanted to find which administrative unit each village was located in. The problem boils down to associating points, the village coordinates, with polygons, the administrative division which they are a part of.</p>
 <p>The village data look like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(foreign)  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(foreign)  
 library(gdata)  
 library(sp)
 
-munic &lt;- read.xls(<span style="color:#a31515">&#34;</span><span style="color:#a31515">France-Population.xlsx&#34;</span>)  
+munic &lt;- read.xls(<span style="color:#a31515">&#34;France-Population.xlsx&#34;</span>)  
 head(munic)  
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">Name long lat pop_2010  
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">Name long lat pop_2010  
 1 Aast -0.0887339 43.28919 182.5416  
 2 Abainville 5.4947440 48.53057 327.2407  
 3 Abancourt 1.7649060 49.69672 687.2479  
@@ -96,24 +94,24 @@ head(munic)
 5 Abaucourt 6.2579230 48.89637 285.9438  
 6 Abaucourt-Hautecourt 5.5405000 49.19700 93.0353  
 </code></pre></div><p>To find the administrative units in which these villages are we can use the <code>over()</code> function from the <code>sp</code> package. First, we get data on administrative boundaries from <a href="http://www.gadm.org/">GADM</a>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">load(<span style="color:#a31515">&#34;</span><span style="color:#a31515">FRA_adm2.RData&#34;</span>)  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">load(<span style="color:#a31515">&#34;FRA_adm2.RData&#34;</span>)  
 adm2 &lt;- gadm; rm(gadm)  
-head(adm2@data[, c(<span style="color:#a31515">&#34;</span><span style="color:#a31515">NAME_1&#34;</span>, <span style="color:#a31515">&#34;</span><span style="color:#a31515">NAME_2&#34;</span>)])  
-</code></pre></div><pre><code>NAME_1 NAME_2  
+head(adm2@data[, c(<span style="color:#a31515">&#34;NAME_1&#34;</span>, <span style="color:#a31515">&#34;NAME_2&#34;</span>)])  
+</code></pre></div><pre tabindex="0"><code>NAME_1 NAME_2  
 1 Picardie Somme  
 2 Haute-Normandie Eure  
 3 Haute-Normandie Seine-Maritime  
 4 Centre Cher  
 5 Centre Eure-et-Loir  
 6 Centre Indre
-</code></pre><p>The data consist of polygons for France's departments, and includes their names as well as the name of the region they are in in the associated data table. To match up the village coordinates with these polygons we need to also convert the village data frame to a spatial object in R:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">coordinates(munic) &lt;- ~ long + lat  
+</code></pre><p>The data consist of polygons for France&rsquo;s departments, and includes their names as well as the name of the region they are in in the associated data table. To match up the village coordinates with these polygons we need to also convert the village data frame to a spatial object in R:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">coordinates(munic) &lt;- ~ long + lat  
 proj4string(munic) &lt;- proj4string(adm2)  
-</code></pre></div><p>The data already include latitude and longitude columns, which we need to identify as such. The second line is about setting the projection the data are in, without which <code>over()</code> will throw an error. The GADM data use WGS 84, which seems to be common for global data, and so it's probably safe to assume that the French village data are also. But this isn't necessarily true, especially with data for a smaller geographic area, which might use a projection that works better for that specific region, e.g. a specific <a href="http://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">UTM grid zone</a>.</p>
+</code></pre></div><p>The data already include latitude and longitude columns, which we need to identify as such. The second line is about setting the projection the data are in, without which <code>over()</code> will throw an error. The GADM data use WGS 84, which seems to be common for global data, and so it&rsquo;s probably safe to assume that the French village data are also. But this isn&rsquo;t necessarily true, especially with data for a smaller geographic area, which might use a projection that works better for that specific region, e.g. a specific <a href="http://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">UTM grid zone</a>.</p>
 <p>The last step is to use <code>over()</code> to match up points and polygons. Note that <code>over()</code> will work with a variety of other spatial data combinations as well.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">munic &lt;- cbind(munic, over(munic, adm2))  
-munic[1:5, c(<span style="color:#a31515">&#34;</span><span style="color:#a31515">Name&#34;</span>, <span style="color:#a31515">&#34;</span><span style="color:#a31515">pop_2010&#34;</span>, <span style="color:#a31515">&#34;</span><span style="color:#a31515">NAME_1&#34;</span>, <span style="color:#a31515">&#34;</span><span style="color:#a31515">NAME_2&#34;</span>)]
-</code></pre></div><pre><code>Name pop_2010 NAME_1 NAME_2  
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">munic &lt;- cbind(munic, over(munic, adm2))  
+munic[1:5, c(<span style="color:#a31515">&#34;Name&#34;</span>, <span style="color:#a31515">&#34;pop_2010&#34;</span>, <span style="color:#a31515">&#34;NAME_1&#34;</span>, <span style="color:#a31515">&#34;NAME_2&#34;</span>)]
+</code></pre></div><pre tabindex="0"><code>Name pop_2010 NAME_1 NAME_2  
 1 Aast 182.5416 Aquitaine Pyrénées-Atlantiques  
 2 Abainville 327.2407 Lorraine Meuse  
 3 Abancourt 687.2479 Picardie Oise  
@@ -169,7 +167,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   </body>
 </html>
 
