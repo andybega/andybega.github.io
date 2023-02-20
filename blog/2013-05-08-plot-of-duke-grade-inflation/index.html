@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Plot of Duke grade inflation | Andreas Beger</title>
+<meta property="og:title" content="Plot of Duke grade inflation - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Plot of Duke grade inflation</h1>
+        
+        <p>
+          <i>
+            <time datetime='2013-05-08' pubdate>
+              8 May 2013
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/duke/">#Duke</a>
+            
+            <a href="https://andybeger.com/tags/grade-inflation/">#grade inflation</a>
+            
+            <a href="https://andybeger.com/tags/r/">#R</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>Someone sent around a link this morning to data on <a href="http://www.gradeinflation.com/Duke.html">grade inflation at Duke</a>, which shows a table of average GPAs for undergraduates from 1932 on. Looking at the table you can sort of get a sense of when GPA&rsquo;s really started increasing (the &rsquo;60s), but it would be nicer to just plot them:</p>
+<p><a href="/img/013/duke_grades_splines.png"><img src="/img/2013/duke_grades_splines.png" alt="duke_grades_splines"></a></p>
+<p>Or to plot the year over year change in average GPA, with some missing values interpolated:</p>
+<p><a href="/img/2013/duke_grades_diff1.png"><img src="/img/2013/duke_grades_diff1.png" alt="duke_grades_diff"></a></p>
+<p>I&rsquo;ve never tried to scrape a website with R before, but it turns out for this it was pretty easy (<a href="http://giventhedata.blogspot.com/2012/08/r-and-web-for-beginners-part-iii.html">with some help</a>).</p>
+<p>Using the <code>XML</code> package and <code>readLines()</code> from the <code>base</code> package you can read the html file which has the grade inflation data. The result of this is not really useful yet since it contains all of the original html and xml tags, but with another function, <code>readHTMLTable</code> one can pull out just the table itself. Since R will by default convert character vectors to factors when creating a data frame, there are a few extra lines in the code below to create a data frame with two numeric vectors for year and GPA:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(XML)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(plyr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get and format html file  </span>
+</span></span><span style="display:flex;"><span>duke.html <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">readLines</span>(<span style="color:#e6db74">&#34;http://www.gradeinflation.com/Duke.html&#34;</span>)  
+</span></span><span style="display:flex;"><span>duke.doc <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">htmlParse</span>(duke.html)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get table as data frame  </span>
+</span></span><span style="display:flex;"><span>duke <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">readHTMLTable</span>(duke.doc, header<span style="color:#f92672">=</span>F, as.data.frame<span style="color:#f92672">=</span>F)  
+</span></span><span style="display:flex;"><span>duke <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(duke, stringsAsFactors<span style="color:#f92672">=</span>F)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">colnames</span>(duke) <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;year&#34;</span>, <span style="color:#e6db74">&#34;gpa&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Format columns  </span>
+</span></span><span style="display:flex;"><span>duke<span style="color:#f92672">$</span>year <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.numeric</span>(duke<span style="color:#f92672">$</span>year)  
+</span></span><span style="display:flex;"><span>duke<span style="color:#f92672">$</span>gpa <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.numeric</span>(<span style="color:#a6e22e">ifelse</span>(duke<span style="color:#f92672">$</span>gpa<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;n.d.&#34;</span>, <span style="color:#66d9ef">NA</span>, duke<span style="color:#f92672">$</span>gpa))  
+</span></span></code></pre></div><p>So now we have a data frame with correct types for year and GPA:</p>
+<pre tabindex="0"><code>&gt; head(duke)  
+  year  gpa  
+1 1932 2.25  
+2 1933 2.28  
+3 1934 2.27  
+4 1935 2.23  
+5 1936 2.21  
+6 1937 2.26  
+</code></pre><p>But if you look at the table on the <a href="http://www.gradeinflation.com/Duke.html">original website</a>, you might notice something funny with the years listed&hellip;there are gaps, or missing years, like the skip between &lsquo;47 and &lsquo;56. After a few lines to add the missing years (link to the full code is below), we can plot the average undergrad GPA for Duke from 1932 on:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(duke<span style="color:#f92672">$</span>year, duke<span style="color:#f92672">$</span>gpa)  
+</span></span></code></pre></div><p><a href="/img/2013/duke_grades_simple_plot.png"><img src="/img/2013/duke_grades_simple_plot.png" alt="duke_grades_simple_plot"></a></p>
+<p>With a little bit of extra code we can make the plot look a bit nicer: add grid lines, mark every decade instead of every 20 years on the x-axis, axis labels, and set the y-axis limits to round numbers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">par</span>(cex<span style="color:#f92672">=</span><span style="color:#ae81ff">1.2</span>)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(duke<span style="color:#f92672">$</span>year, duke<span style="color:#f92672">$</span>gpa, ylim<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>), type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p&#34;</span>, pch<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, xaxt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;n&#34;</span>, 
+</span></span><span style="display:flex;"><span>     xlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;year&#34;</span>, ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GPA&#34;</span>)  
+</span></span><span style="display:flex;"><span>x_ticks <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">seq</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">round_any</span>(<span style="color:#a6e22e">min</span>(years_covered), <span style="color:#ae81ff">10</span>),  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">round_any</span>(<span style="color:#a6e22e">max</span>(years_covered), <span style="color:#ae81ff">10</span>), <span style="color:#ae81ff">10</span>)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">axis</span>(<span style="color:#ae81ff">1</span>, at<span style="color:#f92672">=</span>x_ticks)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid</span>(col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gray50&#34;</span>, lty<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)  
+</span></span></code></pre></div><p><a href="/img/2013/duke_grades_nicer_plot.png"><img src="/img/2013/duke_grades_nicer_plot.png" alt="duke_grades_nicer_plot"></a></p>
+<p>Coding aside, two things stand out from this plot. First, there are significant gaps in the data, e.g. in the 50&rsquo;s and 60&rsquo;s. Second, something crazy happened with grade inflation in the 1960&rsquo;s. We can do something about the missing values by using splines to interpolate them:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>duke<span style="color:#f92672">$</span>gpa_inter <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">spline</span>(duke<span style="color:#f92672">$</span>gpa, n<span style="color:#f92672">=</span><span style="color:#a6e22e">length</span>(duke<span style="color:#f92672">$</span>year))<span style="color:#f92672">$</span>y  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lines</span>(duke<span style="color:#f92672">$</span>year, duke<span style="color:#f92672">$</span>gpa_inter, col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gray80&#34;</span>)  
+</span></span></code></pre></div><p><a href="/img/2013/duke_grades_splines.png"><img src="/img/2013/duke_grades_splines.png" alt="duke_grades_splines"></a></p>
+<p>Finally, since in the context of grade inflation we might be less interested in the absolute values for the average GPA, it might make more sense to plot the changes in GPA from year to year. It looks like there was a period of grad inflation in the late &rsquo;40s (WW2?) and another, bigger period of grade inflation in the 1960s. This actually seems to have happened nation-wide in the 1960s, if you look at the writeup at <a href="http://www.gradeinflation.com/">http://www.gradeinflation.com/</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(duke<span style="color:#f92672">$</span>year[2<span style="color:#f92672">:</span><span style="color:#a6e22e">dim</span>(duke)[1]], <span style="color:#a6e22e">diff</span>(duke<span style="color:#f92672">$</span>gpa_inter), col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gray50&#34;</span>, pch<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>,  
+</span></span><span style="display:flex;"><span>     xlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;year&#34;</span>, ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Change from prev. year&#34;</span>, type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;h&#34;</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, xaxt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;n&#34;</span>)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">axis</span>(<span style="color:#ae81ff">1</span>, at<span style="color:#f92672">=</span>x_ticks)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid</span>(col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gray50&#34;</span>, lty<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">abline</span>(h<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;red&#34;</span>)  
+</span></span></code></pre></div><p><a href="/img/2013/duke_grades_diff1.png"><img src="/img/2013/duke_grades_diff1.png" alt="duke_grades_diff"></a></p>
+<p>Here is a <a href="https://gist.github.com/andybega/5533454">gist of the complete code</a>.</p>
+
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

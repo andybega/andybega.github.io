@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Quick background maps in R | Andreas Beger</title>
+<meta property="og:title" content="Quick background maps in R - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Quick background maps in R</h1>
+        
+        <p>
+          <i>
+            <time datetime='2013-09-30' pubdate>
+              30 September 2013
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/maps/">#maps</a>
+            
+            <a href="https://andybeger.com/tags/r/">#R</a>
+            
+            <a href="https://andybeger.com/tags/visualization/">#visualization</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>Sometimes, for whatever reason, you want to plot something fast. Last week I had some coordinates associated with event data that I was hoping were all from Egypt. But the coordinates were for locations that are only indirectly associated with the events I had, so I wanted to do a quick plot to check. The <code>ggmap</code> package in R makes that pretty easy.</p>
+<p>First, some libraries we will need, and the coordinates. I put the coordinates in a separate gist in order to have a replicable example, but they originally are the result of a not-so-straightforward SQL query (and hence my desire to verify the location).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggmap)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(source.gist)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get data frame with coordinates for points  </span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">source.gist</span>(<span style="color:#e6db74">&#34;6705264&#34;</span>)  
+</span></span></code></pre></div><p>So now we have a data frame with the lat/long coordinates:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">head</span>(egy.points)  
+</span></span><span style="display:flex;"><span>Latitude Longitude  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">30.0626</span> <span style="color:#ae81ff">31.2497</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">30.0626</span> <span style="color:#ae81ff">31.2497</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">30.0626</span> <span style="color:#ae81ff">31.2497</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span> <span style="color:#ae81ff">25.0000</span> <span style="color:#ae81ff">35.0000</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#ae81ff">30.5000</span> <span style="color:#ae81ff">33.7000</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span> <span style="color:#ae81ff">30.1219</span> <span style="color:#ae81ff">31.4056</span>  
+</span></span></code></pre></div><p>At this point, we could plot the coordinates, and maybe add the boundary for Egypt by sourcing from <a href="http://www.gadm.org/download">GADM</a>. That would give us a map with the outline of Egypt and the points. Alternatively, <code>ggmap</code> provides a similarly straightforward solution but with a nicer map that includes bodies of water, cities, names, and other things that you would colloquially expect a map to show.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># Get background map  </span>
+</span></span><span style="display:flex;"><span>egy.map <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get_map</span>(location<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(lon<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>, lat<span style="color:#f92672">=</span><span style="color:#ae81ff">26</span>), zoom<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>, maptype<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;terrain&#34;</span>, filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/Desktop/ggmapTemp&#34;</span>)  
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggmap</span>(egy.map) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">geom_point</span>(data<span style="color:#f92672">=</span>egy.points, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>Longitude, y<span style="color:#f92672">=</span>Latitude), col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;red&#34;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)  
+</span></span><span style="display:flex;"><span>p  
+</span></span></code></pre></div><p>The <code>get_map()</code> command downloads a map from Google centered on 26N, 30E, the approximate centroid for Egypt, with the zoom set so that we get the entire country. It took some playing around to get the zoom right, but the function also lets you download a map by providing a bounding box, which would make sure we get the right map extent. Anyways, once we have the map we can use the ggmap command along with regular <code>ggplot2</code>-style graphics to add the points to the map and display it. This is the result:</p>
+<p><a href="/img/2013/egy_map.png"><img src="/img/2013/egy_map.png" alt="Map of Egypt with points"></a></p>
+<p>Great, all locations are in fact in Egypt, and seem to be in places where people live. Pretty decent for 7 lines of code (5 if you don&rsquo;t count the data sourcing). Here is a <a href="https://gist.github.com/andybega/6706212">gist with the code</a>.</p>
+
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

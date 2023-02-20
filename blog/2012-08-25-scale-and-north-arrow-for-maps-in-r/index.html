@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Scale and north arrow for maps in R | Andreas Beger</title>
+<meta property="og:title" content="Scale and north arrow for maps in R - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Scale and north arrow for maps in R</h1>
+        
+        <p>
+          <i>
+            <time datetime='2012-08-25' pubdate>
+              25 August 2012
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/bosnia/">#Bosnia</a>
+            
+            <a href="https://andybeger.com/tags/map-scale/">#map scale</a>
+            
+            <a href="https://andybeger.com/tags/north-arrow/">#north arrow</a>
+            
+            <a href="https://andybeger.com/tags/r/">#R</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>A few months ago I produced some thematic maps of Bosnia (<a href="http://andybeger.wordpress.com/research/" title="Research papers">paper</a>) using <code>maptools</code> and other packages in R, but I didn&rsquo;t include scales or a north arrow. It sounds simple and <code>sp</code> has functions for doing those things, but I couldn&rsquo;t get it to work well with my maps. Here is a basic map of Bosnia&rsquo;s pre-war municipalities:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(maptools)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(bosnia)  
+</span></span></code></pre></div><p><a href="/img/2012/bosnia_munic.png"><img src="/img/2012/bosnia_munic.png" alt=""></a></p>
+<p>The function <code>map.scale()</code> from the <code>maps</code> package adds a scale. The position is in map units, latitude/longitude in this case:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(maps)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">map.scale</span>(x<span style="color:#f92672">=</span><span style="color:#ae81ff">15.5</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">42.75</span>, ratio<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>, relwidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>)  
+</span></span></code></pre></div><p>And <code>GISTools</code> <code>north.arrow</code> for the north arrow. Units are also in map units. This package has a map scale function as well, which looks nicer but is a little bit more complicated to set up.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(GISTools)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">north.arrow</span>(xb<span style="color:#f92672">=</span><span style="color:#ae81ff">15.75</span>, yb<span style="color:#f92672">=</span><span style="color:#ae81ff">43.25</span>, len<span style="color:#f92672">=</span><span style="color:#ae81ff">0.05</span>, lab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;N&#34;</span>)  
+</span></span></code></pre></div><p>This will produce the following map:</p>
+<p><a href="/img/2012/bosnia_munic2.png"><img src="/img/2012/bosnia_munic2.png" alt="Bosnia municipalities 2"></a></p>
+<p>Adding these to a function I wrote for producing thematic maps of Bosnia produces this pretty nice map (with scale and north arrow!) of document per capita civil war deaths:</p>
+<p><a href="/img/2012/map_dead.png"><img src="/img/2012/map_dead.png" alt="Map of dead in Bosnia"></a></p>
+<p>Here is the function (which is pretty specific to the data I use):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>ThematicMap <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(vector, breaks, title, legend) {  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">require</span>(maptools)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">require</span>(shape)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">require</span>(RColorBrewer)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">require</span>(GISTools)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">require</span>(maps)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  plotvar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">unlist</span>(vector)  
+</span></span><span style="display:flex;"><span>  nclr <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">9</span>  
+</span></span><span style="display:flex;"><span>  plotclr <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">brewer.pal</span>(nclr, <span style="color:#e6db74">&#34;Reds&#34;</span>)  
+</span></span><span style="display:flex;"><span>  fillRed <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">colorRampPalette</span>(plotclr)  
+</span></span><span style="display:flex;"><span>  plotvar[plotvar <span style="color:#f92672">&gt;=</span> maxy] <span style="color:#f92672">&lt;-</span> maxy <span style="color:#ae81ff">-1</span>  
+</span></span><span style="display:flex;"><span>  colcode <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fillRed</span>(maxy)<span style="color:#a6e22e">[round</span>(plotvar) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">plot</span>(bosnia, col <span style="color:#f92672">=</span> colcode, lty <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, border <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;gray&#34;</span>)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">plot</span>(bosnia.st, add<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, border <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;gray30&#34;</span>)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">plot</span>(bosnia.front93, add <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, lty<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;solid&#34;</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>, col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;darkblue&#34;</span>)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">map.scale</span>(x<span style="color:#f92672">=</span><span style="color:#ae81ff">15.5</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">42.75</span>, relwidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, ratio<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">north.arrow</span>(xb<span style="color:#f92672">=</span><span style="color:#ae81ff">15.75</span>, yb<span style="color:#f92672">=</span><span style="color:#ae81ff">43.25</span>, len<span style="color:#f92672">=</span><span style="color:#ae81ff">0.05</span>, lab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;N&#34;</span>)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span>(main <span style="color:#f92672">=</span> title)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">colorlegend</span>(posy <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0.05</span>,<span style="color:#ae81ff">0.9</span>), posx <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0.9</span>,<span style="color:#ae81ff">0.92</span>),  
+</span></span><span style="display:flex;"><span>  col <span style="color:#f92672">=</span> <span style="color:#a6e22e">fillRed</span>(maxy),  
+</span></span><span style="display:flex;"><span>  zlim<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, maxy), zval <span style="color:#f92672">=</span> breaks,  
+</span></span><span style="display:flex;"><span>  main <span style="color:#f92672">=</span> legend,  
+</span></span><span style="display:flex;"><span>  main.cex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.9</span>)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">par</span>(bg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;white&#39;</span>)  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>killed.pk <span style="color:#f92672">&lt;-</span> (killed<span style="color:#f92672">/</span>pop91<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>)  
+</span></span><span style="display:flex;"><span>maxy <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">50</span>  
+</span></span><span style="display:flex;"><span>breaks <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">40</span>, <span style="color:#66d9ef">Inf</span>)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">png</span>(<span style="color:#e6db74">&#34;images/map_dead.png&#34;</span>)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">ThematicMap</span>(killed.pk,breaks,<span style="color:#e6db74">&#34;Documented killings during the Bosnian War&#34;</span>,<span style="color:#e6db74">&#34;per 1,000&#34;</span>))  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dev.off</span>()  
+</span></span></code></pre></div>
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Coding provinces for the Iraq Body Count data | Andreas Beger</title>
+<meta property="og:title" content="Coding provinces for the Iraq Body Count data - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Coding provinces for the Iraq Body Count data</h1>
+        
+        <p>
+          <i>
+            <time datetime='2012-03-21' pubdate>
+              21 March 2012
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/iraq-body-count/">#iraq body count</a>
+            
+            <a href="https://andybeger.com/tags/r/">#R</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>The <a href="http://www.iraqbodycount.org/">Iraq Body Count project</a> collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [<a href="http://www.iraqbodycount.org/database/incidents/k18564">1</a>, <a href="http://www.iraqbodycount.org/database/incidents/k18560">2</a>, <a href="http://www.iraqbodycount.org/database/incidents/k18554">3</a>], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&rsquo;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</p>
+<p>Using the incident data from 2003 to February 2012, about 27,500 records, I&rsquo;ve written an <a href="https://github.com/andybega/Code_IBC_Province/blob/master/code_province.R">R script that assign provinces</a> to ~95 percent of the records, 26,000.</p>
+<p>Here&rsquo;s a basic overview of how it works:</p>
+<p>The process basically consists of four steps:</p>
+<ol>
+<li>Split the location string into separate words</li>
+<li>Identify a candidate word</li>
+<li>Strip if of unnecessary parts (&ldquo;al-&rdquo;, &ldquo;&rsquo;s&rdquo;,&hellip;)</li>
+<li>Check against known city-province list</li>
+<li>Repeat until a match is found</li>
+</ol>
+<p>Two functions cover steps 3 and 4. The first strips out the &ldquo;al-&rdquo; prefix, which just is an article (&ldquo;the&rdquo;), the possessive suffix &ldquo;&rsquo;s&rdquo;, and a couple of other characters that are in a words sometimes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>DelChar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x) {  
+</span></span><span style="display:flex;"><span>  word <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sub</span>(<span style="color:#e6db74">&#34;al-&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, x, ignore.case <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)  
+</span></span><span style="display:flex;"><span>  word <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gsub</span>(<span style="color:#e6db74">&#34;&#39;[s]&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, word)  
+</span></span><span style="display:flex;"><span>  word <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gsub</span>(<span style="color:#e6db74">&#34;[?,&#39;]&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, word)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">return</span>(word)  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><p>The other function takes a word and checks it against a list of known city and province pairs (&ldquo;city.prov&rdquo;) to see whether it matches either, and if so returns that province name:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>ProvLook <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x) {  
+</span></span><span style="display:flex;"><span>  province <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>  
+</span></span><span style="display:flex;"><span>  repeat {  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">if </span>(x <span style="color:#f92672">%in%</span> city.prov[, <span style="color:#ae81ff">2</span>]) {  
+</span></span><span style="display:flex;"><span>      province <span style="color:#f92672">&lt;-</span> x  
+</span></span><span style="display:flex;"><span>      break  
+</span></span><span style="display:flex;"><span>    } else <span style="color:#a6e22e">if </span>(x <span style="color:#f92672">%in%</span> city.prov[, <span style="color:#ae81ff">1</span>]) {  
+</span></span><span style="display:flex;"><span>      province <span style="color:#f92672">&lt;-</span> city.prov<span style="color:#a6e22e">[</span>(x<span style="color:#f92672">==</span>city.prov[, <span style="color:#ae81ff">1</span>]), <span style="color:#ae81ff">2</span>]  
+</span></span><span style="display:flex;"><span>      break  
+</span></span><span style="display:flex;"><span>    } else {  
+</span></span><span style="display:flex;"><span>      province <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;no match&#34;</span>  
+</span></span><span style="display:flex;"><span>      break  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>  }  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">return</span>(province)  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><p>The rest is a loop over the words in location to evaluate each one. It&rsquo;s not very efficient and takes 7 seconds to run over the 27,500 records I&rsquo;m using, but it&rsquo;s effective enough. Any ideas on how to improve efficiency? I don&rsquo;t know enough to have any clue on this.</p>
+<p>I&rsquo;m pretty happy for now with getting 95 percent of the records, but it would be nice to get all in the future. Here are some ideas for how to do that:</p>
+<ol>
+<li>Figure out how to accommodate common misspellings. There are certain patterns in how place names get misspelled. For example, &ldquo;h&rdquo; at the end of words that end in a vowel (Basra, Basrah), and repeated or substituted vowels (Qadisiya, Qadisiyya; Baiji, Baaji)</li>
+<li>Accomodate place names that consist of more than one word, like &ldquo;Salman Pak&rdquo;.</li>
+<li>Extent the list of known city-province pairs. Ultimately this could become a brute force solution, although unpleasant considering there are ~1,500 uncoded places.</li>
+</ol>
+
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

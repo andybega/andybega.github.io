@@ -2,145 +2,123 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>post on Andreas Beger</title>
-    <link>https://www.andybeger.com/categories/post/</link>
+    <link>https://andybeger.com/categories/post/</link>
     <description>Recent content in post on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 06 Oct 2014 15:52:56 +0300</lastBuildDate><atom:link href="https://www.andybeger.com/categories/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Oct 2014 15:52:56 +0300</lastBuildDate><atom:link href="https://andybeger.com/categories/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The right kind of variance</title>
-      <link>https://www.andybeger.com/2014/10/06/the-right-kind-of-variance/</link>
+      <link>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</link>
       <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
       
-      <guid>https://www.andybeger.com/2014/10/06/the-right-kind-of-variance/</guid>
+      <guid>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</guid>
       <description>or, How I learned to stop worrying and love event data. (This post first appeared on Predictive Heuristics)
 Nobody in their right mind would think that the chances of civil war in Denmark and Mauritania are the same. One is a well-established democracy with a GDP of $38,000 per person and which ranks in the top 10 by Human Development Index (HDI), while the other is a fledgling republic in which the current President gained power through a military coup, with a GDP of $2,000 per person and near the bottom of the HDI rankings.</description>
     </item>
     
     <item>
       <title>Modeling and predicting IEDs</title>
-      <link>https://www.andybeger.com/2014/08/08/modeling-and-predicting-ieds/</link>
+      <link>https://andybeger.com/blog/2014-08-08-modeling-and-predicting-ieds/</link>
       <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2014/08/08/modeling-and-predicting-ieds/</guid>
+      <guid>https://andybeger.com/blog/2014-08-08-modeling-and-predicting-ieds/</guid>
       <description>This first appeared on Predictive Heuristics, my employer&amp;rsquo;s blog.
 Improvised explosive devices, or IEDs, were extensively used during the US wars in Iraq and Afghanistan, causing half of all US and coalition casualties despite increasingly sophisticated countermeasures. Although both of these wars have come to a close, it is unlikely that the threat of IEDs will disappear. If anything, their success implies that US and European forces are more likely to face them in similar future conflicts.</description>
     </item>
     
     <item>
       <title>Quick lookup for country codes</title>
-      <link>https://www.andybeger.com/2014/01/29/quick-lookup-for-country-codes/</link>
+      <link>https://andybeger.com/blog/2014-01-29-quick-lookup-for-country-codes/</link>
       <pubDate>Wed, 29 Jan 2014 02:48:21 +0200</pubDate>
       
-      <guid>https://www.andybeger.com/2014/01/29/quick-lookup-for-country-codes/</guid>
+      <guid>https://andybeger.com/blog/2014-01-29-quick-lookup-for-country-codes/</guid>
       <description>Update on 2017-11-01: In the meantime I&amp;rsquo;ve written a minimal R package with the COW and GW state lists and a rudimentary search helper function at https://github.com/andybega/states.
- After more than half a decade at this, it has finally dawned upon me that instead of downloading the Correlates of War state system membership table, or the Gleditsch and Ward refinement of it, every time I wonder what country &amp;ldquo;338&amp;rdquo; is, it might be easier to upload them to Google:</description>
+After more than half a decade at this, it has finally dawned upon me that instead of downloading the Correlates of War state system membership table, or the Gleditsch and Ward refinement of it, every time I wonder what country &amp;ldquo;338&amp;rdquo; is, it might be easier to upload them to Google:</description>
     </item>
     
     <item>
       <title>Taking over the world</title>
-      <link>https://www.andybeger.com/2013/10/18/taking-over-the-world/</link>
+      <link>https://andybeger.com/blog/2013-10-18-taking-over-the-world/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2013/10/18/taking-over-the-world/</guid>
+      <guid>https://andybeger.com/blog/2013-10-18-taking-over-the-world/</guid>
       <description>I work as a Postdoctoral Fellow in the Ward Lab here at Duke University. The Lab currently consists of Mike Ward, me, and a group of very smart graduate students. There are a lot of exciting projects within the lab, like ICEWS and other work for the US government, but also a broader set of projects by our lab members. One of the things we wanted to do this semester is to publicize this work a little bit more, and to this end we&amp;rsquo;re taking a new blog live today: Predictive Heuristics.</description>
     </item>
     
     <item>
       <title>Database adventures</title>
-      <link>https://www.andybeger.com/2013/09/19/database-adventures/</link>
+      <link>https://andybeger.com/blog/2013-09-19-database-adventures/</link>
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2013/09/19/database-adventures/</guid>
+      <guid>https://andybeger.com/blog/2013-09-19-database-adventures/</guid>
       <description>Recently I&amp;rsquo;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the Ward Lab. I should note that I have no idea what I&amp;rsquo;m doing, and this is the first time I&amp;rsquo;ve dealt with databases and how to get them working. It&amp;rsquo;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like Quantum GIS:</description>
     </item>
     
     <item>
       <title>Stata do files for country code conversions</title>
-      <link>https://www.andybeger.com/2013/09/05/stata-do-files-for-country-code-conversions/</link>
+      <link>https://andybeger.com/blog/2013-09-05-stata-do-files-for-country-code-conversions/</link>
       <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2013/09/05/stata-do-files-for-country-code-conversions/</guid>
+      <guid>https://andybeger.com/blog/2013-09-05-stata-do-files-for-country-code-conversions/</guid>
       <description>Blast from the past, in which I used Stata for things: here are some do files that will convert ISO or string country names/codes to COW country codes.
 Country names to COW [.do] Do-file that creates COW country codes for a dataset that only has country names in it. The file does not take the current year of an observation into account, and does not adjust for state membership (e.g. there was no unified Germany between 1946 and 1989).</description>
     </item>
     
     <item>
-      <title>Finding coordinates for cities, etc. with R</title>
-      <link>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</guid>
-      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&amp;rsquo;ve come across it a few times.
-The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&amp;rsquo;s pretty easy to figure out the coordinates for a city or village name.</description>
-    </item>
-    
-    <item>
       <title>Coding provinces for the Iraq Body Count data</title>
-      <link>https://www.andybeger.com/2012/03/21/coding-provinces-for-the-iraq-body-count-data/</link>
+      <link>https://andybeger.com/blog/2012-03-21-coding-provinces-for-the-iraq-body-count-data/</link>
       <pubDate>Wed, 21 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2012/03/21/coding-provinces-for-the-iraq-body-count-data/</guid>
+      <guid>https://andybeger.com/blog/2012-03-21-coding-provinces-for-the-iraq-body-count-data/</guid>
       <description>The Iraq Body Count project collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [1, 2, 3], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&amp;rsquo;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</description>
     </item>
     
     <item>
       <title>Which governments torture?</title>
-      <link>https://www.andybeger.com/2012/01/20/which-governments-torture/</link>
+      <link>https://andybeger.com/blog/2012-01-20-which-governments-torture/</link>
       <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2012/01/20/which-governments-torture/</guid>
-      <description>Almost all states, at least at some point between 1995 and 2005.
-The Ill-Treatment and Torture (ITT) project by Courtenay Conrad and Will Moore codes Amnesty International (AI) allegations of government torture, including the perpetrator, motive, and judicial response. The aggregated, country-year version of their data shows whether AI made allegations against a country in a given year and if so, what the extent of alleged torture or ill-treatment was, on a 5-point scale from &#34;</description>
+      <guid>https://andybeger.com/blog/2012-01-20-which-governments-torture/</guid>
+      <description> </description>
     </item>
     
     <item>
       <title>Yugoslavs die less</title>
-      <link>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</link>
+      <link>https://andybeger.com/blog/2012-01-12-yugoslavs-die-less/</link>
       <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</guid>
+      <guid>https://andybeger.com/blog/2012-01-12-yugoslavs-die-less/</guid>
       <description>In 1991 a census was conducted in Bosnia and Herzegovina, which then was still part of the disintegrating federal state of Yugoslavia. Bosnia was the most diverse republic in the former Yugoslavia, with significant populations of Bosnian Muslims (or Bosniaks, 43 percent), Serbs (31 percent), Croats (17 percent), and others. Bosniaks, Serbs, and Croats were more or less well-established identities with historical roots. Unlike in most multiethnic countries however, the census respondents also had the option to identify themselves as Yugoslavs, rather than a particular ethnic or national group.</description>
     </item>
     
     <item>
       <title>Running RStudio on Amazon EC2</title>
-      <link>https://www.andybeger.com/2011/12/20/running-rstudio-on-amazon-ec2/</link>
+      <link>https://andybeger.com/blog/2011-12-20-running-rstudio-on-amazon-ec2/</link>
       <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2011/12/20/running-rstudio-on-amazon-ec2/</guid>
+      <guid>https://andybeger.com/blog/2011-12-20-running-rstudio-on-amazon-ec2/</guid>
       <description>For the most part I don&amp;rsquo;t do things that are computationally so intensive that I can&amp;rsquo;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on FSU&amp;rsquo;s high performance computing cluster. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</description>
     </item>
     
     <item>
       <title>Egypt&#39;s military and constitution</title>
-      <link>https://www.andybeger.com/2011/02/12/egypts-military-and-constitution/</link>
+      <link>https://andybeger.com/blog/2011-02-12-we-need-us-egyptian-military-exercises-in-sinai-now/</link>
       <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2011/02/12/egypts-military-and-constitution/</guid>
+      <guid>https://andybeger.com/blog/2011-02-12-we-need-us-egyptian-military-exercises-in-sinai-now/</guid>
       <description>In 2003 we invaded Iraq with the hope that people would cheer in the streets. They didn&amp;rsquo;t. We occupied the country anyways and our presences was and generally is hated by the people.
 Starting with the protests on National Police Day, January 25th, 2011, the Egyptian people went to the streets, largely peacefully, and removed Mubarak from power. Now the Egyptian military, hesitant, will have to get involved in running the country.</description>
     </item>
     
     <item>
       <title>Iraq counter-IED</title>
-      <link>https://www.andybeger.com/2011/02/08/iraq-counter-ied/</link>
+      <link>https://andybeger.com/blog/2011-02-08-iraq-counter-ied/</link>
       <pubDate>Tue, 08 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2011/02/08/iraq-counter-ied/</guid>
+      <guid>https://andybeger.com/blog/2011-02-08-iraq-counter-ied/</guid>
       <description>A long time ago, in a place far away, I wrote this (pdf). Random thoughts on counter-IED in northern Iraq, and gripes about living there.
 Not knowing, I was on my way to death from cancer at the time. Maybe that&amp;rsquo;s why I wasn&amp;rsquo;t positive.
 In retrospect I have to also admit even more how much more difficult the combat arms soldiers and officers have it. My life was plush in comparison.</description>
-    </item>
-    
-    <item>
-      <title>Split Population Logit</title>
-      <link>https://www.andybeger.com/2011/02/03/split-population-logit/</link>
-      <pubDate>Thu, 03 Feb 2011 22:05:51 +0200</pubDate>
-      
-      <guid>https://www.andybeger.com/2011/02/03/split-population-logit/</guid>
-      <description>Download ado files and code for predicted probabilities/first differences.
-In many circumstances political scientists study binary dependent variables that have been measured with bias. For example, in surveys the strategic interests of actors can lead them to misrepresent an attitude or behavior to the surveyor in a non-random fashion. Data on terror or torture that are coded using media reports likely suffer from a similar bias related to factors such as freedom of the press in a country.</description>
     </item>
     
   </channel>

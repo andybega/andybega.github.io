@@ -2,19 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2018 on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/2018/</link>
+    <link>https://andybeger.com/tags/2018/</link>
     <description>Recent content in 2018 on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/2018/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/2018/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>200 years of democracy charted</title>
-      <link>https://www.andybeger.com/2018/06/26/200-years-of-democracy-charted/</link>
+      <link>https://andybeger.com/blog/2018-06-26-200-years-of-democracy/</link>
       <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2018/06/26/200-years-of-democracy-charted/</guid>
+      <guid>https://andybeger.com/blog/2018-06-26-200-years-of-democracy/</guid>
       <description>The latest version of the Varieties of Democracy (V-Dem) data, version 8, has historical data back to 1789, in addition to updated data for 2017. The full dataset is massive, but at the top level there are a handful of index variables capturing various facets of &amp;ldquo;democraci-ness&amp;rdquo;. The chart below shows the polyarchy index for all countries from 1789 to 2017. Click to zoom.
-
 You may notice a clump of new countries in 1900.</description>
     </item>
     

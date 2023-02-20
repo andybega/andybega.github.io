@@ -2,19 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ccode on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/ccode/</link>
+    <link>https://andybeger.com/tags/ccode/</link>
     <description>Recent content in ccode on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2014 02:48:21 +0200</lastBuildDate><atom:link href="https://www.andybeger.com/tags/ccode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2014 02:48:21 +0200</lastBuildDate><atom:link href="https://andybeger.com/tags/ccode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick lookup for country codes</title>
-      <link>https://www.andybeger.com/2014/01/29/quick-lookup-for-country-codes/</link>
+      <link>https://andybeger.com/blog/2014-01-29-quick-lookup-for-country-codes/</link>
       <pubDate>Wed, 29 Jan 2014 02:48:21 +0200</pubDate>
       
-      <guid>https://www.andybeger.com/2014/01/29/quick-lookup-for-country-codes/</guid>
+      <guid>https://andybeger.com/blog/2014-01-29-quick-lookup-for-country-codes/</guid>
       <description>Update on 2017-11-01: In the meantime I&amp;rsquo;ve written a minimal R package with the COW and GW state lists and a rudimentary search helper function at https://github.com/andybega/states.
- After more than half a decade at this, it has finally dawned upon me that instead of downloading the Correlates of War state system membership table, or the Gleditsch and Ward refinement of it, every time I wonder what country &amp;ldquo;338&amp;rdquo; is, it might be easier to upload them to Google:</description>
+After more than half a decade at this, it has finally dawned upon me that instead of downloading the Correlates of War state system membership table, or the Gleditsch and Ward refinement of it, every time I wonder what country &amp;ldquo;338&amp;rdquo; is, it might be easier to upload them to Google:</description>
     </item>
     
   </channel>

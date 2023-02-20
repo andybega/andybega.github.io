@@ -2,37 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>coups on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/coups/</link>
+    <link>https://andybeger.com/tags/coups/</link>
     <description>Recent content in coups on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/coups/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Coup forecasts for 2017</title>
-      <link>https://www.andybeger.com/2017/02/10/coup-forecasts-for-2017/</link>
-      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/2017/02/10/coup-forecasts-for-2017/</guid>
-      <description>Forecasts Models and accuracy  Accuracy  Data  Covariates Coups Missing data Why did we not include…?  Parting thoughts   This posts provides some background for the coup forecasts article Mike Ward and I published in the Washington Posts’ Monkey Cage.
-Coup attempts, even if they fail, as the events in Turkey since July 2016 have shown, can have a major impact on a country. And, as some of the reactions to the Turkey coup attempt have reiterated, they often seem to come as a surprise.</description>
-    </item>
-    
-    <item>
-      <title>Good coup, bad coup</title>
-      <link>https://www.andybeger.com/2015/07/10/good-coup-bad-coup/</link>
-      <pubDate>Fri, 10 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/2015/07/10/good-coup-bad-coup/</guid>
-      <description>This post first appeared at Predictive Heuristics.
-Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability. Elischer, although on the whole less optimistic about good coups than Noyes, writes:</description>
-    </item>
-    
+    <lastBuildDate>Wed, 14 Jan 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/coups/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Archigos leader turnovers by regime</title>
-      <link>https://www.andybeger.com/2015/01/14/archigos-leader-turnovers-by-regime/</link>
+      <link>https://andybeger.com/blog/2015-01-14-archigos-leader-turnovers-by-regime/</link>
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2015/01/14/archigos-leader-turnovers-by-regime/</guid>
+      <guid>https://andybeger.com/blog/2015-01-14-archigos-leader-turnovers-by-regime/</guid>
       <description>This post is about the Archigos data, which you can find here.
 Political scientists, and maybe historians as well, are familiar with coups, rebellions, and mass protests as distinct phenomena that lead to the fall of regimes occasionally. Another way to view these events is from the perspective of state leaders, and how these events affect transitions between political leaders. Selectorate theory does this by considering the sets of people within a regime that a leader must rely on to remain in power, and how their relative sizes shape behavior.</description>
     </item>

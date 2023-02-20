@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>When forecasting goes wrong (maybe): Yemen | Andreas Beger</title>
+<meta property="og:title" content="When forecasting goes wrong (maybe): Yemen - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>When forecasting goes wrong (maybe): Yemen</h1>
+        
+        <p>
+          <i>
+            <time datetime='2015-09-24' pubdate>
+              24 September 2015
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/forecasts/">#forecasts</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p><em>From the <!-- raw HTML omitted -->Ward Lab blog<!-- raw HTML omitted --> a few weeks ago:</em></p>
+<p>Over the past few months we have worked on regularly updating our irregular leadership change models and forecasts in order to provide monthly 6-month ahead forecasts of the probability of irregular leadership change in a large number of countries&ndash;but excluding the US&ndash;worldwide. Part of that effort has been the occasional glance back at our previous predictions, and particularly more in-depth examinations for notable cases that we missed or got right, to see whether we can improve our modeling as a result. This note is one of these glances back: a postmortem of our Yemen predictions for the first half of 2015.</p>
+<p>To provide some background, the ILC forecasts are generated from an ensemble of seven <em>thematic</em><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> split-population duration models. For more details on how this works or what irregular leadership changes are and how we code them, take a look at <!-- raw HTML omitted -->our R&amp;P paper<!-- raw HTML omitted --> or <!-- raw HTML omitted -->this longer arXiv writeup<!-- raw HTML omitted -->.</p>
+<!-- raw HTML omitted -->
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Country</th>
+<th style="text-align:right">6-month Prob.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Burkina Faso</td>
+<td style="text-align:right">0.058</td>
+</tr>
+<tr>
+<td style="text-align:left">Egypt</td>
+<td style="text-align:right">0.055</td>
+</tr>
+<tr>
+<td style="text-align:left">Ukraine</td>
+<td style="text-align:right">0.044</td>
+</tr>
+<tr>
+<td style="text-align:left">India</td>
+<td style="text-align:right">0.038</td>
+</tr>
+<tr>
+<td style="text-align:left">Somalia</td>
+<td style="text-align:right">0.038</td>
+</tr>
+<tr>
+<td style="text-align:left">Afghanistan</td>
+<td style="text-align:right">0.035</td>
+</tr>
+<tr>
+<td style="text-align:left">Nigeria</td>
+<td style="text-align:right">0.030</td>
+</tr>
+</tbody>
+</table>
+<!-- raw HTML omitted -->
+<p>Absent from either table is Yemen, which by the time we made the forecasts already seemed to have experienced an ILC, with President Hadi&rsquo;s <!-- raw HTML omitted -->resignation in January<!-- raw HTML omitted -->, and <!-- raw HTML omitted -->flight to Saudi Arabia in March<!-- raw HTML omitted -->. Yemen was instead ranked 33 in our 6-month forecasts. The plot below shows the <!-- raw HTML omitted -->ranking<!-- raw HTML omitted --> of Yemen in the monthly forecasts from 2014 on:<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p><a href="/img/2015/rank-oslo.png"><img src="/img/2015/rank-oslo.png" alt="Yemen forecast rankings are around 30 in the test period"></a></p>
+<!-- raw HTML omitted -->
+<p>Data problems are not new in international relations, but a growing awareness of media and reporting biases in the data we do have maybe is, as a side-effect of the proliferation of event data over the past couple of years (hello GDELT).<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> We are probably not normalizing as well as we should be, and how to properly normalize event data is something that merits greater investigation.</p>
+<!-- raw HTML omitted -->
+<p><a href="/img/2015/exclpop.png"><img src="/img/2015/exclpop.png" alt="Excluded population was imputed to around 0.2, but in carry forward remains 0"></a></p>
+<p>The top plot shows the original data we used. That shift from 2011 on is an artifact of imputation, also given away as such by the sub-annual variation that is impossible since EPR only tracks things in terms of years. Given that the EPR series are largely stable for countries, over stretches of decades, we switched instead to just carrying forward the last observed value.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<!-- raw HTML omitted -->
+<p><a href="/img/2015/events.png"><img src="/img/2015/events.png" alt="Plots of several event aggregations for Yemen that show spikes corresponding to the 2011 revolution and the August 2014 demonstrationsYemen forecast rankings are around 30 in the test period"></a></p>
+<!-- raw HTML omitted -->
+<p><a href="/img/2015/rank-oslo.png"><img src="/img/2015/rank-oslo.png" alt="Yemen forecast rankings are around 30 in the test period"></a></p>
+<p>So our forecasts do pick up correctly on at least part of the story. Loosely speaking they are &ldquo;correct&rdquo;, in that they match the background narrative of events, up through about September 2014, from which point on the situation slowly deteriorates in a way that our models do not pick up on as much as we would like them to. Quite likely there was a spike in events that would have pushed our forecasts higher had we made them later, i.e. with January or February data, and in the end although Yemen was not included in the tables of forecasts we presented for the first half of 2015, it was still ranked highly and consistently in the top fifth of forecasts.</p>
+<p>There is not much here to suggest systematic changes or a new direction in terms of modeling, but that in itself is good to know. Of course we would prefer more accurate models that would predict cases like Yemen higher. Although we are consistently in the high 0.8&rsquo;s in out-of-sample AUC-ROC, we are just starting to scratch the surface when it comes to precision. But with data as sparse as those we are using, it is also challenging to improve performance in a robust way that survives small changes/updates in the data rather than being a symptom of overfitting.</p>
+<!-- raw HTML omitted -->
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Since we are modeling with country-months, and the vast majority of published work on coups, revolutions, etc. is at the country-year level, we had to improvise our own models. They are loosely based on (well-)known concepts from the conflict literature, but won&rsquo;t satisfy, and might even upset, people who are engaged in the more traditional, non-forecasting kind of conflict research. But please, feel free to do your own modeling with the <!-- raw HTML omitted -->2014 replication data<!-- raw HTML omitted -->, we would love to incorporate &ldquo;guest&rdquo; models that stand on more solid ground.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>The rankings are largely stable from December 2014 on because in our live forecasts we hold back covariates as well, instead using carry forward imputation with limited updating for some variables like leader age, which in most cases still leads to minimal variation in the component and ensemble probabilities.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>&hellip;<!-- raw HTML omitted -->growing<!-- raw HTML omitted --> awareness, there certainly have been plenty of people talking and writing about this issue over the years.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>We are switching to the <!-- raw HTML omitted -->ETH version of EPR<!-- raw HTML omitted -->, which as of May 2015 was updated through 2013. There will still be a missing data problem, but much less severe.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

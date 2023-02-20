@@ -2,17 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>random walk negative binomial on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/random-walk-negative-binomial/</link>
+    <link>https://andybeger.com/tags/random-walk-negative-binomial/</link>
     <description>Recent content in random walk negative binomial on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 29 Oct 2012 22:07:55 +0200</lastBuildDate><atom:link href="https://www.andybeger.com/tags/random-walk-negative-binomial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Oct 2012 22:07:55 +0200</lastBuildDate><atom:link href="https://andybeger.com/tags/random-walk-negative-binomial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Random walk negative binomial model for persistent count series.</title>
-      <link>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</link>
+      <link>https://andybeger.com/blog/2012-10-29-random-walk-negative-binomial-model-for-persistent-count-series/</link>
       <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
       
-      <guid>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</guid>
+      <guid>https://andybeger.com/blog/2012-10-29-random-walk-negative-binomial-model-for-persistent-count-series/</guid>
       <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&amp;rsquo;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
     </item>
     

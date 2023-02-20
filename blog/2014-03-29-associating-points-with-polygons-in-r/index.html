@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Associating points with polygons in R | Andreas Beger</title>
+<meta property="og:title" content="Associating points with polygons in R - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Associating points with polygons in R</h1>
+        
+        <p>
+          <i>
+            <time datetime='2014-03-29' pubdate>
+              29 March 2014
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/r/">#R</a>
+            
+            <a href="https://andybeger.com/tags/sp/">#sp</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>Some time ago I posted on how to <a href="https://andybeger.com/blog/2013-08-06-finding-coordinates-for-cities-etc-with-r/">find geographic coordinates given a list of village or city names in R</a>. Somebody emailed me about how to do the reverse: the person had a list of villages in France along with the population in 2010, and wanted to find which administrative unit each village was located in. The problem boils down to associating points, the village coordinates, with polygons, the administrative division which they are a part of.</p>
+<p>The village data look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(foreign)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(gdata)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(sp)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>munic <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.xls</span>(<span style="color:#e6db74">&#34;France-Population.xlsx&#34;</span>)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">head</span>(munic)  
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>Name long lat pop_2010  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> Aast <span style="color:#ae81ff">-0.0887339</span> <span style="color:#ae81ff">43.28919</span> <span style="color:#ae81ff">182.5416</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span> Abainville <span style="color:#ae81ff">5.4947440</span> <span style="color:#ae81ff">48.53057</span> <span style="color:#ae81ff">327.2407</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> Abancourt <span style="color:#ae81ff">1.7649060</span> <span style="color:#ae81ff">49.69672</span> <span style="color:#ae81ff">687.2479</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span> Abancourt <span style="color:#ae81ff">3.2127010</span> <span style="color:#ae81ff">50.23528</span> <span style="color:#ae81ff">448.1252</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> Abaucourt <span style="color:#ae81ff">6.2579230</span> <span style="color:#ae81ff">48.89637</span> <span style="color:#ae81ff">285.9438</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span> Abaucourt<span style="color:#f92672">-</span>Hautecourt <span style="color:#ae81ff">5.5405000</span> <span style="color:#ae81ff">49.19700</span> <span style="color:#ae81ff">93.0353</span>  
+</span></span></code></pre></div><p>To find the administrative units in which these villages are we can use the <code>over()</code> function from the <code>sp</code> package. First, we get data on administrative boundaries from <a href="http://www.gadm.org/">GADM</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">load</span>(<span style="color:#e6db74">&#34;FRA_adm2.RData&#34;</span>)  
+</span></span><span style="display:flex;"><span>adm2 <span style="color:#f92672">&lt;-</span> gadm; <span style="color:#a6e22e">rm</span>(gadm)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">head</span>(adm2<span style="color:#f92672">@</span>data[, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;NAME_1&#34;</span>, <span style="color:#e6db74">&#34;NAME_2&#34;</span>)])  
+</span></span></code></pre></div><pre tabindex="0"><code>NAME_1 NAME_2  
+1 Picardie Somme  
+2 Haute-Normandie Eure  
+3 Haute-Normandie Seine-Maritime  
+4 Centre Cher  
+5 Centre Eure-et-Loir  
+6 Centre Indre
+</code></pre><p>The data consist of polygons for France&rsquo;s departments, and includes their names as well as the name of the region they are in in the associated data table. To match up the village coordinates with these polygons we need to also convert the village data frame to a spatial object in R:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">coordinates</span>(munic) <span style="color:#f92672">&lt;-</span> <span style="color:#f92672">~</span> long <span style="color:#f92672">+</span> lat  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">proj4string</span>(munic) <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">proj4string</span>(adm2)  
+</span></span></code></pre></div><p>The data already include latitude and longitude columns, which we need to identify as such. The second line is about setting the projection the data are in, without which <code>over()</code> will throw an error. The GADM data use WGS 84, which seems to be common for global data, and so it&rsquo;s probably safe to assume that the French village data are also. But this isn&rsquo;t necessarily true, especially with data for a smaller geographic area, which might use a projection that works better for that specific region, e.g. a specific <a href="http://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">UTM grid zone</a>.</p>
+<p>The last step is to use <code>over()</code> to match up points and polygons. Note that <code>over()</code> will work with a variety of other spatial data combinations as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>munic <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cbind</span>(munic, <span style="color:#a6e22e">over</span>(munic, adm2))  
+</span></span><span style="display:flex;"><span>munic[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Name&#34;</span>, <span style="color:#e6db74">&#34;pop_2010&#34;</span>, <span style="color:#e6db74">&#34;NAME_1&#34;</span>, <span style="color:#e6db74">&#34;NAME_2&#34;</span>)]
+</span></span></code></pre></div><pre tabindex="0"><code>Name pop_2010 NAME_1 NAME_2  
+1 Aast 182.5416 Aquitaine Pyrénées-Atlantiques  
+2 Abainville 327.2407 Lorraine Meuse  
+3 Abancourt 687.2479 Picardie Oise  
+4 Abancourt 448.1252 Nord-Pas-de-Calais Nord  
+5 Abaucourt 285.9438 Lorraine Meurthe-et-Moselle  
+</code></pre>
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

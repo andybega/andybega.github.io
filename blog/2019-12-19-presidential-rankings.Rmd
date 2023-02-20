@@ -1,0 +1,173 @@
+---
+title: Presidential rankings
+author: Andreas Beger
+date: '2019-12-19'
+slug: presidential-rankings
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      fig.path="../../static/img/2019/")
+```
+
+This is more of a test post. It's created from an Rmarkdown file that scrapes [presidential rankings from Wikipedia](https://en.wikipedia.org/wiki/Historical_rankings_of_presidents_of_the_United_States) for the chart below. Incidentally, I'm updating this from an earlier April version the morning after Trump was impeached back in the US by the House. 
+
+```{r presidential-rankings, cache=TRUE}
+library(dplyr)
+library(tidyr)
+library(rvest)
+library(stringr)
+library(ggplot2)
+
+url <- "https://en.wikipedia.org/wiki/Historical_rankings_of_presidents_of_the_United_States"
+
+page <- read_html(url)
+
+rankings <- page %>%
+  html_nodes("table.wikitable") %>%
+  `[[`(1) %>%
+  html_table()
+
+# Clean the table
+rankings <- rankings %>%
+  # last row has totals; last column is aggregation
+  head(-1) %>%
+  select(-ncol(.)) %>%
+  # make long
+  gather(survey, rank, -`No.[b][c]`, -President, -`Political party`)
+
+rankings <- rankings %>%
+  # take out footnote references, e.g. "[1]"
+  mutate(survey = str_replace(survey, "(\\[[0-9]+\\])+", ""),
+         rank   = str_replace(rank, "–", NA_character_),
+         rank   = str_replace(rank, "\\*", ""),
+         rank   = str_replace(rank, "\\[[a-z]\\]", ""),
+         rank   = str_trim(rank)) %>%
+  mutate(rank = case_when(
+    str_detect(rank, "tie") ~ str_replace(rank, "\\(tie\\)", "") %>% 
+      as.numeric() %>% `+`(.5),
+    is.na(rank) | rank=="" ~ NA_real_,
+    TRUE ~ as.numeric(rank)
+  ),
+  survey = factor(survey, levels = unique(survey))) %>%
+  filter(!is.na(rank))
+
+# Add relative rankings
+rankings <- rankings %>%
+  group_by(survey) %>%
+  mutate(rel_rank = (rank - 1) / (n()-1)) %>%
+  ungroup()
+
+# Add a final "fake" survey for overall average ranking
+# avg <- rankings %>%
+#   group_by(President) %>%
+#   summarize(`Political party` = unique(`Political party`),
+#             survey = "Average",
+#             rank = mean(rank),
+#             rel_rank = mean(rel_rank))
+# rankings <- rankings %>%
+#   mutate(survey = as.character(survey)) %>%
+#   bind_rows(avg) %>%
+#   mutate(survey = factor(survey, levels = unique(survey)))
+
+
+firstandlast <- rankings %>%
+  group_by(President) %>%
+  summarize(first_survey   = head(survey, 1),
+            first_ranking  = head(rank, 1),
+            latest_survey  = tail(survey, 1),
+            latest_ranking = tail(rank, 1)) %>%
+  ungroup()
+
+# Whose (relative) ranking has improved the most?
+diffr <- rankings %>%
+  filter(survey != "Average") %>%
+  group_by(President) %>%
+  summarize(avg_rel_rank = mean(rel_rank),
+            diff_rel_rank = head(rel_rank, 1) - tail(rel_rank, 1)) %>%
+  arrange(diff_rel_rank)
+
+# Controversial?
+# Look at average relative ranking change / total rankings
+controversial <- rankings %>%
+  filter(survey != "Average") %>%
+  group_by(President) %>%
+  summarize(avg_rel_rank = mean(rel_rank),
+            min_rel_rank = min(rel_rank),
+            max_rel_rank = max(rel_rank),
+            n_surveys = n(),
+            # since rel ranking fluctuates, use ^2 rather than abs, latter 
+            # emphasizes more recent presidents more
+            avg_rel_rank_change = mean(diff(rel_rank)^2)/n_surveys) %>%
+  arrange(avg_rel_rank_change)
+
+firstandlast <- rankings %>%
+  group_by(President) %>%
+  summarize(first_survey   = head(survey, 1),
+            first_rank     = head(rank, 1),
+            first_rel_rank = head(rel_rank, 1),
+            latest_survey  = tail(survey, 1),
+            latest_rank    = tail(rank, 1),
+            latest_rel_rank = tail(rel_rank, 1)) %>%
+  ungroup()
+
+pres_list <- c("Donald Trump", "Barack Obama", "George W. Bush", "Bill Clinton")
+
+highlight <- rankings %>%
+  filter(President %in% pres_list)
+  
+highlight_firstandlast <- firstandlast %>%
+  filter(President %in% pres_list)
+
+p <- ggplot(rankings, aes(group = President)) +
+  geom_line(aes(x = survey, y = rank)) +
+  geom_point(data = firstandlast, aes(x = first_survey, y = first_rank)) +
+  scale_y_reverse(limit = c(44, 1), expand = c(0, 1), 
+                  breaks = c(1, 10, 20, 30, 40, 44),
+                  minor_breaks = c(5 + 0:3*10)) +
+  scale_x_discrete(position = "top") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 0)) +
+  # highlight recent presidents
+  geom_line(data = highlight, 
+            aes(x = survey, y = rank, color = President)) +
+  geom_point(data = highlight_firstandlast, 
+             aes(x = first_survey, y = first_rank, color = President))
+
+
+p <- ggplot(rankings, aes(group = President)) +
+  geom_line(aes(x = survey, y = rel_rank), 
+            color = "gray50") +
+  geom_point(data = firstandlast, aes(x = first_survey, y = first_rel_rank),
+             color = "gray50") +
+  scale_y_reverse() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 0)) +
+  # highlight recent presidents
+  geom_line(data = highlight, 
+            aes(x = survey, y = rel_rank, color = President),
+            size = 2) +
+  geom_point(data = highlight_firstandlast, 
+             aes(x = first_survey, y = first_rel_rank, color = President)) +
+  geom_point(data = highlight_firstandlast, 
+             aes(x = latest_survey, y = latest_rel_rank, color = President)) +
+  scale_color_brewer(guide = FALSE, type = "div", palette = 5, direction = -1) +
+  labs(x = "", y = "Relative rank, 0-1", caption = "Source: Wikipedia\nhttps://en.wikipedia.org/wiki/Historical_rankings_of_presidents_of_the_United_States") +
+  # add names of presidents to the right;
+  # need to extend plot for this
+  scale_x_discrete(position = "top", expand = expand_scale(add = c(0.5, 4))) +
+  geom_text(data = firstandlast %>% 
+              filter(!President %in% highlight$President),
+            aes(x = latest_survey, y = latest_rel_rank, label = President), 
+            nudge_x = .2, hjust = 0, color = "gray50", size = 2) +
+  geom_text(data = highlight_firstandlast,
+            aes(x = latest_survey, y = latest_rel_rank, label = President,
+                color = President), 
+            nudge_x = .2, hjust = 0, 
+            fontface = "bold")
+ggsave("../../static/img/2019/presidential-rankings.png", height = 7.5, width = 11)
+
+```
+
+[![Chart of Presidential Rankings](/img/2019/presidential-rankings.png)](/img/2019/presidential-rankings.png)

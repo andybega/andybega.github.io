@@ -2,18 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GIS on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/gis/</link>
+    <link>https://andybeger.com/tags/gis/</link>
     <description>Recent content in GIS on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jan 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/gis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Jan 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/gis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bosnia 1991 municipalities</title>
-      <link>https://www.andybeger.com/2011/01/18/bosnia-1991-municipalities/</link>
+      <link>https://andybeger.com/blog/2011-01-18-bosnia-1991-municipalities/</link>
       <pubDate>Tue, 18 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2011/01/18/bosnia-1991-municipalities/</guid>
-      <description>{: .align-center}
+      <guid>https://andybeger.com/blog/2011-01-18-bosnia-1991-municipalities/</guid>
+      <description>Figure 1:Bosnia with 1995 municipalities
 This dates back to work I did in 2008, but some people seem to find it useful:
 At the beginning of the Yugoslav civil wars, Bosnia and Herzegovina (BiH) consisted of 109 municipalities. Finding free geographic layers with those municipal boundaries was difficult so I recreated them from National Geophysical Data Center Coastline Extractor, using World Data Bank II. Municipality names and demographic information come from the 1991 Yugoslav census courtesy wikipedia.</description>
     </item>

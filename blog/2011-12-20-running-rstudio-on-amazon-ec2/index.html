@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Running RStudio on Amazon EC2 | Andreas Beger</title>
+<meta property="og:title" content="Running RStudio on Amazon EC2 - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Running RStudio on Amazon EC2</h1>
+        
+        <p>
+          <i>
+            <time datetime='2011-12-20' pubdate>
+              20 December 2011
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/ec2/">#EC2</a>
+            
+            <a href="https://andybeger.com/tags/r/">#R</a>
+            
+            <a href="https://andybeger.com/tags/rstudio/">#RStudio</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>For the most part I don&rsquo;t do things that are computationally so intensive that I can&rsquo;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on <a href="http://www.hpc.fsu.edu/">FSU&rsquo;s high performance computing cluster</a>. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</p>
+<p>An alternative is to use Amazon&rsquo;s <a href="http://aws.amazon.com/ec2/">EC2 cloud computing service</a>. A few weeks ago I started playing around with it, and running basic instances for limited time is actually free. I use R/RStudio for the most part, but was overwhelmed by which AMI to use without having to instal R/RStudio. Fortunately someone has created AMI&rsquo;s (Amazon Machine Images) with RStudio Server, which, once running, lets you use RStudio through your web browser.</p>
+<p>To begin, get an Amazon Web Services account and log in to the management console. <a href="http://www.louisaslett.com/">Louis Aslett</a> has created a number of AMI&rsquo;s&ndash;<a href="http://www.louisaslett.com/RStudio_AMI/">choose</a> one and start an instance on EC2 with that AMI id.</p>
+<p>If you started the instance with the default security group settings like me, you will also have to open port 80 to get access. Go to the security group settings in Amazon management console, select whichever group your instance runs under (e.g. default), and add a custom TCP rule for port 80 (i.e. port range 80). Add the rule and apply. Find out your instance address (instances, at the bottom, it&rsquo;s the string that ends with amazonaws.com, e.g. <code>ec2-184-88-8-888.compute-1.amazonaws.com</code>), paste into your browser and you should get to a RStudio log in. The defaults are &ldquo;rstudio&rdquo; for both. And, there.</p>
+<p><a href="/img/2011/rstudio-ec2.png"><img src="/img/2011/rstudio-ec2.png" alt=""></a></p>
+
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

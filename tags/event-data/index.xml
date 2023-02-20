@@ -2,26 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>event data on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/event-data/</link>
+    <link>https://andybeger.com/tags/event-data/</link>
     <description>Recent content in event data on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/event-data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Apr 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/event-data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A quick look at the public ICEWS data</title>
-      <link>https://www.andybeger.com/2015/04/08/a-quick-look-at-the-public-icews-data/</link>
+      <link>https://andybeger.com/blog/2015-04-08-public-icews-data/</link>
       <pubDate>Wed, 08 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2015/04/08/a-quick-look-at-the-public-icews-data/</guid>
+      <guid>https://andybeger.com/blog/2015-04-08-public-icews-data/</guid>
       <description>The ICEWS data, including the underlying raw event data as well as some aggregations, were quietly posted on Dataverse the Friday before last. I&amp;rsquo;ve worked with the ICEWS data for several years now, first when I was working on on the ICEWS package&amp;ndash;we deliver updated monthly forecasts for the ICEWS events of interest (EOIs) once a month&amp;ndash;and more recently for the [irregular leadership change forecasting project](http://andybeger.com/2014/05/23/the-thailand-coup-and-some-recent- forecasting-work/). The public data are formatted differently from the data I&amp;rsquo;ve worked with, so most of the code I have lying around is not that useful, but in going through the public data I did recreate a short overview that is nowhere near as complete as David Masad&amp;rsquo;s first look (using Python), and some code that might be useful for getting started in R.</description>
     </item>
     
     <item>
       <title>The right kind of variance</title>
-      <link>https://www.andybeger.com/2014/10/06/the-right-kind-of-variance/</link>
+      <link>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</link>
       <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
       
-      <guid>https://www.andybeger.com/2014/10/06/the-right-kind-of-variance/</guid>
+      <guid>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</guid>
       <description>or, How I learned to stop worrying and love event data. (This post first appeared on Predictive Heuristics)
 Nobody in their right mind would think that the chances of civil war in Denmark and Mauritania are the same. One is a well-established democracy with a GDP of $38,000 per person and which ranks in the top 10 by Human Development Index (HDI), while the other is a fledgling republic in which the current President gained power through a military coup, with a GDP of $2,000 per person and near the bottom of the HDI rankings.</description>
     </item>

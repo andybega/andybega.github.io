@@ -2,62 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Andreas Beger</title>
-    <link>https://www.andybeger.com/categories/</link>
+    <link>https://andybeger.com/categories/</link>
     <description>Recent content in Categories on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jul 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>research</title>
-      <link>https://www.andybeger.com/categories/research/</link>
-      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
+      <link>https://andybeger.com/categories/research/</link>
+      <pubDate>Fri, 10 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/categories/research/</guid>
+      <guid>https://andybeger.com/categories/research/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>https://www.andybeger.com/categories/programming/</link>
+      <link>https://andybeger.com/categories/programming/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/categories/programming/</guid>
+      <guid>https://andybeger.com/categories/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>post</title>
-      <link>https://www.andybeger.com/categories/post/</link>
+      <link>https://andybeger.com/categories/post/</link>
       <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
       
-      <guid>https://www.andybeger.com/categories/post/</guid>
+      <guid>https://andybeger.com/categories/post/</guid>
       <description></description>
     </item>
     
     <item>
       <title>commentary</title>
-      <link>https://www.andybeger.com/categories/commentary/</link>
+      <link>https://andybeger.com/categories/commentary/</link>
       <pubDate>Tue, 24 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/categories/commentary/</guid>
+      <guid>https://andybeger.com/categories/commentary/</guid>
       <description></description>
     </item>
     
     <item>
       <title>teaching</title>
-      <link>https://www.andybeger.com/categories/teaching/</link>
+      <link>https://andybeger.com/categories/teaching/</link>
       <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/categories/teaching/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data</title>
-      <link>https://www.andybeger.com/categories/data/</link>
-      <pubDate>Tue, 18 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/categories/data/</guid>
+      <guid>https://andybeger.com/categories/teaching/</guid>
       <description></description>
     </item>
     

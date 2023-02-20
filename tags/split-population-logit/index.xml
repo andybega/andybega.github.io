@@ -2,17 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>split population logit on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/split-population-logit/</link>
+    <link>https://andybeger.com/tags/split-population-logit/</link>
     <description>Recent content in split population logit on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 03 Feb 2011 22:05:51 +0200</lastBuildDate><atom:link href="https://www.andybeger.com/tags/split-population-logit/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Feb 2011 22:05:51 +0200</lastBuildDate><atom:link href="https://andybeger.com/tags/split-population-logit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Split Population Logit</title>
-      <link>https://www.andybeger.com/2011/02/03/split-population-logit/</link>
+      <link>https://andybeger.com/blog/2011-02-03-split-population-logit/</link>
       <pubDate>Thu, 03 Feb 2011 22:05:51 +0200</pubDate>
       
-      <guid>https://www.andybeger.com/2011/02/03/split-population-logit/</guid>
+      <guid>https://andybeger.com/blog/2011-02-03-split-population-logit/</guid>
       <description>Download ado files and code for predicted probabilities/first differences.
 In many circumstances political scientists study binary dependent variables that have been measured with bias. For example, in surveys the strategic interests of actors can lead them to misrepresent an attitude or behavior to the surveyor in a non-random fashion. Data on terror or torture that are coded using media reports likely suffer from a similar bias related to factors such as freedom of the press in a country.</description>
     </item>

@@ -2,515 +2,387 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.andybeger.com/</loc>
+    <loc>https://andybeger.com/</loc>
     <lastmod>2020-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/post/</loc>
+    <loc>https://andybeger.com/blog/</loc>
     <lastmod>2020-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2020/05/14/moving-from-jekyll-to-blogdown/</loc>
+    <loc>https://andybeger.com/blog/moving-from-jekyll-to-blogdown/</loc>
     <lastmod>2020-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2019/12/19/presidential-rankings/</loc>
+    <loc>https://andybeger.com/blog/presidential-rankings/</loc>
     <lastmod>2019-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2018/06/26/200-years-of-democracy-charted/</loc>
+    <loc>https://andybeger.com/blog/2018-06-26-200-years-of-democracy/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/2018/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/democracy/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/ggplot2/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/polyarchy/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/r/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/v-dem/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/2016-election/</loc>
+    <loc>https://andybeger.com/blog/2018-05-11-us-2016-dot-density/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/dot-density-map/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2018/05/11/dot-density-map-of-the-2016-election/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/sf/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/us/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2017/12/12/mapping-state-leader-age/</loc>
+    <loc>https://andybeger.com/blog/2017-12-12-map-leader-age/</loc>
     <lastmod>2017-12-12T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/elections/</loc>
+    <loc>https://andybeger.com/tags/estonia/</loc>
     <lastmod>2017-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/estonia/</loc>
+    <loc>https://andybeger.com/blog/2017-11-28-estonia-2017-local-elections/</loc>
     <lastmod>2017-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/local-elections/</loc>
+    <loc>https://andybeger.com/tags/</loc>
     <lastmod>2017-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2017/11/28/local-elections-in-estonia/</loc>
-    <lastmod>2017-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/2017/</loc>
+    <loc>https://andybeger.com/blog/coup-forecasts-for-2017/</loc>
     <lastmod>2017-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2017/02/10/coup-forecasts-for-2017/</loc>
+    <loc>https://andybeger.com/tags/forecasts/</loc>
     <lastmod>2017-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/coups/</loc>
-    <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/forecasts/</loc>
-    <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/data/</loc>
+    <loc>https://andybeger.com/blog/2016-11-22-eu-army/</loc>
     <lastmod>2016-11-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/eu/</loc>
+    <loc>https://andybeger.com/tags/visualization/</loc>
     <lastmod>2016-11-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/eurobarometer/</loc>
-    <lastmod>2016-11-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2016/11/22/support-for-the-creation-of-an-eu-army/</loc>
-    <lastmod>2016-11-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/visualization/</loc>
-    <lastmod>2016-11-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2016/09/14/data-management-and-missing-data/</loc>
+    <loc>https://andybeger.com/blog/2016-09-13-data-management/</loc>
     <lastmod>2016-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/missing-values/</loc>
-    <lastmod>2016-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/plots/</loc>
-    <lastmod>2016-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/state-system-membership/</loc>
-    <lastmod>2016-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/jekyll/</loc>
+    <loc>https://andybeger.com/blog/2016-06-20-moving-from-wordpress-to-jekyll/</loc>
     <lastmod>2016-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/matt-dickenson/</loc>
-    <lastmod>2016-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/michael-rosen/</loc>
-    <lastmod>2016-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2016/06/20/moving-from-wordpress-to-jekyll/</loc>
-    <lastmod>2016-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/traffic/</loc>
-    <lastmod>2016-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/wordpress/</loc>
-    <lastmod>2016-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/3d-surface-plot/</loc>
+    <loc>https://andybeger.com/blog/3d-surface-plots/</loc>
     <lastmod>2016-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2016/03/03/3d-surface-plots/</loc>
-    <lastmod>2016-03-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/plotly/</loc>
-    <lastmod>2016-03-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/categories/</loc>
+    <loc>https://andybeger.com/blog/2015-09-24-when-forecasting-goes-wrong-maybe-yemen/</loc>
     <lastmod>2015-09-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/irregular-leadership-change/</loc>
-    <lastmod>2015-09-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/categories/research/</loc>
-    <lastmod>2015-09-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2015/09/24/when-forecasting-goes-wrong-maybe-yemen/</loc>
-    <lastmod>2015-09-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/yemen/</loc>
-    <lastmod>2015-09-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/archigos/</loc>
+    <loc>https://andybeger.com/categories/</loc>
     <lastmod>2015-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/descriptive-statistics/</loc>
+    <loc>https://andybeger.com/blog/2015-07-10-good-coup-bad-coup/</loc>
     <lastmod>2015-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2015/07/10/good-coup-bad-coup/</loc>
+    <loc>https://andybeger.com/categories/research/</loc>
     <lastmod>2015-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/good-coups/</loc>
-    <lastmod>2015-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/polity/</loc>
-    <lastmod>2015-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2015/04/08/a-quick-look-at-the-public-icews-data/</loc>
+    <loc>https://andybeger.com/blog/2015-04-08-public-icews-data/</loc>
     <lastmod>2015-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/event-data/</loc>
+    <loc>https://andybeger.com/tags/event-data/</loc>
     <lastmod>2015-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/icews/</loc>
+    <loc>https://andybeger.com/tags/icews/</loc>
     <lastmod>2015-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/auc-pr/</loc>
+    <loc>https://andybeger.com/blog/2015-03-16-precision-recall-curves/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/auc-roc/</loc>
-    <lastmod>2015-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/binary-fit/</loc>
-    <lastmod>2015-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2015/03/16/precision-recall-curves/</loc>
-    <lastmod>2015-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/precision-recall-curves/</loc>
-    <lastmod>2015-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/roc-curves/</loc>
-    <lastmod>2015-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2015/01/14/archigos-leader-turnovers-by-regime/</loc>
+    <loc>https://andybeger.com/tags/archigos/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/irregular-leadership-changes/</loc>
+    <loc>https://andybeger.com/blog/2015-01-14-archigos-leader-turnovers-by-regime/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/polity-iv/</loc>
+    <loc>https://andybeger.com/tags/coups/</loc>
     <lastmod>2015-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2014/10/15/building-rgdal-from-source/</loc>
+    <loc>https://andybeger.com/tags/irregular-leadership-changes/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/tags/polity-iv/</loc>
+    <lastmod>2015-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/blog/2014-10-15-building-rgdal-from-source/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/homebrew/</loc>
+    <loc>https://andybeger.com/tags/homebrew/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/os-x-mavericks/</loc>
+    <loc>https://andybeger.com/tags/os-x-mavericks/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/postgis/</loc>
+    <loc>https://andybeger.com/tags/postgis/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/postgresql/</loc>
+    <loc>https://andybeger.com/tags/postgresql/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/categories/programming/</loc>
+    <loc>https://andybeger.com/categories/programming/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/proj/</loc>
+    <loc>https://andybeger.com/tags/proj/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/rgdal/</loc>
+    <loc>https://andybeger.com/tags/rgdal/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/categories/post/</loc>
+    <loc>https://andybeger.com/categories/post/</loc>
     <lastmod>2014-10-06T15:52:56+03:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/prediction/</loc>
+    <loc>https://andybeger.com/tags/prediction/</loc>
     <lastmod>2014-10-06T15:52:56+03:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2014/10/06/the-right-kind-of-variance/</loc>
+    <loc>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</loc>
     <lastmod>2014-10-06T15:52:56+03:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/variance/</loc>
+    <loc>https://andybeger.com/tags/variance/</loc>
     <lastmod>2014-10-06T15:52:56+03:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/variance-decomposition/</loc>
+    <loc>https://andybeger.com/tags/variance-decomposition/</loc>
     <lastmod>2014-10-06T15:52:56+03:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2014/09/19/baby-steps-with-r-shiny/</loc>
+    <loc>https://andybeger.com/blog/2014-09-19-baby-steps-with-r-shiny/</loc>
     <lastmod>2014-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/seb-tallinn-marathon/</loc>
+    <loc>https://andybeger.com/tags/r/</loc>
     <lastmod>2014-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/seb-tallinna-maraton/</loc>
+    <loc>https://andybeger.com/tags/seb-tallinn-marathon/</loc>
     <lastmod>2014-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/shiny/</loc>
+    <loc>https://andybeger.com/tags/seb-tallinna-maraton/</loc>
     <lastmod>2014-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/shinyapps.io/</loc>
+    <loc>https://andybeger.com/tags/shiny/</loc>
     <lastmod>2014-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/afghanistan/</loc>
+    <loc>https://andybeger.com/tags/shinyapps.io/</loc>
+    <lastmod>2014-09-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/tags/afghanistan/</loc>
     <lastmod>2014-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/counter-ied/</loc>
+    <loc>https://andybeger.com/tags/counter-ied/</loc>
     <lastmod>2014-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/ied/</loc>
+    <loc>https://andybeger.com/tags/ied/</loc>
     <lastmod>2014-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2014/08/08/modeling-and-predicting-ieds/</loc>
+    <loc>https://andybeger.com/blog/2014-08-08-modeling-and-predicting-ieds/</loc>
     <lastmod>2014-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/forecasting/</loc>
+    <loc>https://andybeger.com/tags/forecasting/</loc>
     <lastmod>2014-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/thailand/</loc>
+    <loc>https://andybeger.com/tags/irregular-leadership-change/</loc>
     <lastmod>2014-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2014/05/23/the-thailand-coup-and-some-recent-forecasting-work/</loc>
+    <loc>https://andybeger.com/tags/thailand/</loc>
     <lastmod>2014-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2014/03/29/associating-points-with-polygons-in-r/</loc>
+    <loc>https://andybeger.com/blog/2014-05-23-the-thailand-coup-and-some-recent-forecasting-work/</loc>
+    <lastmod>2014-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/blog/2014-03-29-associating-points-with-polygons-in-r/</loc>
     <lastmod>2014-03-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/sp/</loc>
+    <loc>https://andybeger.com/tags/sp/</loc>
     <lastmod>2014-03-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/ccode/</loc>
+    <loc>https://andybeger.com/tags/ccode/</loc>
     <lastmod>2014-01-29T02:48:21+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/gwcode/</loc>
+    <loc>https://andybeger.com/tags/gwcode/</loc>
     <lastmod>2014-01-29T02:48:21+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2014/01/29/quick-lookup-for-country-codes/</loc>
+    <loc>https://andybeger.com/blog/2014-01-29-quick-lookup-for-country-codes/</loc>
     <lastmod>2014-01-29T02:48:21+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/categories/commentary/</loc>
+    <loc>https://andybeger.com/categories/commentary/</loc>
     <lastmod>2013-12-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/12/24/defense-doublethink/</loc>
+    <loc>https://andybeger.com/blog/2013-12-24-defense-doublethink/</loc>
     <lastmod>2013-12-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/12/11/code-for-blank-state-panel-data/</loc>
+    <loc>https://andybeger.com/blog/2013-12-11-code-for-blank-state-panel-data/</loc>
     <lastmod>2013-12-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/country-codes/</loc>
+    <loc>https://andybeger.com/tags/country-codes/</loc>
     <lastmod>2013-12-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/python/</loc>
+    <loc>https://andybeger.com/tags/python/</loc>
     <lastmod>2013-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/scientific-computing/</loc>
+    <loc>https://andybeger.com/tags/scientific-computing/</loc>
     <lastmod>2013-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/11/21/time-to-learn-python/</loc>
+    <loc>https://andybeger.com/blog/2013-11-21-time-to-learn-python/</loc>
     <lastmod>2013-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/crisp/</loc>
+    <loc>https://andybeger.com/tags/crisp/</loc>
     <lastmod>2013-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/duke-university/</loc>
+    <loc>https://andybeger.com/tags/duke-university/</loc>
     <lastmod>2013-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/predictive-heuristics/</loc>
+    <loc>https://andybeger.com/tags/predictive-heuristics/</loc>
     <lastmod>2013-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/10/18/taking-over-the-world/</loc>
+    <loc>https://andybeger.com/blog/2013-10-18-taking-over-the-world/</loc>
     <lastmod>2013-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/ward-lab/</loc>
+    <loc>https://andybeger.com/tags/ward-lab/</loc>
     <lastmod>2013-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/maps/</loc>
+    <loc>https://andybeger.com/tags/maps/</loc>
     <lastmod>2013-09-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/09/30/quick-background-maps-in-r/</loc>
+    <loc>https://andybeger.com/blog/2013-09-30-map-now/</loc>
     <lastmod>2013-09-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/database/</loc>
+    <loc>https://andybeger.com/tags/database/</loc>
     <lastmod>2013-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/09/19/database-adventures/</loc>
+    <loc>https://andybeger.com/blog/2013-09-19-database-adventures/</loc>
     <lastmod>2013-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/sql/</loc>
+    <loc>https://andybeger.com/tags/sql/</loc>
     <lastmod>2013-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/stata/</loc>
+    <loc>https://andybeger.com/tags/stata/</loc>
     <lastmod>2013-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/09/05/stata-do-files-for-country-code-conversions/</loc>
+    <loc>https://andybeger.com/blog/2013-09-05-stata-do-files-for-country-code-conversions/</loc>
     <lastmod>2013-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc.-with-r/</loc>
+    <loc>https://andybeger.com/tags/code/</loc>
     <lastmod>2013-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/geonames/</loc>
+    <loc>https://andybeger.com/blog/2013-08-06-finding-coordinates-for-cities-etc-with-r/</loc>
     <lastmod>2013-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/spatial/</loc>
-    <lastmod>2013-08-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2013/06/05/whats-in-a-sigact/</loc>
+    <loc>https://andybeger.com/blog/2013-06-05-whats-in-a-sigact/</loc>
     <lastmod>2013-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/duke/</loc>
+    <loc>https://andybeger.com/tags/duke/</loc>
     <lastmod>2013-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/grade-inflation/</loc>
+    <loc>https://andybeger.com/tags/grade-inflation/</loc>
     <lastmod>2013-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2013/05/08/plot-of-duke-grade-inflation/</loc>
+    <loc>https://andybeger.com/blog/2013-05-08-plot-of-duke-grade-inflation/</loc>
     <lastmod>2013-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2012/12/22/building-a-survivor-curve-from-observed-data/</loc>
+    <loc>https://andybeger.com/blog/2012-12-22-building-a-survivor-curve-from-observed-data/</loc>
     <lastmod>2012-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/duration-modeling/</loc>
+    <loc>https://andybeger.com/tags/duration-modeling/</loc>
     <lastmod>2012-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/survival-function/</loc>
+    <loc>https://andybeger.com/tags/survival-function/</loc>
     <lastmod>2012-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/teaching/</loc>
+    <loc>https://andybeger.com/tags/teaching/</loc>
     <lastmod>2012-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/categories/teaching/</loc>
+    <loc>https://andybeger.com/categories/teaching/</loc>
     <lastmod>2012-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/bayesian/</loc>
+    <loc>https://andybeger.com/tags/bayesian/</loc>
     <lastmod>2012-10-29T22:07:55+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/iraq/</loc>
+    <loc>https://andybeger.com/tags/iraq/</loc>
     <lastmod>2012-10-29T22:07:55+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/random-walk-negative-binomial/</loc>
+    <loc>https://andybeger.com/tags/random-walk-negative-binomial/</loc>
     <lastmod>2012-10-29T22:07:55+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2012/10/29/random-walk-negative-binomial-model-for-persistent-count-series./</loc>
+    <loc>https://andybeger.com/blog/2012-10-29-random-walk-negative-binomial-model-for-persistent-count-series/</loc>
     <lastmod>2012-10-29T22:07:55+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/time-series-event-count/</loc>
+    <loc>https://andybeger.com/tags/time-series-event-count/</loc>
     <lastmod>2012-10-29T22:07:55+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/bosnia/</loc>
+    <loc>https://andybeger.com/tags/bosnia/</loc>
     <lastmod>2012-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/map-scale/</loc>
+    <loc>https://andybeger.com/tags/map-scale/</loc>
     <lastmod>2012-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/north-arrow/</loc>
+    <loc>https://andybeger.com/tags/north-arrow/</loc>
     <lastmod>2012-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2012/08/25/scale-and-north-arrow-for-maps-in-r/</loc>
+    <loc>https://andybeger.com/blog/2012-08-25-scale-and-north-arrow-for-maps-in-r/</loc>
     <lastmod>2012-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2012/03/21/coding-provinces-for-the-iraq-body-count-data/</loc>
+    <loc>https://andybeger.com/blog/2012-03-21-coding-provinces-for-the-iraq-body-count-data/</loc>
     <lastmod>2012-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/iraq-body-count/</loc>
+    <loc>https://andybeger.com/tags/iraq-body-count/</loc>
     <lastmod>2012-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/human-rights/</loc>
+    <loc>https://andybeger.com/tags/data/</loc>
     <lastmod>2012-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/itt/</loc>
+    <loc>https://andybeger.com/tags/human-rights/</loc>
     <lastmod>2012-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/torture/</loc>
+    <loc>https://andybeger.com/tags/itt/</loc>
     <lastmod>2012-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2012/01/20/which-governments-torture/</loc>
+    <loc>https://andybeger.com/tags/torture/</loc>
     <lastmod>2012-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/research/</loc>
+    <loc>https://andybeger.com/blog/2012-01-20-which-governments-torture/</loc>
+    <lastmod>2012-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/tags/research/</loc>
     <lastmod>2012-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2012/01/12/yugoslavs-die-less/</loc>
+    <loc>https://andybeger.com/tags/spatial/</loc>
     <lastmod>2012-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/ec2/</loc>
+    <loc>https://andybeger.com/blog/2012-01-12-yugoslavs-die-less/</loc>
+    <lastmod>2012-01-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/tags/ec2/</loc>
     <lastmod>2011-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/rstudio/</loc>
+    <loc>https://andybeger.com/tags/rstudio/</loc>
     <lastmod>2011-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2011/12/20/running-rstudio-on-amazon-ec2/</loc>
+    <loc>https://andybeger.com/blog/2011-12-20-running-rstudio-on-amazon-ec2/</loc>
     <lastmod>2011-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2011/10/22/the-iraq-war-2003-to-2011/</loc>
+    <loc>https://andybeger.com/blog/2011-10-22-the-iraq-war-2003-to-2011/</loc>
     <lastmod>2011-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/coin/</loc>
+    <loc>https://andybeger.com/tags/coin/</loc>
     <lastmod>2011-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2011/08/12/report-on-coin-intelligence-collection/</loc>
+    <loc>https://andybeger.com/blog/2011-08-12-report-on-coin-intelligence-collection/</loc>
     <lastmod>2011-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/egypt/</loc>
+    <loc>https://andybeger.com/tags/democracy/</loc>
     <lastmod>2011-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2011/02/12/egypts-military-and-constitution/</loc>
+    <loc>https://andybeger.com/tags/egypt/</loc>
     <lastmod>2011-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/predictions/</loc>
+    <loc>https://andybeger.com/blog/2011-02-12-we-need-us-egyptian-military-exercises-in-sinai-now/</loc>
     <lastmod>2011-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/regime-stability/</loc>
+    <loc>https://andybeger.com/tags/predictions/</loc>
     <lastmod>2011-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2011/02/08/iraq-counter-ied/</loc>
+    <loc>https://andybeger.com/tags/regime-stability/</loc>
+    <lastmod>2011-02-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/blog/2011-02-08-iraq-counter-ied/</loc>
     <lastmod>2011-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/code/</loc>
+    <loc>https://andybeger.com/blog/2011-02-03-split-population-logit/</loc>
     <lastmod>2011-02-03T22:05:51+02:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/tags/infidelity/</loc>
-    <lastmod>2011-02-03T22:05:51+02:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/mle/</loc>
-    <lastmod>2011-02-03T22:05:51+02:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2011/02/03/split-population-logit/</loc>
-    <lastmod>2011-02-03T22:05:51+02:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/split-population-logit/</loc>
-    <lastmod>2011-02-03T22:05:51+02:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/coding/</loc>
+    <loc>https://andybeger.com/blog/2011-01-30-programming-mle-models-in-stata/</loc>
     <lastmod>2011-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2011/01/30/programming-mle-models-in-stata/</loc>
+    <loc>https://andybeger.com/blog/2011-01-30-stata-basics/</loc>
     <lastmod>2011-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/2011/01/30/stata-basics/</loc>
-    <lastmod>2011-01-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/2011/01/18/bosnia-1991-municipalities/</loc>
+    <loc>https://andybeger.com/blog/2011-01-18-bosnia-1991-municipalities/</loc>
     <lastmod>2011-01-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andybeger.com/categories/data/</loc>
-    <lastmod>2011-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/gis/</loc>
-    <lastmod>2011-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/tags/shapefiles/</loc>
-    <lastmod>2011-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andybeger.com/about/</loc>
-  </url><url>
-    <loc>https://www.andybeger.com/contact/</loc>
-  </url><url>
-    <loc>https://www.andybeger.com/projects/</loc>
-  </url><url>
-    <loc>https://www.andybeger.com/research/</loc>
-  </url><url>
-    <loc>https://www.andybeger.com/software/</loc>
+    <loc>https://andybeger.com/research/</loc>
   </url>
 </urlset>

@@ -2,17 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>coding on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/coding/</link>
+    <link>https://andybeger.com/tags/coding/</link>
     <description>Recent content in coding on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jan 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/coding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Programming MLE models in Stata</title>
-      <link>https://www.andybeger.com/2011/01/30/programming-mle-models-in-stata/</link>
+      <link>https://andybeger.com/blog/2011-01-30-programming-mle-models-in-stata/</link>
       <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2011/01/30/programming-mle-models-in-stata/</guid>
+      <guid>https://andybeger.com/blog/2011-01-30-programming-mle-models-in-stata/</guid>
       <description>Another set of notes from when I was TA for our Advanced Quantitative Methods course with Prof. Matt Golder in 2008. The notes for Programming MLE models in Stata (pdf) walk you through how to recreate your own logit regression command and ado files for Stata, as well as how to use simulations to check your model. Here are also the associated ado and do files.
 The notes are closely based on Maximum Likelihood Estimation with Stata (2006, see full citation in the notes), which is definitely worth it if you are considering writing your own MLE commands in Stata.</description>
     </item>

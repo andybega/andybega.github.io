@@ -1,4 +1,5 @@
-(function() {
+// Copied from yihui/hugo-lithium
+(function () {
   var i, text, code, codes = document.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];

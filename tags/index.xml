@@ -2,989 +2,637 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/</link>
+    <link>https://andybeger.com/tags/</link>
     <description>Recent content in Tags on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2018</title>
-      <link>https://www.andybeger.com/tags/2018/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>democracy</title>
-      <link>https://www.andybeger.com/tags/democracy/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/democracy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ggplot2</title>
-      <link>https://www.andybeger.com/tags/ggplot2/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/ggplot2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>polyarchy</title>
-      <link>https://www.andybeger.com/tags/polyarchy/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/polyarchy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://www.andybeger.com/tags/r/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>V-Dem</title>
-      <link>https://www.andybeger.com/tags/v-dem/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/v-dem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>2016 election</title>
-      <link>https://www.andybeger.com/tags/2016-election/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/2016-election/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dot density map</title>
-      <link>https://www.andybeger.com/tags/dot-density-map/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/dot-density-map/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sf</title>
-      <link>https://www.andybeger.com/tags/sf/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/sf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>US</title>
-      <link>https://www.andybeger.com/tags/us/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/us/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>elections</title>
-      <link>https://www.andybeger.com/tags/elections/</link>
+      <title>Estonia</title>
+      <link>https://andybeger.com/tags/estonia/</link>
       <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/elections/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>estonia</title>
-      <link>https://www.andybeger.com/tags/estonia/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/estonia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>local elections</title>
-      <link>https://www.andybeger.com/tags/local-elections/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/local-elections/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>2017</title>
-      <link>https://www.andybeger.com/tags/2017/</link>
-      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/2017/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>coups</title>
-      <link>https://www.andybeger.com/tags/coups/</link>
-      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/coups/</guid>
+      <guid>https://andybeger.com/tags/estonia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>forecasts</title>
-      <link>https://www.andybeger.com/tags/forecasts/</link>
+      <link>https://andybeger.com/tags/forecasts/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/forecasts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data</title>
-      <link>https://www.andybeger.com/tags/data/</link>
-      <pubDate>Tue, 22 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EU</title>
-      <link>https://www.andybeger.com/tags/eu/</link>
-      <pubDate>Tue, 22 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/eu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Eurobarometer</title>
-      <link>https://www.andybeger.com/tags/eurobarometer/</link>
-      <pubDate>Tue, 22 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/eurobarometer/</guid>
+      <guid>https://andybeger.com/tags/forecasts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>visualization</title>
-      <link>https://www.andybeger.com/tags/visualization/</link>
+      <link>https://andybeger.com/tags/visualization/</link>
       <pubDate>Tue, 22 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/visualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>missing values</title>
-      <link>https://www.andybeger.com/tags/missing-values/</link>
-      <pubDate>Wed, 14 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/missing-values/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>plots</title>
-      <link>https://www.andybeger.com/tags/plots/</link>
-      <pubDate>Wed, 14 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/plots/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>state system membership</title>
-      <link>https://www.andybeger.com/tags/state-system-membership/</link>
-      <pubDate>Wed, 14 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/state-system-membership/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jekyll</title>
-      <link>https://www.andybeger.com/tags/jekyll/</link>
-      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/jekyll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matt Dickenson</title>
-      <link>https://www.andybeger.com/tags/matt-dickenson/</link>
-      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/matt-dickenson/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Michael Rosen</title>
-      <link>https://www.andybeger.com/tags/michael-rosen/</link>
-      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/michael-rosen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>traffic</title>
-      <link>https://www.andybeger.com/tags/traffic/</link>
-      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/traffic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wordpress</title>
-      <link>https://www.andybeger.com/tags/wordpress/</link>
-      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/wordpress/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>3d surface plot</title>
-      <link>https://www.andybeger.com/tags/3d-surface-plot/</link>
-      <pubDate>Thu, 03 Mar 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/3d-surface-plot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>plotly</title>
-      <link>https://www.andybeger.com/tags/plotly/</link>
-      <pubDate>Thu, 03 Mar 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/plotly/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>irregular leadership change</title>
-      <link>https://www.andybeger.com/tags/irregular-leadership-change/</link>
-      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/irregular-leadership-change/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Yemen</title>
-      <link>https://www.andybeger.com/tags/yemen/</link>
-      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/yemen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Archigos</title>
-      <link>https://www.andybeger.com/tags/archigos/</link>
-      <pubDate>Fri, 10 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/archigos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>descriptive statistics</title>
-      <link>https://www.andybeger.com/tags/descriptive-statistics/</link>
-      <pubDate>Fri, 10 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/descriptive-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>good coups</title>
-      <link>https://www.andybeger.com/tags/good-coups/</link>
-      <pubDate>Fri, 10 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/good-coups/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>polity</title>
-      <link>https://www.andybeger.com/tags/polity/</link>
-      <pubDate>Fri, 10 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/polity/</guid>
+      <guid>https://andybeger.com/tags/visualization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>event data</title>
-      <link>https://www.andybeger.com/tags/event-data/</link>
+      <link>https://andybeger.com/tags/event-data/</link>
       <pubDate>Wed, 08 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/event-data/</guid>
+      <guid>https://andybeger.com/tags/event-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>icews</title>
-      <link>https://www.andybeger.com/tags/icews/</link>
+      <link>https://andybeger.com/tags/icews/</link>
       <pubDate>Wed, 08 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/icews/</guid>
+      <guid>https://andybeger.com/tags/icews/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>AUC-PR</title>
-      <link>https://www.andybeger.com/tags/auc-pr/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+      <title>Archigos</title>
+      <link>https://andybeger.com/tags/archigos/</link>
+      <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/auc-pr/</guid>
+      <guid>https://andybeger.com/tags/archigos/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>AUC-ROC</title>
-      <link>https://www.andybeger.com/tags/auc-roc/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+      <title>coups</title>
+      <link>https://andybeger.com/tags/coups/</link>
+      <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/auc-roc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>binary fit</title>
-      <link>https://www.andybeger.com/tags/binary-fit/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/binary-fit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>precision-recall curves</title>
-      <link>https://www.andybeger.com/tags/precision-recall-curves/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/precision-recall-curves/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ROC curves</title>
-      <link>https://www.andybeger.com/tags/roc-curves/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/roc-curves/</guid>
+      <guid>https://andybeger.com/tags/coups/</guid>
       <description></description>
     </item>
     
     <item>
       <title>irregular leadership changes</title>
-      <link>https://www.andybeger.com/tags/irregular-leadership-changes/</link>
+      <link>https://andybeger.com/tags/irregular-leadership-changes/</link>
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/irregular-leadership-changes/</guid>
+      <guid>https://andybeger.com/tags/irregular-leadership-changes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Polity IV</title>
-      <link>https://www.andybeger.com/tags/polity-iv/</link>
+      <link>https://andybeger.com/tags/polity-iv/</link>
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/polity-iv/</guid>
+      <guid>https://andybeger.com/tags/polity-iv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>homebrew</title>
-      <link>https://www.andybeger.com/tags/homebrew/</link>
+      <link>https://andybeger.com/tags/homebrew/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/homebrew/</guid>
+      <guid>https://andybeger.com/tags/homebrew/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OS X Mavericks</title>
-      <link>https://www.andybeger.com/tags/os-x-mavericks/</link>
+      <link>https://andybeger.com/tags/os-x-mavericks/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/os-x-mavericks/</guid>
+      <guid>https://andybeger.com/tags/os-x-mavericks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PostGIS</title>
-      <link>https://www.andybeger.com/tags/postgis/</link>
+      <link>https://andybeger.com/tags/postgis/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/postgis/</guid>
+      <guid>https://andybeger.com/tags/postgis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PostgreSQL</title>
-      <link>https://www.andybeger.com/tags/postgresql/</link>
+      <link>https://andybeger.com/tags/postgresql/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/postgresql/</guid>
+      <guid>https://andybeger.com/tags/postgresql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>proj</title>
-      <link>https://www.andybeger.com/tags/proj/</link>
+      <link>https://andybeger.com/tags/proj/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/proj/</guid>
+      <guid>https://andybeger.com/tags/proj/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rgdal</title>
-      <link>https://www.andybeger.com/tags/rgdal/</link>
+      <link>https://andybeger.com/tags/rgdal/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/rgdal/</guid>
+      <guid>https://andybeger.com/tags/rgdal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>prediction</title>
-      <link>https://www.andybeger.com/tags/prediction/</link>
+      <link>https://andybeger.com/tags/prediction/</link>
       <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
       
-      <guid>https://www.andybeger.com/tags/prediction/</guid>
+      <guid>https://andybeger.com/tags/prediction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>variance</title>
-      <link>https://www.andybeger.com/tags/variance/</link>
+      <link>https://andybeger.com/tags/variance/</link>
       <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
       
-      <guid>https://www.andybeger.com/tags/variance/</guid>
+      <guid>https://andybeger.com/tags/variance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>variance decomposition</title>
-      <link>https://www.andybeger.com/tags/variance-decomposition/</link>
+      <link>https://andybeger.com/tags/variance-decomposition/</link>
       <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
       
-      <guid>https://www.andybeger.com/tags/variance-decomposition/</guid>
+      <guid>https://andybeger.com/tags/variance-decomposition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://andybeger.com/tags/r/</link>
+      <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SEB Tallinn Marathon</title>
-      <link>https://www.andybeger.com/tags/seb-tallinn-marathon/</link>
+      <link>https://andybeger.com/tags/seb-tallinn-marathon/</link>
       <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/seb-tallinn-marathon/</guid>
+      <guid>https://andybeger.com/tags/seb-tallinn-marathon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SEB Tallinna Maraton</title>
-      <link>https://www.andybeger.com/tags/seb-tallinna-maraton/</link>
+      <link>https://andybeger.com/tags/seb-tallinna-maraton/</link>
       <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/seb-tallinna-maraton/</guid>
+      <guid>https://andybeger.com/tags/seb-tallinna-maraton/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shiny</title>
-      <link>https://www.andybeger.com/tags/shiny/</link>
+      <link>https://andybeger.com/tags/shiny/</link>
       <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/shiny/</guid>
+      <guid>https://andybeger.com/tags/shiny/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shinyapps.io</title>
-      <link>https://www.andybeger.com/tags/shinyapps.io/</link>
+      <link>https://andybeger.com/tags/shinyapps.io/</link>
       <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/shinyapps.io/</guid>
+      <guid>https://andybeger.com/tags/shinyapps.io/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Afghanistan</title>
-      <link>https://www.andybeger.com/tags/afghanistan/</link>
+      <link>https://andybeger.com/tags/afghanistan/</link>
       <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/afghanistan/</guid>
+      <guid>https://andybeger.com/tags/afghanistan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>counter-IED</title>
-      <link>https://www.andybeger.com/tags/counter-ied/</link>
+      <link>https://andybeger.com/tags/counter-ied/</link>
       <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/counter-ied/</guid>
+      <guid>https://andybeger.com/tags/counter-ied/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IED</title>
-      <link>https://www.andybeger.com/tags/ied/</link>
+      <link>https://andybeger.com/tags/ied/</link>
       <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/ied/</guid>
+      <guid>https://andybeger.com/tags/ied/</guid>
       <description></description>
     </item>
     
     <item>
       <title>forecasting</title>
-      <link>https://www.andybeger.com/tags/forecasting/</link>
+      <link>https://andybeger.com/tags/forecasting/</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/forecasting/</guid>
+      <guid>https://andybeger.com/tags/forecasting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>irregular leadership change</title>
+      <link>https://andybeger.com/tags/irregular-leadership-change/</link>
+      <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/irregular-leadership-change/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Thailand</title>
-      <link>https://www.andybeger.com/tags/thailand/</link>
+      <link>https://andybeger.com/tags/thailand/</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/thailand/</guid>
+      <guid>https://andybeger.com/tags/thailand/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sp</title>
-      <link>https://www.andybeger.com/tags/sp/</link>
+      <link>https://andybeger.com/tags/sp/</link>
       <pubDate>Sat, 29 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/sp/</guid>
+      <guid>https://andybeger.com/tags/sp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ccode</title>
-      <link>https://www.andybeger.com/tags/ccode/</link>
+      <link>https://andybeger.com/tags/ccode/</link>
       <pubDate>Wed, 29 Jan 2014 02:48:21 +0200</pubDate>
       
-      <guid>https://www.andybeger.com/tags/ccode/</guid>
+      <guid>https://andybeger.com/tags/ccode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gwcode</title>
-      <link>https://www.andybeger.com/tags/gwcode/</link>
+      <link>https://andybeger.com/tags/gwcode/</link>
       <pubDate>Wed, 29 Jan 2014 02:48:21 +0200</pubDate>
       
-      <guid>https://www.andybeger.com/tags/gwcode/</guid>
+      <guid>https://andybeger.com/tags/gwcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>country codes</title>
-      <link>https://www.andybeger.com/tags/country-codes/</link>
+      <link>https://andybeger.com/tags/country-codes/</link>
       <pubDate>Wed, 11 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/country-codes/</guid>
+      <guid>https://andybeger.com/tags/country-codes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://www.andybeger.com/tags/python/</link>
+      <link>https://andybeger.com/tags/python/</link>
       <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/python/</guid>
+      <guid>https://andybeger.com/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scientific computing</title>
-      <link>https://www.andybeger.com/tags/scientific-computing/</link>
+      <link>https://andybeger.com/tags/scientific-computing/</link>
       <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/scientific-computing/</guid>
+      <guid>https://andybeger.com/tags/scientific-computing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>crisp</title>
-      <link>https://www.andybeger.com/tags/crisp/</link>
+      <link>https://andybeger.com/tags/crisp/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/crisp/</guid>
+      <guid>https://andybeger.com/tags/crisp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>duke university</title>
-      <link>https://www.andybeger.com/tags/duke-university/</link>
+      <link>https://andybeger.com/tags/duke-university/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/duke-university/</guid>
+      <guid>https://andybeger.com/tags/duke-university/</guid>
       <description></description>
     </item>
     
     <item>
       <title>predictive heuristics</title>
-      <link>https://www.andybeger.com/tags/predictive-heuristics/</link>
+      <link>https://andybeger.com/tags/predictive-heuristics/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/predictive-heuristics/</guid>
+      <guid>https://andybeger.com/tags/predictive-heuristics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ward lab</title>
-      <link>https://www.andybeger.com/tags/ward-lab/</link>
+      <link>https://andybeger.com/tags/ward-lab/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/ward-lab/</guid>
+      <guid>https://andybeger.com/tags/ward-lab/</guid>
       <description></description>
     </item>
     
     <item>
       <title>maps</title>
-      <link>https://www.andybeger.com/tags/maps/</link>
+      <link>https://andybeger.com/tags/maps/</link>
       <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/maps/</guid>
+      <guid>https://andybeger.com/tags/maps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>database</title>
-      <link>https://www.andybeger.com/tags/database/</link>
+      <link>https://andybeger.com/tags/database/</link>
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/database/</guid>
+      <guid>https://andybeger.com/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
-      <link>https://www.andybeger.com/tags/sql/</link>
+      <link>https://andybeger.com/tags/sql/</link>
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/sql/</guid>
+      <guid>https://andybeger.com/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stata</title>
-      <link>https://www.andybeger.com/tags/stata/</link>
+      <link>https://andybeger.com/tags/stata/</link>
       <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/stata/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>geonames</title>
-      <link>https://www.andybeger.com/tags/geonames/</link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/geonames/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spatial</title>
-      <link>https://www.andybeger.com/tags/spatial/</link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/spatial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Duke</title>
-      <link>https://www.andybeger.com/tags/duke/</link>
-      <pubDate>Wed, 08 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/duke/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>grade inflation</title>
-      <link>https://www.andybeger.com/tags/grade-inflation/</link>
-      <pubDate>Wed, 08 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/grade-inflation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>duration modeling</title>
-      <link>https://www.andybeger.com/tags/duration-modeling/</link>
-      <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/duration-modeling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>survival function</title>
-      <link>https://www.andybeger.com/tags/survival-function/</link>
-      <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/survival-function/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>teaching</title>
-      <link>https://www.andybeger.com/tags/teaching/</link>
-      <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/teaching/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bayesian</title>
-      <link>https://www.andybeger.com/tags/bayesian/</link>
-      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/bayesian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Iraq</title>
-      <link>https://www.andybeger.com/tags/iraq/</link>
-      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/iraq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>random walk negative binomial</title>
-      <link>https://www.andybeger.com/tags/random-walk-negative-binomial/</link>
-      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/random-walk-negative-binomial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>time-series event count</title>
-      <link>https://www.andybeger.com/tags/time-series-event-count/</link>
-      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/time-series-event-count/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bosnia</title>
-      <link>https://www.andybeger.com/tags/bosnia/</link>
-      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/bosnia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>map scale</title>
-      <link>https://www.andybeger.com/tags/map-scale/</link>
-      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/map-scale/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>north arrow</title>
-      <link>https://www.andybeger.com/tags/north-arrow/</link>
-      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/north-arrow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iraq body count</title>
-      <link>https://www.andybeger.com/tags/iraq-body-count/</link>
-      <pubDate>Wed, 21 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/iraq-body-count/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>human rights</title>
-      <link>https://www.andybeger.com/tags/human-rights/</link>
-      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/human-rights/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ITT</title>
-      <link>https://www.andybeger.com/tags/itt/</link>
-      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/itt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>torture</title>
-      <link>https://www.andybeger.com/tags/torture/</link>
-      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/torture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>research</title>
-      <link>https://www.andybeger.com/tags/research/</link>
-      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/research/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EC2</title>
-      <link>https://www.andybeger.com/tags/ec2/</link>
-      <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/ec2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RStudio</title>
-      <link>https://www.andybeger.com/tags/rstudio/</link>
-      <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/rstudio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>coin</title>
-      <link>https://www.andybeger.com/tags/coin/</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/coin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>egypt</title>
-      <link>https://www.andybeger.com/tags/egypt/</link>
-      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/egypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>predictions</title>
-      <link>https://www.andybeger.com/tags/predictions/</link>
-      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/predictions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regime stability</title>
-      <link>https://www.andybeger.com/tags/regime-stability/</link>
-      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/tags/regime-stability/</guid>
+      <guid>https://andybeger.com/tags/stata/</guid>
       <description></description>
     </item>
     
     <item>
       <title>code</title>
-      <link>https://www.andybeger.com/tags/code/</link>
-      <pubDate>Thu, 03 Feb 2011 22:05:51 +0200</pubDate>
+      <link>https://andybeger.com/tags/code/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/code/</guid>
+      <guid>https://andybeger.com/tags/code/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Infidelity</title>
-      <link>https://www.andybeger.com/tags/infidelity/</link>
-      <pubDate>Thu, 03 Feb 2011 22:05:51 +0200</pubDate>
+      <title>Duke</title>
+      <link>https://andybeger.com/tags/duke/</link>
+      <pubDate>Wed, 08 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/infidelity/</guid>
+      <guid>https://andybeger.com/tags/duke/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>MLE</title>
-      <link>https://www.andybeger.com/tags/mle/</link>
-      <pubDate>Thu, 03 Feb 2011 22:05:51 +0200</pubDate>
+      <title>grade inflation</title>
+      <link>https://andybeger.com/tags/grade-inflation/</link>
+      <pubDate>Wed, 08 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/mle/</guid>
+      <guid>https://andybeger.com/tags/grade-inflation/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>split population logit</title>
-      <link>https://www.andybeger.com/tags/split-population-logit/</link>
-      <pubDate>Thu, 03 Feb 2011 22:05:51 +0200</pubDate>
+      <title>duration modeling</title>
+      <link>https://andybeger.com/tags/duration-modeling/</link>
+      <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/split-population-logit/</guid>
+      <guid>https://andybeger.com/tags/duration-modeling/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>coding</title>
-      <link>https://www.andybeger.com/tags/coding/</link>
-      <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
+      <title>survival function</title>
+      <link>https://andybeger.com/tags/survival-function/</link>
+      <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/coding/</guid>
+      <guid>https://andybeger.com/tags/survival-function/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>GIS</title>
-      <link>https://www.andybeger.com/tags/gis/</link>
-      <pubDate>Tue, 18 Jan 2011 00:00:00 +0000</pubDate>
+      <title>teaching</title>
+      <link>https://andybeger.com/tags/teaching/</link>
+      <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/tags/gis/</guid>
+      <guid>https://andybeger.com/tags/teaching/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>shapefiles</title>
-      <link>https://www.andybeger.com/tags/shapefiles/</link>
-      <pubDate>Tue, 18 Jan 2011 00:00:00 +0000</pubDate>
+      <title>Bayesian</title>
+      <link>https://andybeger.com/tags/bayesian/</link>
+      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
       
-      <guid>https://www.andybeger.com/tags/shapefiles/</guid>
+      <guid>https://andybeger.com/tags/bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iraq</title>
+      <link>https://andybeger.com/tags/iraq/</link>
+      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
+      
+      <guid>https://andybeger.com/tags/iraq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random walk negative binomial</title>
+      <link>https://andybeger.com/tags/random-walk-negative-binomial/</link>
+      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
+      
+      <guid>https://andybeger.com/tags/random-walk-negative-binomial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>time-series event count</title>
+      <link>https://andybeger.com/tags/time-series-event-count/</link>
+      <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
+      
+      <guid>https://andybeger.com/tags/time-series-event-count/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bosnia</title>
+      <link>https://andybeger.com/tags/bosnia/</link>
+      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/bosnia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>map scale</title>
+      <link>https://andybeger.com/tags/map-scale/</link>
+      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/map-scale/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>north arrow</title>
+      <link>https://andybeger.com/tags/north-arrow/</link>
+      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/north-arrow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iraq body count</title>
+      <link>https://andybeger.com/tags/iraq-body-count/</link>
+      <pubDate>Wed, 21 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/iraq-body-count/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>https://andybeger.com/tags/data/</link>
+      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>human rights</title>
+      <link>https://andybeger.com/tags/human-rights/</link>
+      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/human-rights/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ITT</title>
+      <link>https://andybeger.com/tags/itt/</link>
+      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/itt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>torture</title>
+      <link>https://andybeger.com/tags/torture/</link>
+      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/torture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>research</title>
+      <link>https://andybeger.com/tags/research/</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spatial</title>
+      <link>https://andybeger.com/tags/spatial/</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/spatial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EC2</title>
+      <link>https://andybeger.com/tags/ec2/</link>
+      <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RStudio</title>
+      <link>https://andybeger.com/tags/rstudio/</link>
+      <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/rstudio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coin</title>
+      <link>https://andybeger.com/tags/coin/</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/coin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>democracy</title>
+      <link>https://andybeger.com/tags/democracy/</link>
+      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/democracy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>egypt</title>
+      <link>https://andybeger.com/tags/egypt/</link>
+      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/egypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>predictions</title>
+      <link>https://andybeger.com/tags/predictions/</link>
+      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/predictions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regime stability</title>
+      <link>https://andybeger.com/tags/regime-stability/</link>
+      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/tags/regime-stability/</guid>
       <description></description>
     </item>
     

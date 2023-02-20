@@ -2,28 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>visualization on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/visualization/</link>
+    <link>https://andybeger.com/tags/visualization/</link>
     <description>Recent content in visualization on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 22 Nov 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Nov 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Support for the creation of an EU Army</title>
-      <link>https://www.andybeger.com/2016/11/22/support-for-the-creation-of-an-eu-army/</link>
+      <link>https://andybeger.com/blog/2016-11-22-eu-army/</link>
       <pubDate>Tue, 22 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2016/11/22/support-for-the-creation-of-an-eu-army/</guid>
+      <guid>https://andybeger.com/blog/2016-11-22-eu-army/</guid>
       <description>In the wake of the Trump victory surprise, and the potential implications for NATO, I stumbled upon a Eurobarometer question that asks people how they feel about the prospect of an EU Army:
- Thinking about the future of the EU, please tell me whether you are in favour or opposed to the following statement: the creation of an EU army.
- Turns out the Eurobarometer has been asking that question for quite some time, which was the first surprising thing.</description>
+Thinking about the future of the EU, please tell me whether you are in favour or opposed to the following statement: the creation of an EU army.
+Turns out the Eurobarometer has been asking that question for quite some time, which was the first surprising thing.</description>
+    </item>
+    
+    <item>
+      <title>3d surface plots of GDP vs. event data</title>
+      <link>https://andybeger.com/blog/3d-surface-plots/</link>
+      <pubDate>Thu, 03 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://andybeger.com/blog/3d-surface-plots/</guid>
+      <description>&lt;p&gt;A while ago I &lt;!-- raw HTML omitted --&gt;wrote a post&lt;!-- raw HTML omitted --&gt; about how the patterns by which data for cross-national datasets observed over multiple periods, e.g. with country-year or country-month observations, vary is important for modeling and prediction. Here is another way to visualize why this is the case using 3-d surface plots made with &lt;!-- raw HTML omitted --&gt;Plotly&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://andybeger.com/img/2016/gdp-logged.png&#34;&gt;&lt;img src=&#34;https://andybeger.com/img/2016/gdp-logged.png&#34; alt=&#34;3d surface plot of logged GDP per capita&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The plot shows logged GDP per capita for &amp;gt;150 countries from 1995 to 2013. This is about the time period we cover in our data for &lt;!-- raw HTML omitted --&gt;forecasting irregular leadership changes&lt;!-- raw HTML omitted --&gt;. Countries are sorted by GDP for the last year with data, which is why the near edge of the plot is smoother than the far end. It&amp;rsquo;s obvious that there are some changes within countries and at rates that differ from other countries, but still most of the variation is between countries.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Quick background maps in R</title>
-      <link>https://www.andybeger.com/2013/09/30/quick-background-maps-in-r/</link>
+      <link>https://andybeger.com/blog/2013-09-30-map-now/</link>
       <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2013/09/30/quick-background-maps-in-r/</guid>
+      <guid>https://andybeger.com/blog/2013-09-30-map-now/</guid>
       <description>Sometimes, for whatever reason, you want to plot something fast. Last week I had some coordinates associated with event data that I was hoping were all from Egypt. But the coordinates were for locations that are only indirectly associated with the events I had, so I wanted to do a quick plot to check. The ggmap package in R makes that pretty easy.
 First, some libraries we will need, and the coordinates.</description>
     </item>

@@ -2,39 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>teaching on Andreas Beger</title>
-    <link>https://www.andybeger.com/categories/teaching/</link>
+    <link>https://andybeger.com/categories/teaching/</link>
     <description>Recent content in teaching on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 22 Dec 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/categories/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Dec 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/categories/teaching/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a survivor curve from observed data</title>
-      <link>https://www.andybeger.com/2012/12/22/building-a-survivor-curve-from-observed-data/</link>
+      <link>https://andybeger.com/blog/2012-12-22-building-a-survivor-curve-from-observed-data/</link>
       <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2012/12/22/building-a-survivor-curve-from-observed-data/</guid>
+      <guid>https://andybeger.com/blog/2012-12-22-building-a-survivor-curve-from-observed-data/</guid>
       <description>A few weeks ago we were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned about this it involved a lot of math and Stata, and when you look around the web it&amp;rsquo;s usually presented similarly. So this was a bit of a challenge.
 A nice thing about duration analysis though is that a lot of the key concepts are already explicitly graphical, like survival curves (wikipedia) and hazard rates.</description>
-    </item>
-    
-    <item>
-      <title>Programming MLE models in Stata</title>
-      <link>https://www.andybeger.com/2011/01/30/programming-mle-models-in-stata/</link>
-      <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/2011/01/30/programming-mle-models-in-stata/</guid>
-      <description>Another set of notes from when I was TA for our Advanced Quantitative Methods course with Prof. Matt Golder in 2008. The notes for Programming MLE models in Stata (pdf) walk you through how to recreate your own logit regression command and ado files for Stata, as well as how to use simulations to check your model. Here are also the associated ado and do files.
-The notes are closely based on Maximum Likelihood Estimation with Stata (2006, see full citation in the notes), which is definitely worth it if you are considering writing your own MLE commands in Stata.</description>
-    </item>
-    
-    <item>
-      <title>Stata Basics</title>
-      <link>https://www.andybeger.com/2011/01/30/stata-basics/</link>
-      <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/2011/01/30/stata-basics/</guid>
-      <description>A couple of lab notes from 2009, when I was TA for our Basic Quantitative Methods course:
- Review of Basic Stata use (pdf) and associated files (zip folder). OLS regression (pdf) and associated files (zip folder). OLS Quantities of Interest (pdf) and associated files (zip folder). Logit Quantities of Interest (pdf) and associated files (zip folder).  </description>
     </item>
     
   </channel>

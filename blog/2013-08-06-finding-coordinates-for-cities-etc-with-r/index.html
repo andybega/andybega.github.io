@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Finding coordinates for cities, etc. with R | Andreas Beger</title>
+<meta property="og:title" content="Finding coordinates for cities, etc. with R - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Finding coordinates for cities, etc. with R</h1>
+        
+        <p>
+          <i>
+            <time datetime='2013-08-06' pubdate>
+              6 August 2013
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/code/">#code</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&rsquo;ve come across it a few times.</p>
+<p>The (or a) solution is to look up the city names with the <a href="http://www.geonames.org/">GeoNames</a> database. Their website has a search feature and with that it&rsquo;s pretty easy to figure out the coordinates for a city or village name. Of course, that stops being convenient when you are dealing with more than a few city names for which you want coordinates.</p>
+<p>So, can we do this in R? Yes, and it&rsquo;s not that difficult. There is a <code>geonames</code> package that provides an interface for R. <a href="http://cran.r-project.org/web/packages/geonames/geonames.pdf">The documentation</a> is pretty short, but the <code>GNSearch()</code> function seems to be what we need (under <code>Searching</code>). It&rsquo;s main argument is just a pointer to <a href="http://www.geonames.org/export/geonames-search.html">GeoNames&rsquo; search arguments</a>.</p>
+<p>Let&rsquo;s start with some data, in this case 5 cities in Afghanistan for which we&rsquo;d like geographic coordinates:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(geonames)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># list of city names (in Afghanistan)  </span>
+</span></span><span style="display:flex;"><span>cities <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Gereshk&#34;</span>, <span style="color:#e6db74">&#34;Lahkar Gah&#34;</span>, <span style="color:#e6db74">&#34;Lashkar Gah&#34;</span>, <span style="color:#e6db74">&#34;Marjah&#34;</span>, <span style="color:#e6db74">&#34;Nad-e Ali&#34;</span>)  
+</span></span></code></pre></div><p>That gives:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> cities  
+</span></span><span style="display:flex;"><span>[1] <span style="color:#e6db74">&#34;Gereshk&#34;</span> <span style="color:#e6db74">&#34;Lashkar Gah&#34;</span> <span style="color:#e6db74">&#34;Marjah&#34;</span> <span style="color:#e6db74">&#34;Nad-e Ali&#34;</span>  
+</span></span></code></pre></div><p>Now we need to run them through <code>GNsearch</code>. We can restrict the search to Afghanistan with <code>country=&quot;AF&quot;</code>. But first, since the arguments passed by <code>GNsearch</code> to GeoNames are not named (i.e. <code>...</code>), I write a convenience function with which we can use <code>sapply()</code>. It just takes a city name, passes it to <code>GNsearch</code> with the appropriate option to search in Afghanistan, and returns the first search result (I checked that the first result in this case is always the city we want). The result is a list, which we can format into a data frame containing what we want, city name and latitute/longitude:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># conveninence function to look up and format results  </span>
+</span></span><span style="display:flex;"><span>GNsearchAF <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x) {  
+</span></span><span style="display:flex;"><span>  res <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">GNsearch</span>(name<span style="color:#f92672">=</span>x, country<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AF&#34;</span>)  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">return</span>(res[1, ])  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># loop over city names and reformat  </span>
+</span></span><span style="display:flex;"><span>GNresult <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sapply</span>(cities, GNsearchAF)  
+</span></span><span style="display:flex;"><span>GNresult <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">do.call</span>(<span style="color:#e6db74">&#34;rbind&#34;</span>, GNresult)  
+</span></span><span style="display:flex;"><span>GNresult <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cbind</span>(city<span style="color:#f92672">=</span><span style="color:#a6e22e">row.names</span>(GNresult),  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">subset</span>(GNresult, select<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;lng&#34;</span>, <span style="color:#e6db74">&#34;lat&#34;</span>, <span style="color:#e6db74">&#34;adminName1&#34;</span>)))  
+</span></span></code></pre></div><p>Final data frame:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> GNresult  
+</span></span><span style="display:flex;"><span>city    lng lat adminName1  
+</span></span><span style="display:flex;"><span>Gereshk Gereshk <span style="color:#ae81ff">64.57005</span> <span style="color:#ae81ff">31.82089</span> Helmand  
+</span></span><span style="display:flex;"><span>Lashkar Gah Lashkar Gah <span style="color:#ae81ff">64.37161</span> <span style="color:#ae81ff">31.59382</span> Helmand  
+</span></span><span style="display:flex;"><span>Marjah Marjah <span style="color:#ae81ff">64.11760</span> <span style="color:#ae81ff">31.52112</span> Helmand  
+</span></span><span style="display:flex;"><span>Nad<span style="color:#f92672">-</span>e Ali Nad<span style="color:#f92672">-</span>e Ali <span style="color:#ae81ff">64.23982</span> <span style="color:#ae81ff">31.64286</span> Helmand  
+</span></span></code></pre></div><p>Here is the <a href="https://gist.github.com/andybega/6159870">complete code</a>.</p>
+<p>One comment: Writing that convenience function so that I can use <code>sapply</code> might be a horrible thing to do. Maybe it would be easier to just write a <code>for</code> loop.</p>
+
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

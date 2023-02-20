@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Building a survivor curve from observed data | Andreas Beger</title>
+<meta property="og:title" content="Building a survivor curve from observed data - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Building a survivor curve from observed data</h1>
+        
+        <p>
+          <i>
+            <time datetime='2012-12-22' pubdate>
+              22 December 2012
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/teaching/">#teaching</a>
+            
+            <a href="https://andybeger.com/tags/duration-modeling/">#duration modeling</a>
+            
+            <a href="https://andybeger.com/tags/r/">#R</a>
+            
+            <a href="https://andybeger.com/tags/survival-function/">#survival function</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>A few weeks ago <a href="http://www.mdwardlab.com" title="Ward Lab">we</a> were asked to teach the basics of (interpreting) duration models to a group of consumers without using any math. When I learned <a href="https://files.nyu.edu/mrg217/public/homepage.htm">about this</a> it involved a lot of math and Stata, and when you look around the web it&rsquo;s usually presented similarly. So this was a bit of a challenge.</p>
+<p>A nice thing about duration analysis though is that a lot of the key concepts are already explicitly graphical, like <a href="http://en.wikipedia.org/wiki/Survival_function">survival curves</a> (wikipedia) and hazard rates. Below, for example, is a survival curve for cancer patients diagnosed with acute lymphoblastic leukemia between 1988 and 2008 in the US, from <a href="http://seer.cancer.gov/faststats/index.php">SEER fast stats</a>:</p>
+<p><a href="/img/2012/all_surv.png"><img src="/img/2012/all_surv.png" alt="Survival curve for ALL, 1988-2008"></a></p>
+<p>Starting from the moment at which a patient is diagnosed with cancer (year 0), it shows the proportion of patients who survive without relapse or death any given number of years from diagnosis. Two years from diagnosis, 50 percents of patients are still event free. Five years from diagnosis about 35 percent are event free (what you might call cured), etc. Alternatively, one could interpret it as the probability that a given ALL patient will be alive 2 or 5 years from diagnosis, with probabilities of 0.5 and 0.35 respectively.</p>
+<p>So far so good, except that in practice one has to estimate survival functions on the basis of limited empirical data, e.g. using a <a href="http://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator">Kaplan-Meier estimate</a> (wikipedia). The resulting estimated survivor curves are not smooth like the curve above, but ragged. Using another example of lightbulbs, with data for the number of days until five bulbs burned out, one might get something like this:</p>
+<p><a href="/img/2012/first5_s.png"><img src="/img/2012/first5_s.png" alt="First 5 failures"></a></p>
+<p>The black line shows the survivor curve estimate, based on data for the five lightbulbs. I added the grey bars to represent the number of days each of the five bulbs lasted to show how the survivor estimate is built up from individual failures. E.g. the top bar is the first bulb, which lasted for ~80 days. Thus on day 25 all 5 bulbs are still burning and our survivor curve is at 1.0. Around day 80, after the first bulb has failed, 4 of 5 or 0.8 of the original bulbs are still &ldquo;alive&rdquo;, bringing the curve down to 0.8. And so on for each additional failure.</p>
+<p>Taking a cue from Bayesian Biologist&rsquo;s <a href="http://bayesianbiologist.com/2012/08/17/an-update-on-visualizing-bayesian-updating/">video of Bayesian updating</a>, and Drew Conway&rsquo;s <a href="http://www.drewconway.com/zia/?p=2741">video of Chicago crime</a> , I thought it would be nice to create a video that shows how an empirical survivor curve like this is built up from observed failure data, and how it changes as you add more data.</p>
+<p>First, a simple backstory: Imagine you move into a new apartment, and having an obsession with measurement, you start keeping track of how long the lightbulbs in your five light fixtures last (it&rsquo;s a small apartment). In the video below, the top half shows the five fixtures, where each bar represents a lightbulb and the number of days it is in operation now. On day 0 all 5 fixtures have new bulbs, i.e. there are no failures yet. Thus the survivor curve estimate, shown at the bottom, is not very useful (we disregard bulbs that haven&rsquo;t burned out yet, i.e. no censoring).</p>
+<!-- raw HTML omitted -->
+<p>Time goes by and after 80 days bulbs are starting to burn out. With data on failures we can now start updating our survivor curve to reflect those failures. The first updates still leave us with a very rough survivor curve estimate, but as more bulbs fail the curve starts getting a nicer shape. Note also that the mean time to failure (MTTF) in the bottom left corner starts getting closer to it&rsquo;s theoretical value. The video ends after a year&rsquo;s worth of simulation, but the longer we let it run the smoother the KM estimate would get. Eventually the KM estimate should converge to the theoretical survivor curve shown in red at the end of the video.</p>
+<p>I created the video using R, with the code below. You&rsquo;ll need <a href="http://ffmpeg.org">ffmpeg</a> to combine the individual frames into a video at the end.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggplot2)  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(gridExtra)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## functions for simulated dgp  </span>
+</span></span><span style="display:flex;"><span>createSurvivalFrame <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(f.survfit) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Create data frame to pass to ggplot2 using survfit result  </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">class</span>(f.survfit)<span style="color:#f92672">!=</span><span style="color:#e6db74">&#39;survfit&#39;</span>) <span style="color:#a6e22e">stop</span>(<span style="color:#e6db74">&#39;Need &amp;amp;quot;survfit&amp;amp;quot; class object.&#39;</span>)  
+</span></span><span style="display:flex;"><span>    f.surv <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(time<span style="color:#f92672">=</span>f.survfit<span style="color:#f92672">$</span>time, surv<span style="color:#f92672">=</span>f.survfit<span style="color:#f92672">$</span>surv)  
+</span></span><span style="display:flex;"><span>    f.start <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(time<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, f.surv<span style="color:#f92672">$</span>time[1]), surv<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>))  
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># add row at end (0 to end of time)  </span>
+</span></span><span style="display:flex;"><span>    f.end <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(time<span style="color:#f92672">=</span><span style="color:#ae81ff">125</span>, surv<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)  
+</span></span><span style="display:flex;"><span>    f.surv <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind</span>(f.start, f.surv, f.end)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">return</span>(f.surv)  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>qplot_survival <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(f.surv) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">require</span>(ggplot2)  
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">-</span> <span style="color:#a6e22e">ggplot</span>(data<span style="color:#f92672">=</span>f.surv) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_step</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>time, y<span style="color:#f92672">=</span>surv), direction<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hv&#39;</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>)  
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">&lt;-</span> p <span style="color:#f92672">+</span> <span style="color:#a6e22e">theme_bw</span>() <span style="color:#f92672">+</span> <span style="color:#a6e22e">ylim</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scale_x_continuous</span>(breaks<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">75</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">125</span>), limits<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">125</span>)) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">labs</span>(y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Survivors&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Day&#39;</span>)  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">return</span>(p)  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## function to simulate lightbulbs  </span>
+</span></span><span style="display:flex;"><span>lights_sim <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(max.days<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">require</span>(survival)  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">require</span>(ggplot2)  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">require</span>(gridExtra)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Initalize  </span>
+</span></span><span style="display:flex;"><span>    obs.bulbs <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>  
+</span></span><span style="display:flex;"><span>    fixtures <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(no<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, bulb<span style="color:#f92672">=</span><span style="color:#66d9ef">NA</span>, bulb.life<span style="color:#f92672">=</span><span style="color:#66d9ef">NA</span>, bulb.spell<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, event<span style="color:#f92672">=</span>F)  
+</span></span><span style="display:flex;"><span>    bulb <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">0</span>  
+</span></span><span style="display:flex;"><span>    true.mttf <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">gamma</span>(<span style="color:#ae81ff">1+1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)  
+</span></span><span style="display:flex;"><span>    mttf <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#39;NA&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Initial survival plot  </span>
+</span></span><span style="display:flex;"><span>    f.surv <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(time<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">125</span>), surv<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>))  
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">qplot_survival</span>(f.surv) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,  
+</span></span><span style="display:flex;"><span>    label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Estimated MTTF:&#39;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">35</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,  
+</span></span><span style="display:flex;"><span>    label<span style="color:#f92672">=</span>mttf, size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,  
+</span></span><span style="display:flex;"><span>    label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Theoretical MTTF:&#39;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">35</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,  
+</span></span><span style="display:flex;"><span>    label<span style="color:#f92672">=</span>true.mttf, size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Simulate through max.days  </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">for </span>(day in <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>max.days) {  
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Update spell counters, reset events  </span>
+</span></span><span style="display:flex;"><span>        fixtures<span style="color:#f92672">$</span>bulb.spell <span style="color:#f92672">&lt;-</span> fixtures<span style="color:#f92672">$</span>bulb.spell <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Place bulbs in empty fixtures  </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">while </span>(<span style="color:#a6e22e">any</span>(<span style="color:#a6e22e">is.na</span>(fixtures<span style="color:#f92672">$</span>bulb))) {  
+</span></span><span style="display:flex;"><span>            bulb <span style="color:#f92672">&lt;-</span> bulb <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>  
+</span></span><span style="display:flex;"><span>            fixtures<span style="color:#a6e22e">[match</span>(<span style="color:#66d9ef">NA</span>, fixtures<span style="color:#f92672">$</span>bulb), <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;bulb&#39;</span>, <span style="color:#e6db74">&#39;bulb.life&#39;</span>)] <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(bulb, <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">rweibull</span>(<span style="color:#ae81ff">1</span>, shape<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, scale<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)))  
+</span></span><span style="display:flex;"><span>        }  
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Check for bulbs to burn out now  </span>
+</span></span><span style="display:flex;"><span>        fixtures<span style="color:#f92672">$</span>event <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">with</span>(fixtures, <span style="color:#a6e22e">ifelse</span>(bulb.life<span style="color:#f92672">==</span>bulb.spell, T, F))  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">any</span>(fixtures<span style="color:#f92672">$</span>event)) {  
+</span></span><span style="display:flex;"><span>            obs.bulbs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind</span>(obs.bulbs, fixtures[fixtures<span style="color:#f92672">$</span>event<span style="color:#f92672">==</span>T, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;bulb&#39;</span>, <span style="color:#e6db74">&#39;bulb.life&#39;</span>, <span style="color:#e6db74">&#39;event&#39;</span>)])  
+</span></span><span style="display:flex;"><span>            fixtures[fixtures<span style="color:#f92672">$</span>event<span style="color:#f92672">==</span>T, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;bulb&#39;</span>, <span style="color:#e6db74">&#39;bulb.life&#39;</span>, <span style="color:#e6db74">&#39;bulb.spell&#39;</span>, <span style="color:#e6db74">&#39;event&#39;</span>)] <span style="color:#f92672">&lt;-</span>  <span style="color:#a6e22e">matrix</span>(<span style="color:#a6e22e">rep</span>(<span style="color:#a6e22e">c</span>(<span style="color:#66d9ef">NA</span>, <span style="color:#66d9ef">NA</span>, <span style="color:#ae81ff">0</span>, F), <span style="color:#a6e22e">sum</span>(fixtures<span style="color:#f92672">$</span>event)), ncol<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, byrow<span style="color:#f92672">=</span>T)  
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Mean time to failure estimate  </span>
+</span></span><span style="display:flex;"><span>            mttf <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">mean</span>(obs.bulbs<span style="color:#f92672">$</span>bulb.life), digits<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)  
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Kaplan-Meier surv curve  </span>
+</span></span><span style="display:flex;"><span>            surv.data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">with</span>(obs.bulbs, <span style="color:#a6e22e">Surv</span>(bulb.life, event))  
+</span></span><span style="display:flex;"><span>            f.surv <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">createSurvivalFrame</span>(<span style="color:#a6e22e">survfit</span>(surv.data <span style="color:#f92672">~</span> <span style="color:#ae81ff">1</span>, surv.data))  
+</span></span><span style="display:flex;"><span>            p <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">qplot_survival</span>(f.surv) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,  
+</span></span><span style="display:flex;"><span>            label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Estimated MTTF:&#39;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">35</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,  
+</span></span><span style="display:flex;"><span>            label<span style="color:#f92672">=</span>mttf, size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,  
+</span></span><span style="display:flex;"><span>            label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Theoretical MTTF:&#39;</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">35</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,  
+</span></span><span style="display:flex;"><span>            label<span style="color:#f92672">=</span>true.mttf, size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># fixture plot for each day  </span>
+</span></span><span style="display:flex;"><span>        p.fix <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(data<span style="color:#f92672">=</span>fixtures) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">geom_bar</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">factor</span>(no), y<span style="color:#f92672">=</span>bulb.spell), fill<span style="color:#f92672">=</span><span style="color:#a6e22e">rgb</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.61</span>), width<span style="color:#f92672">=</span><span style="color:#ae81ff">0.3</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">scale_y_continuous</span>(limits<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">125</span>), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>, breaks<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">75</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">125</span>)) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">scale_x_discrete</span>(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Lamp&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span> <span style="color:#a6e22e">theme_bw</span>() <span style="color:#f92672">+</span> <span style="color:#a6e22e">theme</span>(axis.title.y<span style="color:#f92672">=</span><span style="color:#a6e22e">element_text</span>(vjust<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">theme</span>(plot.margin<span style="color:#f92672">=</span><span style="color:#a6e22e">unit</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0.1</span>,<span style="color:#ae81ff">1.45</span>), <span style="color:#e6db74">&#39;lines&#39;</span>)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">ggtitle</span>(<span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#39;Day: &#39;</span>, day))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Plot frames for each day  </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">png</span>(<span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#39;graphics/frames/&#39;</span>, <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#39;%03d&#39;</span>, day), <span style="color:#e6db74">&#39;.png&#39;</span>))  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">grid.arrange</span>(p.fix, p)  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dev.off</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Progress bar  </span>
+</span></span><span style="display:flex;"><span>        pb <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">txtProgressBar</span>(min<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, max<span style="color:#f92672">=</span>max.days, style<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, width<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>)  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setTxtProgressBar</span>(pb, day)  
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Add last frame with true survivor curve  </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># unobserved data-generating process  </span>
+</span></span><span style="display:flex;"><span>    dgp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(t<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">125</span>, f<span style="color:#f92672">=</span><span style="color:#a6e22e">dweibull</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">125</span>, shape<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, scale<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>))  
+</span></span><span style="display:flex;"><span>    dgp<span style="color:#f92672">$</span>F <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cumsum</span>(dgp<span style="color:#f92672">$</span>f)  
+</span></span><span style="display:flex;"><span>    dgp<span style="color:#f92672">$</span>S <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> dgp<span style="color:#f92672">$</span>F
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    true <span style="color:#f92672">&lt;-</span> p <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_line</span>(data<span style="color:#f92672">=</span>dgp, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>t, y<span style="color:#f92672">=</span>S), col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, linetype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dashed&#39;</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Empirical&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">70</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.65</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#39;text&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Theoretical&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#ae81ff">105</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0.72</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">png</span>(<span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#39;graphics/frames/&#39;</span>, <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#39;%03d&#39;</span>, max.days<span style="color:#ae81ff">+1</span>), <span style="color:#e6db74">&#39;.png&#39;</span>))  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">grid.arrange</span>(p.fix, true)  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dev.off</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># done, return failures  </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">list</span>(obs <span style="color:#f92672">=</span> obs.bulbs, current <span style="color:#f92672">=</span> fixtures, dgp <span style="color:#f92672">=</span> dgp))  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### End of functions ###</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Simulate  </span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">1152359</span>)  
+</span></span><span style="display:flex;"><span>sims <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">lights_sim</span>(<span style="color:#ae81ff">365</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;ffmpeg -f image2 -r 10 -i ~/path/to/frames/%03d.png ~/path/to/video/lightbulbs.mp4&#39;</span>)
+</span></span></code></pre></div>
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

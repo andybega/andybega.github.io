@@ -2,19 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>human rights on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/human-rights/</link>
+    <link>https://andybeger.com/tags/human-rights/</link>
     <description>Recent content in human rights on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jan 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/human-rights/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Jan 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/human-rights/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Which governments torture?</title>
-      <link>https://www.andybeger.com/2012/01/20/which-governments-torture/</link>
+      <link>https://andybeger.com/blog/2012-01-20-which-governments-torture/</link>
       <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2012/01/20/which-governments-torture/</guid>
-      <description>Almost all states, at least at some point between 1995 and 2005.
-The Ill-Treatment and Torture (ITT) project by Courtenay Conrad and Will Moore codes Amnesty International (AI) allegations of government torture, including the perpetrator, motive, and judicial response. The aggregated, country-year version of their data shows whether AI made allegations against a country in a given year and if so, what the extent of alleged torture or ill-treatment was, on a 5-point scale from &#34;</description>
+      <guid>https://andybeger.com/blog/2012-01-20-which-governments-torture/</guid>
+      <description> </description>
     </item>
     
   </channel>

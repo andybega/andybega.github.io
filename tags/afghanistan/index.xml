@@ -2,37 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Afghanistan on Andreas Beger</title>
-    <link>https://www.andybeger.com/tags/afghanistan/</link>
+    <link>https://andybeger.com/tags/afghanistan/</link>
     <description>Recent content in Afghanistan on Andreas Beger</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 08 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andybeger.com/tags/afghanistan/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/afghanistan/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modeling and predicting IEDs</title>
-      <link>https://www.andybeger.com/2014/08/08/modeling-and-predicting-ieds/</link>
+      <link>https://andybeger.com/blog/2014-08-08-modeling-and-predicting-ieds/</link>
       <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2014/08/08/modeling-and-predicting-ieds/</guid>
+      <guid>https://andybeger.com/blog/2014-08-08-modeling-and-predicting-ieds/</guid>
       <description>This first appeared on Predictive Heuristics, my employer&amp;rsquo;s blog.
 Improvised explosive devices, or IEDs, were extensively used during the US wars in Iraq and Afghanistan, causing half of all US and coalition casualties despite increasingly sophisticated countermeasures. Although both of these wars have come to a close, it is unlikely that the threat of IEDs will disappear. If anything, their success implies that US and European forces are more likely to face them in similar future conflicts.</description>
     </item>
     
     <item>
       <title>Database adventures</title>
-      <link>https://www.andybeger.com/2013/09/19/database-adventures/</link>
+      <link>https://andybeger.com/blog/2013-09-19-database-adventures/</link>
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andybeger.com/2013/09/19/database-adventures/</guid>
+      <guid>https://andybeger.com/blog/2013-09-19-database-adventures/</guid>
       <description>Recently I&amp;rsquo;ve set up both a PostgreSQL and MySQL server to host databases related to some of our projects in the Ward Lab. I should note that I have no idea what I&amp;rsquo;m doing, and this is the first time I&amp;rsquo;ve dealt with databases and how to get them working. It&amp;rsquo;s been a very humbling experience, although in the end, we now have two different databases that can be accessed remotely from a laptop through R or other tools like Quantum GIS:</description>
-    </item>
-    
-    <item>
-      <title>What&#39;s in a SIGACT</title>
-      <link>https://www.andybeger.com/2013/06/05/whats-in-a-sigact/</link>
-      <pubDate>Wed, 05 Jun 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andybeger.com/2013/06/05/whats-in-a-sigact/</guid>
-      <description>I&#39;ve been working with SIGACT data (military significant activities reports) all day as part of a research project. When you are dealing with thousands of them, it is easy to trivialize and forget the amount of human suffering encapsulated in each event (and those we don&#39;t hear about). Yesterday, in Afghanistan, 2nd Lieutenant Justin Sisson was among the dead in a suicide bombing that killed another NATO soldier and 9 children.</description>
     </item>
     
   </channel>

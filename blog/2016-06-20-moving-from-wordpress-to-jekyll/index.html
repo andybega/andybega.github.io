@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>Moving from Wordpress to Jekyll | Andreas Beger</title>
+<meta property="og:title" content="Moving from Wordpress to Jekyll - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data/political scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>Moving from Wordpress to Jekyll</h1>
+        
+        <p>
+          <i>
+            <time datetime='2016-06-20' pubdate>
+              20 June 2016
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>I moved my home page and blog from Wordpress to Jekyll over the past week, thanks to a small break in regular work. I&rsquo;ve been using Wordpress.com since 2011, when I started blogging. I don&rsquo;t remember what led me back then to choose Wordpress, but overall, I haven&rsquo;t been unhappy with it. It&rsquo;s easy to set up, and at some point it became possible to write posts in Markdown. Comments work out of the box. Some traffic stats are baked in.</p>
+<p>Two minor things that bothered me were that the editor would mangle posts when switching between the visual and text editors, and that it was always a bit clunky to work with figures and other media. You can just drag and drop them to a media upload page, which by itself is fine, but it is tedious to update existing figures in a way that doesn&rsquo;t change their internal file names. At least it was for me.</p>
+<p>I noticed that some people have been using pages made with Jekyll and similar static page generators. My general sense of the selling points for Jekyll and similar projects like Pelican was that the static sites they create load faster and are more secure. They are not written in PHP. And I guess there&rsquo;s an appeal to figuring out the smallish technical aspects of getting a blog running with them. None of these were really a selling point for me, rather:</p>
+<ul>
+<li>I like the minimalistic styling of the blogs Jekyll, Pelican, and co. create.</li>
+<li>I like the idea of having control over all the content. Having a folder on my laptop that contains all the posts and content, rather than interacting with them through a web editor.</li>
+</ul>
+<p>I&rsquo;m using a slightly modified version of the <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a> theme by Michael Rosen. He&rsquo;s set a set of really nice and clear instructions to get started and between that and a variety of tutorials for getting set up with Jekyll that one can find via Google, I didn&rsquo;t have any major issues in exporting posts from Wordpress.com, setting up the theme, adding Disqus comments, hosting it on GitHub Pages, and switching my domain name registrar. There was a bit of manual work cleaning up and formatting the posts, but I don&rsquo;t have that many posts anyways.</p>
+<p>Beyond the documentation that comes with the Minimal Mistakes theme, Rose has the source code for both the theme and the documentation, including the sample posts, on GitHub. The theme itself is on the master branch, the documentation and sample posts on another branch. Comparing the two was helpful in figuring out things like figure justification.</p>
+<p>Otherwise, I found these guides to be helpful in particular:</p>
+<ul>
+<li><a href="http://mattdickenson.com/2016/02/29/moving-from-wordpress-to-jekyll/">Moving From Wordpress to Jekyll</a>, by Matt Dickenson</li>
+<li><a href="http://www.girliemac.com/blog/2013/12/27/wordpress-to-jekyll/">How-to: Migrating Blog from WordPress to Jekyll, and Host on Github</a>, by Tomomi Imura</li>
+<li><a href="http://www.leemunroe.com/moving-wordpress-dreamhost-to-jekyll-github/">Lessons Learned Switching From Wordpress On Dreamhost To Jekyll On GitHub</a>, by Lee Munroe</li>
+<li><a href="http://michaeljdeeb.com/blog/using-a-custom-domain-with-github-pages/">Using a Custom Domain with GitHub Pages</a>, by Michael Deeb</li>
+</ul>
+<p>The small changes I made to the theme include reducing the default font size (which was too big for me), changing the table styling to Tufte style tables, and adding support for math formulas using MathJax.</p>
+<p>The theme style is controlled by a couple of Sass files. To make the default font smaller I found and changed the relevant variable in <code>_variables.scss</code>. As the <a href="https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/">documentation explains</a>, changes in the SCSS files require regenerating the CSS style files. Doing the required installs and rebuilding the files went without problems for me, once I found that I had to do this (I don&rsquo;t know anything about SASS, Ruby).</p>
+<p>To make it possible to include Latex style math in posts I added a pointer to the MathJax scripts in the header templace in <code>_includes/head.html</code>, as recommended in the <a href="https://docs.mathjax.org/en/latest/start.html">MathJax documentation</a>.</p>
+<p>That worked without problems until it didn&rsquo;t. When I tested the posts that had formulas in them locally, the math displayed fine. But on GitHub Pages some would show up, some wouldn&rsquo;t. In the end, the problem was that on GitHub pages, the hmtl files get compressed into wonderful one-liners without any white space or line breaks. Locally they were still nicely formatted, which is why the equations were displaying locally but not on GitHub Pages. Wrapping the equations in <code>&lt;p&gt;&lt;/p&gt;</code> tags fixed the problem.</p>
+<p>Lastly, the default table styling in Minimal Mistakes looks like this:</p>
+<p><a href="/img/2016/mm-default-table.png"><img src="/img/2016/mm-default-table.png" alt="tag"></a></p>
+<p>I took the booktabs table styling from <code>tufte.scss</code> <a href="https://github.com/clayh53/tufte-jekyll/tree/master/css">here</a>, which is part of Clay Harmon&rsquo;s Tufte Jekyll theme. I added the code to <code>_tables.scss</code> in the theme Sass files (<code>assets/_scss</code>) and then rebuild the CSS file using the same approach as before with the font size change. Tables now look like this:</p>
+<p><a href="/img/2016/tufte-table.png"><img src="/img/2016/tufte-table.png" alt="tag"></a></p>
+<p>There are two more things I want to do:</p>
+<ul>
+<li>Check and fix broken links.</li>
+<li>Move all content to the blog, e.g. right now there are some PDF and shapefiles hosted on Dropbox.</li>
+</ul>
+<p>I should probably work on actually posting things again as well. And working on the handful of <em>bona fide</em> academic projects I still have hanging in the air.</p>
+<h2 id="what-people-have-been-looking-at">What people have been looking at</h2>
+<p>Moving to Jekyll/GitHub Pages and Google Analytics for statistics breaks continuity in those. So I guess this is a good time to look back at what people are coming to this blog for. It seems that other bloggers like to do these kinds of post at the end of the year, but I&rsquo;ll use this structural break as an opportunity instead.</p>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Posts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2011</td>
+<td>9</td>
+</tr>
+<tr>
+<td>2012</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>I started blogging at a crawling pace back in 2011, and I&rsquo;ve stayed at a crawling pace since then, with a new post every 2 months or so at best. A lot of the early posts were dumping older data and notes from my graduate school days, like the [Stata do files for converting country names to codes]({{ site.baseurl}}{% post_url 2013-09-05-stata-do-files-for-country-code-conversions %}). This was also when I started learning R, and later, in 2013, SQL, so there were some posts related to R and mapping. Although the posts have become rarer in the past two years, they have been more substantial and self-contained.</p>
+<p><a href="/img/2016/visits-per-year.png"><img src="/img/2016/visits-per-year.png" alt="Visits per year"></a></p>
+<p>[<img src="/img/2016/visits-last-months.png" alt="Visits last months">(/img/2016/visits-last-months.png)</p>
+<p>Looking at traffic, I had 1 or 2 thousand page views in the first year, which grew to 15 thousand in 2015. These days I get about a 1,000 views per month, although switching to Jekyll has disrupted that somewhat. That&rsquo;s not a lot, but a lot more than the few hundred views/visitors my self-written page got back in my early to mid grad student days.</p>
+<p><a href="/img/2016/top-posts.png"><img src="/img/2016/top-posts.png" alt="Visits per year"></a></p>
+<p>Looking at specific posts, the majority of visitors come for the Stata country conversion do files and for how to put north arrows and scales on R maps. Those posts have been up since 2012 and 2013, and I had the Stata do files on my web site before then, so I think there are some habitual users of these. I&rsquo;m glad that three of the posts from 2015 are showing up in the top list (these are the ones marked with orange).</p>
+<p>For now, the old blog is still around at <a href="http://andybeger.wordpress.com">andybeger.wordpress.com</a>. But all the content is here as well.</p>
+<p>Now back to those research projects.</p>
+
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>
