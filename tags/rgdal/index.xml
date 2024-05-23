@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rgdal on Andreas Beger</title>
+    <title>Rgdal on Andreas Beger</title>
     <link>https://andybeger.com/tags/rgdal/</link>
-    <description>Recent content in rgdal on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Oct 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/rgdal/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Rgdal on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 Oct 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/rgdal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building rgdal from source</title>
       <link>https://andybeger.com/blog/2014-10-15-building-rgdal-from-source/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2014-10-15-building-rgdal-from-source/</guid>
       <description>&lt;p&gt;My limited knowledge of what happens in Terminal, and thus by extension shell, is mostly driven by PostgreSQL/PostGID/rgdal/RPostgreSQL install errors. In the latest variant of this, &lt;code&gt;rgdal&lt;/code&gt; throws the following error when attempting to build from source:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

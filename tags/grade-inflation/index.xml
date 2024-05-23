@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>grade inflation on Andreas Beger</title>
+    <title>Grade Inflation on Andreas Beger</title>
     <link>https://andybeger.com/tags/grade-inflation/</link>
-    <description>Recent content in grade inflation on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 08 May 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/grade-inflation/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Grade Inflation on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 08 May 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/grade-inflation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Plot of Duke grade inflation</title>
       <link>https://andybeger.com/blog/2013-05-08-plot-of-duke-grade-inflation/</link>
       <pubDate>Wed, 08 May 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2013-05-08-plot-of-duke-grade-inflation/</guid>
-      <description>Someone sent around a link this morning to data on grade inflation at Duke, which shows a table of average GPAs for undergraduates from 1932 on. Looking at the table you can sort of get a sense of when GPA&amp;rsquo;s really started increasing (the &amp;rsquo;60s), but it would be nicer to just plot them:
-Or to plot the year over year change in average GPA, with some missing values interpolated:</description>
+      <description>Someone sent around a link this morning to data on grade inflation at Duke, which shows a table of average GPAs for undergraduates from 1932 on. Looking at the table you can sort of get a sense of when GPA&amp;rsquo;s really started increasing (the &amp;rsquo;60s), but it would be nicer to just plot them:&#xA;Or to plot the year over year change in average GPA, with some missing values interpolated:</description>
     </item>
-    
   </channel>
 </rss>

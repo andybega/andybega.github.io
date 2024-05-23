@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iraq body count on Andreas Beger</title>
+    <title>Iraq Body Count on Andreas Beger</title>
     <link>https://andybeger.com/tags/iraq-body-count/</link>
-    <description>Recent content in iraq body count on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Mar 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/iraq-body-count/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Iraq Body Count on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 21 Mar 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/iraq-body-count/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coding provinces for the Iraq Body Count data</title>
       <link>https://andybeger.com/blog/2012-03-21-coding-provinces-for-the-iraq-body-count-data/</link>
       <pubDate>Wed, 21 Mar 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2012-03-21-coding-provinces-for-the-iraq-body-count-data/</guid>
       <description>The Iraq Body Count project collects reports of civilian deaths, and makes their event data publicly available. Each event gives the date, location, description and civilian deaths associated with an incident. Looking at a few examples [1, 2, 3], you can see that while the data values for the date and deaths are straightforward, the place values get a little bit complicated. I&amp;rsquo;m looking for the province in which incidents occurred, so the challenge is to associate each place value with a province.</description>
     </item>
-    
   </channel>
 </rss>

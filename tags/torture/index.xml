@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>torture on Andreas Beger</title>
+    <title>Torture on Andreas Beger</title>
     <link>https://andybeger.com/tags/torture/</link>
-    <description>Recent content in torture on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Jan 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/torture/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Torture on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Jan 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/torture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Which governments torture?</title>
       <link>https://andybeger.com/blog/2012-01-20-which-governments-torture/</link>
       <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2012-01-20-which-governments-torture/</guid>
       <description> </description>
     </item>
-    
   </channel>
 </rss>

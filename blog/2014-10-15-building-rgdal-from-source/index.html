@@ -36,7 +36,7 @@
     <a href="/" class="title">
       <h1>Andreas Beger</h1>
     </a>
-    <p>Data/political scientist</p>
+    <p>Data scientist</p>
   </div>
   <nav>
     <a href="/">Home</a> 
@@ -63,7 +63,7 @@
           <br/>
           <i>Tags: 
             
-            <a href="https://andybeger.com/tags/homebrew/">#homebrew</a>
+            <a href="https://andybeger.com/tags/homebrew/">#Homebrew</a>
             
             <a href="https://andybeger.com/tags/os-x-mavericks/">#OS X Mavericks</a>
             
@@ -71,9 +71,9 @@
             
             <a href="https://andybeger.com/tags/postgresql/">#PostgreSQL</a>
             
-            <a href="https://andybeger.com/tags/proj/">#proj</a>
+            <a href="https://andybeger.com/tags/proj/">#Proj</a>
             
-            <a href="https://andybeger.com/tags/rgdal/">#rgdal</a>
+            <a href="https://andybeger.com/tags/rgdal/">#Rgdal</a>
             
           </i>
         </p>
@@ -82,7 +82,7 @@
           <p>My limited knowledge of what happens in Terminal, and thus by extension shell, is mostly driven by PostgreSQL/PostGID/rgdal/RPostgreSQL install errors. In the latest variant of this, <code>rgdal</code> throws the following error when attempting to build from source:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>checking PROJ.4<span style="color:#f92672">:</span> epsg found and readable... no  
 </span></span><span style="display:flex;"><span>Error<span style="color:#f92672">:</span> proj<span style="color:#f92672">/</span>epsg not found  
-</span></span><span style="display:flex;"><span>Either install missing proj support files, for example the proj<span style="color:#f92672">-</span>nad and  proj<span style="color:#f92672">-</span>epsg RPMs on systems using RPMs, or if installed but not autodetected, set PROJ_LIB to the correct path, and if need be use the <span style="color:#f92672">--</span>with<span style="color:#f92672">-</span>proj<span style="color:#f92672">-</span>share<span style="color:#f92672">=</span>configure argument.  
+</span></span><span style="display:flex;"><span>Either install missing proj support files, <span style="color:#66d9ef">for</span> example the proj<span style="color:#f92672">-</span>nad and  proj<span style="color:#f92672">-</span>epsg RPMs on systems using RPMs, or <span style="color:#66d9ef">if</span> installed but not autodetected, set PROJ_LIB to the correct path, and <span style="color:#66d9ef">if</span> need be use the <span style="color:#f92672">--</span>with<span style="color:#f92672">-</span>proj<span style="color:#f92672">-</span>share<span style="color:#f92672">=</span>configure argument.  
 </span></span></code></pre></div><p>I have to build from source by the way because the default <code>rgdal</code> package for Mac does not include a PostgreSQL driver, meaning I have to build it against another version of GDAL that does. This was another fun thing to discover, but at least is easy to diagnose by checking whether <code>PostgreSQL</code> shows up when you run <code>ogrDrivers()</code> in R. Anyways, as far as I can tell the problem was that I installed <code>proj</code> via <a href="http://brew.sh/">homebrew</a>, a package manager for OS X. As a result although <code>rgdal</code> could find the <code>proj</code> binary via a symlink, it could not find the <code>epsg</code> and related data files that were in a little dark corner by themselves. The solution was to build the package with an option providing the file location manually:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;rgdal&#34;</span>, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;source&#34;</span>, 
 </span></span><span style="display:flex;"><span>  configure.args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--with-proj-share=/usr/local/Cellar/proj/4.8.0/share/proj&#34;</span>)  
@@ -94,7 +94,7 @@
         <footer>
 <div class="footer-container">
     <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
-    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>2024 © Andreas Beger</div>&nbsp;|&nbsp;
     <div>Built with <a href="https://gohugo.io">Hugo</a></div>
 </div>
 

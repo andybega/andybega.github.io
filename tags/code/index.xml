@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>code on Andreas Beger</title>
+    <title>Code on Andreas Beger</title>
     <link>https://andybeger.com/tags/code/</link>
-    <description>Recent content in code on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Code on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Finding coordinates for cities, etc. with R</title>
       <link>https://andybeger.com/blog/2013-08-06-finding-coordinates-for-cities-etc-with-r/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2013-08-06-finding-coordinates-for-cities-etc-with-r/</guid>
-      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&amp;rsquo;ve come across it a few times.
-The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&amp;rsquo;s pretty easy to figure out the coordinates for a city or village name.</description>
+      <description>The problem: you have data that includes the name of a village or city in which something happened, but not coordinates for that village or city. This seems to be a pretty common problem, or at least I&amp;rsquo;ve come across it a few times.&#xA;The (or a) solution is to look up the city names with the GeoNames database. Their website has a search feature and with that it&amp;rsquo;s pretty easy to figure out the coordinates for a city or village name.</description>
     </item>
-    
     <item>
       <title>Split Population Logit</title>
       <link>https://andybeger.com/blog/2011-02-03-split-population-logit/</link>
       <pubDate>Thu, 03 Feb 2011 22:05:51 +0200</pubDate>
-      
       <guid>https://andybeger.com/blog/2011-02-03-split-population-logit/</guid>
-      <description>Download ado files and code for predicted probabilities/first differences.
-In many circumstances political scientists study binary dependent variables that have been measured with bias. For example, in surveys the strategic interests of actors can lead them to misrepresent an attitude or behavior to the surveyor in a non-random fashion. Data on terror or torture that are coded using media reports likely suffer from a similar bias related to factors such as freedom of the press in a country.</description>
+      <description>Download ado files and code for predicted probabilities/first differences.&#xA;In many circumstances political scientists study binary dependent variables that have been measured with bias. For example, in surveys the strategic interests of actors can lead them to misrepresent an attitude or behavior to the surveyor in a non-random fashion. Data on terror or torture that are coded using media reports likely suffer from a similar bias related to factors such as freedom of the press in a country.</description>
     </item>
-    
     <item>
       <title>Programming MLE models in Stata</title>
       <link>https://andybeger.com/blog/2011-01-30-programming-mle-models-in-stata/</link>
       <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2011-01-30-programming-mle-models-in-stata/</guid>
-      <description>Another set of notes from when I was TA for our Advanced Quantitative Methods course with Prof. Matt Golder in 2008. The notes for Programming MLE models in Stata (pdf) walk you through how to recreate your own logit regression command and ado files for Stata, as well as how to use simulations to check your model. Here are also the associated ado and do files.
-The notes are closely based on Maximum Likelihood Estimation with Stata (2006, see full citation in the notes), which is definitely worth it if you are considering writing your own MLE commands in Stata.</description>
+      <description>Another set of notes from when I was TA for our Advanced Quantitative Methods course with Prof. Matt Golder in 2008. The notes for Programming MLE models in Stata (pdf) walk you through how to recreate your own logit regression command and ado files for Stata, as well as how to use simulations to check your model. Here are also the associated ado and do files.&#xA;The notes are closely based on Maximum Likelihood Estimation with Stata (2006, see full citation in the notes), which is definitely worth it if you are considering writing your own MLE commands in Stata.</description>
     </item>
-    
   </channel>
 </rss>

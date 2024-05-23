@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>data on Andreas Beger</title>
+    <title>Data on Andreas Beger</title>
     <link>https://andybeger.com/tags/data/</link>
-    <description>Recent content in data on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Jan 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Data on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 21 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POLECAT Event Data</title>
+      <link>https://andybeger.com/blog/2024-05-21-polecat-event-data/</link>
+      <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://andybeger.com/blog/2024-05-21-polecat-event-data/</guid>
+      <description>This page is about the POLECAT political event data.1&#xA;Resources POLECAT Dataverse: this is where the data are.&#xA;PLOVER (GitHub): PLOVER is the ontology/codebook that describes what kinds of events are in POLECAT, e.g. what the possible event types are and mean, contexts, event modes, etc.&#xA;PLOVER and POLECAT: A New Political Event Ontology and Dataset (OSF): this is a data paper that discusses the PLOVER ontology and POLECAT data.</description>
+    </item>
     <item>
       <title>Which governments torture?</title>
       <link>https://andybeger.com/blog/2012-01-20-which-governments-torture/</link>
       <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2012-01-20-which-governments-torture/</guid>
       <description> </description>
     </item>
-    
     <item>
       <title>Bosnia 1991 municipalities</title>
       <link>https://andybeger.com/blog/2011-01-18-bosnia-1991-municipalities/</link>
       <pubDate>Tue, 18 Jan 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2011-01-18-bosnia-1991-municipalities/</guid>
-      <description>Figure 1:Bosnia with 1995 municipalities
-This dates back to work I did in 2008, but some people seem to find it useful:
-At the beginning of the Yugoslav civil wars, Bosnia and Herzegovina (BiH) consisted of 109 municipalities. Finding free geographic layers with those municipal boundaries was difficult so I recreated them from National Geophysical Data Center Coastline Extractor, using World Data Bank II. Municipality names and demographic information come from the 1991 Yugoslav census courtesy wikipedia.</description>
+      <description>Figure 1:Bosnia with 1995 municipalities&#xA;This dates back to work I did in 2008, but some people seem to find it useful:&#xA;At the beginning of the Yugoslav civil wars, Bosnia and Herzegovina (BiH) consisted of 109 municipalities. Finding free geographic layers with those municipal boundaries was difficult so I recreated them from National Geophysical Data Center Coastline Extractor, using World Data Bank II. Municipality names and demographic information come from the 1991 Yugoslav census courtesy wikipedia.</description>
     </item>
-    
   </channel>
 </rss>

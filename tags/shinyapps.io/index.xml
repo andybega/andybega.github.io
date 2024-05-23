@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shinyapps.io on Andreas Beger</title>
+    <title>Shinyapps.io on Andreas Beger</title>
     <link>https://andybeger.com/tags/shinyapps.io/</link>
-    <description>Recent content in shinyapps.io on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 19 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/shinyapps.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Shinyapps.io on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/shinyapps.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Baby steps with R Shiny</title>
       <link>https://andybeger.com/blog/2014-09-19-baby-steps-with-r-shiny/</link>
       <pubDate>Fri, 19 Sep 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2014-09-19-baby-steps-with-r-shiny/</guid>
       <description>Shiny is a web application framework that lets you create interactive websites representing R data visualization and analysis. The gallery has some nice examples, and it looks like a great way to make R more accessible without having to know things like JavaScript or d3. I&amp;rsquo;ve been in trying my hand at it and it seems like a great way to visualize the models underlying the forecasts I work on in Ward Lab as well as the event data on which they are in part based.</description>
     </item>
-    
   </channel>
 </rss>

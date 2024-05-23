@@ -3,10 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://andybeger.com/</loc>
-    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+    <lastmod>2024-05-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/tags/data/</loc>
+    <lastmod>2024-05-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andybeger.com/blog/</loc>
-    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+    <lastmod>2024-05-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/blog/2024-05-21-polecat-event-data/</loc>
+    <lastmod>2024-05-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andybeger.com/tags/</loc>
+    <lastmod>2024-05-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andybeger.com/blog/moving-from-jekyll-to-blogdown/</loc>
     <lastmod>2020-05-14T00:00:00+00:00</lastmod>
@@ -29,16 +38,13 @@
     <loc>https://andybeger.com/blog/2017-11-28-estonia-2017-local-elections/</loc>
     <lastmod>2017-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://andybeger.com/tags/</loc>
-    <lastmod>2017-11-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://andybeger.com/blog/coup-forecasts-for-2017/</loc>
     <lastmod>2017-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andybeger.com/tags/forecasts/</loc>
     <lastmod>2017-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://andybeger.com/blog/2016-11-22-eu-army/</loc>
+    <loc>https://andybeger.com/blog/eu-army/</loc>
     <lastmod>2016-11-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andybeger.com/tags/visualization/</loc>
@@ -310,9 +316,6 @@
   </url><url>
     <loc>https://andybeger.com/tags/iraq-body-count/</loc>
     <lastmod>2012-03-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://andybeger.com/tags/data/</loc>
-    <lastmod>2012-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andybeger.com/tags/human-rights/</loc>
     <lastmod>2012-01-20T00:00:00+00:00</lastmod>

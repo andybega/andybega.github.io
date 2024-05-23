@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>prediction on Andreas Beger</title>
+    <title>Prediction on Andreas Beger</title>
     <link>https://andybeger.com/tags/prediction/</link>
-    <description>Recent content in prediction on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 Oct 2014 15:52:56 +0300</lastBuildDate><atom:link href="https://andybeger.com/tags/prediction/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Prediction on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Oct 2014 15:52:56 +0300</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/prediction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The right kind of variance</title>
       <link>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</link>
       <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
-      
       <guid>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</guid>
-      <description>or, How I learned to stop worrying and love event data. (This post first appeared on Predictive Heuristics)
-Nobody in their right mind would think that the chances of civil war in Denmark and Mauritania are the same. One is a well-established democracy with a GDP of $38,000 per person and which ranks in the top 10 by Human Development Index (HDI), while the other is a fledgling republic in which the current President gained power through a military coup, with a GDP of $2,000 per person and near the bottom of the HDI rankings.</description>
+      <description>or, How I learned to stop worrying and love event data. (This post first appeared on Predictive Heuristics)&#xA;Nobody in their right mind would think that the chances of civil war in Denmark and Mauritania are the same. One is a well-established democracy with a GDP of $38,000 per person and which ranks in the top 10 by Human Development Index (HDI), while the other is a fledgling republic in which the current President gained power through a military coup, with a GDP of $2,000 per person and near the bottom of the HDI rankings.</description>
     </item>
-    
     <item>
       <title>Taking over the world</title>
       <link>https://andybeger.com/blog/2013-10-18-taking-over-the-world/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2013-10-18-taking-over-the-world/</guid>
       <description>I work as a Postdoctoral Fellow in the Ward Lab here at Duke University. The Lab currently consists of Mike Ward, me, and a group of very smart graduate students. There are a lot of exciting projects within the lab, like ICEWS and other work for the US government, but also a broader set of projects by our lab members. One of the things we wanted to do this semester is to publicize this work a little bit more, and to this end we&amp;rsquo;re taking a new blog live today: Predictive Heuristics.</description>
     </item>
-    
   </channel>
 </rss>

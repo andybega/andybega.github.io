@@ -36,7 +36,7 @@
     <a href="/" class="title">
       <h1>Andreas Beger</h1>
     </a>
-    <p>Data/political scientist</p>
+    <p>Data scientist</p>
   </div>
   <nav>
     <a href="/">Home</a> 
@@ -69,9 +69,9 @@
             
             <a href="https://andybeger.com/tags/seb-tallinna-maraton/">#SEB Tallinna Maraton</a>
             
-            <a href="https://andybeger.com/tags/shiny/">#shiny</a>
+            <a href="https://andybeger.com/tags/shiny/">#Shiny</a>
             
-            <a href="https://andybeger.com/tags/shinyapps.io/">#shinyapps.io</a>
+            <a href="https://andybeger.com/tags/shinyapps.io/">#Shinyapps.io</a>
             
           </i>
         </p>
@@ -80,9 +80,9 @@
           <p><a href="http://shiny.rstudio.com/">Shiny</a> is a web application framework that lets you create interactive websites representing R data visualization and analysis. The <a href="http://shiny.rstudio.com/gallery/">gallery</a> has some nice examples, and it looks like a great way to make R more accessible without having to know things like JavaScript or <a href="http://d3js.org/">d3</a>. I&rsquo;ve been in trying my hand at it and it seems like a great way to visualize the models underlying the forecasts I work on in <a href="http://predictiveheuristics.com">Ward Lab</a> as well as the event data on which they are in part based.</p>
 <p>It&rsquo;s always easier to pick up new things like this with a strong motivating example, and for me it was visualizing the distribution of finish times in the <a href="http://www.tallinnmarathon.ee/">SEB Tallinn Marathon</a> in Estonia last weekend. My wife and I both ran and completed our first marathons, and one can look up the finish times and some other information on the event website. However, there was a post in the New York Times a few months ago that had a plot of the <a href="http://www.nytimes.com/2014/04/23/upshot/what-good-marathons-and-bad-investments-have-in-common.html">distribution of marathon times</a> and which had spikes around the half hour marks as runners pushed themselves to meet arbitrary goals. So I was curious what the distribution of finish times was for the Tallinn Marathon. Along the way, it would also be nice to see where you fall in the distribution, and, since it is maybe not fair to lump all runners into one category, to do so by age and gender groups. Instead of producing dozens of separate plots in R, this seems like a candidate for something interactive, and hence Shiny. You can find the <a href="https://andybeger.shinyapps.io/seb-tallinn-marathon/">interactive results here</a>, and they look like this:</p>
 <figure><a href="/img/2014/seb-marathon.png"><img src="/img/2014/seb-marathon.png"
-         alt="Shiny interactive visualization of SEB Tallinn Marathon finish times. The highlighted time is for me. Yes, I am slow." width="100%"/></a><figcaption>
-            <p>Shiny interactive visualization of SEB Tallinn Marathon finish times. The highlighted time is for me. Yes, I am slow.</p>
-        </figcaption>
+    alt="Shiny interactive visualization of SEB Tallinn Marathon finish times. The highlighted time is for me. Yes, I am slow." width="100%"></a><figcaption>
+      <p>Shiny interactive visualization of SEB Tallinn Marathon finish times. The highlighted time is for me. Yes, I am slow.</p>
+    </figcaption>
 </figure>
 
 <p>The <a href="http://shiny.rstudio.com/tutorial/">Shiny tutorial</a> is straightforward and easy to follow and it wasn&rsquo;t that difficult to adapt it. The amount of code required is surprisingly short, mainly 3 files: <code>server.R</code> to handle input and output, <code>ui.R</code> to set up the interface, and a function that does most of the plotting. The <a href="https://github.com/andybega/seb-tallinn-marathon">complete code</a> is on Github.</p>
@@ -115,7 +115,7 @@
         <footer>
 <div class="footer-container">
     <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
-    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>2024 © Andreas Beger</div>&nbsp;|&nbsp;
     <div>Built with <a href="https://gohugo.io">Hugo</a></div>
 </div>
 

@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>research on Andreas Beger</title>
+    <title>Research on Andreas Beger</title>
     <link>https://andybeger.com/categories/research/</link>
-    <description>Recent content in research on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Jul 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/categories/research/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Research on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Jul 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/categories/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Good coup, bad coup</title>
       <link>https://andybeger.com/blog/2015-07-10-good-coup-bad-coup/</link>
       <pubDate>Fri, 10 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2015-07-10-good-coup-bad-coup/</guid>
-      <description>This post first appeared at Predictive Heuristics.
-Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability. Elischer, although on the whole less optimistic about good coups than Noyes, writes:</description>
+      <description>This post first appeared at Predictive Heuristics.&#xA;Alexander Noyes and Sebastian Elischer wrote about good coups on Monkey Cage a few weeks ago, in the shadow of fallout from the LaCour revelations. Good coups namely are those that lead to democratization, rather than outcomes one might more commonly associate with coups, like military rule, dictatorship, or instability. Elischer, although on the whole less optimistic about good coups than Noyes, writes:</description>
     </item>
-    
     <item>
       <title>A quick look at the public ICEWS data</title>
       <link>https://andybeger.com/blog/2015-04-08-public-icews-data/</link>
       <pubDate>Wed, 08 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2015-04-08-public-icews-data/</guid>
       <description>The ICEWS data, including the underlying raw event data as well as some aggregations, were quietly posted on Dataverse the Friday before last. I&amp;rsquo;ve worked with the ICEWS data for several years now, first when I was working on on the ICEWS package&amp;ndash;we deliver updated monthly forecasts for the ICEWS events of interest (EOIs) once a month&amp;ndash;and more recently for the [irregular leadership change forecasting project](http://andybeger.com/2014/05/23/the-thailand-coup-and-some-recent- forecasting-work/). The public data are formatted differently from the data I&amp;rsquo;ve worked with, so most of the code I have lying around is not that useful, but in going through the public data I did recreate a short overview that is nowhere near as complete as David Masad&amp;rsquo;s first look (using Python), and some code that might be useful for getting started in R.</description>
     </item>
-    
     <item>
       <title>The Thailand coup and some recent forecasting work</title>
       <link>https://andybeger.com/blog/2014-05-23-the-thailand-coup-and-some-recent-forecasting-work/</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2014-05-23-the-thailand-coup-and-some-recent-forecasting-work/</guid>
-      <description>I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I&amp;rsquo;ve recently been part of:
-This morning (East Coast time), the Thai military staged a coup against the caretaker government that had been in power for the past several weeks, after months of protests and political turmoil directed at the government of Yingluck Shinawatra, who herself had been ordered to resign on 7 May by the judiciary.</description>
+      <description>I blogged earlier at Predictive Heuristics about the Thailand coup and some forecasting work I&amp;rsquo;ve recently been part of:&#xA;This morning (East Coast time), the Thai military staged a coup against the caretaker government that had been in power for the past several weeks, after months of protests and political turmoil directed at the government of Yingluck Shinawatra, who herself had been ordered to resign on 7 May by the judiciary.</description>
     </item>
-    
     <item>
       <title>Random walk negative binomial model for persistent count series.</title>
       <link>https://andybeger.com/blog/2012-10-29-random-walk-negative-binomial-model-for-persistent-count-series/</link>
       <pubDate>Mon, 29 Oct 2012 22:07:55 +0200</pubDate>
-      
       <guid>https://andybeger.com/blog/2012-10-29-random-walk-negative-binomial-model-for-persistent-count-series/</guid>
       <description>Will Moore, Kentaro Fukumoto, and I have been working on a random walk negative binomial model for time-series of counts, based on earlier work by Kentaro on a negative binomial integrated (NB I(1)) model. We just presented a related poster in which we look at monthly civilian deaths in Iraq at Peace Science in Savannah, Georgia. Here is the actual pdf poster (it&amp;rsquo;s a big file, be warned), but the basic point is that ARIMA or classical count-models are not a good way to deal with time-series of counts, like monthly deaths in a conflict, and that we have a tested model for non-stationary counts that has some attractive features.</description>
     </item>
-    
   </channel>
 </rss>

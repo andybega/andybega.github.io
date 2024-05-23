@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>maps on Andreas Beger</title>
+    <title>Maps on Andreas Beger</title>
     <link>https://andybeger.com/tags/maps/</link>
-    <description>Recent content in maps on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 30 Sep 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/maps/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Maps on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/maps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick background maps in R</title>
       <link>https://andybeger.com/blog/2013-09-30-map-now/</link>
       <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2013-09-30-map-now/</guid>
-      <description>Sometimes, for whatever reason, you want to plot something fast. Last week I had some coordinates associated with event data that I was hoping were all from Egypt. But the coordinates were for locations that are only indirectly associated with the events I had, so I wanted to do a quick plot to check. The ggmap package in R makes that pretty easy.
-First, some libraries we will need, and the coordinates.</description>
+      <description>Sometimes, for whatever reason, you want to plot something fast. Last week I had some coordinates associated with event data that I was hoping were all from Egypt. But the coordinates were for locations that are only indirectly associated with the events I had, so I wanted to do a quick plot to check. The ggmap package in R makes that pretty easy.&#xA;First, some libraries we will need, and the coordinates.</description>
     </item>
-    
   </channel>
 </rss>

@@ -36,7 +36,7 @@
     <a href="/" class="title">
       <h1>Andreas Beger</h1>
     </a>
-    <p>Data/political scientist</p>
+    <p>Data scientist</p>
   </div>
   <nav>
     <a href="/">Home</a> 
@@ -67,9 +67,9 @@
             
             <a href="https://andybeger.com/tags/iraq/">#Iraq</a>
             
-            <a href="https://andybeger.com/tags/random-walk-negative-binomial/">#random walk negative binomial</a>
+            <a href="https://andybeger.com/tags/random-walk-negative-binomial/">#Random Walk Negative Binomial</a>
             
-            <a href="https://andybeger.com/tags/time-series-event-count/">#time-series event count</a>
+            <a href="https://andybeger.com/tags/time-series-event-count/">#Time-Series Event Count</a>
             
           </i>
         </p>
@@ -79,16 +79,16 @@
 <p>We are working on a draft paper, so I don&rsquo;t want to go through the whole story, but if you&rsquo;d like to try it out yourself and know how to use JAGS, all the R and JAGS code is <a href="https://github.com/andybega/PSSI_2012_TSEC_Iraq">available on github</a>.</p>
 <p>Basically we are using a state-space model which consists of two separate equations: (1) a state transition equation that models a latent system state and describes how that latent state changes over time, and (2) a measurement equation that describes the process by which we observe actual outcomes (y) at any given time point. As a result, this model separates error in the temporal process that creates our data from the measurement error with which we observe it. An implication is that you can have covariates in either equation, where variables in the state transition equation have effects that propagate through time, i.e. short and long-run effects, while variables entering the measurement equation only have an instantaneous impact for that measurement period.</p>
 <figure><a href="/img/2012/deaths_iraq_total.png"><img src="/img/2012/deaths_iraq_total.png"
-         alt="Monthly Iraqi civilian deaths (black=total, red=Baghdad, blue=rest of Iraq)." width="100%"/></a><figcaption>
-            <p>Monthly Iraqi civilian deaths (black=total, red=Baghdad, blue=rest of Iraq).</p>
-        </figcaption>
+    alt="Monthly Iraqi civilian deaths (black=total, red=Baghdad, blue=rest of Iraq)." width="100%"></a><figcaption>
+      <p>Monthly Iraqi civilian deaths (black=total, red=Baghdad, blue=rest of Iraq).</p>
+    </figcaption>
 </figure>
 
 <p>We&rsquo;ve tested this model against simulated data we create, and replication code for these simulations is included as well. For an empirical application, I ran the model against some data on Iraqi civilian deaths from the Iraq Body Count that I was <a href="http://andybeger.wordpress.com/2012/03/21/coding-provinces-for-the-iraq-body-count-data/">working on earlier</a>. The graph on the right shows the  monthly civilian deaths in Iraq we are working with. The black line shows totals, and red and blue show deaths in Baghdad and the rest of Iraq respectively. I&rsquo;ve highlighted some the of the spikes in deaths, like during the invasion or government offensives.</p>
 <figure><a href="/img/2012/iraq_fitted.png"><img src="/img/2012/iraq_fitted.png"
-         alt="Random walk negative binomial fitted values for Iraq monthly civilian deaths. In-sample fitted values (red) and observed civilian deaths (black). The red band shows 80% interval." width="100%"/></a><figcaption>
-            <p>Random walk negative binomial fitted values for Iraq monthly civilian deaths. In-sample fitted values (red) and observed civilian deaths (black). The red band shows 80% interval.</p>
-        </figcaption>
+    alt="Random walk negative binomial fitted values for Iraq monthly civilian deaths. In-sample fitted values (red) and observed civilian deaths (black). The red band shows 80% interval." width="100%"></a><figcaption>
+      <p>Random walk negative binomial fitted values for Iraq monthly civilian deaths. In-sample fitted values (red) and observed civilian deaths (black). The red band shows 80% interval.</p>
+    </figcaption>
 </figure>
 
 <p>We estimated a very basic random walk negative binomial model for total monthly civilian deaths, with four binary indicators for the initial invasion period, elections, government offensives, and Ramadan. The in-sample model fit is in the graph on the right. I think this is a pretty amazing fit considering how simple this model is, and the mean predicted values seem to be a pretty good reflection of local levels at any given time. At this stage I would feel fairly confident in using this for hypothesis testing, but fore forecasting it would be nice to have a more explicit temporal structure, e.g. running estimates of trends and changes in trends.</p>
@@ -100,7 +100,7 @@
         <footer>
 <div class="footer-container">
     <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
-    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>2024 © Andreas Beger</div>&nbsp;|&nbsp;
     <div>Built with <a href="https://gohugo.io">Hugo</a></div>
 </div>
 

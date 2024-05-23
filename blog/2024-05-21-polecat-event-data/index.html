@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSM78VP45T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSM78VP45T');
+</script>
+
+
+<title>POLECAT Event Data | Andreas Beger</title>
+<meta property="og:title" content="POLECAT Event Data - Andreas Beger">
+
+
+
+
+
+
+
+
+<link href='https://andybeger.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+    <body>
+        <header><div class="header-container">
+  <div class="title-container">
+    <a href="/" class="title">
+      <h1>Andreas Beger</h1>
+    </a>
+    <p>Data scientist</p>
+  </div>
+  <nav>
+    <a href="/">Home</a> 
+    
+    <a href="/research/">Research</a> 
+    
+    
+    <a href="/blog">Blog</a>
+    
+  </nav>
+</div>
+
+</header>
+        <main>
+    <article>
+        <h1>POLECAT Event Data</h1>
+        
+        <p>
+          <i>
+            <time datetime='2024-05-21' pubdate>
+              21 May 2024
+            </time>
+          </i>
+          <br/>
+          <i>Tags: 
+            
+            <a href="https://andybeger.com/tags/data/">#Data</a>
+            
+          </i>
+        </p>
+        
+        <content>
+          <p>This page is about the POLECAT political event data.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h2 id="resources">Resources</h2>
+<p><a href="https://dataverse.harvard.edu/dataverse/POLECAT">POLECAT Dataverse</a>: this is where the data are.</p>
+<p><a href="https://github.com/openeventdata/PLOVER">PLOVER (GitHub)</a>: PLOVER is the ontology/codebook that describes what kinds of events are in POLECAT, e.g. what the possible event types are and mean, contexts, event modes, etc.</p>
+<p><a href="https://osf.io/preprints/socarxiv/rm5dw">PLOVER and POLECAT: A New Political Event Ontology and Dataset (OSF)</a>: this is a data paper that discusses the PLOVER ontology and POLECAT data.</p>
+<p><a href="https://arxiv.org/abs/2304.01331">Creating Custom Event Data Without Dictionaries: A Bag-of-Tricks (arXiv Paper)</a>: this paper describes the machine coder (NGEC) that produces the POLECAT data.</p>
+<p><a href="https://github.com/ahalterman/NGEC">NGEC (GitHub)</a>: NGEC is the coder that produces the POLECAT event data.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="some-of-the-txt-files-are-misformatted">Some of the TXT files are misformatted</h3>
+<h3 id="reading-the-data-with-readtable-in-r-throws-an-error">Reading the data with <code>read.table</code> in R throws an error</h3>
+<p>R&rsquo;s <code>read.table</code> does not correctly read the TSV data by default. The problem is that the <code>quote</code> argument includes single quotes (&rsquo;) by default. Some of the field values in the data include single quotes, e.g. as part of a person&rsquo;s name when used in the possessive form, like &ldquo;Merkel<!-- raw HTML omitted --><strong>&rsquo;</strong><!-- raw HTML omitted -->s&rdquo;. To fix this, supply your own quote argument like below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">read.table</span>(file, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;\t&#34;</span>, quote <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;\&#34;&#34;</span>, header <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span></code></pre></div><h3 id="who-created-polecat">Who created POLECAT?</h3>
+<p>See the <a href="https://dataverse.harvard.edu/dataverse/POLECAT">POLECAT Dataverse</a> repo author list.</p>
+<h3 id="what-is-the-license-for-the-data">What is the license for the data?</h3>
+<p>See the notes section in the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AJGVIT">POLECAT Weekly Data</a> page on Dataverse.</p>
+<h2 id="glossary">Glossary</h2>
+<p><em>POLECAT</em> is the data itself. It replaces the ICEWS event data.</p>
+<p><em>PLOVER</em> is the ontology/codebook that describes the structure of event records, what the fields are, and what possible values they can take on. E.g. lists of all event types, modes, and contexts. Compare to CAMEO, which was the basis for the ICEWS event data.</p>
+<p><em>NGEC</em>, or Next Generation Event Coder, is the coder that produces the POLECAT data.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The POLECAT data are produced by the Program on Geostrategic Risk (formerly the Political Instability Task Force). The Program on Geostrategic Risk is funded by the Central Intelligence Agency. The views expressed are the authors&rsquo; alone and do not represent the views of the U.S. Government.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+        </content>
+    </article>
+
+        </main>
+        <footer>
+<div class="footer-container">
+    <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
+    <div>2024 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>Built with <a href="https://gohugo.io">Hugo</a></div>
+</div>
+
+
+ 
+
+</footer>
+    </body>
+</html>

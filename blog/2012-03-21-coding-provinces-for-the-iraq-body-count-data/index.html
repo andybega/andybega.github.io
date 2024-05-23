@@ -36,7 +36,7 @@
     <a href="/" class="title">
       <h1>Andreas Beger</h1>
     </a>
-    <p>Data/political scientist</p>
+    <p>Data scientist</p>
   </div>
   <nav>
     <a href="/">Home</a> 
@@ -63,7 +63,7 @@
           <br/>
           <i>Tags: 
             
-            <a href="https://andybeger.com/tags/iraq-body-count/">#iraq body count</a>
+            <a href="https://andybeger.com/tags/iraq-body-count/">#Iraq Body Count</a>
             
             <a href="https://andybeger.com/tags/r/">#R</a>
             
@@ -83,28 +83,28 @@
 <li>Repeat until a match is found</li>
 </ol>
 <p>Two functions cover steps 3 and 4. The first strips out the &ldquo;al-&rdquo; prefix, which just is an article (&ldquo;the&rdquo;), the possessive suffix &ldquo;&rsquo;s&rdquo;, and a couple of other characters that are in a words sometimes.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>DelChar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x) {  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>DelChar <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x) {  
 </span></span><span style="display:flex;"><span>  word <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sub</span>(<span style="color:#e6db74">&#34;al-&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, x, ignore.case <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)  
 </span></span><span style="display:flex;"><span>  word <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gsub</span>(<span style="color:#e6db74">&#34;&#39;[s]&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, word)  
 </span></span><span style="display:flex;"><span>  word <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gsub</span>(<span style="color:#e6db74">&#34;[?,&#39;]&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, word)  
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">return</span>(word)  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>(word)  
 </span></span><span style="display:flex;"><span>}  
 </span></span></code></pre></div><p>The other function takes a word and checks it against a list of known city and province pairs (&ldquo;city.prov&rdquo;) to see whether it matches either, and if so returns that province name:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>ProvLook <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x) {  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>ProvLook <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x) {  
 </span></span><span style="display:flex;"><span>  province <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>  
-</span></span><span style="display:flex;"><span>  repeat {  
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">if </span>(x <span style="color:#f92672">%in%</span> city.prov[, <span style="color:#ae81ff">2</span>]) {  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeat</span> {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">%in%</span> city.prov[, <span style="color:#ae81ff">2</span>]) {  
 </span></span><span style="display:flex;"><span>      province <span style="color:#f92672">&lt;-</span> x  
-</span></span><span style="display:flex;"><span>      break  
-</span></span><span style="display:flex;"><span>    } else <span style="color:#a6e22e">if </span>(x <span style="color:#f92672">%in%</span> city.prov[, <span style="color:#ae81ff">1</span>]) {  
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">break</span>  
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">%in%</span> city.prov[, <span style="color:#ae81ff">1</span>]) {  
 </span></span><span style="display:flex;"><span>      province <span style="color:#f92672">&lt;-</span> city.prov<span style="color:#a6e22e">[</span>(x<span style="color:#f92672">==</span>city.prov[, <span style="color:#ae81ff">1</span>]), <span style="color:#ae81ff">2</span>]  
-</span></span><span style="display:flex;"><span>      break  
-</span></span><span style="display:flex;"><span>    } else {  
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">break</span>  
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {  
 </span></span><span style="display:flex;"><span>      province <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;no match&#34;</span>  
-</span></span><span style="display:flex;"><span>      break  
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">break</span>  
 </span></span><span style="display:flex;"><span>    }  
 </span></span><span style="display:flex;"><span>  }  
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">return</span>(province)  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>(province)  
 </span></span><span style="display:flex;"><span>}  
 </span></span></code></pre></div><p>The rest is a loop over the words in location to evaluate each one. It&rsquo;s not very efficient and takes 7 seconds to run over the 27,500 records I&rsquo;m using, but it&rsquo;s effective enough. Any ideas on how to improve efficiency? I don&rsquo;t know enough to have any clue on this.</p>
 <p>I&rsquo;m pretty happy for now with getting 95 percent of the records, but it would be nice to get all in the future. Here are some ideas for how to do that:</p>
@@ -121,7 +121,7 @@
         <footer>
 <div class="footer-container">
     <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
-    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>2024 © Andreas Beger</div>&nbsp;|&nbsp;
     <div>Built with <a href="https://gohugo.io">Hugo</a></div>
 </div>
 

@@ -4,52 +4,44 @@
     <title>Categories on Andreas Beger</title>
     <link>https://andybeger.com/categories/</link>
     <description>Recent content in Categories on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Jul 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Jul 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>research</title>
+      <title>Research</title>
       <link>https://andybeger.com/categories/research/</link>
-      <pubDate>Fri, 10 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://andybeger.com/categories/research/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>programming</title>
+      <title>Programming</title>
       <link>https://andybeger.com/categories/programming/</link>
-      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://andybeger.com/categories/programming/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>post</title>
+      <title>Post</title>
       <link>https://andybeger.com/categories/post/</link>
-      <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://andybeger.com/categories/post/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>commentary</title>
+      <title>Commentary</title>
       <link>https://andybeger.com/categories/commentary/</link>
-      <pubDate>Tue, 24 Dec 2013 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://andybeger.com/categories/commentary/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>teaching</title>
+      <title>Teaching</title>
       <link>https://andybeger.com/categories/teaching/</link>
-      <pubDate>Sat, 22 Dec 2012 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://andybeger.com/categories/teaching/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

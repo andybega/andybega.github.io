@@ -36,7 +36,7 @@
     <a href="/" class="title">
       <h1>Andreas Beger</h1>
     </a>
-    <p>Data/political scientist</p>
+    <p>Data scientist</p>
   </div>
   <nav>
     <a href="/">Home</a> 
@@ -123,12 +123,12 @@
 </code></pre>
 <p>To fix both of these issues I wrote a wrapper function that (1) combines the points sampled for each county into a single MULTIPOINT, and (2) returns an empty MULTIPOINT when no points are sampled:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># Modified version of sf:::st_sample that combines points by sampled polyon</span>
-</span></span><span style="display:flex;"><span>st_sample_by_poly <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, size) {
+</span></span><span style="display:flex;"><span>st_sample_by_poly <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x, size) {
 </span></span><span style="display:flex;"><span>  x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">st_geometry</span>(x)
-</span></span><span style="display:flex;"><span>  res <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">lapply</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">length</span>(x), <span style="color:#a6e22e">function</span>(i) {
+</span></span><span style="display:flex;"><span>  res <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">lapply</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">length</span>(x), <span style="color:#66d9ef">function</span>(i) {
 </span></span><span style="display:flex;"><span>    y <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">st_poly_sample_n</span>(x[i], size[i]) <span style="color:#f92672">%&gt;%</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">st_combine</span>()
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">st_is_empty</span>(y)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">st_is_empty</span>(y)) {
 </span></span><span style="display:flex;"><span>      y <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">st_as_sfc</span>(<span style="color:#e6db74">&#34;MULTIPOINT EMPTY&#34;</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    y
@@ -139,32 +139,32 @@
 <p>At the time I&rsquo;m writing this (27 February 2018), <code>st_sample()</code> for polygons works by sampling from a polygon&rsquo;s bounding box and then discarding points that fall outside the polygon. To correct for the potential shortfall in points it adjusts the input size argument based on the ratio of the polygon&rsquo;s area to the area of it&rsquo;s bounding box. The relevant code from <code>sf:::st_poly_sample()</code>, which is called from <code>st_sample()</code>, and where <code>x</code> is in the input geometry:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>a0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">st_area</span>(<span style="color:#a6e22e">st_make_grid</span>(x, n <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)))
 </span></span><span style="display:flex;"><span>a1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">st_area</span>(x))
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">is.finite</span>(a0) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">is.finite</span>(a1) <span style="color:#f92672">&amp;&amp;</span> a0 <span style="color:#f92672">&gt;</span> a0 <span style="color:#f92672">*</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> a1 <span style="color:#f92672">&gt;</span> a1 <span style="color:#f92672">*</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is.finite</span>(a0) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">is.finite</span>(a1) <span style="color:#f92672">&amp;&amp;</span> a0 <span style="color:#f92672">&gt;</span> a0 <span style="color:#f92672">*</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> a1 <span style="color:#f92672">&gt;</span> a1 <span style="color:#f92672">*</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>  size <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(size <span style="color:#f92672">*</span> a0<span style="color:#f92672">/</span>a1)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This correction should on average and with large enough size numbers give the correct number of points, since the original set of points are sampled randomly. But how many fall outside the polygon at any given draw will vary, and this is very noticeable with the large number of county-candidate pairs that only sample 1 or 2 points. I fixed this with a brute force wrapper function that will always return exactly the desired number of points:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># Modified version of sf:::st_poly_sample that always returns correct size</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># when sampling a polygon</span>
-</span></span><span style="display:flex;"><span>st_poly_sample_n <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, size) {
+</span></span><span style="display:flex;"><span>st_poly_sample_n <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x, size) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#a6e22e">length</span>(x)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#a6e22e">length</span>(size)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
 </span></span><span style="display:flex;"><span>  x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">st_geometry</span>(x)
 </span></span><span style="display:flex;"><span>  size <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">round</span>(size)
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">if </span>(size<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">st_as_sfc</span>(<span style="color:#e6db74">&#34;POINT EMPTY&#34;</span>))
-</span></span><span style="display:flex;"><span>  } else {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (size<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>(<span style="color:#a6e22e">st_as_sfc</span>(<span style="color:#e6db74">&#34;POINT EMPTY&#34;</span>))
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>    pts <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">st_sample</span>(x, size)
 </span></span><span style="display:flex;"><span>    max_iter <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">10</span>
 </span></span><span style="display:flex;"><span>    iter <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">while</span>(<span style="color:#a6e22e">length</span>(pts) <span style="color:#f92672">&lt;</span> size <span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>(iter <span style="color:#f92672">&gt;</span> max_iter)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">length</span>(pts) <span style="color:#f92672">&lt;</span> size <span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>(iter <span style="color:#f92672">&gt;</span> max_iter)) {
 </span></span><span style="display:flex;"><span>      need <span style="color:#f92672">&lt;-</span> size <span style="color:#f92672">-</span> <span style="color:#a6e22e">length</span>(pts)
 </span></span><span style="display:flex;"><span>      pts <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(pts, <span style="color:#a6e22e">st_sample</span>(x, need))
 </span></span><span style="display:flex;"><span>      iter <span style="color:#f92672">&lt;-</span> iter <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">length</span>(pts)<span style="color:#f92672">==</span>size) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">return</span>(pts)
-</span></span><span style="display:flex;"><span>    } else <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">length</span>(pts) <span style="color:#f92672">&gt;</span> size) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">return</span>(pts[1<span style="color:#f92672">:</span>size])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">length</span>(pts)<span style="color:#f92672">==</span>size) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>(pts)
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">length</span>(pts) <span style="color:#f92672">&gt;</span> size) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>(pts[1<span style="color:#f92672">:</span>size])
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
@@ -227,7 +227,7 @@
         <footer>
 <div class="footer-container">
     <div><a href="mailto:adbeger&#43;mireg@gmail.com" rel="me" title="Email">Email</a> &nbsp;|&nbsp;<a href="https://twitter.com/andybeega" rel="me" title="Twitter">Twitter</a> &nbsp;|&nbsp;<a href="https://github.com/andybega" rel="me" title="GitHub">GitHub</a> &nbsp;|&nbsp;</div>
-    <div>2023 © Andreas Beger</div>&nbsp;|&nbsp;
+    <div>2024 © Andreas Beger</div>&nbsp;|&nbsp;
     <div>Built with <a href="https://gohugo.io">Hugo</a></div>
 </div>
 

@@ -4,26 +4,23 @@
     <title>Bosnia on Andreas Beger</title>
     <link>https://andybeger.com/tags/bosnia/</link>
     <description>Recent content in Bosnia on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Aug 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/bosnia/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 25 Aug 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/bosnia/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scale and north arrow for maps in R</title>
       <link>https://andybeger.com/blog/2012-08-25-scale-and-north-arrow-for-maps-in-r/</link>
       <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2012-08-25-scale-and-north-arrow-for-maps-in-r/</guid>
-      <description>A few months ago I produced some thematic maps of Bosnia (paper) using maptools and other packages in R, but I didn&amp;rsquo;t include scales or a north arrow. It sounds simple and sp has functions for doing those things, but I couldn&amp;rsquo;t get it to work well with my maps. Here is a basic map of Bosnia&amp;rsquo;s pre-war municipalities:
-library(maptools) plot(bosnia) The function map.scale() from the maps package adds a scale.</description>
+      <description>A few months ago I produced some thematic maps of Bosnia (paper) using maptools and other packages in R, but I didn&amp;rsquo;t include scales or a north arrow. It sounds simple and sp has functions for doing those things, but I couldn&amp;rsquo;t get it to work well with my maps. Here is a basic map of Bosnia&amp;rsquo;s pre-war municipalities:&#xA;library(maptools) plot(bosnia) The function map.scale() from the maps package adds a scale.</description>
     </item>
-    
     <item>
       <title>Yugoslavs die less</title>
       <link>https://andybeger.com/blog/2012-01-12-yugoslavs-die-less/</link>
       <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2012-01-12-yugoslavs-die-less/</guid>
       <description>In 1991 a census was conducted in Bosnia and Herzegovina, which then was still part of the disintegrating federal state of Yugoslavia. Bosnia was the most diverse republic in the former Yugoslavia, with significant populations of Bosnian Muslims (or Bosniaks, 43 percent), Serbs (31 percent), Croats (17 percent), and others. Bosniaks, Serbs, and Croats were more or less well-established identities with historical roots. Unlike in most multiethnic countries however, the census respondents also had the option to identify themselves as Yugoslavs, rather than a particular ethnic or national group.</description>
     </item>
-    
   </channel>
 </rss>

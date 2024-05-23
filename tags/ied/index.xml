@@ -4,17 +4,16 @@
     <title>IED on Andreas Beger</title>
     <link>https://andybeger.com/tags/ied/</link>
     <description>Recent content in IED on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/ied/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Aug 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/ied/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modeling and predicting IEDs</title>
       <link>https://andybeger.com/blog/2014-08-08-modeling-and-predicting-ieds/</link>
       <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2014-08-08-modeling-and-predicting-ieds/</guid>
-      <description>This first appeared on Predictive Heuristics, my employer&amp;rsquo;s blog.
-Improvised explosive devices, or IEDs, were extensively used during the US wars in Iraq and Afghanistan, causing half of all US and coalition casualties despite increasingly sophisticated countermeasures. Although both of these wars have come to a close, it is unlikely that the threat of IEDs will disappear. If anything, their success implies that US and European forces are more likely to face them in similar future conflicts.</description>
+      <description>This first appeared on Predictive Heuristics, my employer&amp;rsquo;s blog.&#xA;Improvised explosive devices, or IEDs, were extensively used during the US wars in Iraq and Afghanistan, causing half of all US and coalition casualties despite increasingly sophisticated countermeasures. Although both of these wars have come to a close, it is unlikely that the threat of IEDs will disappear. If anything, their success implies that US and European forces are more likely to face them in similar future conflicts.</description>
     </item>
-    
   </channel>
 </rss>

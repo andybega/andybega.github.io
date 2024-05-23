@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>variance decomposition on Andreas Beger</title>
+    <title>Variance Decomposition on Andreas Beger</title>
     <link>https://andybeger.com/tags/variance-decomposition/</link>
-    <description>Recent content in variance decomposition on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 Oct 2014 15:52:56 +0300</lastBuildDate><atom:link href="https://andybeger.com/tags/variance-decomposition/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Variance Decomposition on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Oct 2014 15:52:56 +0300</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/variance-decomposition/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The right kind of variance</title>
       <link>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</link>
       <pubDate>Mon, 06 Oct 2014 15:52:56 +0300</pubDate>
-      
       <guid>https://andybeger.com/blog/2014-10-06-the-right-kind-of-variance/</guid>
-      <description>or, How I learned to stop worrying and love event data. (This post first appeared on Predictive Heuristics)
-Nobody in their right mind would think that the chances of civil war in Denmark and Mauritania are the same. One is a well-established democracy with a GDP of $38,000 per person and which ranks in the top 10 by Human Development Index (HDI), while the other is a fledgling republic in which the current President gained power through a military coup, with a GDP of $2,000 per person and near the bottom of the HDI rankings.</description>
+      <description>or, How I learned to stop worrying and love event data. (This post first appeared on Predictive Heuristics)&#xA;Nobody in their right mind would think that the chances of civil war in Denmark and Mauritania are the same. One is a well-established democracy with a GDP of $38,000 per person and which ranks in the top 10 by Human Development Index (HDI), while the other is a fledgling republic in which the current President gained power through a military coup, with a GDP of $2,000 per person and near the bottom of the HDI rankings.</description>
     </item>
-    
   </channel>
 </rss>

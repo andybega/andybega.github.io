@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>duke university on Andreas Beger</title>
+    <title>Duke University on Andreas Beger</title>
     <link>https://andybeger.com/tags/duke-university/</link>
-    <description>Recent content in duke university on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 18 Oct 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/duke-university/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Duke University on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Oct 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/duke-university/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Taking over the world</title>
       <link>https://andybeger.com/blog/2013-10-18-taking-over-the-world/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2013-10-18-taking-over-the-world/</guid>
       <description>I work as a Postdoctoral Fellow in the Ward Lab here at Duke University. The Lab currently consists of Mike Ward, me, and a group of very smart graduate students. There are a lot of exciting projects within the lab, like ICEWS and other work for the US government, but also a broader set of projects by our lab members. One of the things we wanted to do this semester is to publicize this work a little bit more, and to this end we&amp;rsquo;re taking a new blog live today: Predictive Heuristics.</description>
     </item>
-    
   </channel>
 </rss>

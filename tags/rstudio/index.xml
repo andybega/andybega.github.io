@@ -4,16 +4,16 @@
     <title>RStudio on Andreas Beger</title>
     <link>https://andybeger.com/tags/rstudio/</link>
     <description>Recent content in RStudio on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 20 Dec 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Dec 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running RStudio on Amazon EC2</title>
       <link>https://andybeger.com/blog/2011-12-20-running-rstudio-on-amazon-ec2/</link>
       <pubDate>Tue, 20 Dec 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2011-12-20-running-rstudio-on-amazon-ec2/</guid>
       <description>For the most part I don&amp;rsquo;t do things that are computationally so intensive that I can&amp;rsquo;t run them on my work desktop. There have been a few times however where I ran simulations or bootstrapped models, and now Bayesian models with MCMC, that take a while to run. One solution has been to run things on FSU&amp;rsquo;s high performance computing cluster. It takes a little bit of effort, for someone without a background in computer science or programming like me, and it is inconvenient in several ways.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>forecasts on Andreas Beger</title>
+    <title>Forecasts on Andreas Beger</title>
     <link>https://andybeger.com/tags/forecasts/</link>
-    <description>Recent content in forecasts on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/forecasts/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Forecasts on Andreas Beger</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/forecasts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coup forecasts for 2017</title>
       <link>https://andybeger.com/blog/coup-forecasts-for-2017/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/coup-forecasts-for-2017/</guid>
-      <description>Forecasts Models and accuracy Accuracy Data Covariates Coups Missing data Why did we not include…? Parting thoughts This posts provides some background for the coup forecasts article Mike Ward and I published in the Washington Posts’ Monkey Cage.
-Coup attempts, even if they fail, as the events in Turkey since July 2016 have shown, can have a major impact on a country. And, as some of the reactions to the Turkey coup attempt have reiterated, they often seem to come as a surprise.</description>
+      <description>Forecasts Models and accuracy Accuracy Data Covariates Coups Missing data Why did we not include…? Parting thoughts This posts provides some background for the coup forecasts article Mike Ward and I published in the Washington Posts’ Monkey Cage.&#xA;Coup attempts, even if they fail, as the events in Turkey since July 2016 have shown, can have a major impact on a country. And, as some of the reactions to the Turkey coup attempt have reiterated, they often seem to come as a surprise.</description>
     </item>
-    
     <item>
       <title>When forecasting goes wrong (maybe): Yemen</title>
       <link>https://andybeger.com/blog/2015-09-24-when-forecasting-goes-wrong-maybe-yemen/</link>
       <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2015-09-24-when-forecasting-goes-wrong-maybe-yemen/</guid>
-      <description>&lt;p&gt;&lt;em&gt;From the &lt;!-- raw HTML omitted --&gt;Ward Lab blog&lt;!-- raw HTML omitted --&gt; a few weeks ago:&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Over the past few months we have worked on regularly updating our irregular leadership change models and forecasts in order to provide monthly 6-month ahead forecasts of the probability of irregular leadership change in a large number of countries&amp;ndash;but excluding the US&amp;ndash;worldwide. Part of that effort has been the occasional glance back at our previous predictions, and particularly more in-depth examinations for notable cases that we missed or got right, to see whether we can improve our modeling as a result. This note is one of these glances back: a postmortem of our Yemen predictions for the first half of 2015.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;em&gt;From the &lt;!-- raw HTML omitted --&gt;Ward Lab blog&lt;!-- raw HTML omitted --&gt; a few weeks ago:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Over the past few months we have worked on regularly updating our irregular leadership change models and forecasts in order to provide monthly 6-month ahead forecasts of the probability of irregular leadership change in a large number of countries&amp;ndash;but excluding the US&amp;ndash;worldwide. Part of that effort has been the occasional glance back at our previous predictions, and particularly more in-depth examinations for notable cases that we missed or got right, to see whether we can improve our modeling as a result. This note is one of these glances back: a postmortem of our Yemen predictions for the first half of 2015.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

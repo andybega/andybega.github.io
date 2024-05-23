@@ -4,47 +4,37 @@
     <title>Stata on Andreas Beger</title>
     <link>https://andybeger.com/tags/stata/</link>
     <description>Recent content in Stata on Andreas Beger</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 05 Sep 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://andybeger.com/tags/stata/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andybeger.com/tags/stata/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stata do files for country code conversions</title>
       <link>https://andybeger.com/blog/2013-09-05-stata-do-files-for-country-code-conversions/</link>
       <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2013-09-05-stata-do-files-for-country-code-conversions/</guid>
-      <description>Blast from the past, in which I used Stata for things: here are some do files that will convert ISO or string country names/codes to COW country codes.
-Country names to COW [.do] Do-file that creates COW country codes for a dataset that only has country names in it. The file does not take the current year of an observation into account, and does not adjust for state membership (e.g. there was no unified Germany between 1946 and 1989).</description>
+      <description>Blast from the past, in which I used Stata for things: here are some do files that will convert ISO or string country names/codes to COW country codes.&#xA;Country names to COW [.do] Do-file that creates COW country codes for a dataset that only has country names in it. The file does not take the current year of an observation into account, and does not adjust for state membership (e.g. there was no unified Germany between 1946 and 1989).</description>
     </item>
-    
     <item>
       <title>Split Population Logit</title>
       <link>https://andybeger.com/blog/2011-02-03-split-population-logit/</link>
       <pubDate>Thu, 03 Feb 2011 22:05:51 +0200</pubDate>
-      
       <guid>https://andybeger.com/blog/2011-02-03-split-population-logit/</guid>
-      <description>Download ado files and code for predicted probabilities/first differences.
-In many circumstances political scientists study binary dependent variables that have been measured with bias. For example, in surveys the strategic interests of actors can lead them to misrepresent an attitude or behavior to the surveyor in a non-random fashion. Data on terror or torture that are coded using media reports likely suffer from a similar bias related to factors such as freedom of the press in a country.</description>
+      <description>Download ado files and code for predicted probabilities/first differences.&#xA;In many circumstances political scientists study binary dependent variables that have been measured with bias. For example, in surveys the strategic interests of actors can lead them to misrepresent an attitude or behavior to the surveyor in a non-random fashion. Data on terror or torture that are coded using media reports likely suffer from a similar bias related to factors such as freedom of the press in a country.</description>
     </item>
-    
     <item>
       <title>Programming MLE models in Stata</title>
       <link>https://andybeger.com/blog/2011-01-30-programming-mle-models-in-stata/</link>
       <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2011-01-30-programming-mle-models-in-stata/</guid>
-      <description>Another set of notes from when I was TA for our Advanced Quantitative Methods course with Prof. Matt Golder in 2008. The notes for Programming MLE models in Stata (pdf) walk you through how to recreate your own logit regression command and ado files for Stata, as well as how to use simulations to check your model. Here are also the associated ado and do files.
-The notes are closely based on Maximum Likelihood Estimation with Stata (2006, see full citation in the notes), which is definitely worth it if you are considering writing your own MLE commands in Stata.</description>
+      <description>Another set of notes from when I was TA for our Advanced Quantitative Methods course with Prof. Matt Golder in 2008. The notes for Programming MLE models in Stata (pdf) walk you through how to recreate your own logit regression command and ado files for Stata, as well as how to use simulations to check your model. Here are also the associated ado and do files.&#xA;The notes are closely based on Maximum Likelihood Estimation with Stata (2006, see full citation in the notes), which is definitely worth it if you are considering writing your own MLE commands in Stata.</description>
     </item>
-    
     <item>
       <title>Stata Basics</title>
       <link>https://andybeger.com/blog/2011-01-30-stata-basics/</link>
       <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://andybeger.com/blog/2011-01-30-stata-basics/</guid>
-      <description>A couple of lab notes from 2009, when I was TA for our Basic Quantitative Methods course:
-Review of Basic Stata use (pdf) and associated files (zip folder). OLS regression (pdf) and associated files (zip folder). OLS Quantities of Interest (pdf) and associated files (zip folder). Logit Quantities of Interest (pdf) and associated files (zip folder). </description>
+      <description>A couple of lab notes from 2009, when I was TA for our Basic Quantitative Methods course:&#xA;Review of Basic Stata use (pdf) and associated files (zip folder). OLS regression (pdf) and associated files (zip folder). OLS Quantities of Interest (pdf) and associated files (zip folder). Logit Quantities of Interest (pdf) and associated files (zip folder). </description>
     </item>
-    
   </channel>
 </rss>
