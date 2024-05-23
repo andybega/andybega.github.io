@@ -78,8 +78,66 @@
 <p><a href="https://github.com/ahalterman/NGEC">NGEC (GitHub)</a>: NGEC is the coder that produces the POLECAT event data.</p>
 <h2 id="faq">FAQ</h2>
 <h3 id="some-of-the-txt-files-are-misformatted">Some of the TXT files are misformatted</h3>
-<h3 id="reading-the-data-with-readtable-in-r-throws-an-error">Reading the data with <code>read.table</code> in R throws an error</h3>
-<p>R&rsquo;s <code>read.table</code> does not correctly read the TSV data by default. The problem is that the <code>quote</code> argument includes single quotes (&rsquo;) by default. Some of the field values in the data include single quotes, e.g. as part of a person&rsquo;s name when used in the possessive form, like &ldquo;Merkel<!-- raw HTML omitted --><strong>&rsquo;</strong><!-- raw HTML omitted -->s&rdquo;. To fix this, supply your own quote argument like below:</p>
+<p>Several of the text (tab-separated variable) files are misformatted. This R function will be able to read all of them without errors or <code>vroom</code> problem warnings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;readr&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;dplyr&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pc_read_tsv <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x, expected_col, <span style="color:#66d9ef">...</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># check the header for malformed files</span>
+</span></span><span style="display:flex;"><span>  df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_tsv</span>(<span style="color:#a6e22e">file.path</span>(polecat_data_path, file), show_col_types <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, 
+</span></span><span style="display:flex;"><span>                 n_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># file with excess column names</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;Headline&#34;</span> <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">colnames</span>(df)) {
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_tsv</span>(<span style="color:#a6e22e">file.path</span>(polecat_data_path, file), show_col_types <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>,
+</span></span><span style="display:flex;"><span>                   skip <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, col_names <span style="color:#f92672">=</span> expected_col)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>(df)
+</span></span><span style="display:flex;"><span>  } 
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># file with excess tab characters</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ncol</span>(df) <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">length</span>(expected_col)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;Handling excess empty columns&#34;</span>)
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_tsv</span>(<span style="color:#a6e22e">file.path</span>(polecat_data_path, file), show_col_types <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (j <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">seq</span>(<span style="color:#a6e22e">ncol</span>(df), <span style="color:#a6e22e">length</span>(expected_col)<span style="color:#ae81ff">+1</span>)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">all</span>(<span style="color:#a6e22e">is.na</span>(df[[j]]))) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">stop</span>(<span style="color:#e6db74">&#34;Column is not empty&#34;</span>)
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      df[[j]] <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>(df)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># default, normal file</span>
+</span></span><span style="display:flex;"><span>  df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_tsv</span>(<span style="color:#a6e22e">file.path</span>(polecat_data_path, file), show_col_types <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>(df)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The following files have excess column names in the first row. Skipping the first row and manually providing column names will fix this issue.</p>
+<pre tabindex="0"><code>ngecEvents.20230728161146.Release610.DV.txt.gz
+ngecEvents.20230728161306.Release611.DV.txt.gz
+ngecEvents.20230728161432.Release612.DV.txt.gz
+ngecEvents.20230728161606.Release613.DV.txt.gz
+ngecEvents.20230728161754.Release614.DV.txt.gz
+ngecEvents.20230728161954.Release615.DV.txt.gz
+ngecEvents.20230728162154.Release616.DV.txt.gz
+ngecEvents.20230728162404.Release617.DV.txt.gz
+ngecEvents.20230728162615.Release618.DV.txt.gz
+ngecEvents.20230728162845.Release619.DV.txt.gz
+ngecEvents.20230728163218.Release620.DV.txt.gz
+ngecEvents.20230728163550.Release621.DV.txt.gz
+ngecEvents.20230728163916.Release622.DV.txt.gz
+ngecEvents.20230728164255.Release623.DV.txt.gz
+ngecEvents.20230728164702.Release624.DV.txt.gz
+ngecEvents.20230728165115.Release625.DV.txt.gz
+ngecEvents.20230728165700.Release626.DV.txt.gz
+ngecEvents.20230728170202.Release627.DV.txt.gz
+ngecEvents.20230728170742.Release628.DV.txt.gz
+ngecEvents.20230728171335.Release629.DV.txt.gz
+ngecEvents.20230728171900.Release630.DV.txt.gz
+ngecEvents.20230728172518.Release631.DV.txt.gz
+ngecEvents.20230728173251.Release632.DV.txt.gz
+ngecEventsDV-2021-Apr.txt.gz
+</code></pre><p>The file below has excess tab characters that in R lead to the creation of 4 excess, empty column. Dropping those columns fixes this issue.</p>
+<pre tabindex="0"><code>ngecEventsDV-2020-Jun.txt.gz
+</code></pre><h3 id="reading-the-data-with-readtable-in-r-throws-an-error">Reading the data with <code>read.table</code> in R throws an error</h3>
+<p>R&rsquo;s <code>read.table</code> does not correctly read the TSV data by default. The problem is that the <code>quote</code> argument includes single quotes (&rsquo;) by default. Some of the field values in the data include single quotes, e.g. as part of a person&rsquo;s name when used in the possessive form, like &ldquo;Merkel**&rsquo;**s&rdquo;. To fix this, supply your own quote argument like below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">read.table</span>(file, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;\t&#34;</span>, quote <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;\&#34;&#34;</span>, header <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 </span></span></code></pre></div><h3 id="who-created-polecat">Who created POLECAT?</h3>
 <p>See the <a href="https://dataverse.harvard.edu/dataverse/POLECAT">POLECAT Dataverse</a> repo author list.</p>
